@@ -3,12 +3,12 @@
   "type": "module",
   "private": true,
   "scripts": {
-    "dev": "vixt-uni",
-    "dev:h5": "vixt-uni",
-    "dev:mp": "vixt-uni -p mp-weixin",
-    "build": "vixt-uni build",
-    "build:h5": "vixt-uni build",
-    "build:mp": "vixt-uni build -p mp-weixin",
+    "dev": "uni",
+    "dev:h5": "uni",
+    "dev:mp": "uni -p mp-weixin",
+    "build": "uni build",
+    "build:h5": "uni build",
+    "build:mp": "uni build -p mp-weixin",
     "tc": "vue-tsc --noEmit"
   },
   "dependencies": {

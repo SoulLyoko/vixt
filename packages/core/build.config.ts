@@ -1,5 +1,5 @@
 import { defineBuildConfig } from 'unbuild'
 
 export default defineBuildConfig({
-  externals: ['vite', 'pathe', 'fs-extra', 'defu', 'pkg-types', 'mlly', 'c12'],
+  externals: ['vite', 'pathe', 'fs-extra', 'defu', 'pkg-types', 'mlly', 'c12', 'tsx/esm'],
 })

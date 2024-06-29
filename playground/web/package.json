@@ -3,9 +3,9 @@
   "type": "module",
   "private": true,
   "scripts": {
-    "build": "vixt build",
-    "dev": "vixt",
-    "preview": "vixt preview",
+    "build": "vite build",
+    "dev": "vite",
+    "preview": "vite preview",
     "tc": "vue-tsc --noEmit"
   },
   "dependencies": {

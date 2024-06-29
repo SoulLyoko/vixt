@@ -1,6 +1,7 @@
 import type { PluginOption } from 'vite'
 import type { ModuleDefinition, ModuleOptions, Vixt, VixtConfigLayer, VixtModule } from './types'
 
+import 'tsx/esm'
 import { pathToFileURL } from 'mlly'
 import path from 'pathe'
 import fs from 'fs-extra'

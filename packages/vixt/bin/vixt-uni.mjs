@@ -1,1 +1,0 @@
-import '@vixt/uni/cli'

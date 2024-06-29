@@ -10,16 +10,10 @@
     ".": {
       "types": "./dist/index.d.ts",
       "import": "./dist/index.mjs"
-    },
-    "./cli": {
-      "import": "./bin/cli.mjs"
     }
   },
   "main": "dist/index.mjs",
   "types": "dist/index.d.ts",
-  "bin": {
-    "vixt-uni": "bin/cli.mjs"
-  },
   "files": [
     "dist"
   ],
