@@ -1,0 +1,36 @@
+{
+  "name": "@vixt/core",
+  "type": "module",
+  "version": "0.0.0",
+  "author": "SoulLyoko<https://github.com/SoulLyoko>",
+  "license": "MIT",
+  "homepage": "https://github.com/SoulLyoko/vixt#readme",
+  "repository": "https://github.com/SoulLyoko/vixt.git",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.mjs"
+    }
+  },
+  "main": "dist/index.mjs",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "unbuild"
+  },
+  "dependencies": {
+    "@types/fs-extra": "11.0.4",
+    "@vue/tsconfig": "^0.5.1",
+    "c12": "^1.11.1",
+    "defu": "^6.1.4",
+    "fs-extra": "^11.2.0",
+    "mlly": "1.7.1",
+    "pathe": "^1.1.2",
+    "pkg-types": "^1.1.1",
+    "vite": "^5.3.2",
+    "vite-plugin-checker": "^0.6.4",
+    "vue-tsc": "^1.8.27"
+  }
+}

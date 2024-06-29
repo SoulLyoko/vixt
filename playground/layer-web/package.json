@@ -1,0 +1,10 @@
+{
+  "name": "@vixt/layer-web",
+  "type": "module",
+  "private": true,
+  "main": "vixt.config.ts",
+  "dependencies": {
+    "@iconify/vue": "^4.1.2",
+    "vixt": "workspace:*"
+  }
+}

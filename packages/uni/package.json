@@ -1,0 +1,45 @@
+{
+  "name": "@vixt/uni",
+  "type": "module",
+  "version": "0.0.0",
+  "author": "SoulLyoko<https://github.com/SoulLyoko>",
+  "license": "MIT",
+  "homepage": "https://github.com/SoulLyoko/vixt#readme",
+  "repository": "https://github.com/SoulLyoko/vixt.git",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.mjs"
+    },
+    "./cli": {
+      "import": "./bin/cli.mjs"
+    }
+  },
+  "main": "dist/index.mjs",
+  "types": "dist/index.d.ts",
+  "bin": {
+    "vixt-uni": "bin/cli.mjs"
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "unbuild"
+  },
+  "dependencies": {
+    "@dcloudio/types": "^3.4.8",
+    "@uni-helper/eslint-config": "^0.0.6",
+    "@uni-helper/uni-app-types": "^0.5.13",
+    "@uni-helper/unocss-preset-uni": "^0.2.9",
+    "@uni-helper/vite-plugin-uni-components": "^0.0.9",
+    "@uni-helper/vite-plugin-uni-layouts": "^0.1.10",
+    "@uni-helper/vite-plugin-uni-pages": "^0.2.24",
+    "@vixt/core": "workspace:*",
+    "@vueuse/core": "^10.11.0",
+    "pinia": "^2.1.7",
+    "pinia-plugin-unistorage": "^0.0.19",
+    "unocss": "^0.61.0",
+    "unplugin-auto-import": "^0.17.6",
+    "vue": "^3.4.31"
+  }
+}

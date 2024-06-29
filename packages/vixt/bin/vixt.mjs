@@ -1,0 +1,1 @@
+import '@vixt/vue/cli'

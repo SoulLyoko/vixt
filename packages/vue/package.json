@@ -1,0 +1,45 @@
+{
+  "name": "@vixt/vue",
+  "type": "module",
+  "version": "0.0.0",
+  "author": "SoulLyoko<https://github.com/SoulLyoko>",
+  "license": "MIT",
+  "homepage": "https://github.com/SoulLyoko/vixt#readme",
+  "repository": "https://github.com/SoulLyoko/vixt.git",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.mjs"
+    },
+    "./cli": {
+      "import": "./bin/cli.mjs"
+    }
+  },
+  "main": "dist/index.mjs",
+  "types": "dist/index.d.ts",
+  "bin": {
+    "vixt": "bin/cli.mjs"
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "unbuild"
+  },
+  "dependencies": {
+    "@vitejs/plugin-vue": "^5.0.5",
+    "@vitejs/plugin-vue-jsx": "^4.0.0",
+    "@vixt/core": "workspace:*",
+    "@vueuse/core": "^10.11.0",
+    "pinia": "^2.1.7",
+    "pinia-plugin-persistedstate": "^3.2.1",
+    "unocss": "^0.61.0",
+    "unplugin-auto-import": "^0.17.6",
+    "unplugin-vue-components": "^0.27.2",
+    "unplugin-vue-router": "^0.10.0",
+    "vite-plugin-vue-devtools": "^7.3.5",
+    "vite-plugin-vue-layouts": "^0.11.0",
+    "vue": "^3.4.31",
+    "vue-router": "^4.4.0"
+  }
+}

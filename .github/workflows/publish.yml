@@ -1,0 +1,42 @@
+name: NPM Publish
+on:
+  push:
+    tags:
+      - 'v*'
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Install pnpm
+        uses: pnpm/action-setup@v2
+        with:
+          version: 8
+
+      - name: Install Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18
+          cache: pnpm
+
+      - name: Build Packages
+        run: |
+          pnpm install
+          pnpm run build
+
+      - name: Publish
+        run: |
+          echo "//registry.npmjs.org/:_authToken=${{ secrets.NPM_TOKEN }}" > .npmrc
+          pnpm publish --no-git-checks --access public -r
+
+      - name: Sync
+        uses: sepveneto/sync-npmmirror-action@v1
+        with:
+          name: |
+            @vixt/core
+            @vixt/vue
+            @vixt/uni
+            vixt

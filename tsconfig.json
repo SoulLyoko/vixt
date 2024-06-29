@@ -1,0 +1,12 @@
+{
+  "extends": "@vue/tsconfig/tsconfig.json",
+  "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      "vixt": ["packages/vixt"],
+      "vixt/*": ["packages/vixt/*"],
+      "@vixt/*": ["packages/*"]
+    }
+  },
+  "exclude": ["dist"]
+}

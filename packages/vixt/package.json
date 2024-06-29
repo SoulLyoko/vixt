@@ -1,0 +1,48 @@
+{
+  "name": "vixt",
+  "type": "module",
+  "version": "0.0.0",
+  "author": "SoulLyoko<https://github.com/SoulLyoko>",
+  "license": "MIT",
+  "homepage": "https://github.com/SoulLyoko/vixt#readme",
+  "repository": "https://github.com/SoulLyoko/vixt.git",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.mjs"
+    },
+    "./core": {
+      "types": "./core.d.ts",
+      "import": "./core.js"
+    },
+    "./vue": {
+      "types": "./vue.d.ts",
+      "import": "./vue.js"
+    },
+    "./uni": {
+      "types": "./uni.d.ts",
+      "import": "./uni.js"
+    }
+  },
+  "main": "dist/index.mjs",
+  "types": "dist/index.d.ts",
+  "bin": {
+    "vixt": "bin/vixt.mjs",
+    "vixt-uni": "bin/vixt-uni.mjs"
+  },
+  "files": [
+    "bin",
+    "core.*",
+    "dist",
+    "uni.*",
+    "vue.*"
+  ],
+  "scripts": {
+    "build": "unbuild"
+  },
+  "dependencies": {
+    "@vixt/core": "workspace:*",
+    "@vixt/uni": "workspace:*",
+    "@vixt/vue": "workspace:*"
+  }
+}

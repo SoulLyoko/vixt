@@ -1,0 +1,10 @@
+{
+  "name": "@vixt/layer-shared",
+  "type": "module",
+  "private": true,
+  "main": "vixt.config.ts",
+  "dependencies": {
+    "@unocss/reset": "^0.61.0",
+    "vixt": "workspace:*"
+  }
+}
