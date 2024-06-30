@@ -1,3 +1,12 @@
+## [0.0.4](https://github.com/SoulLyoko/vixt/compare/v0.0.3...v0.0.4) (2024-06-30)
+
+
+### Bug Fixes
+
+* **vue:** ignore tscheck in generated main.ts file ([11c6a36](https://github.com/SoulLyoko/vixt/commit/11c6a36b0918fc9234b5ed61ccd499fe43e0803e))
+
+
+
 ## [0.0.3](https://github.com/SoulLyoko/vixt/compare/v0.0.2...v0.0.3) (2024-06-29)
 
 
