@@ -1,3 +1,12 @@
+## [0.0.5](https://github.com/SoulLyoko/vixt/compare/v0.0.4...v0.0.5) (2024-06-30)
+
+
+### Bug Fixes
+
+* **core:** disabled vite-plugin-checker until it upgrade ([045c8af](https://github.com/SoulLyoko/vixt/commit/045c8afcf2994d2ff298dcd299acbff6b9c88a2f))
+
+
+
 ## [0.0.4](https://github.com/SoulLyoko/vixt/compare/v0.0.3...v0.0.4) (2024-06-30)
 
 
