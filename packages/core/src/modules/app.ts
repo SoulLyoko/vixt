@@ -1,4 +1,4 @@
-import type { ResolvedConfig, TransformResult } from 'vite'
+import type { TransformResult } from 'vite'
 import type { Vixt } from '../types'
 
 import { cwd } from 'node:process'
@@ -57,8 +57,8 @@ function resolveHeadTag(tag: string, attrs: Record<string, string>) {
   return attrs?.children ? `<${tag} ${attrsStr}>${attrs.children}</${tag}>` : `<${tag} ${attrsStr} />`
 }
 
-function generateIndexHtml(options: AppOptions, vixt: Vixt, config: ResolvedConfig) {
-  const { buildDir } = vixt.options
+function generateIndexHtml(options: AppOptions, vixt: Vixt) {
+  const { buildDir, rootDir } = vixt.options
 
   const { head = {}, rootTag, rootId, main, loadingTemplate: loading = '' } = options || {}
 
@@ -73,7 +73,7 @@ function generateIndexHtml(options: AppOptions, vixt: Vixt, config: ResolvedConf
 
   let loadingTemplate = ''
   if (/^\.|\//.test(loading)) {
-    const loadingTemplatePath = path.resolve(config.root!, loading)
+    const loadingTemplatePath = path.resolve(rootDir!, loading)
     if (fs.existsSync(loadingTemplatePath)) {
       loadingTemplate = fs.readFileSync(loadingTemplatePath, 'utf-8')
     }
@@ -97,7 +97,7 @@ ${noscriptTemplate}
   </body>
 </html>
 `
-  fs.outputFileSync(path.resolve(config.root!, `${buildDir}/index.html`), code)
+  fs.outputFileSync(path.resolve(rootDir!, `${buildDir}/index.html`), code)
   return code
 }
 
@@ -119,11 +119,9 @@ export const app = defineVixtModule<AppOptions>({
   meta: { name, configKey: 'app' },
   defaults,
   setup(options, vixt) {
+    generateIndexHtml(options, vixt)
     return {
       name,
-      configResolved(config) {
-        generateIndexHtml(options, vixt, config)
-      },
       transformIndexHtml: {
         order: 'pre',
         handler() {

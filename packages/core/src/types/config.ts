@@ -4,6 +4,10 @@ import type { VixtModule } from './module'
 
 export interface VixtOptions extends Record<string, any> {
   /**
+   * @default process.cwd()
+   */
+  rootDir?: string
+  /**
    * @default '.vixt'
    */
   buildDir?: string

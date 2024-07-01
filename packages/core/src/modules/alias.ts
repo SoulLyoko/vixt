@@ -7,11 +7,12 @@ import { defineVixtModule } from '..'
 const name = 'vixt:alias'
 export const alias = defineVixtModule({
   meta: { name },
-  setup() {
+  setup(_, vixt) {
     return {
       name,
       config() {
         return {
+          root: vixt.options.rootDir,
           resolve: {
             alias: {
               '@': `${path.resolve(cwd(), 'src')}`,

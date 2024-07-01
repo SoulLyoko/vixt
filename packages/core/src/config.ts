@@ -2,6 +2,8 @@ import type { LoadConfigOptions } from 'c12'
 import type { VixtOptions } from './types'
 import type { VixtConfigLayer } from '.'
 
+import { cwd } from 'node:process'
+
 import path from 'pathe'
 import fs from 'fs-extra'
 import { loadConfig } from 'c12'
@@ -10,6 +12,7 @@ export function defineVixtConfig(input: VixtOptions) {
   return input
 }
 
+export const rootDir = cwd()
 export const buildDir = '.vixt'
 export const buildTypesDir = `${buildDir}/types`
 export function loadVixtConfig(opts?: LoadConfigOptions<VixtOptions>) {
@@ -17,6 +20,7 @@ export function loadVixtConfig(opts?: LoadConfigOptions<VixtOptions>) {
     name: 'vixt',
     ...opts,
     defaults: {
+      rootDir,
       buildDir,
       buildTypesDir,
       ...opts?.defaults,
