@@ -13,6 +13,7 @@ const defaults = {
   typescript: {
     references: ['types/uni-pages.d.ts', 'types/components.d.ts', 'types/auto-imports.d.ts', 'types/vite-env.d.ts'],
     tsConfig: { compilerOptions: { types: ['@dcloudio/types', '@uni-helper/vite-plugin-uni-pages/client'] } },
+    typeCheck: { vueTsc: true },
   },
 }
 

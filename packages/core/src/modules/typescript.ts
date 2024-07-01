@@ -5,7 +5,7 @@ import type { Vixt } from '../types'
 import fs from 'fs-extra'
 import path from 'pathe'
 import defu from 'defu'
-// import Checker from 'vite-plugin-checker'
+import Checker from 'vite-plugin-checker'
 
 import { defineVixtModule } from '../module'
 
@@ -20,7 +20,7 @@ export interface TypescriptOptions {
   references?: (string | { path?: string, content?: string })[]
   tsConfig?: TSConfig
   /** https://github.com/fi3ework/vite-plugin-checker */
-  // typeCheck?: Parameters<typeof Checker>[0] | false
+  typeCheck?: Parameters<typeof Checker>[0]
 }
 
 function generateDts(options: TypescriptOptions, vixt: Vixt, config: ResolvedConfig) {
@@ -102,7 +102,7 @@ const defaults: TypescriptOptions = {
       './**/*',
     ],
   },
-  // typeCheck: { vueTsc: true, enableBuild: false, overlay: { initialIsOpen: false } },
+  typeCheck: { enableBuild: false, overlay: { initialIsOpen: false } },
 }
 export const typescript = defineVixtModule<TypescriptOptions>({
   meta: { name, configKey: 'typescript' },
@@ -118,7 +118,7 @@ export const typescript = defineVixtModule<TypescriptOptions>({
           genarateShims(options, vixt, config)
         },
       },
-      // options.typeCheck && Checker(options.typeCheck),
+      Checker(options.typeCheck ?? {}),
     ]
   },
 })
