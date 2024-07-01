@@ -1,3 +1,17 @@
+## [0.0.6](https://github.com/SoulLyoko/vixt/compare/v0.0.5...v0.0.6) (2024-07-01)
+
+
+### Bug Fixes
+
+* enable vite-plugin-checker ([f2eb606](https://github.com/SoulLyoko/vixt/commit/f2eb606f62ed33cfdc0d510f3986b1c8e23c2a7f))
+
+
+### Features
+
+* add rootDir ([5f95431](https://github.com/SoulLyoko/vixt/commit/5f95431988b4377b21951f74d34babb574586f6e))
+
+
+
 ## [0.0.5](https://github.com/SoulLyoko/vixt/compare/v0.0.4...v0.0.5) (2024-06-30)
 
 
