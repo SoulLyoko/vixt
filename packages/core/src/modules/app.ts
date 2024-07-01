@@ -105,6 +105,7 @@ const name = 'vixt:app'
 const defaults: AppOptions = {
   rootId: 'app',
   rootTag: 'div',
+  baseURL: '/',
   loadingTemplate: './loading.html',
   main: `${buildDir}/main.ts`,
   head: {

@@ -54,6 +54,7 @@ app.mount('#${rootId}')
 
 const name = 'vixt:entry'
 const defaults: AppOptions = {
+  baseURL: '/',
   rootId: 'app',
   css: ['virtual:uno.css'],
 }
