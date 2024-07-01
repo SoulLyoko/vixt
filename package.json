@@ -30,7 +30,7 @@
     "lint-staged": "^15.2.7",
     "simple-git-hooks": "^2.11.1",
     "taze": "^0.13.9",
-    "tsx": "^4.15.9",
+    "tsx": "^4.16.0",
     "typescript": "^5.5.2",
     "unbuild": "^2.0.0"
   },
