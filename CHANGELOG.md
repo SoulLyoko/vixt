@@ -1,3 +1,19 @@
+## [0.0.7](https://github.com/SoulLyoko/vixt/compare/v0.0.6...v0.0.7) (2024-07-02)
+
+
+### Bug Fixes
+
+* **core:** filter layers required `cwd` ([c64321c](https://github.com/SoulLyoko/vixt/commit/c64321ca6fe14d85c0e347b044b2505505666583))
+* **core:** remove devProxy and warmup ([3134199](https://github.com/SoulLyoko/vixt/commit/31341998c6562e243529c46ac399f7a9d747f863))
+* set baseURL default value ([4f9845e](https://github.com/SoulLyoko/vixt/commit/4f9845e0baa4116b79008be1c60b387c6490828f))
+
+
+### Features
+
+* **uni:** patch `normalizeNodeModules` in `@dcloudio/uni-cli-shared/dist/utils.js` ([9f46c4a](https://github.com/SoulLyoko/vixt/commit/9f46c4a51b42dcba8b1a696021839ff915ce374e))
+
+
+
 ## [0.0.6](https://github.com/SoulLyoko/vixt/compare/v0.0.5...v0.0.6) (2024-07-01)
 
 
