@@ -1,2 +1,2 @@
-export * from './entry'
+export * from './entry-vue'
 export * from './preset-vue'

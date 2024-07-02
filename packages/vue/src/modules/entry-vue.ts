@@ -52,13 +52,13 @@ app.mount('#${rootId}')
   return code
 }
 
-const name = 'vixt:entry'
+const name = 'vixt:entry-vue'
 const defaults: AppOptions = {
   baseURL: '/',
   rootId: 'app',
   css: ['virtual:uno.css'],
 }
-export const entry = defineVixtModule<AppOptions>({
+export const entryVue = defineVixtModule<AppOptions>({
   meta: { name, configKey: 'app' },
   defaults,
   setup(options, vixt) {

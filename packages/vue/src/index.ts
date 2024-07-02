@@ -2,10 +2,12 @@ import type { VixtOptions } from '@vixt/core'
 
 import { createVixtPlugin } from '@vixt/core'
 
-import { entry, presetVue } from './modules'
+import { entryVue, presetVue } from './modules'
+
+export * from './modules'
 
 const defaults: VixtOptions = {
-  modules: [entry, presetVue],
+  modules: [entryVue, presetVue],
   app: {
     head: {
       link: [{ rel: 'icon', href: '/favicon.ico' }],

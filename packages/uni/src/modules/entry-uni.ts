@@ -45,8 +45,8 @@ export function createApp() {
   return code
 }
 
-const name = 'vixt:entry'
-export const entry = defineVixtModule<AppOptions>({
+const name = 'vixt:entry-uni'
+export const entryUni = defineVixtModule<AppOptions>({
   meta: { name, configKey: 'app' },
   defaults: {
     css: ['virtual:uno.css'],
@@ -54,7 +54,7 @@ export const entry = defineVixtModule<AppOptions>({
   setup(options, vixt) {
     generateMainTs(options, vixt)
     return {
-      name: 'vixt:entry',
+      name: 'vixt:entry-uni',
       enforce: 'pre',
       transform(code, id) {
         const { buildDir, rootDir } = vixt.options
