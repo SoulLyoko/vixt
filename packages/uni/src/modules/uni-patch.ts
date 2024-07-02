@@ -1,4 +1,6 @@
 import { defineVitePlugin } from '@vixt/core'
+import { resolvePathSync } from 'mlly'
+import fs from 'fs-extra'
 
 /** 增加小程序中vueuse的运行所需 */
 export function vueusePolyfill(code: string, id: string) {
@@ -11,7 +13,20 @@ export const TransitionGroup = {}
   return code
 }
 
+const matched = `str = normalizePath(str).replace(NODE_MODULES_REGEX, 'node-modules');`
+const replaced = `str = normalizePath(str).replace(NODE_MODULES_REGEX, 'node-modules').replace(/\\.\\.\\//g, '');`
+/** 移除路径中的'../' */
+export function patchNormalizeNodeModules() {
+  const codePath = resolvePathSync('@dcloudio/uni-cli-shared/dist/utils.js')
+  let code = fs.readFileSync(codePath, 'utf8')
+  if (code.includes(matched)) {
+    code = code.replace(matched, replaced)
+    fs.writeFileSync(codePath, code)
+  }
+}
+
 export const uniPatch = defineVitePlugin(() => {
+  patchNormalizeNodeModules()
   return {
     name: 'vixt:uni-patch',
     transform(code, id) {
