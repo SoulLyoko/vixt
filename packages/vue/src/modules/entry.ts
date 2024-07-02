@@ -26,8 +26,8 @@ import { routes } from 'vue-router/auto-routes'
 import { setupLayouts } from 'virtual:generated-layouts'
 import { createPinia } from 'pinia'
 import { createPersistedState } from 'pinia-plugin-persistedstate'
-import App from '@/App.vue'
 
+import App from '@/App.vue'
 ${cssTemplate}
 
 const pinia = createPinia()

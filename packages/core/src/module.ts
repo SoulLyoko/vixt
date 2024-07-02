@@ -7,7 +7,7 @@ import path from 'pathe'
 import fs from 'fs-extra'
 import defu from 'defu'
 
-import { resolveLayersDirs } from '.'
+import { resolveLayersDirs } from './config'
 
 export function defineVitePlugin<Options = any>(pluginFn: (options?: Options) => PluginOption) {
   return pluginFn

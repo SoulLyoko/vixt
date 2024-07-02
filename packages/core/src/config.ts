@@ -15,9 +15,10 @@ export function defineVixtConfig(input: VixtOptions) {
 export const rootDir = cwd()
 export const buildDir = '.vixt'
 export const buildTypesDir = `${buildDir}/types`
-export function loadVixtConfig(opts?: LoadConfigOptions<VixtOptions>) {
-  return loadConfig<VixtOptions>({
+export async function loadVixtConfig(opts?: LoadConfigOptions<VixtOptions>) {
+  const result = await loadConfig<VixtOptions>({
     name: 'vixt',
+    rcFile: false,
     ...opts,
     defaults: {
       rootDir,
@@ -26,11 +27,13 @@ export function loadVixtConfig(opts?: LoadConfigOptions<VixtOptions>) {
       ...opts?.defaults,
     },
   })
+  result.layers = result.layers?.filter(e => e.cwd)
+  return result
 }
 
-export function resolveLayersDirs(layers?: VixtConfigLayer[]) {
+export function resolveLayersDirs(layers: VixtConfigLayer[] = []) {
   const dirs: Record<string, string[] | undefined> = {}
-  for (const layer of layers?.filter(e => e.cwd) ?? []) {
+  for (const layer of layers) {
     const contents = fs.readdirSync(path.resolve(layer.cwd!, 'src'))
     for (const content of contents) {
       const fileOrDirPath = path.resolve(layer.cwd!, 'src', content)

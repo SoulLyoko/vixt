@@ -47,7 +47,7 @@ function generateTsConfig(options: TypescriptOptions, vixt: Vixt, config: Resolv
   const { root } = config
   const { buildDir } = vixt.options
   const tsConfigPath = path.resolve(root, buildDir!, 'tsconfig.json')
-  const layersDirs = vixt._layers.filter(e => e.cwd).map(e => e.cwd)
+  const layersDirs = vixt._layers.map(e => e.cwd)
   const tsConfig = defu(options.tsConfig, { include: layersDirs })
   fs.outputFileSync(tsConfigPath, JSON.stringify(tsConfig, null, 2))
 }
