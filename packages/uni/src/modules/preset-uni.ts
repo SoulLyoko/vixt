@@ -5,6 +5,7 @@ import Uni from '@dcloudio/vite-plugin-uni'
 import Pages from '@uni-helper/vite-plugin-uni-pages'
 import Layouts from '@uni-helper/vite-plugin-uni-layouts'
 import Components from '@uni-helper/vite-plugin-uni-components'
+import { uniuseAutoImports } from '@uni-helper/uni-use'
 import AutoImport from 'unplugin-auto-import/vite'
 import UnoCSS from 'unocss/vite'
 import { defineVixtModule, resolveLayersDirs } from '@vixt/core'
@@ -43,9 +44,26 @@ export const presetUni = defineVixtModule<VixtOptions>({
         directoryAsNamespace: true,
         collapseSamePrefixes: true,
         allowOverrides: true,
+        version: 2.7,
       },
       imports: {
-        imports: ['vue', '@vueuse/core', 'uni-app', 'pinia'],
+        imports: [
+          'vue',
+          'uni-app',
+          'pinia',
+          {
+            '@vueuse/core': [
+              // already imported by uni-use
+              ['tryOnScopeDispose', ''],
+              ['useNetwork', ''],
+              ['useOnline', ''],
+              ['usePreferredDark', ''],
+              ['useStorage', ''],
+              ['useStorageAsync', ''],
+            ],
+          },
+          uniuseAutoImports(),
+        ],
         dts: `${typesDir}/auto-imports.d.ts`,
         dirs: [...composables, ...constants, ...stores, ...utils],
         vueTemplate: true,

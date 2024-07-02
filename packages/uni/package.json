@@ -24,6 +24,7 @@
     "@dcloudio/types": "^3.4.8",
     "@uni-helper/eslint-config": "^0.0.6",
     "@uni-helper/uni-app-types": "^0.5.13",
+    "@uni-helper/uni-use": "^0.19.12",
     "@uni-helper/unocss-preset-uni": "^0.2.9",
     "@uni-helper/vite-plugin-uni-components": "^0.0.9",
     "@uni-helper/vite-plugin-uni-layouts": "^0.1.10",
