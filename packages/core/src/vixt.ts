@@ -5,12 +5,12 @@ import defu from 'defu'
 
 import { applyLayerModules, defineVitePlugin } from './module'
 import { loadVixtConfig } from './config'
-import { alias, app, config, devProxy, typescript, warmup } from '.'
+import { alias, app, config, typescript } from '.'
 
 export async function loadVixt(opts?: LoadConfigOptions<VixtOptions>) {
   const result = await loadVixtConfig(defu(opts, {
     defaults: {
-      modules: [alias, app, config, devProxy, typescript, warmup],
+      modules: [alias, app, config, typescript],
     },
   }))
 

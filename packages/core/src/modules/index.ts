@@ -1,6 +1,4 @@
 export * from './alias'
 export * from './app'
 export * from './config'
-export * from './dev-proxy'
 export * from './typescript'
-export * from './warmup'
