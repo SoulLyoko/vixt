@@ -18,7 +18,7 @@ declare module '@vixt/core'{
     /** https://github.com/uni-helper/vite-plugin-uni-pages */
     pages?: PluginOptions<typeof Pages>
     /** https://github.com/uni-helper/vite-plugin-uni-layouts */
-    layouts?: any
+    uniLayouts?: PluginOptions<typeof Layouts>
     /** https://github.com/uni-helper/vite-plugin-uni-components */
     components?: PluginOptions<typeof Components>
     /** https://github.com/antfu/unplugin-auto-import */
@@ -37,7 +37,7 @@ export const presetUni = defineVixtModule<VixtOptions>({
     const defaultOptions: VixtOptions = {
       uni: {},
       pages: { dts: `${typesDir}/uni-pages.d.ts` },
-      layouts: {},
+      uniLayouts: {},
       components: {
         dts: `${typesDir}/components.d.ts`,
         dirs: components,
@@ -75,7 +75,7 @@ export const presetUni = defineVixtModule<VixtOptions>({
 
     const modules = [
       Pages(options.pages),
-      Layouts(options.layouts),
+      Layouts(options.uniLayouts),
       Components(options.components),
       AutoImport(options.imports),
       UnoCSS(options.unocss),

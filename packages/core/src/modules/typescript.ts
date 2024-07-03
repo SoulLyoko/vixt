@@ -1,4 +1,3 @@
-import type { ResolvedConfig } from 'vite'
 import type { TSConfig } from 'pkg-types'
 import type { Vixt } from '../types'
 
@@ -23,56 +22,52 @@ export interface TypescriptOptions {
   typeCheck?: Parameters<typeof Checker>[0]
 }
 
-function generateDts(options: TypescriptOptions, vixt: Vixt, config: ResolvedConfig) {
-  const { root } = config
-  const { buildDir } = vixt.options
-  const vixtDts = options.references?.map((reference) => {
+function generateVixtDts(options: TypescriptOptions, vixt: Vixt) {
+  const { buildDir, rootDir } = vixt.options
+  const codePath = path.resolve(rootDir!, buildDir!, 'vixt.d.ts')
+  const code = options.references?.map((reference) => {
     if (typeof reference === 'string') {
       return `/// <reference path="${reference}" />`
     }
     else if (typeof reference === 'object' && reference.path && reference.content) {
-      fs.outputFileSync(path.resolve(root, buildDir!), reference.content ?? '')
+      fs.outputFileSync(path.resolve(rootDir!, buildDir!), reference.content ?? '')
       return `/// <reference path="${reference.path}" />`
     }
     else {
       return ''
     }
   }).concat('export {}').join('\n')
-
-  const vixtDtsPath = path.resolve(root, buildDir!, 'vixt.d.ts')
-  fs.outputFileSync(vixtDtsPath, vixtDts!)
+  code && fs.outputFileSync(codePath, code)
 }
 
-function generateTsConfig(options: TypescriptOptions, vixt: Vixt, config: ResolvedConfig) {
-  const { root } = config
-  const { buildDir } = vixt.options
-  const tsConfigPath = path.resolve(root, buildDir!, 'tsconfig.json')
+function generateTsConfig(options: TypescriptOptions, vixt: Vixt) {
+  const { buildDir, rootDir } = vixt.options
+  const codePath = path.resolve(rootDir!, buildDir!, 'tsconfig.json')
   const layersDirs = vixt._layers.map(e => e.cwd)
   const tsConfig = defu(options.tsConfig, { include: layersDirs })
-  fs.outputFileSync(tsConfigPath, JSON.stringify(tsConfig, null, 2))
+  const code = JSON.stringify(tsConfig, null, 2)
+  fs.outputFileSync(codePath, code)
 }
 
-function generateEnvDts(options: TypescriptOptions, vixt: Vixt, config: ResolvedConfig) {
-  const { env, root } = config
-  const { buildDir } = vixt.options
+function generateEnvDts(options: TypescriptOptions, vixt: Vixt, env: Record<string, any>) {
+  const { buildTypesDir, rootDir } = vixt.options
+  const codePath = path.resolve(rootDir!, buildTypesDir!, 'vite-env.d.ts')
   const values = Object.entries(env)
     .map(([key, value]) => `/** ${key}=${value} */\n  ${key}: ${typeof value}`)
     .join('\n  ')
-  const envDts = `interface ImportMeta {
+  const code = `interface ImportMeta {
   readonly env: ImportMetaEnv
 }
 interface ImportMetaEnv {
   ${values}
 }
 `
-  const envDtsPath = path.resolve(root, buildDir!, 'types', 'vite-env.d.ts')
-  fs.outputFileSync(envDtsPath, envDts!)
+  fs.outputFileSync(codePath, code)
 }
 
-function genarateShims(options: TypescriptOptions, vixt: Vixt, config: ResolvedConfig) {
-  const { root } = config
-  const { buildDir } = vixt.options
-  const shimsDts = `
+function genarateShims(options: TypescriptOptions, vixt: Vixt) {
+  const { buildTypesDir, rootDir } = vixt.options
+  const code = `
 declare module '*.vue' {
   import type { DefineComponent } from 'vue'
 
@@ -80,13 +75,26 @@ declare module '*.vue' {
   export default component
 }
 `
-  const shimsDtsPath = path.resolve(root, buildDir!, 'types', 'shims.d.ts')
-  fs.outputFileSync(shimsDtsPath, shimsDts!)
+  const codePath = path.resolve(rootDir!, buildTypesDir!, 'shims.d.ts')
+  fs.outputFileSync(codePath, code)
+}
+
+function genarateGlobalComponents(options: TypescriptOptions, vixt: Vixt) {
+  const { buildTypesDir, rootDir } = vixt.options
+  const codePath = path.resolve(rootDir!, buildTypesDir!, 'global-components.d.ts')
+  const code = `
+import type { GlobalComponents as _GlobalComponents } from '@vue/runtime-core'
+
+declare module 'vue'{
+  interface GlobalComponents extends _GlobalComponents {}
+}
+`
+  fs.outputFileSync(codePath, code)
 }
 
 const name = 'vixt:typescript'
 const defaults: TypescriptOptions = {
-  references: ['./types/vite-env.d.ts', './types/shims.d.ts'],
+  // references: ['types/vite-env.d.ts', 'types/shims.d.ts', 'types/global-components.d.ts'],
   tsConfig: {
     extends: '@vue/tsconfig/tsconfig.dom.json',
     compilerOptions: {
@@ -112,10 +120,11 @@ export const typescript = defineVixtModule<TypescriptOptions>({
       {
         name,
         configResolved(config) {
-          generateDts(options, vixt, config)
-          generateTsConfig(options, vixt, config)
-          generateEnvDts(options, vixt, config)
-          genarateShims(options, vixt, config)
+          generateVixtDts(options, vixt)
+          generateTsConfig(options, vixt)
+          generateEnvDts(options, vixt, config.env)
+          genarateShims(options, vixt)
+          genarateGlobalComponents(options, vixt)
         },
       },
       Checker(options.typeCheck ?? {}),

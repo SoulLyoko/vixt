@@ -17,7 +17,7 @@ declare module '@vixt/core'{
     /** https://github.com/posva/unplugin-vue-router */
     router?: PluginOptions<typeof VueRouter>
     /** https://github.com/JohnCampionJr/vite-plugin-vue-layouts */
-    layouts?: any
+    layouts?: PluginOptions<typeof Layouts>
     /** https://github.com/antfu/unplugin-vue-components */
     components?: PluginOptions<typeof Components>
     /** https://github.com/antfu/unplugin-auto-import */

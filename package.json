@@ -29,7 +29,7 @@
     "eslint-plugin-format": "^0.1.2",
     "lint-staged": "^15.2.7",
     "simple-git-hooks": "^2.11.1",
-    "taze": "^0.14.0",
+    "taze": "^0.14.2",
     "tsx": "^4.16.0",
     "typescript": "^5.5.3",
     "unbuild": "^2.0.0"
