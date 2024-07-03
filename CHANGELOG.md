@@ -1,3 +1,12 @@
+## [0.0.9](https://github.com/SoulLyoko/vixt/compare/v0.0.8...v0.0.9) (2024-07-03)
+
+
+### Bug Fixes
+
+* **uni:** vueuse auto import error ([5f080e3](https://github.com/SoulLyoko/vixt/commit/5f080e3cad55b16bd6191598d23085f025a60302))
+
+
+
 ## [0.0.8](https://github.com/SoulLyoko/vixt/compare/v0.0.7...v0.0.8) (2024-07-03)
 
 
