@@ -34,6 +34,14 @@
     "typescript": "^5.5.3",
     "unbuild": "^2.0.0"
   },
+  "pnpm": {
+    "peerDependencyRules": {
+      "allowedVersions": {
+        "eslint": "9",
+        "vue": "3"
+      }
+    }
+  },
   "simple-git-hooks": {
     "commit-msg": "npx --no-install commitlint --edit $1",
     "pre-commit": "pnpm lint-staged"
