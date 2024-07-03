@@ -1,3 +1,17 @@
+## [0.0.8](https://github.com/SoulLyoko/vixt/compare/v0.0.7...v0.0.8) (2024-07-03)
+
+
+### Bug Fixes
+
+* improve typescript dx ([a61c9ba](https://github.com/SoulLyoko/vixt/commit/a61c9ba7882f3107db7e53f3c2f848457b0d5c40))
+
+
+### Features
+
+* **uni:** auto import uni-use ([7f5b66c](https://github.com/SoulLyoko/vixt/commit/7f5b66cad98e50a832471761ab4d8eb02752ae21))
+
+
+
 ## [0.0.7](https://github.com/SoulLyoko/vixt/compare/v0.0.6...v0.0.7) (2024-07-02)
 
 
