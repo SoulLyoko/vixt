@@ -25,7 +25,7 @@ declare module '@vixt/core'{
     /** https://github.com/antfu/unocss */
     unocss?: PluginOptions<typeof UnoCSS>
     /** https://github.com/webfansplz/vite-plugin-vue-devtools */
-    devtools?: PluginOptions<typeof VueDevTools>
+    devtools?: PluginOptions<typeof VueDevTools> & { enabled?: boolean }
   }
 }
 
@@ -50,7 +50,7 @@ export const presetVue = defineVixtModule<VixtOptions>({
         vueTemplate: true,
       },
       unocss: {},
-      devtools: {},
+      devtools: { enabled: false },
     }
 
     const options = defu(vixt.options, defaultOptions)
@@ -62,7 +62,7 @@ export const presetVue = defineVixtModule<VixtOptions>({
       Components(options.components),
       AutoImport(options.imports),
       UnoCSS(options.unocss),
-      VueDevTools(options.devtools),
+      options.devtools?.enabled && VueDevTools(options.devtools),
     ]
 
     return plugins

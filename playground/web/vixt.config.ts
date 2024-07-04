@@ -8,4 +8,5 @@ export default defineVixtConfig({
       title: [{ children: 'vixt-web' }],
     },
   },
+  devtools: { enabled: true },
 })
