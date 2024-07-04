@@ -30,9 +30,11 @@ watchEffect(() => {
     </view>
 
     <view>
-      <navigator text-sm m-3 btn open-type="navigateBack">
+      <navigator text-sm btn m-3 open-type="navigateBack">
         Back
       </navigator>
     </view>
+
+    <TheCounter :initial="user.otherNames.length" />
   </view>
 </template>

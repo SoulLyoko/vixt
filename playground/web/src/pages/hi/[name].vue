@@ -32,5 +32,7 @@ watchEffect(() => {
     <button text-sm btn m-3 @click="router.back()">
       Back
     </button>
+
+    <TheCounter :initial="user.otherNames.length" />
   </div>
 </template>

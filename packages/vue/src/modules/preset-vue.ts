@@ -42,7 +42,6 @@ export const presetVue = defineVixtModule<VixtOptions>({
         dirs: components,
         directoryAsNamespace: true,
         collapseSamePrefixes: true,
-        allowOverrides: true,
       },
       imports: {
         imports: ['vue', '@vueuse/core', 'pinia', VueRouterAutoImports],
