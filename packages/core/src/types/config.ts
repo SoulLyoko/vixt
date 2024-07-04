@@ -1,4 +1,4 @@
-import type { UserConfig as ViteConfig } from 'vite'
+import type { ResolvedConfig } from 'vite'
 import type { ConfigLayer } from 'c12'
 import type { VixtModule } from './module'
 
@@ -19,7 +19,8 @@ export interface VixtOptions extends Record<string, any> {
   extends?: string[]
   /** modules */
   modules?: VixtModule[]
-  vite?: ViteConfig
+  /** use on configResolved */
+  vite?: ResolvedConfig
 }
 
 export interface VixtConfigLayer extends ConfigLayer<VixtOptions> {}
