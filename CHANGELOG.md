@@ -1,3 +1,14 @@
+## [0.0.10](https://github.com/SoulLyoko/vixt/compare/v0.0.9...v0.0.10) (2024-07-04)
+
+
+### Bug Fixes
+
+* components overrides ([9c89ce6](https://github.com/SoulLyoko/vixt/commit/9c89ce676a3bd2f0baeaa2e30094804b87dda774))
+* vixt.options.vite ([e407eae](https://github.com/SoulLyoko/vixt/commit/e407eae321e747da36026cb62da8c8969a53acc4))
+* **vue:** default disabled devtools ([e0a97d9](https://github.com/SoulLyoko/vixt/commit/e0a97d9b9c0da2abc5a57f3e5e7da200afffe12d))
+
+
+
 ## [0.0.9](https://github.com/SoulLyoko/vixt/compare/v0.0.8...v0.0.9) (2024-07-03)
 
 
