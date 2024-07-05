@@ -1,3 +1,12 @@
+## [0.0.11](https://github.com/SoulLyoko/vixt/compare/v0.0.10...v0.0.11) (2024-07-05)
+
+
+### Bug Fixes
+
+* copy layers files to .vixt/layers, because vite cannot transform files in node_modules ([1d97a61](https://github.com/SoulLyoko/vixt/commit/1d97a61a3c41c43e20168d14997df691e280840b))
+
+
+
 ## [0.0.10](https://github.com/SoulLyoko/vixt/compare/v0.0.9...v0.0.10) (2024-07-04)
 
 
