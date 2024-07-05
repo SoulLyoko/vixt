@@ -12,9 +12,10 @@ export function defineVixtConfig(input: VixtOptions) {
   return input
 }
 
-export const rootDir = cwd()
+export const rootDir = path.resolve(cwd())
 export const buildDir = '.vixt'
 export const buildTypesDir = `${buildDir}/types`
+export const buildLayersDir = `${buildDir}/layers`
 export async function loadVixtConfig(opts?: LoadConfigOptions<VixtOptions>) {
   const result = await loadConfig<VixtOptions>({
     name: 'vixt',
@@ -27,7 +28,14 @@ export async function loadVixtConfig(opts?: LoadConfigOptions<VixtOptions>) {
       ...opts?.defaults,
     },
   })
-  result.layers = result.layers?.filter(e => e.cwd)
+  result.layers = result.layers?.filter(e => e.cwd).map((e) => {
+    if (e.cwd !== rootDir) {
+      const newCwd = path.resolve(rootDir, buildLayersDir, e.cwd!.split('/').pop()!)
+      fs.copySync(e.cwd!, newCwd, { filter: src => !/node_modules|tsconfig/.test(src) })
+      return { ...e, relatedCwd: e.cwd, cwd: newCwd }
+    }
+    return e
+  })
   return result
 }
 

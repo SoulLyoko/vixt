@@ -7,7 +7,10 @@ import { defineVixtModule, resolveLayersDirs } from '@vixt/core'
 function resolveLayersPlugins(layers: VixtConfigLayer[], from: string) {
   const { plugins = [] } = resolveLayersDirs(layers)
   return plugins.map((pluginPath) => {
-    const pluginsDir = path.relative(from, pluginPath)
+    let pluginsDir = path.relative(from, pluginPath)
+    if (!pluginPath.startsWith('.') && !pluginPath.startsWith('/')) {
+      pluginsDir = `./${pluginsDir}`
+    }
     return `${pluginsDir}/*.ts`
   })
 }
