@@ -1,5 +1,3 @@
-import { cwd } from 'node:process'
-
 import path from 'pathe'
 
 import { defineVixtModule } from '..'
@@ -8,17 +6,19 @@ const name = 'vixt:alias'
 export const alias = defineVixtModule({
   meta: { name },
   setup(_, vixt) {
+    const { rootDir, buildDir } = vixt.options
     return {
       name,
       config() {
         return {
-          root: vixt.options.rootDir,
+          root: rootDir,
           resolve: {
             alias: {
-              '@': `${path.resolve(cwd(), 'src')}`,
-              '~': `${path.resolve(cwd(), 'src')}`,
-              '@@': path.resolve(cwd()),
-              '~~': path.resolve(cwd()),
+              '@': `${path.resolve(rootDir!, 'src')}`,
+              '~': `${path.resolve(rootDir!, 'src')}`,
+              '@@': path.resolve(rootDir!),
+              '~~': path.resolve(rootDir!),
+              '#': path.resolve(rootDir!, buildDir!),
             },
           },
         }

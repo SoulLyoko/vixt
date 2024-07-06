@@ -103,6 +103,8 @@ const defaults: TypescriptOptions = {
         '@/*': ['../src/*'],
         '~': ['../src'],
         '~/*': ['../src/*'],
+        '#': ['.'],
+        '#/*': ['./*'],
       },
       types: ['vite/client'],
     },
