@@ -1,3 +1,17 @@
+## [0.0.12](https://github.com/SoulLyoko/vixt/compare/v0.0.11...v0.0.12) (2024-07-06)
+
+
+### Bug Fixes
+
+* **core:** copy layers exclude node_modules and tsconfig.json ([ebe9a4a](https://github.com/SoulLyoko/vixt/commit/ebe9a4a2e62cbf3d9f0d0b5ab240f0777f1a2f99))
+
+
+### Features
+
+* **core:** add alias `#` for buildDir ([e21aba5](https://github.com/SoulLyoko/vixt/commit/e21aba5a17a9649efad34ef84303f1d01bb68e5f))
+
+
+
 ## [0.0.11](https://github.com/SoulLyoko/vixt/compare/v0.0.10...v0.0.11) (2024-07-05)
 
 
