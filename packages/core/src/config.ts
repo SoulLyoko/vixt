@@ -25,18 +25,28 @@ export async function loadVixtConfig(opts?: LoadConfigOptions<VixtOptions>) {
       rootDir,
       buildDir,
       buildTypesDir,
+      buildLayersDir,
       ...opts?.defaults,
     },
   })
   result.layers = result.layers?.filter(e => e.cwd).map((e) => {
     if (e.cwd !== rootDir) {
-      const newCwd = path.resolve(rootDir, buildLayersDir, e.cwd!.split('/').pop()!)
-      fs.copySync(e.cwd!, newCwd, { filter: src => !/node_modules|tsconfig/.test(src) })
+      const layerRootDir = e.cwd!.split('/').pop()!
+      const newCwd = path.resolve(rootDir, buildLayersDir, layerRootDir)
+      fs.copySync(e.cwd!, newCwd, { filter: (src) => {
+        const nodeModulesPath = path.resolve(e.cwd!, 'node_modules')
+        const tsConfigPath = path.resolve(e.cwd!, 'tsconfig.json')
+        return !isSamePath(src, nodeModulesPath) && !isSamePath(src, tsConfigPath)
+      } })
       return { ...e, relatedCwd: e.cwd, cwd: newCwd }
     }
     return e
   })
   return result
+}
+
+function isSamePath(a: string, b: string) {
+  return path.resolve(a) === path.resolve(b)
 }
 
 export function resolveLayersDirs(layers: VixtConfigLayer[] = []) {

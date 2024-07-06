@@ -15,6 +15,10 @@ export interface VixtOptions extends Record<string, any> {
    * @default '.vixt/types'
    */
   buildTypesDir?: string
+  /**
+   * @default '.vixt/layers'
+   */
+  buildLayersDir?: string
   /** layers */
   extends?: string[]
   /** modules */
