@@ -27,4 +27,9 @@ export interface VixtOptions extends Record<string, any> {
   vite?: ResolvedConfig
 }
 
-export interface VixtConfigLayer extends ConfigLayer<VixtOptions> {}
+export interface VixtConfigLayer extends ConfigLayer<VixtOptions> {
+  /** layer path before copy */
+  relatedCwd?: string
+  /** layer path after copy to buildLayersDir */
+  cwd?: string
+}

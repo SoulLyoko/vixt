@@ -43,7 +43,7 @@ function generateVixtDts(options: TypescriptOptions, vixt: Vixt) {
 function generateTsConfig(options: TypescriptOptions, vixt: Vixt) {
   const { buildDir, rootDir } = vixt.options
   const codePath = path.resolve(rootDir!, buildDir!, 'tsconfig.json')
-  const layersDirs = vixt._layers.map(e => e.cwd)
+  const layersDirs = vixt._layers.map(e => [e.cwd, e.relatedCwd]).flat().filter(e => e)
   const tsConfig = defu(options.tsConfig, { include: layersDirs })
   const code = JSON.stringify(tsConfig, null, 2)
   fs.outputFileSync(codePath, code)
