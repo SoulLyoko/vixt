@@ -1,3 +1,13 @@
+## [0.0.14](https://github.com/SoulLyoko/vixt/compare/v0.0.13...v0.0.14) (2024-07-07)
+
+
+### Bug Fixes
+
+* **core:** tsconfig include layers relatedCwd ([1116ad0](https://github.com/SoulLyoko/vixt/commit/1116ad0ffa24fb71062e0adc01d84078b1026319))
+* **vue:** reverse layoutsDirs array, to support overrides layouts ([7554528](https://github.com/SoulLyoko/vixt/commit/7554528771e0bb0658a695d4213d392503b2d208))
+
+
+
 ## [0.0.13](https://github.com/SoulLyoko/vixt/compare/v0.0.12...v0.0.13) (2024-07-07)
 
 
