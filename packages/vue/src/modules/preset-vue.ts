@@ -36,7 +36,7 @@ export const presetVue = defineVixtModule<VixtOptions>({
     const defaultOptions: VixtOptions = {
       vue: {},
       router: { dts: `${buildTypesDir}/typed-router.d.ts`, routesFolder: pages },
-      layouts: { layoutsDirs: layouts, pagesDirs: pages },
+      layouts: { layoutsDirs: layouts?.reverse(), pagesDirs: pages },
       components: {
         dts: `${buildTypesDir}/components.d.ts`,
         dirs: components,

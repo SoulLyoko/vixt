@@ -1,3 +1,5 @@
 import { defineVixtConfig } from 'vixt/core'
 
-export default defineVixtConfig({})
+export default defineVixtConfig({
+  extends: ['@vixt/layer-shared'],
+})
