@@ -1,3 +1,12 @@
+## [0.0.13](https://github.com/SoulLyoko/vixt/compare/v0.0.12...v0.0.13) (2024-07-07)
+
+
+### Bug Fixes
+
+* **uni:** corrected layersPluginsPath ([600c246](https://github.com/SoulLyoko/vixt/commit/600c246ceca380f47e7a7e9ff97f427370da172b))
+
+
+
 ## [0.0.12](https://github.com/SoulLyoko/vixt/compare/v0.0.11...v0.0.12) (2024-07-06)
 
 
