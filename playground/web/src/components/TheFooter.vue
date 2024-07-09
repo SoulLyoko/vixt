@@ -1,5 +1,5 @@
 <script setup lang="ts">
-
+import { toggleDark } from '#/layers/layer-shared/src/composables/dark'
 </script>
 
 <template>

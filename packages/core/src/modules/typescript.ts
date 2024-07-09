@@ -43,8 +43,16 @@ function generateVixtDts(options: TypescriptOptions, vixt: Vixt) {
 function generateTsConfig(options: TypescriptOptions, vixt: Vixt) {
   const { buildDir, rootDir } = vixt.options
   const codePath = path.resolve(rootDir!, buildDir!, 'tsconfig.json')
-  const layersDirs = vixt._layers.map(e => [e.cwd, e.relatedCwd]).flat().filter(e => e)
-  const tsConfig = defu(options.tsConfig, { include: layersDirs })
+  const layersDirs: string[] = []
+  const layersAlias: Record<string, string[]> = {}
+  for (const layer of vixt._layers) {
+    layer.cwd && layersDirs.push(layer.cwd)
+    layer.relatedCwd && layersDirs.push(layer.relatedCwd)
+    if (layer.meta?.alias) {
+      layersAlias[`${layer.meta.alias}/*`] = [`${layer.cwd!}/*`]
+    }
+  }
+  const tsConfig = defu(options.tsConfig, { compilerOptions: { paths: layersAlias }, include: layersDirs })
   const code = JSON.stringify(tsConfig, null, 2)
   fs.outputFileSync(codePath, code)
 }
@@ -98,12 +106,10 @@ const defaults: TypescriptOptions = {
   tsConfig: {
     extends: '@vue/tsconfig/tsconfig.dom.json',
     compilerOptions: {
+      baseUrl: './',
       paths: {
-        '@': ['../src'],
         '@/*': ['../src/*'],
-        '~': ['../src'],
         '~/*': ['../src/*'],
-        '#': ['.'],
         '#/*': ['./*'],
       },
       types: ['vite/client'],

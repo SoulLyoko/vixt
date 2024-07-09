@@ -1,5 +1,5 @@
 import type { ResolvedConfig } from 'vite'
-import type { ConfigLayer } from 'c12'
+import type { ConfigLayer, ConfigLayerMeta } from 'c12'
 import type { VixtModule } from './module'
 
 export interface VixtOptions extends Record<string, any> {
@@ -19,17 +19,25 @@ export interface VixtOptions extends Record<string, any> {
    * @default '.vixt/layers'
    */
   buildLayersDir?: string
-  /** layers */
-  extends?: string[]
   /** modules */
   modules?: VixtModule[]
   /** use on configResolved */
   vite?: ResolvedConfig
+  meta?: VixtConfigLayerMeta
+  /** layers */
+  extends?: string[]
 }
 
-export interface VixtConfigLayer extends ConfigLayer<VixtOptions> {
-  /** layer path before copy */
+export interface VixtConfigLayerMeta extends ConfigLayerMeta {
+  /** layer name */
+  name?: string
+  /** layer alias */
+  alias?: string
+}
+
+export interface VixtConfigLayer extends ConfigLayer<VixtOptions, VixtConfigLayerMeta> {
+  /** layer path before copy when layer in node_modules */
   relatedCwd?: string
-  /** layer path after copy to buildLayersDir */
+  /** layer path after copy to buildLayersDir when layer in node_modules */
   cwd?: string
 }

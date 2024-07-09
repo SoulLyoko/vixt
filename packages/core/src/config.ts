@@ -29,20 +29,28 @@ export async function loadVixtConfig(opts?: LoadConfigOptions<VixtOptions>) {
       ...opts?.defaults,
     },
   })
-  result.layers = result.layers?.filter(e => e.cwd).map((e) => {
-    if (e.cwd !== rootDir) {
-      const layerRootDir = e.cwd!.split('/').pop()!
-      const newCwd = path.resolve(rootDir, buildLayersDir, layerRootDir)
-      fs.copySync(e.cwd!, newCwd, { filter: (src) => {
-        const nodeModulesPath = path.resolve(e.cwd!, 'node_modules')
-        const tsConfigPath = path.resolve(e.cwd!, 'tsconfig.json')
-        return !isSamePath(src, nodeModulesPath) && !isSamePath(src, tsConfigPath)
-      } })
-      return { ...e, relatedCwd: e.cwd, cwd: newCwd }
-    }
-    return e
-  })
+  result.layers = mapLayers(result.layers?.filter(e => e.cwd) ?? [])
   return result
+}
+
+function mapLayers(layers: VixtConfigLayer[]) {
+  return layers.map((layer) => {
+    const meta = layer.config?.meta ?? {}
+    const layerName = meta.name || layer.cwd!.split('/').pop()!
+    meta.name && (meta.alias = `#/layers/${meta.name}`)
+    if (layer.cwd === rootDir || !layer.cwd?.includes('node_modules')) {
+      return { ...layer, meta }
+    }
+    const newCwd = path.resolve(rootDir, buildLayersDir, layerName)
+    fs.copySync(layer.cwd!, newCwd, {
+      filter: (src) => {
+        const nodeModulesPath = path.resolve(layer.cwd!, 'node_modules')
+        const tsConfigPath = path.resolve(layer.cwd!, 'tsconfig.json')
+        return !isSamePath(src, nodeModulesPath) && !isSamePath(src, tsConfigPath)
+      },
+    })
+    return { ...layer, relatedCwd: layer.cwd, cwd: newCwd, meta }
+  })
 }
 
 function isSamePath(a: string, b: string) {
