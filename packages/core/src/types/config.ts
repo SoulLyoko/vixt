@@ -33,11 +33,13 @@ export interface VixtConfigLayerMeta extends ConfigLayerMeta {
   name?: string
   /** layer alias */
   alias?: string
+  /** relative path from layer cwd to rootDir */
+  relative?: string
 }
 
 export interface VixtConfigLayer extends ConfigLayer<VixtOptions, VixtConfigLayerMeta> {
-  /** layer path before copy when layer in node_modules */
-  relatedCwd?: string
-  /** layer path after copy to buildLayersDir when layer in node_modules */
+  /** when layer is in node_modules, layer will copy to `<buildLayersDir>/<layerName>`, change cwd */
   cwd?: string
 }
+
+export interface VixtAppConfig extends Record<string, any> {}

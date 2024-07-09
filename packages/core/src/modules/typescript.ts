@@ -46,8 +46,7 @@ function generateTsConfig(options: TypescriptOptions, vixt: Vixt) {
   const layersDirs: string[] = []
   const layersAlias: Record<string, string[]> = {}
   for (const layer of vixt._layers) {
-    layer.cwd && layersDirs.push(layer.cwd)
-    layer.relatedCwd && layersDirs.push(layer.relatedCwd)
+    layersDirs.push(layer.cwd!)
     if (layer.meta?.alias) {
       layersAlias[`${layer.meta.alias}/*`] = [`${layer.cwd!}/*`]
     }
