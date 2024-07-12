@@ -1,5 +1,7 @@
 # Vixt
 
+[../.vixt/main.ts](../.vixt/main.ts)
+
 ## Usage
 
 ```bash

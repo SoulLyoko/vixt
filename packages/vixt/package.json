@@ -8,8 +8,8 @@
   "repository": "https://github.com/SoulLyoko/vixt.git",
   "exports": {
     ".": {
-      "types": "./dist/index.d.ts",
-      "import": "./dist/index.mjs"
+      "types": "./index.d.ts",
+      "import": "./index.js"
     },
     "./core": {
       "types": "./core.d.ts",
@@ -24,16 +24,15 @@
       "import": "./uni.js"
     }
   },
-  "main": "dist/index.mjs",
-  "types": "dist/index.d.ts",
+  "main": "index.js",
+  "types": "index.d.ts",
   "files": [
     "core.*",
-    "dist",
+    "index.*",
     "uni.*",
     "vue.*"
   ],
   "scripts": {
-    "build": "unbuild"
   },
   "dependencies": {
     "@vixt/core": "workspace:*",

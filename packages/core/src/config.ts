@@ -50,7 +50,7 @@ function mapLayers(layers: VixtConfigLayer[]) {
       })
       layer.cwd = newCwd
     }
-    meta.relative = path.join('./', path.relative(rootDir, layer.cwd!))
+    meta.relative = path.join('./', path.relative(`${rootDir}/src`, layer.cwd!))
     return { ...layer, meta }
   })
 }

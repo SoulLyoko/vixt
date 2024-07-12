@@ -1,16 +1,36 @@
 import { createVixtPlugin } from '@vixt/core'
 
-import { entryUni, presetUni } from './modules'
+import { presetUni } from './modules'
 
 export * from './modules'
 
 const defaults = {
-  modules: [entryUni, presetUni],
+  modules: [presetUni],
   app: {
     head: {
       link: [{ rel: 'icon', href: '/static/favicon.ico' }],
     },
-    main: 'src/main.ts',
+    css: ['virtual:uno.css'],
+    transformMain(code: string) {
+      code += `
+import { createSSRApp } from 'vue'
+import * as Pinia from 'pinia'
+import { createUnistorage } from 'pinia-plugin-unistorage'
+import { pages as routes } from 'virtual:uni-pages'
+
+export function createApp() {
+  const app = createSSRApp(App)
+  const pinia = Pinia.createPinia()
+  pinia.use(createUnistorage())
+  app.use(pinia)
+
+  Object.values(plugins).forEach((plugin) => typeof plugin === 'function' && plugin({ app, routes, pinia, appConfig }))
+  
+  return { app, Pinia }
+}
+`
+      return code
+    },
   },
   typescript: {
     // references: ['types/uni-pages.d.ts', 'types/components.d.ts', 'types/auto-imports.d.ts'],
