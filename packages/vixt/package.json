@@ -1,7 +1,7 @@
 {
   "name": "vixt",
   "type": "module",
-  "version": "0.0.15",
+  "version": "0.1.0",
   "author": "SoulLyoko<https://github.com/SoulLyoko>",
   "license": "MIT",
   "homepage": "https://github.com/SoulLyoko/vixt#readme",
@@ -32,8 +32,7 @@
     "uni.*",
     "vue.*"
   ],
-  "scripts": {
-  },
+  "scripts": {},
   "dependencies": {
     "@vixt/core": "workspace:*",
     "@vixt/uni": "workspace:*",

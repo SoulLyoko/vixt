@@ -1,3 +1,18 @@
+# [0.1.0](https://github.com/SoulLyoko/vixt/compare/v0.0.15...v0.1.0) (2024-07-12)
+
+
+### Bug Fixes
+
+* **core:**  only copy layer when it is in node_modules ([c561816](https://github.com/SoulLyoko/vixt/commit/c56181682d4b1edd48ededda596afbd52b4f4931))
+
+
+### Features
+
+* layer alias ([c1de27e](https://github.com/SoulLyoko/vixt/commit/c1de27ebcd1fc4e64aa8559967acfa56cf4bdb4a))
+* support app.config.ts, support import App.vue and loading.html from layers ([14c79d1](https://github.com/SoulLyoko/vixt/commit/14c79d1204cbe33e356d6422aedbde048784457f))
+
+
+
 ## [0.0.15](https://github.com/SoulLyoko/vixt/compare/v0.0.14...v0.0.15) (2024-07-07)
 
 
