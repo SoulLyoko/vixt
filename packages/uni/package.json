@@ -28,7 +28,7 @@
     "@uni-helper/unocss-preset-uni": "^0.2.9",
     "@uni-helper/vite-plugin-uni-components": "^0.0.9",
     "@uni-helper/vite-plugin-uni-layouts": "^0.1.10",
-    "@uni-helper/vite-plugin-uni-pages": "^0.2.25",
+    "@uni-helper/vite-plugin-uni-pages": "^0.2.26",
     "@vixt/core": "workspace:*",
     "@vueuse/core": "^10.11.0",
     "pinia": "^2.1.7",
