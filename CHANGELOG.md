@@ -1,3 +1,12 @@
+## [0.1.1](https://github.com/SoulLyoko/vixt/compare/v0.1.0...v0.1.1) (2024-07-15)
+
+
+### Bug Fixes
+
+* **core:** layer meta, alias and relative ([33c5a57](https://github.com/SoulLyoko/vixt/commit/33c5a572c57fb680cb149c26a4da92682e72a448))
+
+
+
 # [0.1.0](https://github.com/SoulLyoko/vixt/compare/v0.0.15...v0.1.0) (2024-07-12)
 
 
