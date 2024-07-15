@@ -30,7 +30,7 @@ function generateTsConfig(options: TypescriptOptions, vixt: Vixt) {
   for (const layer of vixt._layers) {
     layersDirs.push(layer.cwd!)
     if (layer.meta?.alias) {
-      layersAlias[`${layer.meta.alias}/*`] = [`${layer.cwd!}/*`]
+      layersAlias[`${layer.meta.alias}/*`] = [`${path.relative(path.resolve(rootDir!, buildDir!), layer.cwd!)}/*`]
     }
   }
   const tsConfig = defu(options.tsConfig, { compilerOptions: { paths: layersAlias }, include: layersDirs })
@@ -53,7 +53,8 @@ function generateVixtDts(options: TypescriptOptions, vixt: Vixt) {
       return ''
     }
   }).concat('export {}').join('\n')
-  code && fs.outputFileSync(codePath, code)
+  if (code)
+    fs.outputFileSync(codePath, code)
 }
 
 function genarateShims(options: TypescriptOptions, vixt: Vixt) {
@@ -105,7 +106,6 @@ const defaults: TypescriptOptions = {
   tsConfig: {
     extends: '@vue/tsconfig/tsconfig.dom.json',
     compilerOptions: {
-      baseUrl: './',
       paths: {
         '@/*': ['../src/*'],
         '~/*': ['../src/*'],

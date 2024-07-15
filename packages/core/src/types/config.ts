@@ -33,7 +33,7 @@ export interface VixtConfigLayerMeta extends ConfigLayerMeta {
   name?: string
   /** layer alias */
   alias?: string
-  /** relative path from layer cwd to <rootDir>/src */
+  /** relative path from `<layer.cwd>/src` to `<rootDir>/src` */
   relative?: string
 }
 

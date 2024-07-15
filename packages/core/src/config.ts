@@ -37,7 +37,8 @@ function mapLayers(layers: VixtConfigLayer[]) {
   return layers.map((layer) => {
     const meta = layer.config?.meta ?? {}
     const layerName = meta.name || layer.cwd!.split('/').pop()!
-    meta.name && (meta.alias = `#/layers/${meta.name}`)
+    if (!isSamePath(layer.cwd!, path.resolve(rootDir)))
+      meta.alias = `#/layers/${layerName}`
     // when layer is in node_modules, copy to `<buildLayersDir>/<layerName>`
     if (layer.cwd?.includes('node_modules')) {
       const newCwd = path.resolve(rootDir, buildLayersDir, layerName)
@@ -50,7 +51,7 @@ function mapLayers(layers: VixtConfigLayer[]) {
       })
       layer.cwd = newCwd
     }
-    meta.relative = path.join('./', path.relative(`${rootDir}/src`, layer.cwd!))
+    meta.relative = path.join(path.relative(`${rootDir}/src`, `${layer.cwd!}/src`))
     return { ...layer, meta }
   })
 }
