@@ -30,7 +30,8 @@ function generateTsConfig(options: TypescriptOptions, vixt: Vixt) {
   for (const layer of vixt._layers) {
     layersDirs.push(layer.cwd!)
     if (layer.meta?.alias) {
-      layersAlias[`${layer.meta.alias}/*`] = [`${path.relative(path.resolve(rootDir!, buildDir!), layer.cwd!)}/*`]
+      const layerRelativePath = `./${path.relative(path.resolve(rootDir!, buildDir!), layer.cwd!)}/*`
+      layersAlias[`${layer.meta.alias}/*`] = [layerRelativePath]
     }
   }
   const tsConfig = defu(options.tsConfig, { compilerOptions: { paths: layersAlias }, include: layersDirs })
