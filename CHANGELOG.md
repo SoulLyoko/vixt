@@ -1,3 +1,12 @@
+## [0.1.2](https://github.com/SoulLyoko/vixt/compare/v0.1.1...v0.1.2) (2024-07-15)
+
+
+### Bug Fixes
+
+* **core:** layer paths in tsconfig ([e2997b4](https://github.com/SoulLyoko/vixt/commit/e2997b462fb066c0e943bfb05c34c76ea2a9360f))
+
+
+
 ## [0.1.1](https://github.com/SoulLyoko/vixt/compare/v0.1.0...v0.1.1) (2024-07-15)
 
 

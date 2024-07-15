@@ -1,7 +1,7 @@
 {
   "name": "vixt-framework",
   "type": "module",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "private": true,
   "packageManager": "pnpm@9.5.0",
   "scripts": {
@@ -40,7 +40,9 @@
         "eslint": "9",
         "vue": "3"
       },
-      "ignoreMissing": ["vue"]
+      "ignoreMissing": [
+        "vue"
+      ]
     }
   },
   "simple-git-hooks": {
