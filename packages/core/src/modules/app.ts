@@ -184,7 +184,6 @@ export const app = defineVixtModule<AppOptions>({
           return mainTsCode
         },
       },
-
     }
   },
 })
