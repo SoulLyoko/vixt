@@ -1,3 +1,12 @@
+## [0.1.3](https://github.com/SoulLyoko/vixt/compare/v0.1.2...v0.1.3) (2024-07-17)
+
+
+### Bug Fixes
+
+* **uni:** lock `@uni-helper/vite-plugin-uni-pages` version 0.2.24 ([2612261](https://github.com/SoulLyoko/vixt/commit/2612261e178308f0066073fda1c67f406eb48fe9))
+
+
+
 ## [0.1.2](https://github.com/SoulLyoko/vixt/compare/v0.1.1...v0.1.2) (2024-07-15)
 
 
