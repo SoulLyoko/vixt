@@ -1,3 +1,12 @@
+## [0.1.5](https://github.com/SoulLyoko/vixt/compare/v0.1.4...v0.1.5) (2024-07-18)
+
+
+### Bug Fixes
+
+* **core:** change file generation logic ([8ff7bd4](https://github.com/SoulLyoko/vixt/commit/8ff7bd4503fda6caf2655554bfa054d500181b66))
+
+
+
 ## [0.1.4](https://github.com/SoulLyoko/vixt/compare/v0.1.3...v0.1.4) (2024-07-18)
 
 
