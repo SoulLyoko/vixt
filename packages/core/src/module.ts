@@ -23,6 +23,9 @@ export function defineVixtModule<T extends ModuleOptions>(definition: ModuleDefi
     const configKey = module.meta?.configKey || module.meta?.name
     const defaultOptions = typeof module.defaults === 'function' ? module.defaults(vixt) : module.defaults
     const resolvedOptions = defu(inlineOptions, configKey ? vixt.options[configKey] : {}, defaultOptions)
+    if (configKey) {
+      vixt.options[configKey] = resolvedOptions
+    }
     return resolvedOptions as T
   }
 

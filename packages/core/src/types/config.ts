@@ -8,17 +8,21 @@ export interface VixtOptions extends Record<string, any> {
    */
   rootDir?: string
   /**
-   * @default '.vixt'
+   * @default '<rootDir>/.vixt'
    */
   buildDir?: string
   /**
-   * @default '.vixt/types'
+   * @default '<buildDir>/types'
    */
   buildTypesDir?: string
   /**
-   * @default '.vixt/layers'
+   * @default '<buildDir>/layers'
    */
   buildLayersDir?: string
+  /**
+   * @default '<rootDir>/src'
+   */
+  srcDir?: string
   /** modules */
   modules?: VixtModule[]
   /** use on configResolved */

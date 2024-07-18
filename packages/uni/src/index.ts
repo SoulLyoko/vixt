@@ -7,12 +7,9 @@ export * from './modules'
 const defaults = {
   modules: [presetUni],
   app: {
-    head: {
-      link: [{ rel: 'icon', href: '/static/favicon.ico' }],
-    },
-    css: ['virtual:uno.css'],
     transformMain(code: string) {
       code += `
+import 'virtual:uno.css'
 import { createSSRApp } from 'vue'
 import * as Pinia from 'pinia'
 import { createUnistorage } from 'pinia-plugin-unistorage'
@@ -33,7 +30,6 @@ export function createApp() {
     },
   },
   typescript: {
-    // references: ['types/uni-pages.d.ts', 'types/components.d.ts', 'types/auto-imports.d.ts'],
     tsConfig: {
       compilerOptions: {
         types: ['@dcloudio/types', '@uni-helper/uni-app-types', '@uni-helper/vite-plugin-uni-pages/client'],
@@ -42,7 +38,6 @@ export function createApp() {
         plugins: ['@uni-helper/uni-app-types/volar-plugin'],
       },
     },
-    typeCheck: { vueTsc: true },
   },
 }
 

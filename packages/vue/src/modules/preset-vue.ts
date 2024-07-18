@@ -53,7 +53,7 @@ export const presetVue = defineVixtModule<VixtOptions>({
       devtools: { enabled: false },
     }
 
-    const options = defu(vixt.options, defaultOptions)
+    const options = vixt.options = defu(vixt.options, defaultOptions)
 
     const plugins = [
       VueRouter(options.router),

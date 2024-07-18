@@ -32,27 +32,27 @@ export const presetUni = defineVixtModule<VixtOptions>({
   meta: { name },
   setup(_, vixt) {
     const { components, composables = [], constants = [], utils = [], stores = [] } = resolveLayersDirs(vixt._layers)
-    const typesDir = `${vixt.options.buildDir}/types`
+    const { buildTypesDir } = vixt.options
     const defaultOptions: VixtOptions = {
       uni: {},
-      pages: { dts: `${typesDir}/uni-pages.d.ts` },
+      pages: { dts: `${buildTypesDir}/uni-pages.d.ts` },
       uniLayouts: {},
       components: {
-        dts: `${typesDir}/components.d.ts`,
+        dts: `${buildTypesDir}/components.d.ts`,
         dirs: components,
         directoryAsNamespace: true,
         collapseSamePrefixes: true,
       },
       imports: {
         imports: ['vue', 'uni-app', 'pinia', useImports()],
-        dts: `${typesDir}/auto-imports.d.ts`,
+        dts: `${buildTypesDir}/auto-imports.d.ts`,
         dirs: [...composables, ...constants, ...stores, ...utils],
         vueTemplate: true,
       },
       unocss: {},
     }
 
-    const options = defu(vixt.options, defaultOptions)
+    const options = vixt.options = defu(vixt.options, defaultOptions)
 
     const modules = [
       Pages(options.pages),

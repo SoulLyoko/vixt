@@ -9,7 +9,7 @@ import { uniuseAutoImports } from '@uni-helper/uni-use'
 
 let _cache: ImportsMap | undefined
 
-export const useImports: () => ImportsMap = () => {
+export function useImports() {
   const excluded = [
     'toRefs',
     'utils',
