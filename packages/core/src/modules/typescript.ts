@@ -103,7 +103,6 @@ interface ImportMetaEnv {
 
 const name = 'vixt:typescript'
 const defaults: TypescriptOptions = {
-  // references: ['types/vite-env.d.ts', 'types/shims.d.ts', 'types/global-components.d.ts'],
   tsConfig: {
     extends: '@vue/tsconfig/tsconfig.dom.json',
     compilerOptions: {
@@ -124,14 +123,14 @@ export const typescript = defineVixtModule<TypescriptOptions>({
   meta: { name, configKey: 'typescript' },
   defaults,
   setup(options, vixt) {
-    generateTsConfig(options, vixt)
-    generateVixtDts(options, vixt)
-    genarateShims(options, vixt)
-    genarateGlobalComponents(options, vixt)
     return [
       {
         name,
         configResolved(config) {
+          generateTsConfig(options, vixt)
+          generateVixtDts(options, vixt)
+          genarateShims(options, vixt)
+          genarateGlobalComponents(options, vixt)
           generateEnvDts(config.env, vixt)
         },
       },
