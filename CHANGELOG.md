@@ -1,3 +1,12 @@
+## [0.1.4](https://github.com/SoulLyoko/vixt/compare/v0.1.3...v0.1.4) (2024-07-18)
+
+
+### Bug Fixes
+
+* **core:** assign vixtOptions in modules ([55e5be6](https://github.com/SoulLyoko/vixt/commit/55e5be6c736f8af5bc2ba44fed6e571a336a805a))
+
+
+
 ## [0.1.3](https://github.com/SoulLyoko/vixt/compare/v0.1.2...v0.1.3) (2024-07-17)
 
 
