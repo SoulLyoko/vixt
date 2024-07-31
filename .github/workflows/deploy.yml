@@ -1,4 +1,6 @@
 name: Deploy To gh-pages
+permissions:
+  contents: write
 on:
   push:
     branches:
