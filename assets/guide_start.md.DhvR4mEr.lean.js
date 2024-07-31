@@ -1,1 +1,0 @@
-import{_ as s,c as i,o as a,a2 as t}from"./chunks/framework.Duwg_OWc.js";const u=JSON.parse('{"title":"开始","description":"","frontmatter":{},"headers":[],"relativePath":"guide/start.md","filePath":"guide/start.md"}'),e={name:"guide/start.md"},n=t("",12),l=[n];function h(p,k,r,d,o,c){return a(),i("div",null,l)}const E=s(e,[["render",h]]);export{u as __pageData,E as default};

@@ -1,0 +1,1 @@
+import{_ as i,c as s,o as a,a2 as t}from"./chunks/framework.Duwg_OWc.js";const g=JSON.parse('{"title":"Vixt","description":"","frontmatter":{},"headers":[],"relativePath":"guide/start.md","filePath":"guide/start.md"}'),e={name:"guide/start.md"},n=t("",12),l=[n];function h(p,r,k,d,o,c){return a(),s("div",null,l)}const x=i(e,[["render",h]]);export{g as __pageData,x as default};
