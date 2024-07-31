@@ -7,12 +7,12 @@ export default defineConfig({
   description: 'Trying to implement nuxt\'s features via vite plugin',
   themeConfig: {
     nav: [
-      { text: 'Guide', link: '/guide/start' },
+      { text: '指南', link: '/guide/start' },
     ],
     sidebar: {
       '/guide': [
-        { text: 'Getting Started', link: '/guide/start' },
-        { text: 'Changelog', link: '/guide/changelog' },
+        { text: '开始', link: '/guide/start' },
+        { text: '更新日志', link: '/guide/changelog' },
       ],
     },
   },
