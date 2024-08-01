@@ -27,13 +27,13 @@
     "@vueuse/core": "^10.11.0",
     "pinia": "^2.2.0",
     "pinia-plugin-persistedstate": "^3.2.1",
-    "unocss": "^0.61.8",
+    "unocss": "0.61.5",
     "unplugin-auto-import": "^0.18.2",
     "unplugin-vue-components": "^0.27.3",
     "unplugin-vue-router": "^0.10.2",
     "vite-plugin-vue-devtools": "^7.3.7",
     "vite-plugin-vue-layouts": "^0.11.0",
-    "vue": "^3.4.34",
-    "vue-router": "^4.4.0"
+    "vue": "^3.4.35",
+    "vue-router": "^4.4.1"
   }
 }
