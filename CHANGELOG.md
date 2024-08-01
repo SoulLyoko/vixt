@@ -1,3 +1,12 @@
+## [0.1.7](https://github.com/SoulLyoko/vixt/compare/v0.1.6...v0.1.7) (2024-08-01)
+
+
+### Bug Fixes
+
+* **core:** gen `index.html` and `main.ts` when not exists ([bc4a36f](https://github.com/SoulLyoko/vixt/commit/bc4a36fabb53d85c6404ac6ded038f5b68c1fea5))
+
+
+
 ## [0.1.6](https://github.com/SoulLyoko/vixt/compare/v0.1.5...v0.1.6) (2024-07-19)
 
 
