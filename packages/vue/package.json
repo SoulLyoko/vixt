@@ -21,7 +21,7 @@
     "build": "unbuild"
   },
   "dependencies": {
-    "@vitejs/plugin-vue": "^5.1.1",
+    "@vitejs/plugin-vue": "^5.1.2",
     "@vitejs/plugin-vue-jsx": "^4.0.0",
     "@vixt/core": "workspace:*",
     "@vueuse/core": "^10.11.0",
@@ -34,6 +34,6 @@
     "vite-plugin-vue-devtools": "^7.3.7",
     "vite-plugin-vue-layouts": "^0.11.0",
     "vue": "^3.4.35",
-    "vue-router": "^4.4.1"
+    "vue-router": "4.4.0"
   }
 }
