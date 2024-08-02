@@ -1,3 +1,12 @@
+## [0.1.8](https://github.com/SoulLyoko/vixt/compare/v0.1.7...v0.1.8) (2024-08-02)
+
+
+### Bug Fixes
+
+* **vue:** lock `vue-router` v4.4.0 ([beb85b2](https://github.com/SoulLyoko/vixt/commit/beb85b20e8067db18c1353ef23b698e50415bcd7))
+
+
+
 ## [0.1.7](https://github.com/SoulLyoko/vixt/compare/v0.1.6...v0.1.7) (2024-08-01)
 
 
