@@ -1,0 +1,1 @@
+import{_ as s,c as i,o as a,a2 as n}from"./chunks/framework.D5JhANZs.js";const c=JSON.parse('{"title":"从 vixt 导入","description":"","frontmatter":{},"headers":[],"relativePath":"api/vixt.md","filePath":"api/vixt.md"}'),p={name:"api/vixt.md"},l=n("",10),t=[l];function h(e,k,d,E,r,g){return a(),i("div",null,t)}const y=s(p,[["render",h]]);export{c as __pageData,y as default};
