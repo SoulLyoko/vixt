@@ -8,11 +8,25 @@ export default defineConfig({
   themeConfig: {
     nav: [
       { text: '指南', link: '/guide/start' },
+      { text: 'API', link: '/api/vixt' },
     ],
     sidebar: {
       '/guide': [
         { text: '开始', link: '/guide/start' },
         { text: '更新日志', link: '/guide/changelog' },
+      ],
+      '/api': [
+        { text: 'vixt', link: '/api/vixt' },
+        { text: 'core', link: '/api/core' },
+        {
+          text: 'Vixt 配置',
+          base: '/api/config',
+          items: [
+            { text: 'core', link: '/core' },
+            { text: 'vue', link: '/vue' },
+            { text: 'uni', link: '/uni' },
+          ],
+        },
       ],
     },
   },

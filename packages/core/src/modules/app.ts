@@ -36,13 +36,13 @@ export interface AppOptions {
    * @default 'div'
    */
   rootTag?: string
-  /** transform main.ts */
-  transformMain?: (code: string, vixt: Vixt) => string | undefined
   css?: string[]
   /**
    * @default './loading.html'
    */
   loadingTemplate?: string
+  /** transform main.ts */
+  transformMain?: (code: string, vixt: Vixt) => string | undefined
 }
 
 function resolveHeadTag(tag: string, attrs: Record<string, string>) {
