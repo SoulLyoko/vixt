@@ -1,3 +1,12 @@
+## [0.1.9](https://github.com/SoulLyoko/vixt/compare/v0.1.8...v0.1.9) (2024-08-06)
+
+
+### Bug Fixes
+
+* **core:** lock `vue-tsc` v2.0.26 ([6e44169](https://github.com/SoulLyoko/vixt/commit/6e4416911b27264266cdc0655f5eed5402d93e35))
+
+
+
 ## [0.1.8](https://github.com/SoulLyoko/vixt/compare/v0.1.7...v0.1.8) (2024-08-02)
 
 
