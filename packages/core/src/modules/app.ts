@@ -68,7 +68,7 @@ function generateIndexHtml(options: AppOptions, vixt: Vixt) {
     .flat()
     .join('\n')
 
-  let { loadingTemplate } = options
+  let { loadingTemplate = '' } = options
   if (!loadingTemplate) {
     for (const layer of vixt._layers) {
       const loadingTemplatePath = path.resolve(layer.cwd!, 'loading.html')
