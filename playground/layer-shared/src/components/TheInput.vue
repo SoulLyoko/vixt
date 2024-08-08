@@ -1,4 +1,7 @@
 <script setup lang="ts">
+defineProps<{
+  placeholder?: string
+}>()
 const modelValue = defineModel()
 </script>
 
@@ -15,5 +18,6 @@ const modelValue = defineModel()
     outline="none active:none"
     min-h-8
     m-auto
+    :placeholder="placeholder"
   >
 </template>
