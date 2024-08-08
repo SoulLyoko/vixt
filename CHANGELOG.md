@@ -1,3 +1,12 @@
+## [0.1.10](https://github.com/SoulLyoko/vixt/compare/v0.1.9...v0.1.10) (2024-08-08)
+
+
+### Bug Fixes
+
+* **core:** loadingTemplate value ([5d98415](https://github.com/SoulLyoko/vixt/commit/5d9841516acccd33f3e80c4fa147906b72642909))
+
+
+
 ## [0.1.9](https://github.com/SoulLyoko/vixt/compare/v0.1.8...v0.1.9) (2024-08-06)
 
 
