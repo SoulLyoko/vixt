@@ -65,6 +65,9 @@ importers:
       c12:
         specifier: ^1.11.1
         version: 1.11.1
+      cac:
+        specifier: ^6.7.14
+        version: 6.7.14
       defu:
         specifier: ^6.1.4
         version: 6.1.4
