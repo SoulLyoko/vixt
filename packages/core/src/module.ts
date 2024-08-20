@@ -1,5 +1,5 @@
 import type { PluginOption } from 'vite'
-import type { ModuleDefinition, ModuleOptions, Vixt, VixtConfigLayer, VixtModule } from './types'
+import type { ModuleDefinition, ModuleOptions, Vixt, VixtConfigLayer, VixtModule, VixtOptions } from './types'
 
 import 'tsx/esm'
 import { pathToFileURL } from 'mlly'
@@ -43,8 +43,8 @@ export function installModule(module: VixtModule, inlineOptions: any, vixt: Vixt
   return module(inlineOptions, vixt!)
 }
 
-export async function applyLayerModules(layers?: VixtConfigLayer[]): Promise<VixtModule[]> {
-  const { modules: modulesDir = [] } = resolveLayersDirs(layers)
+export async function applyLayerModules(layers: VixtConfigLayer[], config: VixtOptions): Promise<VixtModule[]> {
+  const { modules: modulesDir = [] } = resolveLayersDirs(layers, config)
   const modules: VixtModule[] = []
   for (const m of modulesDir) {
     if (fs.existsSync(m)) {

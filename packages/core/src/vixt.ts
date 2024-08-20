@@ -14,7 +14,7 @@ export async function loadVixt(opts?: LoadConfigOptions<VixtOptions>) {
     },
   }))
 
-  const layerModules = await applyLayerModules(result.layers)
+  const layerModules = await applyLayerModules(result.layers ?? [], result.config)
 
   const vixt: Vixt = {
     options: result.config,

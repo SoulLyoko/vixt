@@ -1,17 +1,15 @@
-import path from 'pathe'
-
 import { defineVixtModule } from '..'
 
 const name = 'vixt:alias'
 export const alias = defineVixtModule({
   meta: { name },
   setup(_, vixt) {
-    const { rootDir, buildDir } = vixt.options
+    const { rootDir, buildDir, srcDir } = vixt.options
     const defaultAlias: Record<string, string> = {
-      '@': `${path.resolve(rootDir!, 'src')}`,
-      '~': `${path.resolve(rootDir!, 'src')}`,
-      '@@': path.resolve(rootDir!),
-      '~~': path.resolve(rootDir!),
+      '@': srcDir!,
+      '~': srcDir!,
+      '@@': rootDir!,
+      '~~': rootDir!,
     }
     // layers alias
     for (const layer of vixt._layers) {
@@ -20,7 +18,7 @@ export const alias = defineVixtModule({
       }
     }
     // buildDir alias
-    defaultAlias['#'] = path.resolve(rootDir!, buildDir!)
+    defaultAlias['#'] = buildDir!
     return {
       name,
       config() {

@@ -8,6 +8,10 @@ export interface VixtOptions extends Record<string, any> {
    */
   rootDir?: string
   /**
+   * @default '.vixt'
+   */
+  buildDirName?: string
+  /**
    * @default '<rootDir>/.vixt'
    */
   buildDir?: string
@@ -19,6 +23,14 @@ export interface VixtOptions extends Record<string, any> {
    * @default '<buildDir>/layers'
    */
   buildLayersDir?: string
+  /**
+   * @default '<buildDir>/imports'
+   */
+  buildImportsDir?: string
+  /**
+   * @default 'src'
+   */
+  srcDirName?: string
   /**
    * @default '<rootDir>/src'
    */
@@ -38,11 +50,11 @@ export interface VixtConfigLayerMeta extends ConfigLayerMeta {
   /** layer alias */
   alias?: string
   /** relative path from `<layer.cwd>/src` to `<rootDir>/src` */
-  relative?: string
+  // relative?: string
 }
 
 export interface VixtConfigLayer extends ConfigLayer<VixtOptions, VixtConfigLayerMeta> {
-  /** when layer is in node_modules, layer will copy to `<buildLayersDir>/<layerName>`, change cwd */
+  /** when layer is in node_modules, layer will copy to `<buildLayersDir>/<layerName>`, and change cwd */
   cwd?: string
 }
 
