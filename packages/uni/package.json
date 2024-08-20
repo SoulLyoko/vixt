@@ -22,19 +22,19 @@
   },
   "dependencies": {
     "@dcloudio/types": "^3.4.12",
-    "@uni-helper/eslint-config": "^0.0.6",
+    "@uni-helper/eslint-config": "^0.1.0",
     "@uni-helper/uni-app-types": "^0.5.13",
     "@uni-helper/uni-use": "^0.19.12",
     "@uni-helper/unocss-preset-uni": "^0.2.9",
-    "@uni-helper/vite-plugin-uni-components": "^0.0.9",
+    "@uni-helper/vite-plugin-uni-components": "^0.0.10",
     "@uni-helper/vite-plugin-uni-layouts": "^0.1.10",
     "@uni-helper/vite-plugin-uni-pages": "0.2.24",
     "@vixt/core": "workspace:*",
-    "@vueuse/core": "^10.11.0",
-    "pinia": "^2.2.1",
+    "@vueuse/core": "^11.0.1",
+    "pinia": "^2.2.2",
     "pinia-plugin-unistorage": "^0.1.2",
     "unocss": "0.61.5",
     "unplugin-auto-import": "^0.18.2",
-    "vue": "^3.4.36"
+    "vue": "^3.4.38"
   }
 }

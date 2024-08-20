@@ -3,7 +3,7 @@ layout: home
 
 hero:
   name: Vixt
-  text: 写更少的代码，<br>做更多的事
+  text: 使用Vixt快速开发Vue.js应用
   actions:
     - theme: brand
       text: 开始
