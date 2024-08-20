@@ -21,17 +21,17 @@ import { routes } from 'vue-router/auto-routes'
 import { setupLayouts } from 'virtual:generated-layouts'
 
 const pinia = createPinia()
-pinia.use(createPersistedState())
+pinia.use(createPersistedState(appConfig.piniaPersistedState))
 
 const router = createRouter({
   routes: setupLayouts(routes),
   history: createWebHistory('${app!.baseURL}'),
+  ...appConfig.router,
 })
 
 const app = createApp(App)
 app.use(pinia).use(router)
-
-Object.values(plugins).forEach((plugin) => typeof plugin === 'function' && plugin({ app, router, routes, pinia, appConfig }))
+usePlugins({ app, router, routes, pinia, appConfig })
 
 app.mount('#${app!.rootId}')
 `

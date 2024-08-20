@@ -18,10 +18,9 @@ import { pages as routes } from 'virtual:uni-pages'
 export function createApp() {
   const app = createSSRApp(App)
   const pinia = Pinia.createPinia()
-  pinia.use(createUnistorage())
+  pinia.use(createUnistorage(appConfig.piniaPersistedState))
   app.use(pinia)
-
-  Object.values(plugins).forEach((plugin) => typeof plugin === 'function' && plugin({ app, routes, pinia, appConfig }))
+  usePlugins({ app, routes, pinia, appConfig })
   
   return { app, Pinia }
 }

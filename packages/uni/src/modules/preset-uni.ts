@@ -1,4 +1,5 @@
 import type { PluginOptions, VixtOptions } from '@vixt/core'
+import type { PersistedStateFactoryOptions } from 'pinia-plugin-unistorage'
 
 import defu from 'defu'
 import Uni from '@dcloudio/vite-plugin-uni'
@@ -15,11 +16,11 @@ declare module '@vixt/core'{
   interface VixtOptions {
     uni?: PluginOptions<typeof Uni>
     /** https://github.com/uni-helper/vite-plugin-uni-pages */
-    pages?: PluginOptions<typeof Pages>
+    uniPages?: PluginOptions<typeof Pages>
     /** https://github.com/uni-helper/vite-plugin-uni-layouts */
     uniLayouts?: PluginOptions<typeof Layouts>
     /** https://github.com/uni-helper/vite-plugin-uni-components */
-    components?: PluginOptions<typeof Components>
+    uniComponents?: PluginOptions<typeof Components>
     /** https://github.com/antfu/unplugin-auto-import */
     imports?: PluginOptions<typeof AutoImport>
     /** https://github.com/antfu/unocss */
@@ -27,17 +28,24 @@ declare module '@vixt/core'{
   }
 }
 
+declare module '@vixt/core/client'{
+  interface VixtAppConfig {
+    /** https://github.com/dishait/pinia-plugin-unistorage */
+    piniaPersistedState?: PersistedStateFactoryOptions
+  }
+}
+
 const name = 'vixt:preset-uni'
 export const presetUni = defineVixtModule<VixtOptions>({
   meta: { name },
   setup(_, vixt) {
-    const { components, composables = [], constants = [], utils = [], stores = [] } = resolveLayersDirs(vixt._layers)
-    const { buildTypesDir } = vixt.options
+    const { components, composables = [], constants = [], utils = [], stores = [] } = resolveLayersDirs(vixt._layers, vixt.options)
+    const { buildTypesDir, buildImportsDir } = vixt.options
     const defaultOptions: VixtOptions = {
       uni: {},
-      pages: { dts: `${buildTypesDir}/uni-pages.d.ts` },
+      uniPages: { dts: `${buildTypesDir}/uni-pages.d.ts` },
       uniLayouts: {},
-      components: {
+      uniComponents: {
         dts: `${buildTypesDir}/components.d.ts`,
         dirs: components,
         directoryAsNamespace: true,
@@ -46,7 +54,7 @@ export const presetUni = defineVixtModule<VixtOptions>({
       imports: {
         imports: ['vue', 'uni-app', 'pinia', useImports()],
         dts: `${buildTypesDir}/auto-imports.d.ts`,
-        dirs: [...composables, ...constants, ...stores, ...utils],
+        dirs: [...composables, ...constants, ...stores, ...utils, buildImportsDir!],
         vueTemplate: true,
       },
       unocss: {},
@@ -55,9 +63,9 @@ export const presetUni = defineVixtModule<VixtOptions>({
     const options = vixt.options = defu(vixt.options, defaultOptions)
 
     const modules = [
-      Pages(options.pages),
+      Pages(options.uniPages),
       Layouts(options.uniLayouts),
-      Components(options.components),
+      Components(options.uniComponents),
       AutoImport(options.imports),
       UnoCSS(options.unocss),
       // @ts-expect-error

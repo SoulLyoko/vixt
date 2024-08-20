@@ -1,4 +1,7 @@
 import type { PluginOptions, VixtOptions } from '@vixt/core'
+import type { TreeNode } from 'unplugin-vue-router'
+import type { RouterOptions } from 'vue-router'
+import type { PersistedStateFactoryOptions } from 'pinia-plugin-persistedstate'
 
 import defu from 'defu'
 import Vue from '@vitejs/plugin-vue'
@@ -29,13 +32,39 @@ declare module '@vixt/core'{
   }
 }
 
+declare module '@vixt/core/client'{
+  interface VixtAppConfig {
+    router?: RouterOptions
+    /** https://github.com/prazdevs/pinia-plugin-persistedstate */
+    piniaPersistedState?: PersistedStateFactoryOptions
+  }
+}
+
+export function normalizeRouteName(route: TreeNode['value'], name = '') {
+  if (route.rawSegment && route.rawSegment !== 'index') {
+    name = name ? `${route.rawSegment}-${name}` : route.rawSegment
+  }
+  if (route.parent) {
+    name = normalizeRouteName(route.parent, name)
+  }
+  return name.replace(/\[|\]|\.\.\./g, '')
+}
+
 export const presetVue = defineVixtModule<VixtOptions>({
   async setup(_, vixt) {
-    const { components, composables = [], constants = [], utils = [], stores = [], pages, layouts } = resolveLayersDirs(vixt._layers)
-    const { buildTypesDir } = vixt.options
+    const { components, composables = [], constants = [], utils = [], stores = [], pages, layouts } = resolveLayersDirs(vixt._layers, vixt.options)
+    const { buildTypesDir, buildImportsDir } = vixt.options
     const defaultOptions: VixtOptions = {
       vue: {},
-      router: { dts: `${buildTypesDir}/typed-router.d.ts`, routesFolder: pages },
+      router: {
+        dts: `${buildTypesDir}/typed-router.d.ts`,
+        routesFolder: pages,
+        getRouteName(route) {
+          if (route.path === '/')
+            return 'index'
+          return normalizeRouteName(route.value)
+        },
+      },
       layouts: { layoutsDirs: layouts?.reverse(), pagesDirs: pages },
       components: {
         dts: `${buildTypesDir}/components.d.ts`,
@@ -46,7 +75,7 @@ export const presetVue = defineVixtModule<VixtOptions>({
       imports: {
         imports: ['vue', '@vueuse/core', 'pinia', VueRouterAutoImports],
         dts: `${buildTypesDir}/auto-imports.d.ts`,
-        dirs: [...composables, ...constants, ...stores, ...utils],
+        dirs: [...composables, ...constants, ...stores, ...utils, buildImportsDir!],
         vueTemplate: true,
       },
       unocss: {},

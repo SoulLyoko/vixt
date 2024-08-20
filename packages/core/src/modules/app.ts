@@ -149,7 +149,9 @@ function generatePlugins(vixt: Vixt) {
 ${pluginsImportTemplate}
 const plugins = [${pluginsMergeTemplate}]
 function usePlugins(options) {
-  Object.values(plugins).forEach((plugin) => typeof plugin === 'function' && plugin(options))
+  for (const plugin of plugins) {
+    typeof plugin === 'function' && plugin(options)
+  }
 }
 `
   return pluginsTemplate
