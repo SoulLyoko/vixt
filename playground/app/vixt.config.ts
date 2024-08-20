@@ -11,5 +11,6 @@ export default defineVixtConfig({
         types: ['@uni-helper/uni-ui-types'],
       },
     },
+    typeCheck: { vueTsc: true },
   },
 })
