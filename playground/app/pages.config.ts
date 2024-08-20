@@ -6,6 +6,7 @@ export default defineUniPages({
     autoscan: true,
     custom: {
       '^uni-(.*)': '@dcloudio/uni-ui/lib/uni-$1/uni-$1.vue',
+      '^u-(.*)': 'uview-plus/components/u-$1/u-$1.vue',
     },
   },
   globalStyle: {

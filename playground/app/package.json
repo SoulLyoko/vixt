@@ -19,6 +19,7 @@
     "@dcloudio/uni-ui": "1.5.6",
     "@vixt/layer-app": "workspace:*",
     "@vixt/layer-shared": "workspace:*",
+    "uview-plus": "^3.3.24",
     "vixt": "workspace:*"
   },
   "devDependencies": {
