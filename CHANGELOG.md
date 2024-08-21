@@ -1,3 +1,18 @@
+## [0.1.11](https://github.com/SoulLyoko/vixt/compare/v0.1.10...v0.1.11) (2024-08-21)
+
+
+### Bug Fixes
+
+* lock `vue-tsc` v2.0.26 ([b1a1fa5](https://github.com/SoulLyoko/vixt/commit/b1a1fa599b21a65da02e4861438e52682da618b2))
+
+
+### Features
+
+* add loadEnv function ([aa36519](https://github.com/SoulLyoko/vixt/commit/aa3651984655222112adb2eb9ec8298a493709de))
+* add router options and piniaPersistedState options in app config ([5c6c016](https://github.com/SoulLyoko/vixt/commit/5c6c0167cff45bf9b2cf4a357b6edc96cc837e37))
+
+
+
 ## [0.1.10](https://github.com/SoulLyoko/vixt/compare/v0.1.9...v0.1.10) (2024-08-08)
 
 
