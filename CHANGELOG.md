@@ -1,3 +1,12 @@
+## [0.1.12](https://github.com/SoulLyoko/vixt/compare/v0.1.11...v0.1.12) (2024-08-23)
+
+
+### Bug Fixes
+
+* **vue:** remove default option value `router.getRouteName` ([774b5a9](https://github.com/SoulLyoko/vixt/commit/774b5a93e99af351289e5ad5572e753e122c4c0e))
+
+
+
 ## [0.1.11](https://github.com/SoulLyoko/vixt/compare/v0.1.10...v0.1.11) (2024-08-21)
 
 
