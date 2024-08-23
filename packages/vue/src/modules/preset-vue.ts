@@ -1,5 +1,4 @@
 import type { PluginOptions, VixtOptions } from '@vixt/core'
-import type { TreeNode } from 'unplugin-vue-router'
 import type { RouterOptions } from 'vue-router'
 import type { PersistedStateFactoryOptions } from 'pinia-plugin-persistedstate'
 
@@ -40,31 +39,13 @@ declare module '@vixt/core/client'{
   }
 }
 
-export function normalizeRouteName(route: TreeNode['value'], name = '') {
-  if (route.rawSegment && route.rawSegment !== 'index') {
-    name = name ? `${route.rawSegment}-${name}` : route.rawSegment
-  }
-  if (route.parent) {
-    name = normalizeRouteName(route.parent, name)
-  }
-  return name.replace(/\[|\]|\.\.\./g, '')
-}
-
 export const presetVue = defineVixtModule<VixtOptions>({
   async setup(_, vixt) {
     const { components, composables = [], constants = [], utils = [], stores = [], pages, layouts } = resolveLayersDirs(vixt._layers, vixt.options)
     const { buildTypesDir, buildImportsDir } = vixt.options
     const defaultOptions: VixtOptions = {
       vue: {},
-      router: {
-        dts: `${buildTypesDir}/typed-router.d.ts`,
-        routesFolder: pages,
-        getRouteName(route) {
-          if (route.path === '/')
-            return 'index'
-          return normalizeRouteName(route.value)
-        },
-      },
+      router: { dts: `${buildTypesDir}/typed-router.d.ts`, routesFolder: pages },
       layouts: { layoutsDirs: layouts?.reverse(), pagesDirs: pages },
       components: {
         dts: `${buildTypesDir}/components.d.ts`,
