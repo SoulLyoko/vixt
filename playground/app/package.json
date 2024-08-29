@@ -12,18 +12,18 @@
     "tc": "vue-tsc --noEmit"
   },
   "dependencies": {
-    "@dcloudio/uni-app": "3.0.0-alpha-4020620240820001",
-    "@dcloudio/uni-app-plus": "3.0.0-alpha-4020620240820001",
-    "@dcloudio/uni-h5": "3.0.0-alpha-4020620240820001",
-    "@dcloudio/uni-mp-weixin": "3.0.0-alpha-4020620240820001",
+    "@dcloudio/uni-app": "3.0.0-alpha-4020620240822002",
+    "@dcloudio/uni-app-plus": "3.0.0-alpha-4020620240822002",
+    "@dcloudio/uni-h5": "3.0.0-alpha-4020620240822002",
+    "@dcloudio/uni-mp-weixin": "3.0.0-alpha-4020620240822002",
     "@dcloudio/uni-ui": "1.5.6",
     "@vixt/layer-app": "workspace:*",
     "@vixt/layer-shared": "workspace:*",
-    "uview-plus": "^3.3.27",
+    "uview-plus": "^3.3.28",
     "vixt": "workspace:*"
   },
   "devDependencies": {
-    "@dcloudio/vite-plugin-uni": "3.0.0-alpha-4020620240820001",
+    "@dcloudio/vite-plugin-uni": "3.0.0-alpha-4020620240822002",
     "@uni-helper/uni-ui-types": "0.5.15",
     "sass": "1.77.8"
   }

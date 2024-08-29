@@ -30,7 +30,7 @@
     "@uni-helper/vite-plugin-uni-layouts": "^0.1.10",
     "@uni-helper/vite-plugin-uni-pages": "0.2.24",
     "@vixt/core": "workspace:*",
-    "@vueuse/core": "^11.0.1",
+    "@vueuse/core": "^11.0.3",
     "pinia": "^2.2.2",
     "pinia-plugin-unistorage": "^0.1.2",
     "unocss": "0.61.6",
