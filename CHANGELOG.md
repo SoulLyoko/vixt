@@ -1,3 +1,12 @@
+## [0.1.13](https://github.com/SoulLyoko/vixt/compare/v0.1.12...v0.1.13) (2024-08-29)
+
+
+### Bug Fixes
+
+* **vue:** partial RouterOptions ([df9a947](https://github.com/SoulLyoko/vixt/commit/df9a9470fdadd10e12f2520bc4fe9e965d9dc0e2))
+
+
+
 ## [0.1.12](https://github.com/SoulLyoko/vixt/compare/v0.1.11...v0.1.12) (2024-08-23)
 
 
