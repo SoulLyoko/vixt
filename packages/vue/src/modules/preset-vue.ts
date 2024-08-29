@@ -33,7 +33,7 @@ declare module '@vixt/core'{
 
 declare module '@vixt/core/client'{
   interface VixtAppConfig {
-    router?: RouterOptions
+    router?: Partial<RouterOptions>
     /** https://github.com/prazdevs/pinia-plugin-persistedstate */
     piniaPersistedState?: PersistedStateFactoryOptions
   }
