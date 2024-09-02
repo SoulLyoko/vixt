@@ -1,3 +1,17 @@
+## [0.1.14](https://github.com/SoulLyoko/vixt/compare/v0.1.13...v0.1.14) (2024-09-02)
+
+
+### Bug Fixes
+
+* **core:** `loadEnv` load workspace and cwd env variables by default ([733ffed](https://github.com/SoulLyoko/vixt/commit/733ffed9e2bdc63b7a2a27fd5a96e4248a27ae84))
+
+
+### Features
+
+* remove `buildDir` when `--force` in command line ([0722406](https://github.com/SoulLyoko/vixt/commit/072240691b2def42e69eb08d7baed642f3f9e228))
+
+
+
 ## [0.1.13](https://github.com/SoulLyoko/vixt/compare/v0.1.12...v0.1.13) (2024-08-29)
 
 
