@@ -1,4 +1,7 @@
-import { defineVixtConfig } from 'vixt/core'
+import { defineVixtConfig, loadEnv } from 'vixt/core'
+
+const env = loadEnv()
+console.log('env:', env)
 
 export default defineVixtConfig({
   extends: ['@vixt/layer-web'],

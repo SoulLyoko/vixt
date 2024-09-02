@@ -1,6 +1,6 @@
 <script setup lang="ts">
 const router = useRouter()
-const route = useRoute('hi-name')
+const route = useRoute('/hi/[name]')
 const user = useUserStore()
 
 watchEffect(() => {
