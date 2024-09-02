@@ -1,7 +1,9 @@
 import type { LoadConfigOptions } from 'c12'
 import type { Vixt, VixtOptions } from './types'
 
+import { cac } from 'cac'
 import defu from 'defu'
+import fs from 'fs-extra'
 
 import { applyLayerModules, defineVitePlugin } from './module'
 import { loadVixtConfig } from './config'
@@ -13,6 +15,13 @@ export async function loadVixt(opts?: LoadConfigOptions<VixtOptions>) {
       modules: [alias, app, config, typescript],
     },
   }))
+
+  // remove buildDir
+  const parsedArgv = cac().parse()
+  const isForce = !!parsedArgv.options.force
+  if (isForce) {
+    fs.removeSync(result.config.buildDir!)
+  }
 
   const layerModules = await applyLayerModules(result.layers ?? [], result.config)
 
