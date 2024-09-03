@@ -65,8 +65,8 @@ function mapLayers(layers: VixtConfigLayer[], config: VixtOptions) {
   })
 }
 
-function isSamePath(a: string, b: string) {
-  return path.resolve(a) === path.resolve(b)
+export function isSamePath(a: string, b: string) {
+  return path.normalize(a) === path.normalize(b)
 }
 
 export function resolveLayersDirs(layers: VixtConfigLayer[] = [], config: VixtOptions) {

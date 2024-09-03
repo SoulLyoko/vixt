@@ -7,12 +7,12 @@ import fs from 'fs-extra'
 
 import { applyLayerModules, defineVitePlugin } from './module'
 import { loadVixtConfig } from './config'
-import { alias, app, config, typescript } from '.'
+import { app, config, typescript } from '.'
 
 export async function loadVixt(opts?: LoadConfigOptions<VixtOptions>) {
   const result = await loadVixtConfig(defu(opts, {
     defaults: {
-      modules: [alias, app, config, typescript],
+      modules: [config, app, typescript],
     },
   }))
 

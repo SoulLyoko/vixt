@@ -10,19 +10,19 @@ import { loadEnv as _loadEnv } from 'vite'
 export function loadEnv(mode?: string, envDir?: string, prefixes?: string | string[]) {
   const parsedArgv = cac().parse()
   mode = mode || parsedArgv.options.mode || parsedArgv.options.m || env.NODE_ENV
-  const loadedEnv: Record<string, string> = {}
-  if (envDir) {
-    Object.assign(loadedEnv, _loadEnv(mode!, envDir, prefixes))
-  }
-  else {
-    const workspaceDir = env.INIT_CWD!
-    Object.assign(loadedEnv, _loadEnv(mode!, workspaceDir, prefixes), _loadEnv(mode!, cwd(), prefixes))
-  }
 
   return {
     MODE: mode,
     DEV: env.NODE_ENV !== 'production',
     PROD: env.NODE_ENV === 'production',
-    ...loadedEnv,
+    ...loadWorkspaceEnv(mode, prefixes),
+    ..._loadEnv(mode!, envDir || cwd(), prefixes),
   } as ImportMeta['env']
+}
+
+/**
+ * Load workspace env variables
+ */
+export function loadWorkspaceEnv(mode?: string, prefixes?: string | string[]) {
+  return env.INIT_CWD ? _loadEnv(mode!, env.INIT_CWD, prefixes) : {}
 }
