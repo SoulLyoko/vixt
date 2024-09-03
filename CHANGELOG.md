@@ -1,3 +1,13 @@
+## [0.1.15](https://github.com/SoulLyoko/vixt/compare/v0.1.14...v0.1.15) (2024-09-03)
+
+
+### Features
+
+* **core:** set workspace env to `import.meta.env` ([7be5689](https://github.com/SoulLyoko/vixt/commit/7be56899224422a995e6ed95be8a4b6bfc1da2a4))
+* **core:** watch `vixt.config.ts` for server restart ([b9e1179](https://github.com/SoulLyoko/vixt/commit/b9e117910fdb589a1d151898a9a13e030bc7f191))
+
+
+
 ## [0.1.14](https://github.com/SoulLyoko/vixt/compare/v0.1.13...v0.1.14) (2024-09-02)
 
 
