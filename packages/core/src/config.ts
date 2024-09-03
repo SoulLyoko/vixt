@@ -37,11 +37,10 @@ export async function loadVixtConfig(opts?: LoadConfigOptions<VixtOptions>) {
       ...opts?.defaults,
     },
   })
-  result.layers = mapLayers(result.layers?.filter(e => e.cwd) ?? [], result.config)
   return result
 }
 
-function mapLayers(layers: VixtConfigLayer[], config: VixtOptions) {
+export function applyLayers(layers: VixtConfigLayer[], config: VixtOptions) {
   const { rootDir, buildLayersDir } = config
   return layers.map((layer) => {
     const meta = layer.config?.meta ?? {}
