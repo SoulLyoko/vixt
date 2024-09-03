@@ -1,3 +1,5 @@
+import path from 'pathe'
+
 import { defineVixtModule } from '../module'
 import { loadWorkspaceEnv } from '../env'
 
@@ -34,6 +36,16 @@ export const config = defineVixtModule({
       configResolved(config) {
         Object.assign(config.env, { ...loadWorkspaceEnv(config.mode, config.envPrefix), ...config.env })
         vixt.options.vite = config
+      },
+      configureServer(server) {
+        // restart server when `vixt.config.ts` changed
+        const configFiles = vixt._layers.map(layer => path.resolve(layer.cwd!, 'vixt.config.ts'))
+        server.watcher.add(configFiles)
+        server.watcher.on('change', (file) => {
+          if (configFiles.includes(path.normalize(file))) {
+            server.restart()
+          }
+        })
       },
     }
   },
