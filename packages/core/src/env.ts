@@ -1,8 +1,10 @@
 /// <reference types="vite/client" />
 import { cwd, env } from 'node:process'
 
-import { cac } from 'cac'
+import path from 'pathe'
 import { loadEnv as _loadEnv } from 'vite'
+import { cac } from 'cac'
+import { findUpSync } from 'find-up'
 
 /**
  * Load workspace and cwd env variables by default
@@ -24,5 +26,6 @@ export function loadEnv(mode?: string, envDir?: string, prefixes?: string | stri
  * Load workspace env variables
  */
 export function loadWorkspaceEnv(mode?: string, prefixes?: string | string[]) {
-  return env.INIT_CWD ? _loadEnv(mode!, env.INIT_CWD, prefixes) : {}
+  const workspaceManifestLocation = findUpSync(['pnpm-workspace.yaml', 'pnpm-workspace.yml'])
+  return workspaceManifestLocation ? _loadEnv(mode!, path.dirname(workspaceManifestLocation), prefixes) : {}
 }
