@@ -6,6 +6,7 @@
   "packageManager": "pnpm@9.9.0",
   "scripts": {
     "build": "pnpm -F \"./packages/*\" build",
+    "build:web": "pnpm -F web build",
     "changelog": "conventional-changelog -p angular -i CHANGELOG.md -s",
     "dev": "pnpm -F core -F vue build && pnpm -F web dev",
     "dev:h5": "pnpm -F core -F uni build && pnpm -F app dev",

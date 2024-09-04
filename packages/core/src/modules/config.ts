@@ -1,7 +1,7 @@
 import path from 'pathe'
 
 import { defineVixtModule } from '../module'
-import { loadWorkspaceEnv } from '../env'
+import { loadEnv } from '../env'
 
 const name = 'vixt:config'
 export const config = defineVixtModule({
@@ -10,7 +10,7 @@ export const config = defineVixtModule({
     return {
       name,
       enforce: 'pre',
-      config() {
+      config(config) {
         const { rootDir, buildDir, srcDir } = vixt.options
         const defaultAlias: Record<string, string> = {
           '@': srcDir!,
@@ -26,15 +26,23 @@ export const config = defineVixtModule({
         }
         // buildDir alias
         defaultAlias['#'] = buildDir!
+
+        const env = loadEnv(config.mode, config.envDir, config.envPrefix)
+        const defineEnv = Object.fromEntries(
+          Object.entries(env)
+            .filter(([k]) => !['MODE', 'DEV', 'PROD'].includes(k))
+            .map(([k, v]) => [`import.meta.env.${k}`, JSON.stringify(v)]),
+        )
+
         return {
           root: rootDir,
           resolve: {
             alias: defaultAlias,
           },
+          define: defineEnv,
         }
       },
       configResolved(config) {
-        Object.assign(config.env, { ...loadWorkspaceEnv(config.mode, config.envPrefix), ...config.env })
         vixt.options.vite = config
       },
       configureServer(server) {
