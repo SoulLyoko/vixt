@@ -7,6 +7,7 @@ const name = 'vixt:config'
 export const config = defineVixtModule({
   meta: { name },
   setup(_, vixt) {
+    let env: Record<string, string>
     return {
       name,
       enforce: 'pre',
@@ -27,7 +28,7 @@ export const config = defineVixtModule({
         // buildDir alias
         defaultAlias['#'] = buildDir!
 
-        const env = loadEnv(config.mode, config.envDir, config.envPrefix)
+        env = loadEnv(config.mode, config.envDir, config.envPrefix)
         const defineEnv = Object.fromEntries(
           Object.entries(env)
             .filter(([k]) => !['MODE', 'DEV', 'PROD'].includes(k))
@@ -43,6 +44,7 @@ export const config = defineVixtModule({
         }
       },
       configResolved(config) {
+        Object.assign(config.env, { ...env, ...config.env })
         vixt.options.vite = config
       },
       configureServer(server) {
