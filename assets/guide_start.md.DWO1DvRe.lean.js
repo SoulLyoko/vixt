@@ -1,1 +1,0 @@
-import{_ as s,c as i,o as a,a2 as t}from"./chunks/framework.BGNPZ3X_.js";const g=JSON.parse('{"title":"Vixt","description":"","frontmatter":{},"headers":[],"relativePath":"guide/start.md","filePath":"guide/start.md"}'),e={name:"guide/start.md"},n=t("",12),l=[n];function h(p,r,k,d,o,c){return a(),i("div",null,l)}const x=s(e,[["render",h]]);export{g as __pageData,x as default};
