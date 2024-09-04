@@ -1,3 +1,14 @@
+## [0.1.16](https://github.com/SoulLyoko/vixt/compare/v0.1.15...v0.1.16) (2024-09-04)
+
+
+### Bug Fixes
+
+* **core:** `loadWorkspaceEnv` use `find-up` to find workspace dir instead use `env.INIT_CWD` ([3964c1f](https://github.com/SoulLyoko/vixt/commit/3964c1f99bbdf03d7a80eb42228c5636df0e77ea))
+* **core:** inject env vars to `config.define` ([b759bc5](https://github.com/SoulLyoko/vixt/commit/b759bc5c88ded70cba632f6a520f7cfc825bab4b))
+* **core:** remove buildDir before apply layers ([ecacf1b](https://github.com/SoulLyoko/vixt/commit/ecacf1b9dea860606f8217e848438271906acdcd))
+
+
+
 ## [0.1.15](https://github.com/SoulLyoko/vixt/compare/v0.1.14...v0.1.15) (2024-09-03)
 
 
