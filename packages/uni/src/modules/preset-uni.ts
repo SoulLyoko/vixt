@@ -1,5 +1,5 @@
 import type { PluginOptions, VixtOptions } from '@vixt/core'
-import type { PersistedStateFactoryOptions } from 'pinia-plugin-unistorage'
+import type { PluginOptions as PersistedStateOptions } from 'pinia-plugin-persistedstate'
 
 import defu from 'defu'
 import Uni from '@dcloudio/vite-plugin-uni'
@@ -30,8 +30,8 @@ declare module '@vixt/core'{
 
 declare module '@vixt/core/client'{
   interface VixtAppConfig {
-    /** https://github.com/dishait/pinia-plugin-unistorage */
-    piniaPersistedState?: PersistedStateFactoryOptions
+    /** https://github.com/prazdevs/pinia-plugin-persistedstate */
+    piniaPersistedState?: PersistedStateOptions
   }
 }
 

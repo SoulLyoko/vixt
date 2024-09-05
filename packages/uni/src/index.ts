@@ -12,13 +12,19 @@ const defaults = {
 import 'virtual:uno.css'
 import { createSSRApp } from 'vue'
 import * as Pinia from 'pinia'
-import { createUnistorage } from 'pinia-plugin-unistorage'
+import { createPersistedState } from 'pinia-plugin-persistedstate'
 import { pages as routes } from 'virtual:uni-pages'
 
 export function createApp() {
   const app = createSSRApp(App)
   const pinia = Pinia.createPinia()
-  pinia.use(createUnistorage(appConfig.piniaPersistedState))
+  pinia.use(createPersistedState({
+    storage: {
+      getItem: uni.getStorageSync,
+      setItem: uni.setStorageSync,
+    },
+    ...appConfig.piniaPersistedState,
+  }))
   app.use(pinia)
   usePlugins({ app, routes, pinia, appConfig })
   

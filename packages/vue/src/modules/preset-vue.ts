@@ -1,6 +1,6 @@
 import type { PluginOptions, VixtOptions } from '@vixt/core'
 import type { RouterOptions } from 'vue-router'
-import type { PersistedStateFactoryOptions } from 'pinia-plugin-persistedstate'
+import type { PluginOptions as PersistedStateOptions } from 'pinia-plugin-persistedstate'
 
 import defu from 'defu'
 import Vue from '@vitejs/plugin-vue'
@@ -35,7 +35,7 @@ declare module '@vixt/core/client'{
   interface VixtAppConfig {
     router?: Partial<RouterOptions>
     /** https://github.com/prazdevs/pinia-plugin-persistedstate */
-    piniaPersistedState?: PersistedStateFactoryOptions
+    piniaPersistedState?: PersistedStateOptions
   }
 }
 

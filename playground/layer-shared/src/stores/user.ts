@@ -6,7 +6,7 @@ export const useUserStore = defineStore('user', () => {
    * Current name of the user.
    */
   const savedName = ref('')
-  const previousNames = ref(new Set<string>())
+  const previousNames = ref<string[]>([])
 
   const usedNames = computed(() => Array.from(previousNames.value))
   const otherNames = computed(() => usedNames.value.filter(name => name !== savedName.value))
@@ -18,8 +18,8 @@ export const useUserStore = defineStore('user', () => {
    * @param name - new name to set
    */
   function setNewName(name: string) {
-    if (savedName.value)
-      previousNames.value.add(savedName.value)
+    if (savedName.value && !previousNames.value.includes(savedName.value))
+      previousNames.value.push(savedName.value)
 
     savedName.value = name
   }
@@ -28,8 +28,9 @@ export const useUserStore = defineStore('user', () => {
     setNewName,
     otherNames,
     savedName,
+    previousNames,
   }
-})
+}, { persist: true })
 
 if (import.meta.hot)
   import.meta.hot.accept(acceptHMRUpdate(useUserStore as any, import.meta.hot))
