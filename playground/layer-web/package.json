@@ -4,7 +4,7 @@
   "private": true,
   "main": "vixt.config.ts",
   "dependencies": {
-    "@iconify/vue": "^4.1.2",
+    "@iconify/vue": "catalog:",
     "vixt": "workspace:*"
   }
 }

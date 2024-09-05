@@ -28,19 +28,19 @@
     "build": "unbuild"
   },
   "dependencies": {
-    "@types/fs-extra": "11.0.4",
-    "@vue/tsconfig": "^0.5.1",
-    "c12": "^1.11.2",
-    "cac": "^6.7.14",
-    "defu": "^6.1.4",
-    "find-up": "^7.0.0",
-    "fs-extra": "^11.2.0",
-    "mlly": "1.7.1",
-    "pathe": "^1.1.2",
-    "pkg-types": "^1.2.0",
-    "tsx": "^4.19.0",
-    "vite": "^5.4.3",
-    "vite-plugin-checker": "^0.7.2",
-    "vue-tsc": "2.0.26"
+    "@types/fs-extra": "catalog:",
+    "@vue/tsconfig": "catalog:",
+    "c12": "catalog:",
+    "cac": "catalog:",
+    "defu": "catalog:",
+    "find-up": "catalog:",
+    "fs-extra": "catalog:",
+    "mlly": "catalog:",
+    "pathe": "catalog:",
+    "pkg-types": "catalog:",
+    "tsx": "catalog:",
+    "vite": "catalog:",
+    "vite-plugin-checker": "catalog:",
+    "vue-tsc": "catalog:"
   }
 }
