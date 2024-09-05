@@ -4,147 +4,324 @@ settings:
   autoInstallPeers: true
   excludeLinksFromLockfile: false
 
+catalogs:
+  default:
+    '@antfu/eslint-config':
+      specifier: ^3.2.0
+      version: 3.2.0
+    '@commitlint/cli':
+      specifier: ^19.4.1
+      version: 19.4.1
+    '@commitlint/config-conventional':
+      specifier: ^19.4.1
+      version: 19.4.1
+    '@dcloudio/types':
+      specifier: ^3.4.12
+      version: 3.4.12
+    '@dcloudio/uni-app':
+      specifier: 3.0.0-alpha-4020720240904001
+      version: 3.0.0-alpha-4020720240904001
+    '@dcloudio/uni-app-plus':
+      specifier: 3.0.0-alpha-4020720240904001
+      version: 3.0.0-alpha-4020720240904001
+    '@dcloudio/uni-h5':
+      specifier: 3.0.0-alpha-4020720240904001
+      version: 3.0.0-alpha-4020720240904001
+    '@dcloudio/uni-mp-weixin':
+      specifier: 3.0.0-alpha-4020720240904001
+      version: 3.0.0-alpha-4020720240904001
+    '@dcloudio/uni-ui':
+      specifier: ^1.5.6
+      version: 1.5.6
+    '@dcloudio/vite-plugin-uni':
+      specifier: 3.0.0-alpha-4020720240904001
+      version: 3.0.0-alpha-4020720240904001
+    '@iconify/vue':
+      specifier: ^4.1.2
+      version: 4.1.2
+    '@types/fs-extra':
+      specifier: ^11.0.4
+      version: 11.0.4
+    '@uni-helper/uni-app-types':
+      specifier: ^0.5.13
+      version: 0.5.13
+    '@uni-helper/uni-ui-types':
+      specifier: ^0.5.15
+      version: 0.5.15
+    '@uni-helper/uni-use':
+      specifier: ^0.19.14
+      version: 0.19.14
+    '@uni-helper/unocss-preset-uni':
+      specifier: ^0.2.9
+      version: 0.2.9
+    '@uni-helper/vite-plugin-uni-components':
+      specifier: ^0.1.0
+      version: 0.1.0
+    '@uni-helper/vite-plugin-uni-layouts':
+      specifier: ^0.1.10
+      version: 0.1.10
+    '@uni-helper/vite-plugin-uni-pages':
+      specifier: 0.2.24
+      version: 0.2.24
+    '@unocss/eslint-plugin':
+      specifier: 0.61.6
+      version: 0.61.6
+    '@unocss/reset':
+      specifier: ^0.61.6
+      version: 0.61.9
+    '@vitejs/plugin-vue':
+      specifier: ^5.1.3
+      version: 5.1.3
+    '@vitejs/plugin-vue-jsx':
+      specifier: ^4.0.1
+      version: 4.0.1
+    '@vue/tsconfig':
+      specifier: ^0.5.1
+      version: 0.5.1
+    '@vueuse/core':
+      specifier: ^11.0.3
+      version: 11.0.3
+    bumpp:
+      specifier: ^9.5.2
+      version: 9.5.2
+    c12:
+      specifier: ^1.11.2
+      version: 1.11.2
+    cac:
+      specifier: ^6.7.14
+      version: 6.7.14
+    conventional-changelog-cli:
+      specifier: ^5.0.0
+      version: 5.0.0
+    defu:
+      specifier: ^6.1.4
+      version: 6.1.4
+    eslint:
+      specifier: ^9.9.1
+      version: 9.9.1
+    eslint-plugin-format:
+      specifier: ^0.1.2
+      version: 0.1.2
+    find-up:
+      specifier: ^7.0.0
+      version: 7.0.0
+    fs-extra:
+      specifier: ^11.2.0
+      version: 11.2.0
+    lint-staged:
+      specifier: ^15.2.10
+      version: 15.2.10
+    mlly:
+      specifier: 1.7.1
+      version: 1.7.1
+    pathe:
+      specifier: ^1.1.2
+      version: 1.1.2
+    pinia:
+      specifier: ^2.2.2
+      version: 2.2.2
+    pinia-plugin-persistedstate:
+      specifier: ^4.0.0
+      version: 4.0.0
+    pkg-types:
+      specifier: ^1.2.0
+      version: 1.2.0
+    sass:
+      specifier: 1.78.0
+      version: 1.78.0
+    simple-git-hooks:
+      specifier: ^2.11.1
+      version: 2.11.1
+    taze:
+      specifier: ^0.16.7
+      version: 0.16.7
+    tsx:
+      specifier: ^4.19.0
+      version: 4.19.0
+    typescript:
+      specifier: ^5.5.4
+      version: 5.5.4
+    unbuild:
+      specifier: ^2.0.0
+      version: 2.0.0
+    unocss:
+      specifier: 0.61.6
+      version: 0.61.6
+    unplugin-auto-import:
+      specifier: ^0.18.2
+      version: 0.18.2
+    unplugin-vue-components:
+      specifier: ^0.27.4
+      version: 0.27.4
+    unplugin-vue-router:
+      specifier: ^0.10.7
+      version: 0.10.7
+    uview-plus:
+      specifier: ^3.3.31
+      version: 3.3.31
+    vite:
+      specifier: ^5.4.3
+      version: 5.4.3
+    vite-plugin-checker:
+      specifier: ^0.7.2
+      version: 0.7.2
+    vite-plugin-vue-devtools:
+      specifier: ^7.4.4
+      version: 7.4.4
+    vite-plugin-vue-layouts:
+      specifier: ^0.11.0
+      version: 0.11.0
+    vitepress:
+      specifier: ^1.3.4
+      version: 1.3.4
+    vue:
+      specifier: ^3.5.1
+      version: 3.5.1
+    vue-router:
+      specifier: ^4.4.3
+      version: 4.4.3
+    vue-tsc:
+      specifier: 2.0.26
+      version: 2.0.26
+
 importers:
 
   .:
     devDependencies:
       '@antfu/eslint-config':
-        specifier: ^3.2.0
+        specifier: 'catalog:'
         version: 3.2.0(@typescript-eslint/utils@8.4.0(eslint@9.9.1(jiti@1.21.6))(typescript@5.5.4))(@unocss/eslint-plugin@0.61.6(eslint@9.9.1(jiti@1.21.6))(typescript@5.5.4))(@vue/compiler-sfc@3.5.1)(eslint-plugin-format@0.1.2(eslint@9.9.1(jiti@1.21.6)))(eslint@9.9.1(jiti@1.21.6))(typescript@5.5.4)
       '@commitlint/cli':
-        specifier: ^19.4.1
+        specifier: 'catalog:'
         version: 19.4.1(@types/node@22.5.4)(typescript@5.5.4)
       '@commitlint/config-conventional':
-        specifier: ^19.4.1
+        specifier: 'catalog:'
         version: 19.4.1
       '@unocss/eslint-plugin':
-        specifier: 0.61.6
+        specifier: 'catalog:'
         version: 0.61.6(eslint@9.9.1(jiti@1.21.6))(typescript@5.5.4)
       bumpp:
-        specifier: ^9.5.2
+        specifier: 'catalog:'
         version: 9.5.2
       conventional-changelog-cli:
-        specifier: ^5.0.0
+        specifier: 'catalog:'
         version: 5.0.0(conventional-commits-filter@5.0.0)
       eslint:
-        specifier: ^9.9.1
+        specifier: 'catalog:'
         version: 9.9.1(jiti@1.21.6)
       eslint-plugin-format:
-        specifier: ^0.1.2
+        specifier: 'catalog:'
         version: 0.1.2(eslint@9.9.1(jiti@1.21.6))
       lint-staged:
-        specifier: ^15.2.10
+        specifier: 'catalog:'
         version: 15.2.10
       simple-git-hooks:
-        specifier: ^2.11.1
+        specifier: 'catalog:'
         version: 2.11.1
       taze:
-        specifier: ^0.16.7
+        specifier: 'catalog:'
         version: 0.16.7
       tsx:
-        specifier: ^4.19.0
+        specifier: 'catalog:'
         version: 4.19.0
       typescript:
-        specifier: ^5.5.4
+        specifier: 'catalog:'
         version: 5.5.4
       unbuild:
-        specifier: ^2.0.0
+        specifier: 'catalog:'
         version: 2.0.0(sass@1.78.0)(typescript@5.5.4)(vue-tsc@2.0.26(typescript@5.5.4))
       vitepress:
-        specifier: ^1.3.4
+        specifier: 'catalog:'
         version: 1.3.4(@algolia/client-search@4.24.0)(@types/node@22.5.4)(postcss@8.4.45)(sass@1.78.0)(search-insights@2.17.1)(terser@5.31.6)(typescript@5.5.4)
 
   packages/core:
     dependencies:
       '@types/fs-extra':
-        specifier: 11.0.4
+        specifier: 'catalog:'
         version: 11.0.4
       '@vue/tsconfig':
-        specifier: ^0.5.1
+        specifier: 'catalog:'
         version: 0.5.1
       c12:
-        specifier: ^1.11.2
+        specifier: 'catalog:'
         version: 1.11.2
       cac:
-        specifier: ^6.7.14
+        specifier: 'catalog:'
         version: 6.7.14
       defu:
-        specifier: ^6.1.4
+        specifier: 'catalog:'
         version: 6.1.4
       find-up:
-        specifier: ^7.0.0
+        specifier: 'catalog:'
         version: 7.0.0
       fs-extra:
-        specifier: ^11.2.0
+        specifier: 'catalog:'
         version: 11.2.0
       mlly:
-        specifier: 1.7.1
+        specifier: 'catalog:'
         version: 1.7.1
       pathe:
-        specifier: ^1.1.2
+        specifier: 'catalog:'
         version: 1.1.2
       pkg-types:
-        specifier: ^1.2.0
+        specifier: 'catalog:'
         version: 1.2.0
       tsx:
-        specifier: ^4.19.0
+        specifier: 'catalog:'
         version: 4.19.0
       vite:
-        specifier: ^5.4.3
+        specifier: 'catalog:'
         version: 5.4.3(@types/node@22.5.4)(sass@1.78.0)(terser@5.31.6)
       vite-plugin-checker:
-        specifier: ^0.7.2
+        specifier: 'catalog:'
         version: 0.7.2(eslint@9.9.1(jiti@1.21.6))(optionator@0.9.4)(typescript@5.5.4)(vite@5.4.3(@types/node@22.5.4)(sass@1.78.0)(terser@5.31.6))(vue-tsc@2.0.26(typescript@5.5.4))
       vue-tsc:
-        specifier: 2.0.26
+        specifier: 'catalog:'
         version: 2.0.26(typescript@5.5.4)
 
   packages/uni:
     dependencies:
       '@dcloudio/types':
-        specifier: ^3.4.12
+        specifier: 'catalog:'
         version: 3.4.12
       '@uni-helper/uni-app-types':
-        specifier: ^0.5.13
+        specifier: 'catalog:'
         version: 0.5.13(typescript@5.5.4)
       '@uni-helper/uni-use':
-        specifier: ^0.19.14
+        specifier: 'catalog:'
         version: 0.19.14(@nuxt/kit@3.13.1(rollup@4.21.2))(@vueuse/core@11.0.3(vue@3.5.1(typescript@5.5.4)))(postcss@8.4.45)(rollup@4.21.2)(typescript@5.5.4)(vue@3.5.1(typescript@5.5.4))
       '@uni-helper/unocss-preset-uni':
-        specifier: ^0.2.9
+        specifier: 'catalog:'
         version: 0.2.9(@unocss/preset-mini@0.61.6)(@unocss/rule-utils@0.61.6)(@unocss/vite@0.61.6(rollup@4.21.2)(vite@5.4.3(@types/node@22.5.4)(sass@1.78.0)(terser@5.31.6)))(unocss-applet@0.8.2(@unocss/core@0.61.6)(@unocss/preset-mini@0.61.6)(@unocss/preset-uno@0.61.6)(magic-string@0.30.11)(unocss@0.61.6(postcss@8.4.45)(rollup@4.21.2)(vite@5.4.3(@types/node@22.5.4)(sass@1.78.0)(terser@5.31.6))))(unocss@0.61.6(postcss@8.4.45)(rollup@4.21.2)(vite@5.4.3(@types/node@22.5.4)(sass@1.78.0)(terser@5.31.6)))
       '@uni-helper/vite-plugin-uni-components':
-        specifier: ^0.1.0
+        specifier: 'catalog:'
         version: 0.1.0(rollup@4.21.2)
       '@uni-helper/vite-plugin-uni-layouts':
-        specifier: ^0.1.10
+        specifier: 'catalog:'
         version: 0.1.10(rollup@4.21.2)
       '@uni-helper/vite-plugin-uni-pages':
-        specifier: 0.2.24
+        specifier: 'catalog:'
         version: 0.2.24(@types/lodash-es@4.17.12)(lodash-es@4.17.21)(lodash@4.17.21)
       '@vixt/core':
         specifier: workspace:*
         version: link:../core
       '@vueuse/core':
-        specifier: ^11.0.3
+        specifier: 'catalog:'
         version: 11.0.3(vue@3.5.1(typescript@5.5.4))
       pinia:
-        specifier: ^2.2.2
+        specifier: 'catalog:'
         version: 2.2.2(typescript@5.5.4)(vue@3.5.1(typescript@5.5.4))
       pinia-plugin-persistedstate:
-        specifier: ^4.0.0
+        specifier: 'catalog:'
         version: 4.0.0(pinia@2.2.2(typescript@5.5.4)(vue@3.5.1(typescript@5.5.4)))(rollup@4.21.2)
-      pinia-plugin-unistorage:
-        specifier: ^0.1.2
-        version: 0.1.2
       unocss:
-        specifier: 0.61.6
+        specifier: 'catalog:'
         version: 0.61.6(postcss@8.4.45)(rollup@4.21.2)(vite@5.4.3(@types/node@22.5.4)(sass@1.78.0)(terser@5.31.6))
       unplugin-auto-import:
-        specifier: ^0.18.2
+        specifier: 'catalog:'
         version: 0.18.2(@nuxt/kit@3.13.1(rollup@4.21.2))(@vueuse/core@11.0.3(vue@3.5.1(typescript@5.5.4)))(rollup@4.21.2)
       vue:
-        specifier: ^3.5.1
+        specifier: 'catalog:'
         version: 3.5.1(typescript@5.5.4)
 
   packages/vixt:
@@ -162,64 +339,64 @@ importers:
   packages/vue:
     dependencies:
       '@vitejs/plugin-vue':
-        specifier: ^5.1.3
+        specifier: 'catalog:'
         version: 5.1.3(vite@5.4.3(@types/node@22.5.4)(sass@1.78.0)(terser@5.31.6))(vue@3.5.1(typescript@5.5.4))
       '@vitejs/plugin-vue-jsx':
-        specifier: ^4.0.1
+        specifier: 'catalog:'
         version: 4.0.1(vite@5.4.3(@types/node@22.5.4)(sass@1.78.0)(terser@5.31.6))(vue@3.5.1(typescript@5.5.4))
       '@vixt/core':
         specifier: workspace:*
         version: link:../core
       '@vueuse/core':
-        specifier: ^11.0.3
+        specifier: 'catalog:'
         version: 11.0.3(vue@3.5.1(typescript@5.5.4))
       pinia:
-        specifier: ^2.2.2
+        specifier: 'catalog:'
         version: 2.2.2(typescript@5.5.4)(vue@3.5.1(typescript@5.5.4))
       pinia-plugin-persistedstate:
-        specifier: ^4.0.0
+        specifier: 'catalog:'
         version: 4.0.0(pinia@2.2.2(typescript@5.5.4)(vue@3.5.1(typescript@5.5.4)))(rollup@4.21.2)
       unocss:
-        specifier: 0.61.6
+        specifier: 'catalog:'
         version: 0.61.6(postcss@8.4.45)(rollup@4.21.2)(vite@5.4.3(@types/node@22.5.4)(sass@1.78.0)(terser@5.31.6))
       unplugin-auto-import:
-        specifier: ^0.18.2
+        specifier: 'catalog:'
         version: 0.18.2(@nuxt/kit@3.13.1(rollup@4.21.2))(@vueuse/core@11.0.3(vue@3.5.1(typescript@5.5.4)))(rollup@4.21.2)
       unplugin-vue-components:
-        specifier: ^0.27.4
+        specifier: 'catalog:'
         version: 0.27.4(@babel/parser@7.25.6)(@nuxt/kit@3.13.1(rollup@4.21.2))(rollup@4.21.2)(vue@3.5.1(typescript@5.5.4))
       unplugin-vue-router:
-        specifier: ^0.10.7
+        specifier: 'catalog:'
         version: 0.10.7(rollup@4.21.2)(vue-router@4.4.3(vue@3.5.1(typescript@5.5.4)))(vue@3.5.1(typescript@5.5.4))
       vite-plugin-vue-devtools:
-        specifier: ^7.4.4
+        specifier: 'catalog:'
         version: 7.4.4(@nuxt/kit@3.13.1(rollup@4.21.2))(rollup@4.21.2)(vite@5.4.3(@types/node@22.5.4)(sass@1.78.0)(terser@5.31.6))(vue@3.5.1(typescript@5.5.4))
       vite-plugin-vue-layouts:
-        specifier: ^0.11.0
+        specifier: 'catalog:'
         version: 0.11.0(vite@5.4.3(@types/node@22.5.4)(sass@1.78.0)(terser@5.31.6))(vue-router@4.4.3(vue@3.5.1(typescript@5.5.4)))(vue@3.5.1(typescript@5.5.4))
       vue:
-        specifier: ^3.5.1
+        specifier: 'catalog:'
         version: 3.5.1(typescript@5.5.4)
       vue-router:
-        specifier: ^4.4.3
+        specifier: 'catalog:'
         version: 4.4.3(vue@3.5.1(typescript@5.5.4))
 
   playground/app:
     dependencies:
       '@dcloudio/uni-app':
-        specifier: 3.0.0-alpha-4020720240904001
+        specifier: 'catalog:'
         version: 3.0.0-alpha-4020720240904001(@dcloudio/types@3.4.12)(@nuxt/kit@3.13.1(rollup@4.21.2))(@vueuse/core@11.0.3(vue@3.5.1(typescript@5.5.4)))(postcss@8.4.45)(rollup@4.21.2)(vue@3.5.1(typescript@5.5.4))
       '@dcloudio/uni-app-plus':
-        specifier: 3.0.0-alpha-4020720240904001
+        specifier: 'catalog:'
         version: 3.0.0-alpha-4020720240904001(@nuxt/kit@3.13.1(rollup@4.21.2))(@vueuse/core@11.0.3(vue@3.5.1(typescript@5.5.4)))(postcss@8.4.45)(rollup@4.21.2)(vite@5.4.3(@types/node@22.5.4)(sass@1.78.0)(terser@5.31.6))(vue@3.5.1(typescript@5.5.4))
       '@dcloudio/uni-h5':
-        specifier: 3.0.0-alpha-4020720240904001
+        specifier: 'catalog:'
         version: 3.0.0-alpha-4020720240904001(@nuxt/kit@3.13.1(rollup@4.21.2))(@vueuse/core@11.0.3(vue@3.5.1(typescript@5.5.4)))(postcss@8.4.45)(rollup@4.21.2)(vue@3.5.1(typescript@5.5.4))
       '@dcloudio/uni-mp-weixin':
-        specifier: 3.0.0-alpha-4020720240904001
+        specifier: 'catalog:'
         version: 3.0.0-alpha-4020720240904001(@nuxt/kit@3.13.1(rollup@4.21.2))(@vueuse/core@11.0.3(vue@3.5.1(typescript@5.5.4)))(postcss@8.4.45)(rollup@4.21.2)(vue@3.5.1(typescript@5.5.4))
       '@dcloudio/uni-ui':
-        specifier: 1.5.6
+        specifier: 'catalog:'
         version: 1.5.6
       '@vixt/layer-app':
         specifier: workspace:*
@@ -228,20 +405,20 @@ importers:
         specifier: workspace:*
         version: link:../layer-shared
       uview-plus:
-        specifier: ^3.3.31
+        specifier: 'catalog:'
         version: 3.3.31
       vixt:
         specifier: workspace:*
         version: link:../../packages/vixt
     devDependencies:
       '@dcloudio/vite-plugin-uni':
-        specifier: 3.0.0-alpha-4020720240904001
+        specifier: 'catalog:'
         version: 3.0.0-alpha-4020720240904001(@nuxt/kit@3.13.1(rollup@4.21.2))(@vueuse/core@11.0.3(vue@3.5.1(typescript@5.5.4)))(postcss@8.4.45)(rollup@4.21.2)(vite@5.4.3(@types/node@22.5.4)(sass@1.78.0)(terser@5.31.6))(vue@3.5.1(typescript@5.5.4))
       '@uni-helper/uni-ui-types':
-        specifier: 0.5.15
+        specifier: 'catalog:'
         version: 0.5.15(@uni-helper/uni-app-types@0.5.13(typescript@5.5.4))(typescript@5.5.4)
       sass:
-        specifier: 1.78.0
+        specifier: 'catalog:'
         version: 1.78.0
 
   playground/layer-app:
@@ -253,7 +430,7 @@ importers:
   playground/layer-shared:
     dependencies:
       '@unocss/reset':
-        specifier: ^0.61.6
+        specifier: 'catalog:'
         version: 0.61.9
       vixt:
         specifier: workspace:*
@@ -262,7 +439,7 @@ importers:
   playground/layer-web:
     dependencies:
       '@iconify/vue':
-        specifier: ^4.1.2
+        specifier: 'catalog:'
         version: 4.1.2(vue@3.5.1(typescript@5.5.4))
       vixt:
         specifier: workspace:*
@@ -5008,9 +5185,6 @@ packages:
         optional: true
       pinia:
         optional: true
-
-  pinia-plugin-unistorage@0.1.2:
-    resolution: {integrity: sha512-WXit2cGnm5rG6CDTcLSLehNWhyJS/Yq7WEeeXAapZbCnqoPJxlszqg7rT8S+OP47az0h5nlajGo+LuyMxUQ2uw==}
 
   pinia@2.2.2:
     resolution: {integrity: sha512-ja2XqFWZC36mupU4z1ZzxeTApV7DOw44cV4dhQ9sGwun+N89v/XP7+j7q6TanS1u1tdbK4r+1BUx7heMaIdagA==}
@@ -11921,8 +12095,6 @@ snapshots:
       - rollup
       - supports-color
       - webpack-sources
-
-  pinia-plugin-unistorage@0.1.2: {}
 
   pinia@2.2.2(typescript@5.5.4)(vue@3.5.1(typescript@5.5.4)):
     dependencies:

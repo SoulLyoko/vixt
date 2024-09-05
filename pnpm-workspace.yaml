@@ -40,6 +40,7 @@ catalog:
   mlly: 1.7.1
   pathe: ^1.1.2
   pinia: ^2.2.2
+  pinia-plugin-persistedstate: ^4.0.0
   pkg-types: ^1.2.0
   sass: 1.78.0
   simple-git-hooks: ^2.11.1
