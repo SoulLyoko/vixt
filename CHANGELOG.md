@@ -1,3 +1,12 @@
+## [0.1.18](https://github.com/SoulLyoko/vixt/compare/v0.1.17...v0.1.18) (2024-09-05)
+
+
+### Bug Fixes
+
+* **uni:** use `pinia-plugin-persistedstate` instead `pinia-plugin-unistorage` ([c452f5e](https://github.com/SoulLyoko/vixt/commit/c452f5e998c6e0c0b2f6597ac3b9e2fb6690b4e6))
+
+
+
 ## [0.1.17](https://github.com/SoulLyoko/vixt/compare/v0.1.16...v0.1.17) (2024-09-04)
 
 
