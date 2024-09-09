@@ -1,11 +1,11 @@
-import type { PluginOption } from 'vite'
 import type { ModuleDefinition, ModuleOptions, Vixt, VixtConfigLayer, VixtModule, VixtOptions } from './types'
+import type { PluginOption } from 'vite'
 
-import 'tsx/esm'
+import defu from 'defu'
+import fs from 'fs-extra'
 import { pathToFileURL } from 'mlly'
 import path from 'pathe'
-import fs from 'fs-extra'
-import defu from 'defu'
+import 'tsx/esm'
 
 import { resolveLayersDirs } from './config'
 

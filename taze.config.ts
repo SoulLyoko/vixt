@@ -2,5 +2,5 @@ import { defineConfig } from 'taze'
 
 export default defineConfig({
   // ignore packages from bumping
-  exclude: ['@uni-helper/vite-plugin-uni-pages', '@unocss/*', 'unocss', 'vue-tsc'],
+  exclude: ['@uni-helper/vite-plugin-uni-pages', '@unocss/*', 'unocss', 'vue-tsc', 'vite-plugin-checker'],
 })

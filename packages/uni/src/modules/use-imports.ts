@@ -4,8 +4,8 @@ import type { ImportsMap } from 'unplugin-auto-import/types'
 import { readFileSync } from 'node:fs'
 import process from 'node:process'
 
-import { resolveModule } from 'local-pkg'
 import { uniuseAutoImports } from '@uni-helper/uni-use'
+import { resolveModule } from 'local-pkg'
 
 let _cache: ImportsMap | undefined
 

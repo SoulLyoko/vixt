@@ -1,10 +1,10 @@
 /// <reference types="vite/client" />
 import { cwd, env } from 'node:process'
 
-import path from 'pathe'
-import { loadEnv as _loadEnv } from 'vite'
 import { cac } from 'cac'
 import { findUpSync } from 'find-up'
+import path from 'pathe'
+import { loadEnv as _loadEnv } from 'vite'
 
 /**
  * Load workspace and cwd env variables by default

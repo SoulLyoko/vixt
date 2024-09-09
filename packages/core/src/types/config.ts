@@ -1,6 +1,6 @@
-import type { ResolvedConfig } from 'vite'
-import type { ConfigLayer, ConfigLayerMeta } from 'c12'
 import type { VixtModule } from './module'
+import type { ConfigLayer, ConfigLayerMeta } from 'c12'
+import type { ResolvedConfig } from 'vite'
 
 export interface VixtOptions extends Record<string, any> {
   /**

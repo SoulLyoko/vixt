@@ -1,18 +1,18 @@
-import type { LoadConfigOptions } from 'c12'
 import type { Vixt, VixtOptions } from './types'
+import type { LoadConfigOptions } from 'c12'
 
 import { cac } from 'cac'
 import defu from 'defu'
 import fs from 'fs-extra'
 
-import { applyLayerModules, defineVitePlugin } from './module'
+import { applyLayers, config, typescript } from '.'
 import { loadVixtConfig } from './config'
-import { app, applyLayers, config, typescript } from '.'
+import { applyLayerModules, defineVitePlugin } from './module'
 
 export async function loadVixt(opts?: LoadConfigOptions<VixtOptions>) {
   const result = await loadVixtConfig(defu(opts, {
     defaults: {
-      modules: [config, app, typescript],
+      modules: [config, typescript],
     },
   }))
 

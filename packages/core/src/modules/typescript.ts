@@ -1,10 +1,10 @@
-import type { TSConfig } from 'pkg-types'
 import type { Vixt } from '../types'
 import type { RawVueCompilerOptions } from '@vue/language-core'
+import type { TSConfig } from 'pkg-types'
 
+import defu from 'defu'
 import fs from 'fs-extra'
 import path from 'pathe'
-import defu from 'defu'
 import Checker from 'vite-plugin-checker'
 
 import { defineVixtModule } from '../module'

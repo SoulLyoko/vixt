@@ -1,12 +1,12 @@
-import type { LoadConfigOptions } from 'c12'
-import type { VixtOptions } from './types'
 import type { VixtConfigLayer } from '.'
+import type { VixtOptions } from './types'
+import type { LoadConfigOptions } from 'c12'
 
 import { cwd } from 'node:process'
 
-import path from 'pathe'
-import fs from 'fs-extra'
 import { loadConfig } from 'c12'
+import fs from 'fs-extra'
+import path from 'pathe'
 
 export function defineVixtConfig(input: VixtOptions) {
   return input

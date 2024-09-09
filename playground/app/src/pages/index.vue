@@ -26,7 +26,7 @@ function go() {
 
     <TheInput v-model="name" placeholder="What's your name?" autocomplete="false" @keydown.enter="go" />
 
-    <view my-3 mx-auto w-10>
+    <view mx-auto my-3 w-10>
       <u-button type="primary" size="small" :disabled="!name" @click="go">
         Go
       </u-button>

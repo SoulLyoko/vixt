@@ -1,5 +1,5 @@
 {
-  "name": "@vixt/uni",
+  "name": "@vixt/vitepress",
   "type": "module",
   "version": "0.1.18",
   "author": "SoulLyoko<https://github.com/SoulLyoko>",
@@ -21,20 +21,14 @@
     "build": "unbuild"
   },
   "dependencies": {
-    "@dcloudio/types": "catalog:",
-    "@uni-helper/uni-app-types": "catalog:",
-    "@uni-helper/uni-use": "catalog:",
-    "@uni-helper/unocss-preset-uni": "catalog:",
-    "@uni-helper/vite-plugin-uni-components": "catalog:",
-    "@uni-helper/vite-plugin-uni-layouts": "catalog:",
-    "@uni-helper/vite-plugin-uni-pages": "catalog:",
     "@vixt/core": "workspace:*",
     "@vixt/vue": "workspace:*",
     "@vueuse/core": "catalog:",
-    "pinia": "catalog:",
-    "pinia-plugin-persistedstate": "catalog:",
     "unocss": "catalog:",
     "unplugin-auto-import": "catalog:",
+    "unplugin-vue-components": "catalog:",
+    "vite-plugin-vue-devtools": "catalog:",
+    "vitepress": "catalog:",
     "vue": "catalog:"
   }
 }

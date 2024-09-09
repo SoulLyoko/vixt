@@ -1,5 +1,5 @@
-import type { VixtModule } from './module'
 import type { VixtConfigLayer, VixtOptions } from './config'
+import type { VixtModule } from './module'
 
 export interface Vixt {
   options: VixtOptions

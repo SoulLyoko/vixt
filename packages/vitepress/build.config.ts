@@ -1,5 +1,5 @@
 import { defineBuildConfig } from 'unbuild'
 
 export default defineBuildConfig({
-  externals: [],
+  externals: ['defu', 'pathe', 'fs-extra', 'vite', 'vitepress'],
 })

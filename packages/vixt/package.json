@@ -22,6 +22,10 @@
     "./uni": {
       "types": "./uni.d.ts",
       "import": "./uni.js"
+    },
+    "./vitepress": {
+      "types": "./vitepress.d.ts",
+      "import": "./vitepress.js"
     }
   },
   "main": "index.js",
@@ -30,12 +34,14 @@
     "core.*",
     "index.*",
     "uni.*",
+    "vitepress.*",
     "vue.*"
   ],
   "scripts": {},
   "dependencies": {
     "@vixt/core": "workspace:*",
     "@vixt/uni": "workspace:*",
+    "@vixt/vitepress": "workspace:*",
     "@vixt/vue": "workspace:*"
   }
 }

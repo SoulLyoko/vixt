@@ -1,25 +1,14 @@
 import type { PluginOptions, VixtOptions } from '@vixt/core'
-import type { PluginOptions as PersistedStateOptions } from 'pinia-plugin-persistedstate'
-import type { RouterOptions } from 'vue-router'
 
-import Vue from '@vitejs/plugin-vue'
 import { defineVixtModule, resolveLayersDirs } from '@vixt/core'
 import defu from 'defu'
 import UnoCSS from 'unocss/vite'
 import AutoImport from 'unplugin-auto-import/vite'
 import Components from 'unplugin-vue-components/vite'
-import { VueRouterAutoImports } from 'unplugin-vue-router'
-import VueRouter from 'unplugin-vue-router/vite'
 import VueDevTools from 'vite-plugin-vue-devtools'
-import Layouts from 'vite-plugin-vue-layouts'
 
-declare module '@vixt/core'{
+declare module '@vixt/core' {
   interface VixtOptions {
-    vue?: PluginOptions<typeof Vue>
-    /** https://github.com/posva/unplugin-vue-router */
-    router?: PluginOptions<typeof VueRouter>
-    /** https://github.com/JohnCampionJr/vite-plugin-vue-layouts */
-    layouts?: PluginOptions<typeof Layouts>
     /** https://github.com/antfu/unplugin-vue-components */
     components?: PluginOptions<typeof Components>
     /** https://github.com/antfu/unplugin-auto-import */
@@ -31,30 +20,21 @@ declare module '@vixt/core'{
   }
 }
 
-declare module '@vixt/core/client'{
-  interface VixtAppConfig {
-    router?: Partial<RouterOptions>
-    /** https://github.com/prazdevs/pinia-plugin-persistedstate */
-    piniaPersistedState?: PersistedStateOptions
-  }
-}
-
-export const presetVue = defineVixtModule<VixtOptions>({
+export const presetVitepress = defineVixtModule<VixtOptions>({
   async setup(_, vixt) {
-    const { components, composables = [], constants = [], utils = [], stores = [], pages, layouts } = resolveLayersDirs(vixt._layers, vixt.options)
+    const { components, composables = [], constants = [], utils = [], stores = [] } = resolveLayersDirs(vixt._layers, vixt.options)
     const { buildTypesDir, buildImportsDir } = vixt.options
     const defaultOptions: VixtOptions = {
-      vue: {},
-      router: { dts: `${buildTypesDir}/typed-router.d.ts`, routesFolder: pages },
-      layouts: { layoutsDirs: layouts?.reverse(), pagesDirs: pages },
       components: {
         dts: `${buildTypesDir}/components.d.ts`,
         dirs: components,
         directoryAsNamespace: true,
         collapseSamePrefixes: true,
+        extensions: ['vue', 'md'],
+        include: [/\.vue$/, /\.vue\?vue/, /\.md$/],
       },
       imports: {
-        imports: ['vue', '@vueuse/core', 'pinia', VueRouterAutoImports],
+        imports: ['vue', '@vueuse/core'],
         dts: `${buildTypesDir}/auto-imports.d.ts`,
         dirs: [...composables, ...constants, ...stores, ...utils, buildImportsDir!],
         vueTemplate: true,
@@ -66,9 +46,6 @@ export const presetVue = defineVixtModule<VixtOptions>({
     const options = vixt.options = defu(vixt.options, defaultOptions)
 
     const plugins = [
-      VueRouter(options.router),
-      Vue(options.vue),
-      Layouts(options.layouts),
       Components(options.components),
       AutoImport(options.imports),
       UnoCSS(options.unocss),

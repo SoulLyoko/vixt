@@ -1,4 +1,5 @@
 import { defineConfig } from 'vitepress'
+import vixt from 'vixt/vitepress'
 
 // refer https://vitepress.dev/reference/site-config for details
 export default defineConfig({
@@ -29,5 +30,8 @@ export default defineConfig({
         },
       ],
     },
+  },
+  vite: {
+    plugins: [vixt()],
   },
 })

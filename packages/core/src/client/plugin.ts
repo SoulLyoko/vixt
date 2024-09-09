@@ -1,5 +1,5 @@
-import type { Plugin as VuePlugin } from 'vue'
 import type { PluginDefinition, VixtPlugin } from './types'
+import type { Plugin as VuePlugin } from 'vue'
 
 export function defineVuePlugin<Options = any[]>(plugin: VuePlugin<Options>) {
   return plugin

@@ -1,14 +1,14 @@
 import type { PluginOptions, VixtOptions } from '@vixt/core'
 import type { PluginOptions as PersistedStateOptions } from 'pinia-plugin-persistedstate'
 
-import defu from 'defu'
 import Uni from '@dcloudio/vite-plugin-uni'
-import Pages from '@uni-helper/vite-plugin-uni-pages'
-import Layouts from '@uni-helper/vite-plugin-uni-layouts'
 import Components from '@uni-helper/vite-plugin-uni-components'
-import AutoImport from 'unplugin-auto-import/vite'
-import UnoCSS from 'unocss/vite'
+import Layouts from '@uni-helper/vite-plugin-uni-layouts'
+import Pages from '@uni-helper/vite-plugin-uni-pages'
 import { defineVixtModule, resolveLayersDirs } from '@vixt/core'
+import defu from 'defu'
+import UnoCSS from 'unocss/vite'
+import AutoImport from 'unplugin-auto-import/vite'
 
 import { uniPatch, useImports } from '.'
 

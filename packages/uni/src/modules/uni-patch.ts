@@ -1,6 +1,6 @@
 import { defineVitePlugin } from '@vixt/core'
-import { resolvePathSync } from 'mlly'
 import fs from 'fs-extra'
+import { resolvePathSync } from 'mlly'
 
 /** 增加小程序中vueuse的运行所需 */
 export function vueusePolyfill(code: string, id: string) {

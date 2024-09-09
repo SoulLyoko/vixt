@@ -1,5 +1,5 @@
-import type { PluginOption } from 'vite'
 import type { Vixt } from './vixt'
+import type { PluginOption } from 'vite'
 
 export type PluginOptions<Options = any> = (Options extends (...args: any[]) => any ? Parameters<Options>[0] : Options)
 

@@ -1,7 +1,7 @@
 import path from 'pathe'
 
-import { defineVixtModule } from '../module'
 import { loadEnv } from '../env'
+import { defineVixtModule } from '../module'
 
 const name = 'vixt:config'
 export const config = defineVixtModule({
