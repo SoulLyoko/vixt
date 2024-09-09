@@ -37,4 +37,5 @@ jobs:
             @vixt/core
             @vixt/vue
             @vixt/uni
+            @vixt/vitepress
             vixt
