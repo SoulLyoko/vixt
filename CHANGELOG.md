@@ -1,3 +1,12 @@
+## [0.1.19](https://github.com/SoulLyoko/vixt/compare/v0.1.18...v0.1.19) (2024-09-09)
+
+
+### Features
+
+* add package `@vixt/vitepress` to support vitepress ([c4c975c](https://github.com/SoulLyoko/vixt/commit/c4c975c4890a34d2544bb811dc8389204a7ea4de))
+
+
+
 ## [0.1.18](https://github.com/SoulLyoko/vixt/compare/v0.1.17...v0.1.18) (2024-09-05)
 
 
