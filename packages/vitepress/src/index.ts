@@ -8,7 +8,6 @@ export * from './modules'
 
 const defaults: VixtOptions = {
   modules: [appVitepress, presetVitepress],
-  srcDirName: '',
 }
 
 export default createVixtPlugin({ defaults })
