@@ -3,7 +3,7 @@
   "type": "module",
   "version": "0.1.19",
   "private": true,
-  "packageManager": "pnpm@9.9.0",
+  "packageManager": "pnpm@9.12.1",
   "scripts": {
     "build": "pnpm -F \"./packages/*\" build",
     "build:docs": "pnpm build && pnpm -F docs build",
@@ -34,8 +34,7 @@
     "taze": "catalog:",
     "tsx": "catalog:",
     "typescript": "catalog:",
-    "unbuild": "catalog:",
-    "vitepress": "catalog:"
+    "unbuild": "catalog:"
   },
   "pnpm": {
     "peerDependencyRules": {

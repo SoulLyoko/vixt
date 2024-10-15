@@ -4,3 +4,4 @@ dist
 .vixt
 pages.json
 cache
+*.local
