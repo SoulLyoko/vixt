@@ -72,9 +72,11 @@ export function resolveLayersDirs(layers: VixtConfigLayer[] = [], config: VixtOp
   const { srcDirName } = config
   const dirs: Record<string, string[] | undefined> = {}
   for (const layer of layers) {
-    const contents = fs.readdirSync(path.resolve(layer.cwd!, srcDirName!))
+    const srcPath = path.resolve(layer.cwd!, srcDirName!)
+    const isExist = fs.existsSync(srcPath)
+    const contents = isExist ? fs.readdirSync(srcPath) : []
     for (const content of contents) {
-      const fileOrDirPath = path.resolve(layer.cwd!, srcDirName!, content)
+      const fileOrDirPath = path.resolve(srcPath, content)
       if (fs.statSync(fileOrDirPath).isDirectory()) {
         dirs[content] ??= []
         dirs[content]!.push(fileOrDirPath)
