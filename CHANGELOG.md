@@ -1,3 +1,12 @@
+## [0.1.20](https://github.com/SoulLyoko/vixt/compare/v0.1.19...v0.1.20) (2024-10-16)
+
+
+### Bug Fixes
+
+* **vp:** `srcDirName` restore to default ([145c667](https://github.com/SoulLyoko/vixt/commit/145c667a130b8428a3b3265824e885842c48b653))
+
+
+
 ## [0.1.19](https://github.com/SoulLyoko/vixt/compare/v0.1.18...v0.1.19) (2024-09-09)
 
 
