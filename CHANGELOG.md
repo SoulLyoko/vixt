@@ -1,3 +1,12 @@
+## [0.1.21](https://github.com/SoulLyoko/vixt/compare/v0.1.20...v0.1.21) (2024-10-21)
+
+
+### Bug Fixes
+
+* **core:** error when no `src` directory ([584bbc5](https://github.com/SoulLyoko/vixt/commit/584bbc54e5189d35f357277bbef8b4aa6d4ac2de))
+
+
+
 ## [0.1.20](https://github.com/SoulLyoko/vixt/compare/v0.1.19...v0.1.20) (2024-10-16)
 
 
