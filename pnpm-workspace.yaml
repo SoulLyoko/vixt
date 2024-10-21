@@ -3,10 +3,10 @@ packages:
   - playground/*
   - docs
 catalog:
-  '@antfu/eslint-config': ^3.7.3
+  '@antfu/eslint-config': ^3.8.0
   '@commitlint/cli': ^19.5.0
   '@commitlint/config-conventional': ^19.5.0
-  '@dcloudio/types': ^3.4.12
+  '@dcloudio/types': ^3.4.14
   '@dcloudio/uni-app': 3.0.0-alpha-4030120241009001
   '@dcloudio/uni-app-plus': 3.0.0-alpha-4030120241009001
   '@dcloudio/uni-h5': 3.0.0-alpha-4030120241009001
@@ -15,8 +15,8 @@ catalog:
   '@dcloudio/vite-plugin-uni': 3.0.0-alpha-4030120241009001
   '@iconify/vue': ^4.1.2
   '@types/fs-extra': ^11.0.4
-  '@uni-helper/uni-app-types': ^1.0.0-alpha.4
-  '@uni-helper/uni-ui-types': ^1.0.0-alpha.4
+  '@uni-helper/uni-app-types': ^1.0.0-alpha.5
+  '@uni-helper/uni-ui-types': ^1.0.0-alpha.5
   '@uni-helper/uni-use': ^0.19.14
   '@uni-helper/unocss-preset-uni': ^0.2.10
   '@uni-helper/vite-plugin-uni-components': ^0.1.0
@@ -33,7 +33,7 @@ catalog:
   cac: ^6.7.14
   conventional-changelog-cli: ^5.0.0
   defu: ^6.1.4
-  eslint: ^9.12.0
+  eslint: ^9.13.0
   eslint-plugin-format: ^0.1.2
   find-up: ^7.0.0
   fs-extra: ^11.2.0
@@ -43,7 +43,7 @@ catalog:
   pinia: ^2.2.4
   pinia-plugin-persistedstate: ^4.1.1
   pkg-types: ^1.2.1
-  sass: ^1.79.5
+  sass: ^1.80.3
   simple-git-hooks: ^2.11.1
   taze: ^0.17.2
   tsx: ^4.19.1
@@ -53,10 +53,10 @@ catalog:
   unplugin-auto-import: ^0.18.3
   unplugin-vue-components: ^0.27.4
   unplugin-vue-router: ^0.10.8
-  uview-plus: ^3.3.36
+  uview-plus: ^3.3.37
   vite: ^5.4.9
   vite-plugin-checker: ^0.8.0
-  vite-plugin-vue-devtools: ^7.4.6
+  vite-plugin-vue-devtools: ^7.5.2
   vite-plugin-vue-layouts: ^0.11.0
   vitepress: ^1.4.1
   vue: ^3.5.12
