@@ -1,3 +1,17 @@
+## [0.1.23](https://github.com/SoulLyoko/vixt/compare/v0.1.22...v0.1.23) (2024-10-25)
+
+
+### Bug Fixes
+
+* useAppConfig in weapp ([6401ccd](https://github.com/SoulLyoko/vixt/commit/6401ccde1030abdb17945f2fdcc8774da1fe4fba))
+
+
+### Features
+
+* **vitepress:** install pinia ([3000080](https://github.com/SoulLyoko/vixt/commit/3000080dee0cdd42ef7b3532726d1628f21982d1))
+
+
+
 ## [0.1.22](https://github.com/SoulLyoko/vixt/compare/v0.1.21...v0.1.22) (2024-10-25)
 
 
