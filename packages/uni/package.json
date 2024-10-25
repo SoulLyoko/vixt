@@ -29,12 +29,6 @@
     "@uni-helper/vite-plugin-uni-layouts": "catalog:",
     "@uni-helper/vite-plugin-uni-pages": "catalog:",
     "@vixt/core": "workspace:*",
-    "@vixt/vue": "workspace:*",
-    "@vueuse/core": "catalog:",
-    "pinia": "catalog:",
-    "pinia-plugin-persistedstate": "catalog:",
-    "unocss": "catalog:",
-    "unplugin-auto-import": "catalog:",
-    "vue": "catalog:"
+    "@vixt/vue": "workspace:*"
   }
 }

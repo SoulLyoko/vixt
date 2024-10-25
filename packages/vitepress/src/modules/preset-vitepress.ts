@@ -1,4 +1,5 @@
 import type { PluginOptions, VixtOptions } from '@vixt/core'
+import type { PluginOptions as PersistedStateOptions } from 'pinia-plugin-persistedstate'
 
 import { defineVixtModule, resolveLayersDirs } from '@vixt/core'
 import defu from 'defu'
@@ -17,6 +18,13 @@ declare module '@vixt/core' {
     unocss?: PluginOptions<typeof UnoCSS>
     /** https://github.com/webfansplz/vite-plugin-vue-devtools */
     devtools?: PluginOptions<typeof VueDevTools> & { enabled?: boolean }
+  }
+}
+
+declare module '@vixt/core/client'{
+  interface VixtAppConfig {
+    /** https://github.com/prazdevs/pinia-plugin-persistedstate */
+    piniaPersistedState?: PersistedStateOptions
   }
 }
 

@@ -23,12 +23,6 @@
   "dependencies": {
     "@vixt/core": "workspace:*",
     "@vixt/vue": "workspace:*",
-    "@vueuse/core": "catalog:",
-    "unocss": "catalog:",
-    "unplugin-auto-import": "catalog:",
-    "unplugin-vue-components": "catalog:",
-    "vite-plugin-vue-devtools": "catalog:",
-    "vitepress": "catalog:",
-    "vue": "catalog:"
+    "vitepress": "catalog:"
   }
 }

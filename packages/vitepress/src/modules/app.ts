@@ -25,12 +25,17 @@ ${appConfigTemplate}
 ${pluginsTemplate}
 
 import 'uno.css'
+import { createPinia } from 'pinia'
+import { createPersistedState } from 'pinia-plugin-persistedstate'
 import DefaultTheme from 'vitepress/theme'
 
 export default {
   extends: DefaultTheme,
   enhanceApp(ctx) {
-    usePlugins({ ...ctx, appConfig })
+    const pinia = createPinia()
+    pinia.use(createPersistedState(appConfig.piniaPersistedState))
+    ctx.app.use(pinia)
+    usePlugins({ ...ctx, pinia, appConfig })
   },
 }
 `
