@@ -1,3 +1,4 @@
+import { findUpSync } from 'find-up'
 import path from 'pathe'
 
 import { loadEnv } from '../env'
@@ -48,13 +49,22 @@ export const config = defineVixtModule({
         vixt.options.vite = config
       },
       configureServer(server) {
-        // restart server when `vixt.config.ts` changed
+        const mode = server.config.mode
+        const watchFiles: string[] = []
         const configFiles = vixt._layers.map(layer => path.resolve(layer.cwd!, 'vixt.config.ts'))
-        server.watcher.add(configFiles)
-        server.watcher.on('change', (file) => {
-          if (configFiles.includes(path.normalize(file))) {
+        const modulesDirs = vixt._layers.map(layer => path.resolve(layer.cwd!, vixt.options.srcDirName!, 'modules'))
+        watchFiles.push(...configFiles, ...modulesDirs)
+        const workspaceManifestLocation = findUpSync(['pnpm-workspace.yaml', 'pnpm-workspace.yml'])
+        if (workspaceManifestLocation) {
+          const workspaceDir = path.dirname(workspaceManifestLocation)
+          const envFiles = [`${workspaceDir}/.env`, `${workspaceDir}/.env.local`, `${workspaceDir}/.env.${mode}`, `${workspaceDir}/.env.${mode}.local`]
+          watchFiles.push(...envFiles)
+        }
+        server.watcher.add(watchFiles)
+        server.watcher.on('all', (_, file) => {
+          const match = watchFiles.some(e => path.normalize(file).match(e))
+          if (match)
             server.restart()
-          }
         })
       },
     }
