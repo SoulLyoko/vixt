@@ -1,3 +1,12 @@
+## [0.1.24](https://github.com/SoulLyoko/vixt/compare/v0.1.23...v0.1.24) (2024-10-28)
+
+
+### Features
+
+* **core:** add watching modules and workspace env files to restart server ([349ea13](https://github.com/SoulLyoko/vixt/commit/349ea13b51f47310d8a076b675ee9f37f8496abf))
+
+
+
 ## [0.1.23](https://github.com/SoulLyoko/vixt/compare/v0.1.22...v0.1.23) (2024-10-25)
 
 
