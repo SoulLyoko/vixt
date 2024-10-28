@@ -3,7 +3,7 @@
   "type": "module",
   "version": "0.1.23",
   "private": true,
-  "packageManager": "pnpm@9.12.2",
+  "packageManager": "pnpm@9.12.3",
   "scripts": {
     "build": "pnpm -F \"./packages/*\" build",
     "build:docs": "pnpm build && pnpm -F docs build",
@@ -35,17 +35,6 @@
     "tsx": "catalog:",
     "typescript": "catalog:",
     "unbuild": "catalog:"
-  },
-  "pnpm": {
-    "peerDependencyRules": {
-      "allowedVersions": {
-        "eslint": "9",
-        "vue": "3"
-      },
-      "ignoreMissing": [
-        "vue"
-      ]
-    }
   },
   "simple-git-hooks": {
     "commit-msg": "npx --no-install commitlint --edit $1",
