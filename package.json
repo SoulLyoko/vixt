@@ -7,6 +7,7 @@
   "scripts": {
     "build": "pnpm -F \"./packages/*\" build",
     "build:docs": "pnpm build && pnpm -F docs build",
+    "build:h5": "pnpm build && pnpm -F app build",
     "build:web": "pnpm build && pnpm -F web build",
     "changelog": "conventional-changelog -p angular -i CHANGELOG.md -s",
     "dev:web": "pnpm build && pnpm -F web dev",
