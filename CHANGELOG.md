@@ -1,3 +1,12 @@
+## [0.1.28](https://github.com/SoulLyoko/vixt/compare/v0.1.27...v0.1.28) (2024-11-22)
+
+
+### Bug Fixes
+
+* **vitepress:** add imports `pinia` and `VueRouterAutoImports` ([d5187c9](https://github.com/SoulLyoko/vixt/commit/d5187c9759ce9e7050bf41c7e698d33806932301))
+
+
+
 ## [0.1.27](https://github.com/SoulLyoko/vixt/compare/v0.1.26...v0.1.27) (2024-11-17)
 
 
