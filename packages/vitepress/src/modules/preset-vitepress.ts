@@ -6,6 +6,7 @@ import defu from 'defu'
 import UnoCSS from 'unocss/vite'
 import AutoImport from 'unplugin-auto-import/vite'
 import Components from 'unplugin-vue-components/vite'
+import { VueRouterAutoImports } from 'unplugin-vue-router'
 import VueDevTools from 'vite-plugin-vue-devtools'
 
 declare module '@vixt/core' {
@@ -42,7 +43,7 @@ export const presetVitepress = defineVixtModule<VixtOptions>({
         include: [/\.vue$/, /\.vue\?vue/, /\.md$/],
       },
       imports: {
-        imports: ['vue', '@vueuse/core'],
+        imports: ['vue', '@vueuse/core', 'pinia', VueRouterAutoImports],
         dts: `${buildTypesDir}/auto-imports.d.ts`,
         dirs: [...composables, ...constants, ...stores, ...utils, buildImportsDir!],
         vueTemplate: true,
