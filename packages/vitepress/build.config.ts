@@ -11,6 +11,7 @@ export default defineBuildConfig({
     'unplugin-auto-import/vite',
     'unplugin-vue-components',
     'unplugin-vue-components/vite',
+    'unplugin-vue-router',
     'vite',
     'vite-plugin-vue-devtools',
     'vitepress',
