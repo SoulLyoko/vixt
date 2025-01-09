@@ -3,7 +3,7 @@
   "type": "module",
   "version": "0.1.28",
   "private": true,
-  "packageManager": "pnpm@9.14.2",
+  "packageManager": "pnpm@9.15.3",
   "scripts": {
     "build": "pnpm -F \"./packages/*\" build",
     "build:docs": "pnpm build && pnpm -F docs build",
@@ -35,7 +35,15 @@
     "taze": "catalog:",
     "tsx": "catalog:",
     "typescript": "catalog:",
-    "unbuild": "catalog:"
+    "unbuild": "catalog:",
+    "vitest": "catalog:"
+  },
+  "pnpm": {
+    "peerDependencyRules": {
+      "allowAny": [
+        "vite"
+      ]
+    }
   },
   "simple-git-hooks": {
     "commit-msg": "npx --no-install commitlint --edit $1",

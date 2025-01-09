@@ -29,6 +29,7 @@
     "@uni-helper/vite-plugin-uni-layouts": "catalog:",
     "@uni-helper/vite-plugin-uni-pages": "catalog:",
     "@vixt/core": "workspace:*",
-    "@vixt/vue": "workspace:*"
+    "@vixt/vue": "workspace:*",
+    "unocss-applet": "catalog:"
   }
 }
