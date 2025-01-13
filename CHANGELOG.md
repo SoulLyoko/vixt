@@ -1,3 +1,12 @@
+## [0.1.29](https://github.com/SoulLyoko/vixt/compare/v0.1.28...v0.1.29) (2025-01-13)
+
+
+### Bug Fixes
+
+* **vitepress:** build external `unplugin-vue-router` ([768acaf](https://github.com/SoulLyoko/vixt/commit/768acaf9d150983d8c22adfbc461021a244ab799))
+
+
+
 ## [0.1.28](https://github.com/SoulLyoko/vixt/compare/v0.1.27...v0.1.28) (2024-11-22)
 
 
