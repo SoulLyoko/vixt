@@ -1,0 +1,10 @@
+{
+  "name": "@vixt/test",
+  "type": "module",
+  "scripts": {
+    "test": "vitest"
+  },
+  "dependencies": {
+    "vixt": "workspace:*"
+  }
+}

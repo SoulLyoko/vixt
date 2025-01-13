@@ -24,10 +24,10 @@ export async function loadVixt(opts?: LoadConfigOptions<VixtOptions>) {
   }
 
   // apply layers
-  result.layers = applyLayers(result.layers?.filter(e => e.cwd) ?? [], result.config)
+  result.layers = applyLayers(result.layers ?? [], result.config)
 
   // apply modules
-  const layerModules = await applyLayerModules(result.layers ?? [], result.config)
+  const layerModules = await applyLayerModules(result.layers ?? [])
 
   const vixt: Vixt = {
     options: result.config,

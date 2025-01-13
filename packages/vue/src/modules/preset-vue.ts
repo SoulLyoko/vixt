@@ -41,7 +41,7 @@ declare module '@vixt/core/client'{
 
 export const presetVue = defineVixtModule<VixtOptions>({
   async setup(_, vixt) {
-    const { components, composables = [], constants = [], utils = [], stores = [], pages, layouts } = resolveLayersDirs(vixt._layers, vixt.options)
+    const { components, composables = [], constants = [], utils = [], stores = [], pages, layouts } = resolveLayersDirs(vixt._layers)
     const { buildTypesDir, buildImportsDir } = vixt.options
     const defaultOptions: VixtOptions = {
       vue: {},

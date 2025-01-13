@@ -4,9 +4,8 @@ import fs from 'fs-extra'
 import path from 'pathe'
 
 export function getAppComponentPath(vixt: Vixt) {
-  const { srcDirName } = vixt.options
   for (const layer of vixt._layers) {
-    const appComponentPath = path.resolve(layer.cwd!, srcDirName!, 'App.vue')
+    const appComponentPath = path.resolve(layer.config!.srcDir!, 'App.vue')
     if (fs.existsSync(appComponentPath))
       return appComponentPath
   }

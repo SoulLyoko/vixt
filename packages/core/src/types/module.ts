@@ -11,7 +11,7 @@ export interface ModuleMeta extends Record<string, any> {
 export interface ModuleDefinition<T extends ModuleOptions = ModuleOptions> {
   meta?: ModuleMeta
   defaults?: T | ((vixt: Vixt) => T)
-  setup?: (this: void, resolvedOptions: T, vixt: Vixt) => PluginOption
+  setup?: (this: void, resolvedOptions: T, vixt: Vixt) => PluginOption | void
 }
 export interface VixtModule<T extends ModuleOptions = ModuleOptions> {
   (this: void, inlineOptions: T, vixt: Vixt): PluginOption

@@ -4,12 +4,11 @@ import fs from 'fs-extra'
 import path from 'pathe'
 
 export function generatePlugins(vixt: Vixt) {
-  const { srcDirName } = vixt.options
   let pluginsImportTemplate = ''
   let pluginsMergeTemplate = ''
   let i = 0
   for (const layer of [...vixt._layers].reverse()) {
-    const pluginsDir = path.resolve(layer.cwd!, srcDirName!, 'plugins')
+    const pluginsDir = path.resolve(layer.config!.srcDir!, 'plugins')
     const files = fs.existsSync(pluginsDir) ? fs.readdirSync(pluginsDir) : []
     for (const f of files) {
       const p = path.resolve(pluginsDir, f)

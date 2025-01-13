@@ -1,4 +1,4 @@
-import type { ModuleDefinition, ModuleOptions, Vixt, VixtConfigLayer, VixtModule, VixtOptions } from './types'
+import type { ModuleDefinition, ModuleOptions, Vixt, VixtConfigLayer, VixtModule } from './types'
 import type { PluginOption } from 'vite'
 
 import defu from 'defu'
@@ -21,8 +21,9 @@ export function defineVixtModule<T extends ModuleOptions>(definition: ModuleDefi
 
   function getOptions(inlineOptions: T, vixt: Vixt) {
     const configKey = module.meta?.configKey || module.meta?.name
+    const configOptions = configKey ? vixt.options[configKey] : {}
     const defaultOptions = typeof module.defaults === 'function' ? module.defaults(vixt) : module.defaults
-    const resolvedOptions = defu(inlineOptions, configKey ? vixt.options[configKey] : {}, defaultOptions)
+    const resolvedOptions = defu(inlineOptions, configOptions, defaultOptions)
     if (configKey) {
       vixt.options[configKey] = resolvedOptions
     }
@@ -30,7 +31,8 @@ export function defineVixtModule<T extends ModuleOptions>(definition: ModuleDefi
   }
 
   function normalizedModule(inlineOptions: T, vixt: Vixt) {
-    return module.setup?.(getOptions(inlineOptions, vixt), vixt)
+    const options = getOptions(inlineOptions, vixt)
+    return module.setup?.(options, vixt)
   }
 
   normalizedModule.getMeta = () => module.meta
@@ -40,13 +42,13 @@ export function defineVixtModule<T extends ModuleOptions>(definition: ModuleDefi
 }
 
 export function installModule(module: VixtModule, inlineOptions: any, vixt: Vixt) {
-  return module(inlineOptions, vixt!)
+  return module(inlineOptions, vixt)
 }
 
-export async function applyLayerModules(layers: VixtConfigLayer[], config: VixtOptions): Promise<VixtModule[]> {
-  const { modules: modulesDir = [] } = resolveLayersDirs(layers, config)
+export async function applyLayerModules(layers: VixtConfigLayer[]): Promise<VixtModule[]> {
+  const { modules: modulesDirs = [] } = resolveLayersDirs(layers)
   const modules: VixtModule[] = []
-  for (const m of modulesDir) {
+  for (const m of modulesDirs) {
     if (fs.existsSync(m)) {
       const files = fs.readdirSync(m)
       for (const f of files) {

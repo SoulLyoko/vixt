@@ -6,7 +6,8 @@
       "vixt": ["packages/vixt"],
       "vixt/*": ["packages/vixt/*"],
       "@vixt/*": ["packages/*"]
-    }
+    },
+    "types": ["vitest/globals"]
   },
   "exclude": ["dist"]
 }

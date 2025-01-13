@@ -4,12 +4,12 @@ import fs from 'fs-extra'
 import path from 'pathe'
 
 export function generateAppConfig(vixt: Vixt) {
-  const { buildImportsDir, srcDirName } = vixt.options
+  const { buildImportsDir } = vixt.options
   let appConfigsImportTemplate = ''
   let appConfigsMergeTemplate = ''
   let i = 0
   for (const layer of vixt._layers) {
-    const appConfigPath = path.resolve(layer.cwd!, srcDirName!, 'app.config.ts')
+    const appConfigPath = path.resolve(layer.config!.srcDir!, 'app.config.ts')
     if (fs.existsSync(appConfigPath)) {
       const appConfigName = `__app_config_${i}`
       appConfigsImportTemplate += `import ${appConfigName} from '${appConfigPath}'\n`

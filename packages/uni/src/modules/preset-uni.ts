@@ -39,7 +39,7 @@ const name = 'vixt:preset-uni'
 export const presetUni = defineVixtModule<VixtOptions>({
   meta: { name },
   setup(_, vixt) {
-    const { components, composables = [], constants = [], utils = [], stores = [] } = resolveLayersDirs(vixt._layers, vixt.options)
+    const { components, composables = [], constants = [], utils = [], stores = [] } = resolveLayersDirs(vixt._layers)
     const { buildTypesDir, buildImportsDir } = vixt.options
     const defaultOptions: VixtOptions = {
       uni: {},
