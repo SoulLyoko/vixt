@@ -1,3 +1,13 @@
+## [0.1.30](https://github.com/SoulLyoko/vixt/compare/v0.1.29...v0.1.30) (2025-01-14)
+
+
+### Bug Fixes
+
+* **core:** default tsConfig ([9f5d2a9](https://github.com/SoulLyoko/vixt/commit/9f5d2a9790a2865035b9d34816541ada0d243dd0))
+* **vitepress:** set default `srcDir` to `.vitepress` ([282c115](https://github.com/SoulLyoko/vixt/commit/282c115e7c69dba42a033fd816c2f7802bd2bcd6))
+
+
+
 ## [0.1.29](https://github.com/SoulLyoko/vixt/compare/v0.1.28...v0.1.29) (2025-01-13)
 
 
