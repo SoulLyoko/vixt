@@ -1,3 +1,12 @@
+## [0.1.31](https://github.com/SoulLyoko/vixt/compare/v0.1.30...v0.1.31) (2025-01-14)
+
+
+### Bug Fixes
+
+* **vitepress:** remove default `srcDir` ([1734a21](https://github.com/SoulLyoko/vixt/commit/1734a21f6d88a0d9c6d0d846e95c2c7f64e3ebbd))
+
+
+
 ## [0.1.30](https://github.com/SoulLyoko/vixt/compare/v0.1.29...v0.1.30) (2025-01-14)
 
 
