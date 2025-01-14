@@ -16,7 +16,7 @@
     "dev:mp": "pnpm build && pnpm -F app dev:mp",
     "lint": "eslint .",
     "postinstall": "npx simple-git-hooks",
-    "release": "pnpm test run && pnpm build && tsx scripts/release.ts",
+    "release": "pnpm build && pnpm test run && tsx scripts/release.ts",
     "rm:dist": "tsx scripts/rm-dist.ts",
     "test": "pnpm -F test test",
     "tc": "tsc --noEmit",

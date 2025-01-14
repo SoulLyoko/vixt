@@ -1,11 +1,8 @@
 import type { PluginOptions, VixtOptions } from '@vixt/core'
 import type { PluginOptions as PersistedStateOptions } from 'pinia-plugin-persistedstate'
 
-import { cwd } from 'node:process'
-
 import { defineVixtModule, resolveLayersDirs } from '@vixt/core'
 import defu from 'defu'
-import { resolve } from 'pathe'
 import UnoCSS from 'unocss/vite'
 import AutoImport from 'unplugin-auto-import/vite'
 import Components from 'unplugin-vue-components/vite'
@@ -37,7 +34,6 @@ export const presetVitepress = defineVixtModule<VixtOptions>({
     const { components, composables = [], constants = [], utils = [], stores = [] } = resolveLayersDirs(vixt._layers)
     const { buildTypesDir, buildImportsDir } = vixt.options
     const defaultOptions: VixtOptions = {
-      srcDir: resolve(cwd(), '.vitepress'),
       components: {
         dts: `${buildTypesDir}/components.d.ts`,
         dirs: components,
@@ -47,7 +43,7 @@ export const presetVitepress = defineVixtModule<VixtOptions>({
         include: [/\.vue$/, /\.vue\?vue/, /\.md$/],
       },
       imports: {
-        include: [/\.md/, /\.md\?md/],
+        include: [/\.[jt]sx?$/, /\.vue$/, /\.vue\?vue/, /\.md/, /\.md\?md/],
         imports: ['vue', '@vueuse/core', 'pinia', VueRouterAutoImports],
         dts: `${buildTypesDir}/auto-imports.d.ts`,
         dirs: [...composables, ...constants, ...stores, ...utils, buildImportsDir!],
