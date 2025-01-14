@@ -2,14 +2,13 @@ import type { Vixt } from '../types'
 import type { RawVueCompilerOptions } from '@vue/language-core'
 import type { TSConfig } from 'pkg-types'
 
-import defu from 'defu'
 import fs from 'fs-extra'
 import path from 'pathe'
 import Checker from 'vite-plugin-checker'
 
 import { defineVixtModule } from '../module'
 
-// @ts-ignore
+// @ts-ignore expect error when build
 declare module '@vixt/core' {
   interface VixtOptions {
     typescript?: TypescriptOptions
@@ -31,17 +30,7 @@ export interface TypescriptOptions {
 function generateTsConfig(options: TypescriptOptions, vixt: Vixt) {
   const { buildDir } = vixt.options
   const codePath = path.resolve(buildDir!, 'tsconfig.json')
-  const layersDirs: string[] = []
-  const layersAlias: Record<string, string[]> = {}
-  for (const layer of vixt._layers) {
-    layersDirs.push(layer.cwd!)
-    if (layer.meta?.alias) {
-      const layerRelativePath = `./${path.relative(buildDir!, layer.cwd!)}/*`
-      layersAlias[`${layer.meta.alias}/*`] = [layerRelativePath]
-    }
-  }
-  const tsConfig = defu(options.tsConfig, { compilerOptions: { paths: layersAlias }, include: layersDirs })
-  const code = JSON.stringify(tsConfig, null, 2)
+  const code = JSON.stringify(options.tsConfig, null, 2)
   fs.outputFileSync(codePath, code)
 }
 
@@ -110,26 +99,43 @@ interface ImportMetaEnv {
 }
 
 const name = 'vixt:typescript'
-const defaults: TypescriptOptions = {
-  tsConfig: {
-    extends: '@vue/tsconfig/tsconfig.dom.json',
-    compilerOptions: {
-      paths: {
-        '@/*': ['../src/*'],
-        '~/*': ['../src/*'],
-        '#/*': ['./*'],
-      },
-      types: ['vite/client'],
-    },
-    include: [
-      './**/*',
-    ],
-  },
-  typeCheck: { enableBuild: false, overlay: { initialIsOpen: false } },
-}
 export const typescript = defineVixtModule<TypescriptOptions>({
   meta: { name, configKey: 'typescript' },
-  defaults,
+  defaults(vixt: Vixt) {
+    const { rootDir, srcDir } = vixt.options
+
+    const rootAlias: Record<string, string[]> = {}
+    if (rootDir)
+      rootAlias['@@/*'] = rootAlias['~~/*'] = [`${rootDir}/*`]
+
+    const srcAlias: Record<string, string[]> = {}
+    if (srcDir)
+      srcAlias['@/*'] = srcAlias['~/*'] = [`${srcDir}/*`]
+
+    const layersDirs: string[] = []
+    const layersAlias: Record<string, string[]> = {}
+    for (const layer of vixt._layers) {
+      layersDirs.push(layer.cwd!)
+      if (layer.meta?.alias)
+        layersAlias[`${layer.meta.alias}/*`] = [`${layer.cwd}/*`]
+    }
+
+    return {
+      tsConfig: {
+        extends: '@vue/tsconfig/tsconfig.dom.json',
+        compilerOptions: {
+          baseUrl: rootDir,
+          paths: { '#/*': ['./*'], ...layersAlias, ...rootAlias, ...srcAlias },
+          types: ['vite/client'],
+        },
+        include: ['./**/*', ...layersDirs],
+      },
+      typeCheck: {
+        enableBuild: false,
+        overlay: { initialIsOpen: false },
+      },
+    }
+  },
   setup(options, vixt) {
     return [
       {
