@@ -51,8 +51,8 @@ export const config = defineVixtModule({
       configureServer(server) {
         const mode = server.config.mode
         const watchFiles: string[] = []
-        const configFiles = vixt._layers.map(layer => layer.configFile!)
-        const modulesDirs = vixt._layers.map(layer => path.resolve(layer.config!.srcDir!, 'modules'))
+        const configFiles = vixt._layers.map(layer => layer.configFile!).filter(e => !e.includes('node_modules'))
+        const modulesDirs = vixt._layers.map(layer => path.resolve(layer.config!.srcDir!, 'modules')).filter(e => !e.includes('node_modules'))
         watchFiles.push(...configFiles, ...modulesDirs)
         const workspaceManifestLocation = findUpSync(['pnpm-workspace.yaml', 'pnpm-workspace.yml'])
         if (workspaceManifestLocation) {
