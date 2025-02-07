@@ -1,3 +1,12 @@
+## [0.1.33](https://github.com/SoulLyoko/vixt/compare/v0.1.32...v0.1.33) (2025-02-07)
+
+
+### Bug Fixes
+
+* **core:** watch files exclude node_modules ([5dfe160](https://github.com/SoulLyoko/vixt/commit/5dfe160b1e73864878cbc010b23e35aed81f709c))
+
+
+
 ## [0.1.32](https://github.com/SoulLyoko/vixt/compare/v0.1.31...v0.1.32) (2025-02-06)
 
 
