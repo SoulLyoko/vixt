@@ -1,3 +1,12 @@
+## [0.1.35](https://github.com/SoulLyoko/vixt/compare/v0.1.34...v0.1.35) (2025-02-24)
+
+
+### Bug Fixes
+
+* **core:** export findUpWorkspaceDir ([7b12e4f](https://github.com/SoulLyoko/vixt/commit/7b12e4fe328a3e3ca37efbc2b848e8329a6a9ee5))
+
+
+
 ## [0.1.34](https://github.com/SoulLyoko/vixt/compare/v0.1.33...v0.1.34) (2025-02-17)
 
 
