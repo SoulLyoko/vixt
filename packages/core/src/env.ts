@@ -23,9 +23,17 @@ export function loadEnv(mode?: string, envDir?: string, prefixes?: string | stri
 }
 
 /**
+ * find the workspace dir
+ */
+export function findUpWorkspaceDir() {
+  const workspaceManifestLocation = findUpSync(['pnpm-workspace.yaml', 'pnpm-workspace.yml'])
+  return workspaceManifestLocation && path.dirname(workspaceManifestLocation)
+}
+
+/**
  * Load workspace env variables
  */
 export function loadWorkspaceEnv(mode?: string, prefixes?: string | string[]) {
-  const workspaceManifestLocation = findUpSync(['pnpm-workspace.yaml', 'pnpm-workspace.yml'])
-  return workspaceManifestLocation ? _loadEnv(mode!, path.dirname(workspaceManifestLocation), prefixes) : {}
+  const workspaceDir = findUpWorkspaceDir()
+  return workspaceDir ? _loadEnv(mode!, workspaceDir, prefixes) : {}
 }
