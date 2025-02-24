@@ -41,12 +41,12 @@ declare module '@vixt/core/client'{
 
 export const presetVue = defineVixtModule<VixtOptions>({
   async setup(_, vixt) {
-    const { components, composables = [], constants = [], utils = [], stores = [], pages, layouts } = resolveLayersDirs(vixt._layers)
+    const { components, composables = [], constants = [], utils = [], stores = [], pages = [], layouts = [] } = resolveLayersDirs(vixt._layers)
     const { buildTypesDir, buildImportsDir } = vixt.options
     const defaultOptions: VixtOptions = {
       vue: {},
-      router: { dts: `${buildTypesDir}/typed-router.d.ts`, routesFolder: pages },
-      layouts: { layoutsDirs: layouts?.reverse(), pagesDirs: pages },
+      router: { dts: `${buildTypesDir}/typed-router.d.ts`, routesFolder: [...pages]?.reverse() },
+      layouts: { layoutsDirs: [...layouts]?.reverse(), pagesDirs: [...pages]?.reverse() },
       components: {
         dts: `${buildTypesDir}/components.d.ts`,
         dirs: components,
