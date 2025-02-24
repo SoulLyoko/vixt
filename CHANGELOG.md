@@ -1,3 +1,12 @@
+## [0.1.36](https://github.com/SoulLyoko/vixt/compare/v0.1.35...v0.1.36) (2025-02-24)
+
+
+### Bug Fixes
+
+* **vue:** reverse pages dirs ([688c6ab](https://github.com/SoulLyoko/vixt/commit/688c6ab8690ee0b0b56419947d6459dc13ef9e99))
+
+
+
 ## [0.1.35](https://github.com/SoulLyoko/vixt/compare/v0.1.34...v0.1.35) (2025-02-24)
 
 
