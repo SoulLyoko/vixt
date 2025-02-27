@@ -24,6 +24,7 @@
     "@vitejs/plugin-vue": "catalog:",
     "@vitejs/plugin-vue-jsx": "catalog:",
     "@vixt/core": "workspace:*",
+    "@vue/compiler-sfc": "catalog:",
     "@vueuse/core": "catalog:",
     "pinia": "catalog:",
     "pinia-plugin-persistedstate": "catalog:",

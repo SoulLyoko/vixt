@@ -2,5 +2,7 @@ import { defineConfig } from 'taze'
 
 export default defineConfig({
   // ignore packages from bumping
-  exclude: ['@vitejs/plugin-vue', '@vitejs/plugin-vue-jsx'],
+  exclude: [
+    'unplugin-vue-components', // latest version uses `tinyglobby` and gets wrong files order
+  ],
 })
