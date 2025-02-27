@@ -12,5 +12,12 @@ export default defineVixtConfig({
     },
   },
   devtools: { enabled: true },
-  typescript: { typeCheck: { vueTsc: true } },
+  typescript: {
+    typeCheck: { vueTsc: true },
+    tsConfig: {
+      compilerOptions: {
+        types: ['vitest/globals', '@vitest/browser/providers/playwright'],
+      },
+    },
+  },
 })

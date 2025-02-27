@@ -1,12 +1,9 @@
+<script setup lang="ts">
+import DefaultLayout from '#/layers/layer-shared/src/layouts/default.vue'
+</script>
+
 <template>
-  <main
-    px-4 py-10
-    text="center gray-700 dark:gray-200"
-  >
+  <DefaultLayout>
     <slot />
-    <TheFooter />
-    <div mx-auto mt-5 text-center text-sm opacity-50>
-      [Default Layout]
-    </div>
-  </main>
+  </DefaultLayout>
 </template>

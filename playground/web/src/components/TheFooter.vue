@@ -3,7 +3,7 @@ import { toggleDark } from '#/layers/layer-shared/src/composables/dark'
 </script>
 
 <template>
-  <nav flex="~ gap-4" justify-center mt-6 text-xl>
+  <nav data-testid="component-footer" flex="~ gap-4" justify-center mt-6 text-xl>
     <RouterLink icon-btn to="/" title="Home">
       <Icon icon="carbon:campsite" />
     </RouterLink>

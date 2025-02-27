@@ -5,9 +5,9 @@
   <div>
     <strong>This page should not be visited.</strong>
     <ul>
-      Please check the rewriting rules below:
-      <li>path `/index/index` can be rewritten by `/index/index` and `/index`.</li>
-      <li>path `/index` can be rewritten by `/index`, but can not be rewritten by `/index/index`.</li>
+      Please check the overriding rules below:
+      <li>path `/index/index` can be overridden by `/index/index` and `/index`.</li>
+      <li>path `/index` can be rewritten by `/index`, but can not be overridden by `/index/index`.</li>
     </ul>
   </div>
 </template>

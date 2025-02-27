@@ -7,7 +7,7 @@
       "vixt/*": ["packages/vixt/*"],
       "@vixt/*": ["packages/*"]
     },
-    "types": ["vitest/globals"]
+    "types": ["vitest/globals", "@vitest/browser/providers/playwright"]
   },
   "exclude": ["dist"]
 }

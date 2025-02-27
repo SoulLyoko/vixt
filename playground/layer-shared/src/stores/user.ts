@@ -33,4 +33,4 @@ export const useUserStore = defineStore('user', () => {
 }, { persist: true })
 
 if (import.meta.hot)
-  import.meta.hot.accept(acceptHMRUpdate(useUserStore as any, import.meta.hot))
+  import.meta.hot.accept(acceptHMRUpdate(useUserStore, import.meta.hot))

@@ -10,7 +10,7 @@ function go() {
 </script>
 
 <template>
-  <div>
+  <div data-testid="page-index">
     <Icon icon="carbon:campsite" m-auto width="36px" />
 
     <a href="https://github.com/SoulLyoko/vixt" target="_blank">
