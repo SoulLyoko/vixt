@@ -1,3 +1,12 @@
+## [0.1.37](https://github.com/SoulLyoko/vixt/compare/v0.1.36...v0.1.37) (2025-02-27)
+
+
+### Bug Fixes
+
+* **vue:** fix unplugin-vue-router overrides priority ([cb8a839](https://github.com/SoulLyoko/vixt/commit/cb8a8390be9b3f4437da870b0445f88869d25976))
+
+
+
 ## [0.1.36](https://github.com/SoulLyoko/vixt/compare/v0.1.35...v0.1.36) (2025-02-24)
 
 
