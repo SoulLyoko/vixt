@@ -4,16 +4,16 @@ packages:
   - docs
   - test
 catalog:
-  '@antfu/eslint-config': ^4.3.0
+  '@antfu/eslint-config': ^4.6.0
   '@commitlint/cli': ^19.7.1
   '@commitlint/config-conventional': ^19.7.1
   '@dcloudio/types': ^3.4.14
-  '@dcloudio/uni-app': 3.0.0-alpha-4050320250221002
-  '@dcloudio/uni-app-plus': 3.0.0-alpha-4050320250221002
-  '@dcloudio/uni-h5': 3.0.0-alpha-4050320250221002
-  '@dcloudio/uni-mp-weixin': 3.0.0-alpha-4050320250221002
+  '@dcloudio/uni-app': 3.0.0-alpha-4050320250224001
+  '@dcloudio/uni-app-plus': 3.0.0-alpha-4050320250224001
+  '@dcloudio/uni-h5': 3.0.0-alpha-4050320250224001
+  '@dcloudio/uni-mp-weixin': 3.0.0-alpha-4050320250224001
   '@dcloudio/uni-ui': ^1.5.7
-  '@dcloudio/vite-plugin-uni': 3.0.0-alpha-4050320250221002
+  '@dcloudio/vite-plugin-uni': 3.0.0-alpha-4050320250224001
   '@iconify/vue': ^4.3.0
   '@types/fs-extra': ^11.0.4
   '@uni-helper/uni-app-types': ^1.0.0-alpha.6
@@ -27,10 +27,10 @@ catalog:
   '@unocss/reset': ^66.0.0
   '@vitejs/plugin-vue': ^5.2.1
   '@vitejs/plugin-vue-jsx': ^4.1.1
-  '@vitest/browser': ^3.0.7
+  '@vitest/browser': ^3.0.8
   '@vue/tsconfig': ^0.7.0
   '@vue/compiler-sfc': ^3.5.13
-  '@vueuse/core': ^12.7.0
+  '@vueuse/core': ^12.8.2
   bumpp: ^10.0.3
   c12: ^3.0.2
   cac: ^6.7.14
@@ -45,26 +45,26 @@ catalog:
   pathe: ^2.0.3
   pinia: ^3.0.1
   pinia-plugin-persistedstate: ^4.2.0
-  pkg-types: ^2.0.0
-  playwright: ^1.50.1
+  pkg-types: ^2.1.0
+  playwright: ^1.51.0
   sass: ^1.85.1
   simple-git-hooks: ^2.11.1
   taze: ^18.6.0
   tsx: ^4.19.3
-  typescript: ^5.7.3
+  typescript: ^5.8.2
   unbuild: ^3.5.0
   unocss: ^66.0.0
   unocss-applet: ^0.9.0
-  unplugin-auto-import: ^19.1.0
+  unplugin-auto-import: ^19.1.1
   unplugin-vue-components: 28.0.0
-  unplugin-vue-router: ^0.11.2
-  uview-plus: ^3.3.70
-  vite: ^6.2.0
+  unplugin-vue-router: ^0.12.0
+  uview-plus: ^3.3.74
+  vite: ^6.2.1
   vite-plugin-checker: ^0.9.0
   vite-plugin-vue-devtools: ^7.7.2
   vite-plugin-vue-layouts: ^0.11.0
   vitepress: ^1.6.3
-  vitest: ^3.0.7
+  vitest: ^3.0.8
   vue: ^3.5.13
   vue-router: ^4.5.0
-  vue-tsc: ^2.2.4
+  vue-tsc: ^2.2.8
