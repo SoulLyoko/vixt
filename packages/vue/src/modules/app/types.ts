@@ -1,4 +1,5 @@
 type Property = Record<string, string>
+
 export interface AppHead {
   meta?: Property[]
   link?: Property[]

@@ -1,9 +1,8 @@
 import type { PluginOptions, VixtOptions } from '@vixt/core'
-import type { PluginOptions as PersistedStateOptions } from 'pinia-plugin-persistedstate'
 import type { TreeNode } from 'unplugin-vue-router'
-import type { RouterOptions } from 'vue-router'
 
 import Vue from '@vitejs/plugin-vue'
+import VueJsx from '@vitejs/plugin-vue-jsx'
 import { defineVixtModule, resolveLayersDirs } from '@vixt/core'
 import defu from 'defu'
 import UnoCSS from 'unocss/vite'
@@ -17,6 +16,7 @@ import Layouts from 'vite-plugin-vue-layouts'
 declare module '@vixt/core' {
   interface VixtOptions {
     vue?: PluginOptions<typeof Vue>
+    vueJsx?: PluginOptions<typeof VueJsx>
     /** https://github.com/posva/unplugin-vue-router */
     router?: PluginOptions<typeof VueRouter>
     /** https://github.com/JohnCampionJr/vite-plugin-vue-layouts */
@@ -32,20 +32,13 @@ declare module '@vixt/core' {
   }
 }
 
-declare module '@vixt/core/client' {
-  interface VixtAppConfig {
-    router?: Partial<RouterOptions>
-    /** https://github.com/prazdevs/pinia-plugin-persistedstate */
-    piniaPersistedState?: PersistedStateOptions
-  }
-}
-
 export const presetVue = defineVixtModule<VixtOptions>({
   async setup(_, vixt) {
     const { components = [], composables = [], constants = [], utils = [], stores = [], pages = [], layouts = [] } = resolveLayersDirs(vixt._layers)
     const { buildTypesDir, buildImportsDir } = vixt.options
     const defaultOptions: VixtOptions = {
       vue: {},
+      vueJsx: {},
       router: {
         dts: `${buildTypesDir}/typed-router.d.ts`,
         routesFolder: pages,
@@ -89,6 +82,7 @@ export const presetVue = defineVixtModule<VixtOptions>({
     const plugins = [
       VueRouter(options.router),
       Vue(options.vue),
+      VueJsx(options.vueJsx),
       Layouts(options.layouts),
       Components(options.components),
       AutoImport(options.imports),

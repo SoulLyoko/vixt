@@ -1,4 +1,6 @@
 import type { AppOptions } from './types'
+import type { PluginOptions as PersistedStateOptions } from 'pinia-plugin-persistedstate'
+import type { RouterOptions } from 'vue-router'
 
 import { defineVixtModule } from '@vixt/core'
 import path from 'pathe'
@@ -12,6 +14,20 @@ export * from './html'
 export * from './main'
 export * from './plugins'
 export * from './types'
+
+declare module '@vixt/core' {
+  interface VixtOptions {
+    app?: AppOptions
+  }
+}
+
+declare module '@vixt/core/client' {
+  interface VixtAppConfig {
+    router?: Partial<RouterOptions>
+    /** https://github.com/prazdevs/pinia-plugin-persistedstate */
+    piniaPersistedState?: PersistedStateOptions
+  }
+}
 
 const name = 'vixt:app'
 const defaults: AppOptions = {
