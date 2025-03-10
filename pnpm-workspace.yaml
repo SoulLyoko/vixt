@@ -2,7 +2,7 @@ packages:
   - packages/*
   - playground/*
   - docs
-  - test
+
 catalog:
   '@antfu/eslint-config': ^4.6.0
   '@commitlint/cli': ^19.7.1

@@ -1,0 +1,15 @@
+{
+  "name": "vixt-monorepo-ts",
+  "type": "module",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "build": "pnpm -F vue build",
+    "build:h5": "pnpm -F uni build:h5",
+    "dev": "pnpm -F vue dev",
+    "dev:h5": "pnpm -F uni dev"
+  },
+  "dependencies": {
+    "vixt": "workspace:*"
+  }
+}

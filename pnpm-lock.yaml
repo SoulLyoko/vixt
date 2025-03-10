@@ -306,6 +306,15 @@ importers:
         specifier: 'catalog:'
         version: 2.2.8(typescript@5.8.2)
 
+  packages/create-vixt:
+    dependencies:
+      cac:
+        specifier: 'catalog:'
+        version: 6.7.14
+      fs-extra:
+        specifier: 'catalog:'
+        version: 11.3.0
+
   packages/uni:
     dependencies:
       '@dcloudio/types':
@@ -489,12 +498,6 @@ importers:
       vixt:
         specifier: workspace:*
         version: link:../../packages/vixt
-
-  test:
-    dependencies:
-      vixt:
-        specifier: workspace:*
-        version: link:../packages/vixt
 
 packages:
 

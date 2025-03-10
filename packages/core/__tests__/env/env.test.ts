@@ -1,17 +1,19 @@
-import { fileURLToPath } from 'node:url'
+import process from 'node:process'
+import url from 'node:url'
 
 import { findUpWorkspaceDir, loadEnv, loadWorkspaceEnv } from '@vixt/core'
 import path from 'pathe'
 import { loadEnv as _loadEnv } from 'vite'
 
-const __dirname = fileURLToPath(new URL('.', import.meta.url))
+const __dirname = path.dirname(url.fileURLToPath(import.meta.url))
+process.chdir(__dirname)
 
 describe('env', () => {
   const mode = 'development'
   const env = loadEnv(mode, __dirname)
 
   it ('should find workspace dir', () => {
-    expect(findUpWorkspaceDir()).toBe(path.resolve(__dirname, '../../'))
+    expect(findUpWorkspaceDir()).toBe(path.resolve(__dirname, '../'))
   })
 
   it('should merge workspace and cwd env variables', () => {

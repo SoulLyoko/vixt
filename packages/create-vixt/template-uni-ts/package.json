@@ -1,0 +1,24 @@
+{
+  "name": "vixt-uni-ts",
+  "type": "module",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "dev:h5": "uni",
+    "dev:h5:ssr": "uni --ssr",
+    "dev:mp": "uni -p mp-weixin",
+    "build:h5": "uni build",
+    "build:h5:ssr": "uni build --ssr",
+    "build:mp": "uni build -p mp-weixin"
+  },
+  "dependencies": {
+    "@dcloudio/uni-app": "3.0.0-alpha-4050420250306001",
+    "@dcloudio/uni-app-plus": "3.0.0-alpha-4050420250306001",
+    "@dcloudio/uni-h5": "3.0.0-alpha-4050420250306001",
+    "@dcloudio/uni-mp-weixin": "3.0.0-alpha-4050420250306001",
+    "vixt": "workspace:*"
+  },
+  "devDependencies": {
+    "@dcloudio/vite-plugin-uni": "3.0.0-alpha-4050420250306001"
+  }
+}
