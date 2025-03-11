@@ -1,3 +1,13 @@
+# [0.2.0](https://github.com/SoulLyoko/vixt/compare/v0.1.38...v0.2.0) (2025-03-11)
+
+
+### Features
+
+* add `@vitejs/plugin-vue-jsx` ([e935646](https://github.com/SoulLyoko/vixt/commit/e935646f6ed34e201b07a1961b0b6f39b7523de6))
+* add package `create-vixt` ([32487fc](https://github.com/SoulLyoko/vixt/commit/32487fcda72a11c02decddb554a9e96347aea8f6))
+
+
+
 ## [0.1.38](https://github.com/SoulLyoko/vixt/compare/v0.1.37...v0.1.38) (2025-02-27)
 
 
