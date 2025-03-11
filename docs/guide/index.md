@@ -1,8 +1,5 @@
 # Vixt
 
-<a href="https://npmjs.com/package/vixt"><img src="https://img.shields.io/npm/v/vixt.svg" alt="npm package"></a>
-<a href="https://soullyoko.github.io/vixt/"><img src="https://img.shields.io/badge/Vixt%20Docs-5A5A5A" alt="Website"></a>
-
 ## 介绍
 
 Vixt是一个[Vite](https://vitepress.dev/zh/)插件，与[Nuxt](https://nuxt.com.cn/)一样旨在提升开发者体验，名字取自Vite的前两个字母和Nuxt的后两个字母。
@@ -18,16 +15,55 @@ Nuxt具备SSR和全栈开发的能力，如果你的项目需要这些，Nuxt是
 Vixt推荐使用pnpm+monorepo管理项目，创建的默认模板也是monorepo项目
 
 ```sh
+# 默认为monorepo模板，包含vue和uni-app项目
 pnpm create vixt my-project
+
+# vue单项目
+# pnpm create vixt my-project --template vue-ts
+
+# uni-app单项目
+# pnpm create vixt my-project --template uni-ts
 ```
 
-## Packages
+## 在现有项目中使用
 
-| Package                               | Desc                 |
-| ------------------------------------- | -------------------- |
-| [vixt](packages/vixt)                 | 统一管理vixt的所有包 |
-| [@vixt/core](packages/core)           | vixt的底层核心       |
-| [@vixt/vue](packages/vue)             | vue的适配层          |
-| [@vixt/uni](packages/uni)             | uni-app的适配层      |
-| [@vixt/vitepress](packages/vitepress) | vitepress的适配层    |
-| [create-vixt](packages/create-vixt)   | 用于创建模板项目     |
+- 删除 packages.json 中的与vixt重复的依赖(如vue,vite等,非必须)
+- 创建 .npmrc
+
+```
+shamefully-hoist=true
+strict-peer-dependencies=false
+```
+
+- 安装 vixt
+
+```sh
+pnpm add vixt
+```
+
+- 新建vixt.config.ts
+
+```ts
+import { defineVixtConfig } from '@vixt/core'
+
+export default defineVixtConfig({})
+```
+
+- 修改vite.config.ts
+
+```ts
+import vixt from '@vixt/vue'
+import { defineConfig } from 'vite'
+
+export default defineConfig({
+  plugins: [vixt()],
+})
+```
+
+- 修改tsconfig.json
+
+```json
+{
+  "extends": "./.vixt/tsconfig.json"
+}
+```

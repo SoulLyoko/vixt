@@ -8,26 +8,43 @@ export default defineConfig({
   description: 'Trying to implement nuxt\'s features via vite plugin',
   themeConfig: {
     nav: [
-      { text: '指南', link: '/guide/start' },
+      { text: '指南', link: '/guide/' },
+      { text: '配置', link: '/config/core' },
       { text: 'API', link: '/api/vixt' },
     ],
     sidebar: {
       '/guide': [
-        { text: '开始', link: '/guide/start' },
-        { text: '更新日志', link: '/guide/changelog' },
+        {
+          text: '介绍',
+          items: [
+            { text: '开始', link: '/guide/' },
+            { text: '更新日志', link: '/guide/changelog' },
+          ],
+        },
+        {
+          text: '功能',
+          items: [
+            { text: '应用', link: '/guide/app' },
+            { text: '路由', link: '/guide/router' },
+            { text: '布局', link: '/guide/layouts' },
+            { text: '组件', link: '/guide/components' },
+            { text: '自动导入', link: '/guide/imports' },
+            { text: '样式', link: '/guide/styles' },
+            { text: '插件', link: '/guide/plugins' },
+            { text: '模块', link: '/guide/modules' },
+            { text: '层', link: '/guide/layers' },
+          ],
+        },
+      ],
+      '/config': [
+        { text: 'core', link: '/config/core' },
+        { text: 'vue', link: '/config/vue' },
+        { text: 'uni', link: '/config/uni' },
+        { text: 'vitepress', link: '/config/vitepress' },
       ],
       '/api': [
         { text: 'vixt', link: '/api/vixt' },
         { text: 'core', link: '/api/core' },
-        {
-          text: 'Vixt 配置',
-          base: '/api/config',
-          items: [
-            { text: 'core', link: '/core' },
-            { text: 'vue', link: '/vue' },
-            { text: 'uni', link: '/uni' },
-          ],
-        },
       ],
     },
   },
