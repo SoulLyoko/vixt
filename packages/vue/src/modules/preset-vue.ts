@@ -52,7 +52,7 @@ export const presetVue = defineVixtModule<VixtOptions>({
             return
 
           for (const pageDir of pages) {
-            const matched = overrides.keys().find(e => e.match(pageDir))
+            const matched = [...overrides.keys()].find(e => e.match(pageDir))
             if (matched) {
               node.components.set('default', matched)
               return
