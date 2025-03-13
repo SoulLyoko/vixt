@@ -1,3 +1,12 @@
+## [0.2.1](https://github.com/SoulLyoko/vixt/compare/v0.2.0...v0.2.1) (2025-03-13)
+
+
+### Bug Fixes
+
+* compatibility map.key().find ([417f082](https://github.com/SoulLyoko/vixt/commit/417f082dd7047dab4b77b229a6237008a47c1d54))
+
+
+
 # [0.2.0](https://github.com/SoulLyoko/vixt/compare/v0.1.38...v0.2.0) (2025-03-11)
 
 
