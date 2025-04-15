@@ -19,15 +19,21 @@ export default defineAppConfig({
 提供定义Vixt插件的类型提示
 
 ```ts
-// src/plugins/my-vixt-plugin.ts
+// src/plugins/my-plugin.ts
 import { defineVixtPlugin } from 'vixt'
 
 interface PluginOptions {
   enabled?: boolean
 }
 
+declare module '@vixt/core/client'{
+  interface VixtAppConfig {
+    myPlugin?: PluginOptions
+  }
+}
+
 export default defineVixtPlugin<PluginOptions>({
-  name: 'my-vixt-plugin',
+  name: 'my-plugin',
   setup(vixt) {
     console.log(vixt) // { app, router, routes, pinia, appConfig }
   }

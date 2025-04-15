@@ -21,11 +21,11 @@ declare module '@vixt/core' {
     router?: PluginOptions<typeof VueRouter>
     /** https://github.com/JohnCampionJr/vite-plugin-vue-layouts */
     layouts?: PluginOptions<typeof Layouts>
-    /** https://github.com/antfu/unplugin-vue-components */
+    /** https://github.com/unplugin/unplugin-vue-components */
     components?: PluginOptions<typeof Components>
-    /** https://github.com/antfu/unplugin-auto-import */
+    /** https://github.com/unplugin/unplugin-auto-import */
     imports?: PluginOptions<typeof AutoImport>
-    /** https://github.com/antfu/unocss */
+    /** https://github.com/unocss/unocss */
     unocss?: PluginOptions<typeof UnoCSS>
     /** https://github.com/webfansplz/vite-plugin-vue-devtools */
     devtools?: PluginOptions<typeof VueDevTools> & { enabled?: boolean }

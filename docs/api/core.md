@@ -18,14 +18,20 @@ export default defineVixtConfig({
 提供定义Vixt模块的类型提示
 
 ```ts
-// src/modules/my-vixt-module.ts
+// src/modules/my-module.ts
 import { defineVixtModule } from 'vixt/core'
 
 interface ModuleOptions {
   enabled?: boolean
 }
 
-const name = 'my-vixt-module'
+declare module '@vixt/core'{
+  interface VixtOptions {
+    myModuleOptions?: ModuleOptions
+  }
+}
+
+const name = 'my-module'
 export default defineVixtModule<ModuleOptions>({
   meta: { name },
   defaults: { enabled: true },
@@ -48,11 +54,11 @@ export default defineVixtModule<ModuleOptions>({
 ```ts
 import { defineVitePlugin } from 'vixt/core'
 
-interface MyPluginOptions {
+interface PluginOptions {
   enabled?: boolean
 }
 
-export const myVitePlugin = defineVitePlugin<MyPluginOptions>((options) => {
+export const myVitePlugin = defineVitePlugin<PluginOptions>((options) => {
   console.log(options)
   return {
     name: 'my-vite-plugin',
