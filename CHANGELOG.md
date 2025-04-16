@@ -1,3 +1,12 @@
+## [0.3.1](https://github.com/SoulLyoko/vixt/compare/v0.3.0...v0.3.1) (2025-04-16)
+
+
+### Bug Fixes
+
+* **uni:** copy `uni_modules` when version change ([c99f323](https://github.com/SoulLyoko/vixt/commit/c99f32358a92003d8c4b68853990270dd879279a))
+
+
+
 # [0.3.0](https://github.com/SoulLyoko/vixt/compare/v0.2.1...v0.3.0) (2025-04-16)
 
 
