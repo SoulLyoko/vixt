@@ -9,7 +9,7 @@ import { loadEnv as _loadEnv } from 'vite'
 /**
  * Load workspace and cwd env variables by default
  */
-export function loadEnv(mode?: string, envDir?: string, prefixes?: string | string[]) {
+export function loadEnv(mode?: string, envDir?: string | false, prefixes?: string | string[]) {
   const parsedArgv = cac().parse()
   mode = mode || parsedArgv.options.mode || parsedArgv.options.m || env.NODE_ENV
 
