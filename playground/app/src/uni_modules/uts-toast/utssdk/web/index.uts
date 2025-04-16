@@ -1,3 +1,0 @@
-export function showToast(option) {
-  console.log(option)
-}
