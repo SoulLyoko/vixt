@@ -1,3 +1,12 @@
+# [0.3.0](https://github.com/SoulLyoko/vixt/compare/v0.2.1...v0.3.0) (2025-04-16)
+
+
+### Features
+
+* **uni:** support layers uni_modules ([0d92514](https://github.com/SoulLyoko/vixt/commit/0d925147d9cca2b9da70a3e0776a775cbc764a80))
+
+
+
 ## [0.2.1](https://github.com/SoulLyoko/vixt/compare/v0.2.0...v0.2.1) (2025-03-13)
 
 
