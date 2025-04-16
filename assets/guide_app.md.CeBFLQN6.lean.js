@@ -1,1 +1,0 @@
-import{_ as i,c as a,o as n,ag as t}from"./chunks/framework.Cja5CjOe.js";const c=JSON.parse('{"title":"应用","description":"","frontmatter":{},"headers":[],"relativePath":"guide/app.md","filePath":"guide/app.md"}'),l={name:"guide/app.md"};function e(p,s,h,k,d,r){return n(),a("div",null,s[0]||(s[0]=[t("",6)]))}const g=i(l,[["render",e]]);export{c as __pageData,g as default};
