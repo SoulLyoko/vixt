@@ -10,7 +10,7 @@
 
 :::code-group
 
-```目录结构
+```[目录结构]
 -| packages/
 ---| layer-shared
 -----| src

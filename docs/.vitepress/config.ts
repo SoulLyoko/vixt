@@ -6,6 +6,7 @@ export default defineConfig({
   base: '/vixt',
   title: 'Vixt',
   description: 'Trying to implement nuxt\'s features via vite plugin',
+  ignoreDeadLinks: true,
   themeConfig: {
     nav: [
       { text: '指南', link: '/guide/' },
