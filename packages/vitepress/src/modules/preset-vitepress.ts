@@ -57,7 +57,7 @@ export const presetVitepress = defineVixtModule<VixtOptions>({
 
     const plugins = [
       Components(options.components),
-      AutoImport(options.imports),
+      AutoImport(options.imports!),
       UnoCSS(options.unocss),
       options.devtools?.enabled && VueDevTools(options.devtools),
     ]

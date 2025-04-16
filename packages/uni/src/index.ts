@@ -1,11 +1,11 @@
 import { createVixtPlugin } from '@vixt/core'
 
-import { appUni, presetUni } from './modules'
+import { appUni, presetUni, uniModules } from './modules'
 
 export * from './modules'
 
 const defaults = {
-  modules: [appUni, presetUni],
+  modules: [appUni, uniModules, presetUni],
   typescript: {
     tsConfig: {
       compilerOptions: {

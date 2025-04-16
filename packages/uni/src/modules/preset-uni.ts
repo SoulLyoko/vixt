@@ -66,7 +66,7 @@ export const presetUni = defineVixtModule<VixtOptions>({
       Pages(options.uniPages),
       Layouts(options.uniLayouts),
       Components(options.uniComponents),
-      AutoImport(options.imports),
+      AutoImport(options.imports!),
       UnoCSS(options.unocss),
       // @ts-expect-error
       Uni.default(options.uni),

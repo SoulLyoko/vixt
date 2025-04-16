@@ -17,6 +17,7 @@
     "@dcloudio/uni-h5": "catalog:",
     "@dcloudio/uni-mp-weixin": "catalog:",
     "@dcloudio/uni-ui": "catalog:",
+    "@dcloudio/uni-uts-v1": "catalog:",
     "@vixt/layer-app": "workspace:*",
     "@vixt/layer-shared": "workspace:*",
     "uview-plus": "catalog:",

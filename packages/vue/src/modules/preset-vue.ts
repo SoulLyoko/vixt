@@ -85,7 +85,7 @@ export const presetVue = defineVixtModule<VixtOptions>({
       VueJsx(options.vueJsx),
       Layouts(options.layouts),
       Components(options.components),
-      AutoImport(options.imports),
+      AutoImport(options.imports!),
       UnoCSS(options.unocss),
       options.devtools?.enabled && VueDevTools(options.devtools),
     ]

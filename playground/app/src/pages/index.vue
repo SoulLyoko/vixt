@@ -1,10 +1,17 @@
 <script setup lang="ts">
+// @ts-ignore
+import { showToast } from '@/uni_modules/uts-toast'
+
 const user = useUserStore()
 const name = ref(user.savedName)
 
 function go() {
   if (name.value)
     uni.navigateTo({ url: `/pages/hi?name=${encodeURIComponent(name.value)}` })
+}
+
+function toast() {
+  showToast({ message: 'Vixt App' })
 }
 </script>
 
@@ -18,7 +25,7 @@ function go() {
       Vixt
     </uni-link>
 
-    <view text-sm op-75>
+    <view text-sm op-75 @click="toast">
       Vixt App
     </view>
 
