@@ -32,7 +32,9 @@ function copyUniModules(_: any, vixt: Vixt) {
       .forEach((dir) => {
         const srcPath = path.join(uniModulesPath, dir)
         const destPath = path.join(srcUniModulesPath, dir)
-        if (fs.statSync(srcPath).isDirectory() && srcPath !== destPath) {
+        const srcPkgVersion = fs.readJSONSync(path.join(srcPath, 'package.json'), { throws: false })?.version
+        const destPkgVersion = fs.readJSONSync(path.join(destPath, 'package.json'), { throws: false })?.version
+        if (srcPath !== destPath && srcPkgVersion !== destPkgVersion) {
           fs.removeSync(destPath)
           fs.copySync(srcPath, destPath)
           fs.writeFileSync(path.join(destPath, '.gitignore'), '*', 'utf-8')

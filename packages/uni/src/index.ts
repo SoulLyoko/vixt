@@ -5,7 +5,7 @@ import { appUni, presetUni, uniModules } from './modules'
 export * from './modules'
 
 const defaults = {
-  modules: [appUni, uniModules, presetUni],
+  modules: [uniModules, appUni, presetUni],
   typescript: {
     tsConfig: {
       compilerOptions: {
