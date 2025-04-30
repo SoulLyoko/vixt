@@ -1,3 +1,12 @@
+## [0.3.3](https://github.com/SoulLyoko/vixt/compare/v0.3.2...v0.3.3) (2025-04-30)
+
+
+### Bug Fixes
+
+* **uni:**  add watch `uni_modules` dir ([dd15df8](https://github.com/SoulLyoko/vixt/commit/dd15df8fd51c0623c2f3f7f239ac74b0b6844441))
+
+
+
 ## [0.3.2](https://github.com/SoulLyoko/vixt/compare/v0.3.1...v0.3.2) (2025-04-16)
 
 
