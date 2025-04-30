@@ -1,9 +1,8 @@
 import type { Vixt } from '@vixt/core'
 
-import path from 'node:path'
-
 import { defineVixtModule, resolveLayersDirs } from '@vixt/core'
 import fs from 'fs-extra'
+import path from 'pathe'
 
 declare module '@vixt/core' {
   interface VixtOptions {
@@ -16,8 +15,9 @@ export interface ModuleOptions {
   exclude?: string[]
 }
 
-function copyUniModules(_: any, vixt: Vixt) {
-  const { srcDir, uniModules: { include, exclude } = {} } = vixt.options
+function copyUniModules(options: ModuleOptions, vixt: Vixt) {
+  const { srcDir } = vixt.options
+  const { include, exclude } = options ?? {}
   const { uni_modules = [] } = resolveLayersDirs(vixt._layers)
   const srcUniModulesPath = path.join(srcDir!, 'uni_modules')
   uni_modules.forEach((uniModulesPath) => {
@@ -32,10 +32,11 @@ function copyUniModules(_: any, vixt: Vixt) {
       .forEach((dir) => {
         const srcPath = path.join(uniModulesPath, dir)
         const destPath = path.join(srcUniModulesPath, dir)
-        const srcPkgVersion = fs.readJSONSync(path.join(srcPath, 'package.json'), { throws: false })?.version
-        const destPkgVersion = fs.readJSONSync(path.join(destPath, 'package.json'), { throws: false })?.version
-        if (srcPath !== destPath && srcPkgVersion !== destPkgVersion) {
-          fs.removeSync(destPath)
+        // const srcPkgVersion = fs.readJSONSync(path.join(srcPath, 'package.json'), { throws: false })?.version
+        // const destPkgVersion = fs.readJSONSync(path.join(destPath, 'package.json'), { throws: false })?.version
+        // if (srcPath !== destPath && srcPkgVersion !== destPkgVersion) {
+        if (srcPath !== destPath) {
+          // fs.removeSync(destPath)
           fs.copySync(srcPath, destPath)
           fs.writeFileSync(path.join(destPath, '.gitignore'), '*', 'utf-8')
         }
@@ -45,8 +46,21 @@ function copyUniModules(_: any, vixt: Vixt) {
 
 const name = 'vixt:uni-modules'
 export const uniModules = defineVixtModule({
-  meta: { name },
-  setup(_, vixt) {
-    copyUniModules(_, vixt)
+  meta: { name, configKey: 'uniModules' },
+  setup(options, vixt) {
+    copyUniModules(options, vixt)
+
+    return {
+      name,
+      configureServer(server) {
+        const { uni_modules = [] } = resolveLayersDirs(vixt._layers)
+        server.watcher.add(uni_modules)
+        server.watcher.on('all', (_, file) => {
+          const match = uni_modules.some(e => path.normalize(file).match(e))
+          if (match)
+            copyUniModules(options, vixt)
+        })
+      },
+    }
   },
 })
