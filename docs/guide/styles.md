@@ -38,6 +38,8 @@ export default defineVixtConfig({
 
 原子化样式由 [unocss](https://github.com/unocss/unocss) 提供支持
 
+### 配置
+
 建立`uno.config.ts`以配置unocss
 
 :::code-group
@@ -55,7 +57,7 @@ export default defineConfig({
 
 :::
 
-使用
+### 使用
 
 <div bg-gray text-white w-fit px-1 rd>
   UnoCSS

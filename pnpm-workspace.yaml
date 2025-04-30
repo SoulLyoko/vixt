@@ -7,14 +7,14 @@ catalog:
   '@antfu/eslint-config': ^4.12.0
   '@commitlint/cli': ^19.8.0
   '@commitlint/config-conventional': ^19.8.0
-  '@dcloudio/types': ^3.4.14
-  '@dcloudio/uni-app': 3.0.0-alpha-4060220250414001
-  '@dcloudio/uni-app-plus': 3.0.0-alpha-4060220250414001
-  '@dcloudio/uni-h5': 3.0.0-alpha-4060220250414001
-  '@dcloudio/uni-mp-weixin': 3.0.0-alpha-4060220250414001
+  '@dcloudio/types': ^3.4.15
+  '@dcloudio/uni-app': 3.0.0-alpha-4060320250423001
+  '@dcloudio/uni-app-plus': 3.0.0-alpha-4060320250423001
+  '@dcloudio/uni-h5': 3.0.0-alpha-4060320250423001
+  '@dcloudio/uni-mp-weixin': 3.0.0-alpha-4060320250423001
   '@dcloudio/uni-ui': ^1.5.7
-  '@dcloudio/uni-uts-v1': 3.0.0-alpha-4060220250414001
-  '@dcloudio/vite-plugin-uni': 3.0.0-alpha-4060220250414001
+  '@dcloudio/uni-uts-v1': 3.0.0-alpha-4060320250423001
+  '@dcloudio/vite-plugin-uni': 3.0.0-alpha-4060320250423001
   '@iconify/vue': ^4.3.0
   '@types/fs-extra': ^11.0.4
   '@uni-helper/uni-app-types': ^1.0.0-alpha.6
@@ -28,7 +28,7 @@ catalog:
   '@unocss/reset': ^66.0.0
   '@vitejs/plugin-vue': ^5.2.3
   '@vitejs/plugin-vue-jsx': ^4.1.2
-  '@vitest/browser': ^3.1.1
+  '@vitest/browser': ^3.1.2
   '@vue/compiler-sfc': ^3.5.13
   '@vue/tsconfig': ^0.7.0
   '@vueuse/core': ^13.1.0
@@ -37,7 +37,7 @@ catalog:
   cac: ^6.7.14
   conventional-changelog-cli: ^5.0.0
   defu: ^6.1.4
-  eslint: ^9.24.0
+  eslint: ^9.25.1
   eslint-plugin-format: ^1.0.1
   find-up: ^7.0.0
   fs-extra: ^11.3.0
@@ -47,11 +47,11 @@ catalog:
   pinia: ^3.0.2
   pinia-plugin-persistedstate: ^4.2.0
   pkg-types: ^2.1.0
-  playwright: ^1.51.1
-  sass: ^1.86.3
-  simple-git-hooks: ^2.12.1
+  playwright: ^1.52.0
+  sass: ^1.87.0
+  simple-git-hooks: ^2.13.0
   taze: ^19.0.4
-  tsx: ^4.19.3
+  tsx: ^4.19.4
   typescript: ^5.8.3
   unbuild: ^3.5.0
   unocss: ^66.0.0
@@ -59,13 +59,13 @@ catalog:
   unplugin-auto-import: ^19.1.2
   unplugin-vue-components: 28.0.0
   unplugin-vue-router: ^0.12.0
-  uview-plus: ^3.4.19
-  vite: ^6.3.0
+  uview-plus: ^3.4.25
+  vite: ^6.3.4
   vite-plugin-checker: ^0.9.1
-  vite-plugin-vue-devtools: ^7.7.2
+  vite-plugin-vue-devtools: ^7.7.6
   vite-plugin-vue-layouts: ^0.11.0
   vitepress: ^1.6.3
-  vitest: ^3.1.1
+  vitest: ^3.1.2
   vue: ^3.5.13
-  vue-router: ^4.5.0
-  vue-tsc: ^2.2.8
+  vue-router: ^4.5.1
+  vue-tsc: ^2.2.10
