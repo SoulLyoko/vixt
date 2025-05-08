@@ -1,3 +1,7 @@
+## [0.3.5](https://github.com/SoulLyoko/vixt/compare/v0.3.4...v0.3.5) (2025-05-08)
+
+
+
 ## [0.3.4](https://github.com/SoulLyoko/vixt/compare/v0.3.3...v0.3.4) (2025-05-06)
 
 
