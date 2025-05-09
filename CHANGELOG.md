@@ -1,3 +1,12 @@
+## [0.3.6](https://github.com/SoulLyoko/vixt/compare/v0.3.5...v0.3.6) (2025-05-09)
+
+
+### Bug Fixes
+
+* **uni:** catch error when coping uni_modules ([b7bc802](https://github.com/SoulLyoko/vixt/commit/b7bc802699be80def3f3f22af7cb73f21794dd59))
+
+
+
 ## [0.3.5](https://github.com/SoulLyoko/vixt/compare/v0.3.4...v0.3.5) (2025-05-08)
 
 
