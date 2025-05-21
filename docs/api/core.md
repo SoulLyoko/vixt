@@ -6,7 +6,7 @@
 
 ```ts
 // vixt.config.ts
-import { defineVixtConfig } from 'vixt/core'
+import { defineVixtConfig } from '@vixt/core'
 
 export default defineVixtConfig({
   // Vixt配置
@@ -19,7 +19,7 @@ export default defineVixtConfig({
 
 ```ts
 // src/modules/my-module.ts
-import { defineVixtModule } from 'vixt/core'
+import { defineVixtModule } from '@vixt/core'
 
 interface ModuleOptions {
   enabled?: boolean
@@ -52,7 +52,7 @@ export default defineVixtModule<ModuleOptions>({
 提供定义Vite插件的类型提示
 
 ```ts
-import { defineVitePlugin } from 'vixt/core'
+import { defineVitePlugin } from '@vixt/core'
 
 interface PluginOptions {
   enabled?: boolean

@@ -1,5 +1,4 @@
 import type { PluginOptions, VixtOptions } from '@vixt/core'
-import type { PluginOptions as PersistedStateOptions } from 'pinia-plugin-persistedstate'
 
 import { defineVixtModule, resolveLayersDirs } from '@vixt/core'
 import defu from 'defu'
@@ -21,15 +20,9 @@ declare module '@vixt/core' {
     devtools?: PluginOptions<typeof VueDevTools> & { enabled?: boolean }
   }
 }
-
-declare module '@vixt/core/client'{
-  interface VixtAppConfig {
-    /** https://github.com/prazdevs/pinia-plugin-persistedstate */
-    piniaPersistedState?: PersistedStateOptions
-  }
-}
-
+const name = 'vixt:preset-vitepress'
 export const presetVitepress = defineVixtModule<VixtOptions>({
+  meta: { name },
   async setup(_, vixt) {
     const { components, composables = [], constants = [], utils = [], stores = [] } = resolveLayersDirs(vixt._layers)
     const { buildTypesDir, buildImportsDir } = vixt.options

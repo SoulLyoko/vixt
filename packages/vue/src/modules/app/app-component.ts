@@ -12,7 +12,15 @@ export function getAppComponentPath(vixt: Vixt) {
 }
 
 export function genarateAppComponent(vixt: Vixt) {
-  const appComponentPath = getAppComponentPath(vixt) || '@vixt/core/client/App.vue'
+  const { buildDir } = vixt.options
+  const defaultAppComponentPath = path.resolve(buildDir!, `App.vue`)
+
+  // generate App.vue in .vixt
+  fs.outputFileSync(defaultAppComponentPath, `<template>
+  <RouterView />
+</template>
+`)
+  const appComponentPath = getAppComponentPath(vixt) || defaultAppComponentPath
   const appComponentTemplate = `import App from '${appComponentPath}'`
   return appComponentTemplate
 }

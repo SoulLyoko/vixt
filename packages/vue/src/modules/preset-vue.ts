@@ -1,5 +1,5 @@
 import type { PluginOptions, VixtOptions } from '@vixt/core'
-import type { TreeNode } from 'unplugin-vue-router'
+// import type { TreeNode } from 'unplugin-vue-router'
 
 import Vue from '@vitejs/plugin-vue'
 import VueJsx from '@vitejs/plugin-vue-jsx'
@@ -12,6 +12,8 @@ import { VueRouterAutoImports } from 'unplugin-vue-router'
 import VueRouter from 'unplugin-vue-router/vite'
 import VueDevTools from 'vite-plugin-vue-devtools'
 import Layouts from 'vite-plugin-vue-layouts'
+
+import { genarateGlobalComponents } from './global-components'
 
 declare module '@vixt/core' {
   interface VixtOptions {
@@ -32,9 +34,11 @@ declare module '@vixt/core' {
   }
 }
 
+const name = 'vixt:preset-vue'
 export const presetVue = defineVixtModule<VixtOptions>({
+  meta: { name },
   async setup(_, vixt) {
-    const { components = [], composables = [], constants = [], utils = [], stores = [], pages = [], layouts = [] } = resolveLayersDirs(vixt._layers)
+    const { components = [], composables = [], constants = [], utils = [], stores = [], pages = [], layouts = [] } = resolveLayersDirs([...vixt._layers].reverse())
     const { buildTypesDir, buildImportsDir } = vixt.options
     const defaultOptions: VixtOptions = {
       vue: {},
@@ -43,27 +47,27 @@ export const presetVue = defineVixtModule<VixtOptions>({
         dts: `${buildTypesDir}/typed-router.d.ts`,
         routesFolder: pages,
         /** Fix overrides priority */
-        extendRoute(route) {
-          // @ts-ignore
-          const node: TreeNode['value'] = route.node.value
-          // @ts-ignore
-          const overrides: Map<string, object> = node._overrides
-          if (overrides.size <= 1)
-            return
+        // extendRoute(route) {
+        //   // @ts-ignore
+        //   const node: TreeNode['value'] = route.node.value
+        //   // @ts-ignore
+        //   const overrides: Map<string, object> = node._overrides
+        //   if (overrides.size <= 1)
+        //     return
 
-          for (const pageDir of pages) {
-            const matched = [...overrides.keys()].find(e => e.match(pageDir))
-            if (matched) {
-              node.components.set('default', matched)
-              return
-            }
-          }
-        },
+        //   for (const pageDir of [...pages].reverse()) {
+        //     const matched = [...overrides.keys()].find(e => e.match(pageDir))
+        //     if (matched) {
+        //       node.components.set('default', matched)
+        //       return
+        //     }
+        //   }
+        // },
       },
-      layouts: { layoutsDirs: [...layouts].reverse(), pagesDirs: pages },
+      layouts: { layoutsDirs: layouts, pagesDirs: pages },
       components: {
         dts: `${buildTypesDir}/components.d.ts`,
-        dirs: components,
+        dirs: [...components].reverse(),
         directoryAsNamespace: true,
         collapseSamePrefixes: true,
       },
@@ -78,6 +82,8 @@ export const presetVue = defineVixtModule<VixtOptions>({
     }
 
     const options = vixt.options = defu(vixt.options, defaultOptions)
+
+    genarateGlobalComponents(vixt)
 
     const plugins = [
       VueRouter(options.router),

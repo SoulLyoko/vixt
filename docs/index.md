@@ -24,5 +24,5 @@ features:
     details: 定制属于自己的模块和插件
   - icon: ⭐
     title: 多框架支持
-    details: 支持vue,uni-app单仓库同时开发
+    details: 支持vue,uni-app,react等单仓库同时开发
 ---

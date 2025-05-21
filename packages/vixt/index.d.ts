@@ -1,1 +1,1 @@
-export * from '@vixt/core/client'
+export * from '@vixt/core'

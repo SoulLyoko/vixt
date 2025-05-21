@@ -1,9 +1,0 @@
-{
-  "name": "@vixt/layer-app",
-  "type": "module",
-  "private": true,
-  "main": "vixt.config.ts",
-  "dependencies": {
-    "vixt": "workspace:*"
-  }
-}

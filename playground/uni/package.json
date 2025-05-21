@@ -1,0 +1,30 @@
+{
+  "name": "@vixt/test-uni",
+  "type": "module",
+  "private": true,
+  "scripts": {
+    "dev": "uni",
+    "dev:h5": "uni",
+    "dev:mp": "uni -p mp-weixin",
+    "build": "uni build",
+    "build:h5": "uni build",
+    "build:mp": "uni build -p mp-weixin",
+    "tc": "vue-tsc --noEmit"
+  },
+  "dependencies": {
+    "@dcloudio/uni-app": "catalog:",
+    "@dcloudio/uni-app-plus": "catalog:",
+    "@dcloudio/uni-h5": "catalog:",
+    "@dcloudio/uni-mp-weixin": "catalog:",
+    "@dcloudio/uni-ui": "catalog:",
+    "@dcloudio/uni-uts-v1": "catalog:",
+    "@vixt/layer-uni": "workspace:*",
+    "@vixt/uni": "workspace:*",
+    "vixt": "workspace:*"
+  },
+  "devDependencies": {
+    "@dcloudio/vite-plugin-uni": "catalog:",
+    "@uni-helper/uni-ui-types": "catalog:",
+    "sass": "catalog:"
+  }
+}

@@ -1,8 +1,11 @@
-import type { PluginDefinition, VixtPlugin } from './types'
-import type { Plugin as VuePlugin } from 'vue'
+import type { VixtApp } from './app'
 
-export function defineVuePlugin<Options = any[]>(plugin: VuePlugin<Options>) {
-  return plugin
+export interface PluginDefinition {
+  name?: string
+  setup?: (this: void, vixt: VixtApp) => any
+}
+export interface VixtPlugin {
+  (this: void, vixt: VixtApp): any
 }
 
 export function defineVixtPlugin(definition: PluginDefinition | VixtPlugin): VixtPlugin {

@@ -6,7 +6,7 @@
 
 ```ts
 // src/app.config.ts
-import { defineAppConfig } from 'vixt'
+import { defineAppConfig } from 'vixt/client'
 
 export default defineAppConfig({
   title: 'My Vixt App',
@@ -20,13 +20,13 @@ export default defineAppConfig({
 
 ```ts
 // src/plugins/my-plugin.ts
-import { defineVixtPlugin } from 'vixt'
+import { defineVixtPlugin } from 'vixt/client'
 
 interface PluginOptions {
   enabled?: boolean
 }
 
-declare module '@vixt/core/client'{
+declare module '@vixt/core/client' {
   interface VixtAppConfig {
     myPlugin?: PluginOptions
   }
@@ -45,7 +45,7 @@ export default defineVixtPlugin<PluginOptions>({
 提供定义Vue插件的类型提示
 
 ```ts
-import { defineVuePlugin } from 'vixt'
+import { defineVuePlugin } from 'vixt/client'
 
 interface PluginOptions {
   enabled?: boolean

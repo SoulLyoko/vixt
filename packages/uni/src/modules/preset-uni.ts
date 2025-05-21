@@ -28,7 +28,7 @@ declare module '@vixt/core'{
   }
 }
 
-declare module '@vixt/core/client'{
+declare module '@vixt/core/client' {
   interface VixtAppConfig {
     /** https://github.com/prazdevs/pinia-plugin-persistedstate */
     piniaPersistedState?: PersistedStateOptions

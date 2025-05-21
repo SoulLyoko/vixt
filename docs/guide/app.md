@@ -31,7 +31,7 @@ export default defineVixtConfig({
 ```ts [src/plugins/register.ts]
 import ElementPlus from 'element-plus'
 import 'element-plus/dist/index.css'
-import { defineVixtPlugin } from 'vixt'
+import { defineVixtPlugin } from 'vixt/client'
 
 export default defineVixtPlugin({
   name: 'register',

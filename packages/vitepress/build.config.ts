@@ -5,6 +5,7 @@ export default defineBuildConfig({
     'defu',
     'pathe',
     'fs-extra',
+    'pinia',
     'pinia-plugin-persistedstate',
     'unocss/vite',
     'unplugin-auto-import',

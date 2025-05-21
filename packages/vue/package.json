@@ -18,7 +18,8 @@
     "dist"
   ],
   "scripts": {
-    "build": "unbuild"
+    "build": "unbuild",
+    "dev": "unbuild --stub"
   },
   "dependencies": {
     "@vitejs/plugin-vue": "catalog:",
@@ -35,6 +36,7 @@
     "vite-plugin-vue-devtools": "catalog:",
     "vite-plugin-vue-layouts": "catalog:",
     "vue": "catalog:",
-    "vue-router": "catalog:"
+    "vue-router": "catalog:",
+    "vue-tsc": "catalog:"
   }
 }

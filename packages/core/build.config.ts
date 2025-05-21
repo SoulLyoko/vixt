@@ -4,12 +4,15 @@ import { defineBuildConfig } from 'unbuild'
 
 export default defineBuildConfig({
   declaration: true,
-  entries: ['src/index.ts', 'src/client/index.ts'],
-  externals: ['vue', 'vue-router', 'pinia', '@vue/language-core'],
+  entries: ['src/node/index.ts', 'src/client/index.ts'],
+  externals: ['@vue/language-core'],
   hooks: {
-    'mkdist:done': (ctx) => {
-      const appComponentPath = path.join(ctx.options.outDir, 'client/App.vue')
-      fs.outputFileSync(appComponentPath, `<template>\n  <RouterView />\n</template>\n`)
+    'build:done': (ctx) => {
+      const { outDir, stub } = ctx.options
+      if (stub) {
+        const clientIndexPath = path.resolve(outDir, 'client/index.mjs')
+        fs.writeFileSync(clientIndexPath, `export * from "${path.resolve('./src/client/index.js')}"`)
+      }
     },
   },
 })

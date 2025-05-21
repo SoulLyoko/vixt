@@ -9,10 +9,12 @@ export default defineBuildConfig({
     'local-pkg',
     'mlly',
     'pathe',
+    'pinia',
     'pinia-plugin-persistedstate',
     'unocss/vite',
     'unplugin-auto-import',
     'unplugin-auto-import/vite',
     'vite',
+    'vue',
   ],
 })

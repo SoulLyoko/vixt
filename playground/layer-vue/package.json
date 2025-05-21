@@ -1,0 +1,12 @@
+{
+  "name": "@vixt/layer-vue",
+  "type": "module",
+  "private": true,
+  "main": "vixt.config.ts",
+  "dependencies": {
+    "@iconify/vue": "catalog:",
+    "@vixt/layer-shared": "workspace:*",
+    "@vixt/vue": "workspace:*",
+    "vixt": "workspace:*"
+  }
+}

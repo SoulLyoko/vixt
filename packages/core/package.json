@@ -8,24 +8,22 @@
   "repository": "https://github.com/SoulLyoko/vixt.git",
   "exports": {
     ".": {
-      "types": "./dist/index.d.ts",
-      "import": "./dist/index.mjs"
+      "types": "./dist/node/index.d.ts",
+      "import": "./dist/node/index.mjs"
     },
     "./client": {
       "types": "./dist/client/index.d.ts",
       "import": "./dist/client/index.mjs"
-    },
-    "./client/App.vue": {
-      "import": "./dist/client/App.vue"
     }
   },
-  "main": "dist/index.mjs",
-  "types": "dist/index.d.ts",
+  "main": "./dist/node/index.mjs",
+  "types": "./dist/node/index.d.ts",
   "files": [
     "dist"
   ],
   "scripts": {
-    "build": "unbuild"
+    "build": "unbuild",
+    "dev": "unbuild --stub"
   },
   "dependencies": {
     "@types/fs-extra": "catalog:",
@@ -40,7 +38,6 @@
     "pkg-types": "catalog:",
     "tsx": "catalog:",
     "vite": "catalog:",
-    "vite-plugin-checker": "catalog:",
-    "vue-tsc": "catalog:"
+    "vite-plugin-checker": "catalog:"
   }
 }

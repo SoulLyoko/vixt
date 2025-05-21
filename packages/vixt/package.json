@@ -11,37 +11,19 @@
       "types": "./index.d.ts",
       "import": "./index.js"
     },
-    "./core": {
-      "types": "./core.d.ts",
-      "import": "./core.js"
-    },
-    "./vue": {
-      "types": "./vue.d.ts",
-      "import": "./vue.js"
-    },
-    "./uni": {
-      "types": "./uni.d.ts",
-      "import": "./uni.js"
-    },
-    "./vitepress": {
-      "types": "./vitepress.d.ts",
-      "import": "./vitepress.js"
+    "./client": {
+      "types": "./client.d.ts",
+      "import": "./client.js"
     }
   },
   "main": "index.js",
   "types": "index.d.ts",
   "files": [
-    "core.*",
-    "index.*",
-    "uni.*",
-    "vitepress.*",
-    "vue.*"
+    "client.*",
+    "index.*"
   ],
   "scripts": {},
   "dependencies": {
-    "@vixt/core": "workspace:*",
-    "@vixt/uni": "workspace:*",
-    "@vixt/vitepress": "workspace:*",
-    "@vixt/vue": "workspace:*"
+    "@vixt/core": "workspace:*"
   }
 }

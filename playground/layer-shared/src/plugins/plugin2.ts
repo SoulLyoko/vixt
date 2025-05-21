@@ -1,5 +1,5 @@
-import { defineVixtPlugin } from 'vixt'
+import { defineVixtPlugin } from 'vixt/client'
 
 export default defineVixtPlugin(() => {
-  console.log('layer-shared plugin2 loaded')
+  console.log('layer-shared2 plugin loaded')
 })

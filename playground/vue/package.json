@@ -1,0 +1,17 @@
+{
+  "name": "@vixt/test-vue",
+  "type": "module",
+  "private": true,
+  "scripts": {
+    "build": "vite build",
+    "dev": "vite",
+    "preview": "vite preview",
+    "tc": "vue-tsc --noEmit",
+    "test": "vitest"
+  },
+  "dependencies": {
+    "@vixt/layer-vue": "workspace:*",
+    "@vixt/vue": "workspace:*",
+    "vixt": "workspace:*"
+  }
+}

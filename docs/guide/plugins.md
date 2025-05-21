@@ -7,13 +7,13 @@ Vixt会在`createApp`之后自动扫描并执行`plugins`文件夹中的所有�
 :::code-group
 
 ```ts [plugins/my-plugin.ts]
-import { defineVixtPlugin } from 'vixt'
+import { defineVixtPlugin } from 'vixt/client'
 
 interface PluginOptions {
   enabled?: boolean
 }
 
-declare module '@vixt/core/client'{
+declare module '@vixt/core/client' {
   interface VixtAppConfig {
     myPluginOptions?: PluginOptions
   }
