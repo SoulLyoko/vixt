@@ -1,0 +1,14 @@
+{
+  "name": "@vixt/layer-react",
+  "type": "module",
+  "private": true,
+  "main": "vixt.config.ts",
+  "dependencies": {
+    "@iconify/react": "catalog:",
+    "@reactuses/core": "catalog:",
+    "@vixt/layer-shared": "workspace:*",
+    "@vixt/react": "workspace:*",
+    "vixt": "workspace:*",
+    "zustand": "catalog:"
+  }
+}

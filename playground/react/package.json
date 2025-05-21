@@ -1,0 +1,16 @@
+{
+  "name": "@vixt/test-react",
+  "type": "module",
+  "private": true,
+  "scripts": {
+    "build": "vite build",
+    "dev": "vite",
+    "preview": "vite preview",
+    "test": "vitest"
+  },
+  "dependencies": {
+    "@vixt/layer-react": "workspace:*",
+    "@vixt/react": "workspace:*",
+    "vixt": "workspace:*"
+  }
+}

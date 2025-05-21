@@ -1,0 +1,42 @@
+{
+  "name": "@vixt/react",
+  "type": "module",
+  "version": "0.3.6",
+  "author": "SoulLyoko<https://github.com/SoulLyoko>",
+  "license": "MIT",
+  "homepage": "https://github.com/SoulLyoko/vixt#readme",
+  "repository": "https://github.com/SoulLyoko/vixt.git",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.mjs"
+    }
+  },
+  "main": "dist/index.mjs",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "unbuild",
+    "dev": "unbuild --stub"
+  },
+  "dependencies": {
+    "@types/react": "catalog:",
+    "@types/react-dom": "catalog:",
+    "@vitejs/plugin-react": "catalog:",
+    "@vixt/core": "workspace:*",
+    "ahooks": "catalog:",
+    "extract-comments": "catalog:",
+    "fast-glob": "catalog:",
+    "react": "catalog:",
+    "react-dom": "catalog:",
+    "react-router": "catalog:",
+    "unocss": "catalog:",
+    "unplugin-auto-import": "catalog:",
+    "unplugin-vue-components": "catalog:",
+    "vite-plugin-pages": "catalog:",
+    "vite-plugin-vue-layouts": "catalog:",
+    "yaml": "catalog:"
+  }
+}

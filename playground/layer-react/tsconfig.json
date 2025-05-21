@@ -1,0 +1,3 @@
+{
+  "extends": "../react/.vixt/tsconfig.json"
+}
