@@ -4,7 +4,7 @@ packages:
   - docs
 
 catalog:
-  '@antfu/eslint-config': ^4.13.1
+  '@antfu/eslint-config': ^4.13.2
   '@commitlint/cli': ^19.8.1
   '@commitlint/config-conventional': ^19.8.1
   '@dcloudio/types': ^3.4.15
@@ -19,7 +19,7 @@ catalog:
   '@iconify/vue': ^5.0.0
   '@reactuses/core': ^6.0.2
   '@types/fs-extra': ^11.0.4
-  '@types/react': ^19.1.4
+  '@types/react': ^19.1.5
   '@types/react-dom': ^19.1.5
   '@uni-helper/uni-app-types': ^1.0.0-alpha.6
   '@uni-helper/uni-ui-types': ^1.0.0-alpha.6
@@ -81,4 +81,4 @@ catalog:
   vue-router: ^4.5.1
   vue-tsc: ^2.2.10
   yaml: ^2.8.0
-  zustand: ^5.0.4
+  zustand: ^5.0.5

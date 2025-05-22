@@ -1,5 +1,5 @@
 {
-  "name": "vixt-vue-ts",
+  "name": "vixt-react-ts",
   "type": "module",
   "version": "0.0.0",
   "private": true,
@@ -9,7 +9,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "@vixt/vue": "workspace:*",
+    "@vixt/react": "workspace:*",
     "vixt": "workspace:*"
   }
 }

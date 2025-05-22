@@ -26,6 +26,9 @@ pnpm create vixt my-project
 
 # uni-app单项目
 # pnpm create vixt my-project --template uni-ts
+
+# react单项目
+# pnpm create vixt my-project --template react-ts
 ```
 
 ## 在现有项目中使用
@@ -80,4 +83,5 @@ export default defineConfig({
 | [@vixt/vue](packages/vue)             | vue的适配层          |
 | [@vixt/uni](packages/uni)             | uni-app的适配层      |
 | [@vixt/vitepress](packages/vitepress) | vitepress的适配层    |
+| [@vixt/react](packages/react)         | react的适配层        |
 | [create-vixt](packages/create-vixt)   | 用于创建模板项目     |

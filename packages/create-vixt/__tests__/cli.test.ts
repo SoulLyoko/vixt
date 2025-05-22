@@ -35,15 +35,21 @@ describe.skipIf(isWatch)('create-vixt', () => {
     expect(getVixtDepVersion(genPath)).toBe(vixtVersion)
     expect(getVixtDepVersion(path.join(genPath, 'packages/vue'))).toBeUndefined()
     expect(getVixtDepVersion(path.join(genPath, 'packages/uni'))).toBeUndefined()
+    expect(getVixtDepVersion(path.join(genPath, 'packages/react'))).toBeUndefined()
   })
 
-  it('should create a vue project', () => {
+  it('should create vue project', () => {
     run([projectName, '--template', 'vue-ts'])
     expect(getVixtDepVersion(genPath)).toBe(vixtVersion)
   })
 
-  it('should create a uni project', () => {
+  it('should create uni project', () => {
     run([projectName, '--template', 'uni-ts'])
+    expect(getVixtDepVersion(genPath)).toBe(vixtVersion)
+  })
+
+  it('should create react project', () => {
+    run([projectName, '--template', 'react-ts'])
     expect(getVixtDepVersion(genPath)).toBe(vixtVersion)
   })
 })

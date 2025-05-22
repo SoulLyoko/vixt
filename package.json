@@ -19,7 +19,7 @@
     "dev:vue": "pnpm -F test-vue dev",
     "lint": "eslint .",
     "postinstall": "npx simple-git-hooks",
-    "prerelease": "pnpm build && pnpm test run && pnpm test:web run",
+    "prerelease": "pnpm build && pnpm test run && pnpm test:vue run",
     "release": "tsx scripts/release.ts",
     "rm:dist": "tsx scripts/rm-dist.ts",
     "tc": "tsc --noEmit",
@@ -48,7 +48,8 @@
   },
   "pnpm": {
     "overrides": {
-      "vite": "catalog:"
+      "vite": "catalog:",
+      "vue": "catalog:"
     },
     "peerDependencyRules": {
       "allowAny": [

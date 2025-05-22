@@ -1,12 +1,6 @@
 {
   "extends": "@vue/tsconfig/tsconfig.json",
   "compilerOptions": {
-    "baseUrl": ".",
-    "paths": {
-      "vixt": ["packages/vixt"],
-      "vixt/*": ["packages/vixt/*"],
-      "@vixt/*": ["packages/*"]
-    },
     "types": ["vitest/globals", "@vitest/browser/providers/playwright"]
   },
   "exclude": ["dist"]

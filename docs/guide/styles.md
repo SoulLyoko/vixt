@@ -45,11 +45,11 @@ export default defineVixtConfig({
 :::code-group
 
 ```ts [uno.config.ts]
-import { defineConfig, presetAttributify, presetUno } from 'unocss'
+import { defineConfig, presetAttributify, presetWind3 } from 'unocss'
 
 export default defineConfig({
   presets: [
-    presetUno(),
+    presetWind3(),
     presetAttributify(),
   ],
 })

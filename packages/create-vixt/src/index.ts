@@ -47,7 +47,11 @@ function copyTemplateFiles(srcDir: string, destDir: string) {
   fs.copySync(srcDir, destDir)
   editPackageJson(destDir, (json) => {
     json.name = projectName
-    json.dependencies.vixt = `^${version}`
+    Object.entries(json.dependencies).forEach(([key, value]) => {
+      if (value === 'workspace:*') {
+        json.dependencies[key] = `^${version}`
+      }
+    })
   })
 }
 
@@ -65,6 +69,13 @@ if (templateName === 'monorepo-ts') {
   const uniProjectPath = path.join(projectPath, 'packages/uni')
   fs.copySync(uniTemplatePath, uniProjectPath)
   editPackageJson(uniProjectPath, (json) => {
+    delete json.dependencies.vixt
+  })
+
+  const reactTemplatePath = path.join(__dirname, `../template-react-ts`)
+  const reactProjectPath = path.join(projectPath, 'packages/react')
+  fs.copySync(reactTemplatePath, reactProjectPath)
+  editPackageJson(reactProjectPath, (json) => {
     delete json.dependencies.vixt
   })
 }
