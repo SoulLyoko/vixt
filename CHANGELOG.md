@@ -1,3 +1,26 @@
+# [0.4.0](https://github.com/SoulLyoko/vixt/compare/v0.3.6...v0.4.0) (2025-05-22)
+
+
+### Code Refactoring
+
+* refactor all packages for better scalability ([4eb9a0b](https://github.com/SoulLyoko/vixt/commit/4eb9a0b3aa37ce25c941e71053f0cd09cef90932))
+
+
+### Features
+
+* **create-vixt:** add template-react-ts ([80651f8](https://github.com/SoulLyoko/vixt/commit/80651f805bb8191556e84f4982f55a971f6ee9da))
+* **react:** support react ([2e5af1f](https://github.com/SoulLyoko/vixt/commit/2e5af1f7558243ace4338339f2230a51e40d49a5))
+
+
+### BREAKING CHANGES
+
+* remove exports `vue,uni,vitepress` from package `vixt`
+* use `@vixt/vue`,`@vixt/uni`,`@vixt/vitepress` instead
+* `vixt/index.js` now reexport `@vixt/core`
+* use `import { defineAppConfig, defineVixtPlugin } from 'vixt/client'` instead
+
+
+
 ## [0.3.6](https://github.com/SoulLyoko/vixt/compare/v0.3.5...v0.3.6) (2025-05-09)
 
 
