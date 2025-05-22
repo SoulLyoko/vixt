@@ -1,3 +1,12 @@
+## [0.4.1](https://github.com/SoulLyoko/vixt/compare/v0.4.0...v0.4.1) (2025-05-22)
+
+
+### Bug Fixes
+
+* build script ([14bfc6b](https://github.com/SoulLyoko/vixt/commit/14bfc6b59b83b97ba55f37646e8f38ec0282988c))
+
+
+
 # [0.4.0](https://github.com/SoulLyoko/vixt/compare/v0.3.6...v0.4.0) (2025-05-22)
 
 
