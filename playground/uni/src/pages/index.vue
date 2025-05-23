@@ -1,5 +1,4 @@
 <script setup lang="ts">
-// @ts-ignore
 import { showToast } from '@/uni_modules/uts-toast'
 
 const user = useUserStore()

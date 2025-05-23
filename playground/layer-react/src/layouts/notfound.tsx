@@ -1,6 +1,6 @@
 import { Outlet } from 'react-router'
 
-function Layout404() {
+function LayoutNotfound() {
   return (
     <div>
       <Outlet />
@@ -11,4 +11,4 @@ function Layout404() {
   )
 }
 
-export default Layout404
+export default LayoutNotfound

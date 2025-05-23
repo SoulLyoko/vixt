@@ -11,9 +11,11 @@
       <Icon :icon="isDark ? 'carbon:sun' : 'carbon:moon'" width="20px" />
     </view>
 
-    <uni-link icon-btn href="https://github.com/SoulLyoko/vixt" title="GitHub">
-      <Icon icon="carbon:logo-github" width="20px" />
-    </uni-link>
+    <view>
+      <uni-link icon-btn href="https://github.com/SoulLyoko/vixt" title="GitHub">
+        <Icon icon="carbon:logo-github" width="20px" inline-block />
+      </uni-link>
+    </view>
 
     <navigator icon-btn url="/pages/about" title="About">
       <Icon icon="carbon:dicom-overlay" width="20px" />

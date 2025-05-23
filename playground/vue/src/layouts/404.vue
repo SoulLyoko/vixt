@@ -5,7 +5,7 @@ const router = useRouter()
 <template>
   <main p="x4 y10" text="center teal-700 dark:gray-200">
     <div text-4xl>
-      <Icon icon="carbon:campsite" inline-block />
+      <Icon icon="carbon:warning" inline-block />
     </div>
     <RouterView />
     <div>

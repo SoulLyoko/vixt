@@ -7,6 +7,7 @@
   "keywords": [
     "uts-toast"
   ],
+  "types": "index.d.ts",
   "engines": {
     "HBuilderX": "^3.6.8"
   },

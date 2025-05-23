@@ -48,6 +48,7 @@
   },
   "pnpm": {
     "overrides": {
+      "@vue/shared": "catalog:",
       "vite": "catalog:",
       "vue": "catalog:"
     },

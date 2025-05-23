@@ -1,5 +1,8 @@
 import { defineAppConfig } from 'vixt/client'
 
+const env = useEnv()
+console.log('env:', env)
+
 export default defineAppConfig({
-  name: useEnv().VITE_APP_NAME,
+  name: 'layer-shared',
 })

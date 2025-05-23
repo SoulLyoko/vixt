@@ -2,7 +2,7 @@
 route
 
 meta:
-  layout: 404
+  layout: notfound
 */
 
 function all() {
