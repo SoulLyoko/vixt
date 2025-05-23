@@ -1,3 +1,12 @@
+## [0.4.2](https://github.com/SoulLyoko/vixt/compare/v0.4.1...v0.4.2) (2025-05-23)
+
+
+### Bug Fixes
+
+* **vue:** fix router overrides priority ([d13c51d](https://github.com/SoulLyoko/vixt/commit/d13c51d7d1136145f09cf6f7a8a4daa69415f2c1))
+
+
+
 ## [0.4.1](https://github.com/SoulLyoko/vixt/compare/v0.4.0...v0.4.1) (2025-05-22)
 
 
