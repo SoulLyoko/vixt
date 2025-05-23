@@ -1,5 +1,5 @@
 import type { PluginOptions, VixtOptions } from '@vixt/core'
-// import type { TreeNode } from 'unplugin-vue-router'
+import type { TreeNode } from 'unplugin-vue-router'
 
 import Vue from '@vitejs/plugin-vue'
 import VueJsx from '@vitejs/plugin-vue-jsx'
@@ -47,22 +47,22 @@ export const presetVue = defineVixtModule<VixtOptions>({
         dts: `${buildTypesDir}/typed-router.d.ts`,
         routesFolder: pages,
         /** Fix overrides priority */
-        // extendRoute(route) {
-        //   // @ts-ignore
-        //   const node: TreeNode['value'] = route.node.value
-        //   // @ts-ignore
-        //   const overrides: Map<string, object> = node._overrides
-        //   if (overrides.size <= 1)
-        //     return
+        extendRoute(route) {
+          // @ts-ignore
+          const node: TreeNode['value'] = route.node.value
+          // @ts-ignore
+          const overrides: Map<string, object> = node._overrides
+          if (overrides.size <= 1)
+            return
 
-        //   for (const pageDir of [...pages].reverse()) {
-        //     const matched = [...overrides.keys()].find(e => e.match(pageDir))
-        //     if (matched) {
-        //       node.components.set('default', matched)
-        //       return
-        //     }
-        //   }
-        // },
+          for (const pageDir of [...pages].reverse()) {
+            const matched = [...overrides.keys()].find(e => e.match(pageDir))
+            if (matched) {
+              node.components.set('default', matched)
+              return
+            }
+          }
+        },
       },
       layouts: { layoutsDirs: layouts, pagesDirs: pages },
       components: {
@@ -74,7 +74,7 @@ export const presetVue = defineVixtModule<VixtOptions>({
       imports: {
         imports: ['vue', '@vueuse/core', 'pinia', VueRouterAutoImports],
         dts: `${buildTypesDir}/auto-imports.d.ts`,
-        dirs: [...composables, ...constants, ...stores, ...utils, buildImportsDir!],
+        dirs: [composables, constants, stores, utils, buildImportsDir!].flat(),
         vueTemplate: true,
       },
       unocss: {},

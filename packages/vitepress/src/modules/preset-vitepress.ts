@@ -24,12 +24,12 @@ const name = 'vixt:preset-vitepress'
 export const presetVitepress = defineVixtModule<VixtOptions>({
   meta: { name },
   async setup(_, vixt) {
-    const { components, composables = [], constants = [], utils = [], stores = [] } = resolveLayersDirs(vixt._layers)
+    const { components = [], composables = [], constants = [], utils = [], stores = [] } = resolveLayersDirs([...vixt._layers].reverse())
     const { buildTypesDir, buildImportsDir } = vixt.options
     const defaultOptions: VixtOptions = {
       components: {
         dts: `${buildTypesDir}/components.d.ts`,
-        dirs: components,
+        dirs: [...components].reverse(),
         directoryAsNamespace: true,
         collapseSamePrefixes: true,
         extensions: ['vue', 'md'],
@@ -39,7 +39,7 @@ export const presetVitepress = defineVixtModule<VixtOptions>({
         include: [/\.[jt]sx?$/, /\.vue$/, /\.vue\?vue/, /\.md/, /\.md\?md/],
         imports: ['vue', '@vueuse/core', 'pinia', VueRouterAutoImports],
         dts: `${buildTypesDir}/auto-imports.d.ts`,
-        dirs: [...composables, ...constants, ...stores, ...utils, buildImportsDir!],
+        dirs: [composables, constants, stores, utils, buildImportsDir!].flat(),
         vueTemplate: true,
       },
       unocss: {},

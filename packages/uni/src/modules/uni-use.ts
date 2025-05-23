@@ -9,7 +9,7 @@ import { resolveModule } from 'local-pkg'
 
 let _cache: ImportsMap | undefined
 
-export function useImports() {
+export function uniVueUseResolver() {
   const excluded = [
     'toRefs',
     'utils',

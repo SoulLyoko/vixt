@@ -10,7 +10,8 @@ import defu from 'defu'
 import UnoCSS from 'unocss/vite'
 import AutoImport from 'unplugin-auto-import/vite'
 
-import { uniPatch, useImports } from '.'
+import { uniPatch } from './uni-patch'
+import { uniVueUseResolver } from './uni-use'
 
 declare module '@vixt/core'{
   interface VixtOptions {
@@ -39,7 +40,7 @@ const name = 'vixt:preset-uni'
 export const presetUni = defineVixtModule<VixtOptions>({
   meta: { name },
   setup(_, vixt) {
-    const { components, composables = [], constants = [], utils = [], stores = [] } = resolveLayersDirs(vixt._layers)
+    const { components = [], composables = [], constants = [], utils = [], stores = [] } = resolveLayersDirs([...vixt._layers].reverse())
     const { buildTypesDir, buildImportsDir } = vixt.options
     const defaultOptions: VixtOptions = {
       uni: {},
@@ -47,14 +48,14 @@ export const presetUni = defineVixtModule<VixtOptions>({
       uniLayouts: {},
       uniComponents: {
         dts: `${buildTypesDir}/components.d.ts`,
-        dirs: components,
+        dirs: [...components].reverse(),
         directoryAsNamespace: true,
         collapseSamePrefixes: true,
       },
       imports: {
-        imports: ['vue', 'uni-app', 'pinia', useImports()],
+        imports: ['vue', 'uni-app', 'pinia', uniVueUseResolver()],
         dts: `${buildTypesDir}/auto-imports.d.ts`,
-        dirs: [...composables, ...constants, ...stores, ...utils, buildImportsDir!],
+        dirs: [composables, constants, stores, utils, buildImportsDir!].flat(),
         vueTemplate: true,
       },
       unocss: {},

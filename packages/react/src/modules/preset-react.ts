@@ -29,7 +29,7 @@ const name = 'vixt:preset-react'
 export const presetReact = defineVixtModule<VixtOptions>({
   meta: { name },
   async setup(_, vixt) {
-    const { constants = [], hooks = [], layouts = [], pages = [], stores = [], utils = [] } = resolveLayersDirs([...vixt._layers].reverse())
+    const { components = [], constants = [], hooks = [], layouts = [], pages = [], stores = [], utils = [] } = resolveLayersDirs([...vixt._layers].reverse())
     const { buildTypesDir, buildImportsDir } = vixt.options
 
     const defaultOptions: VixtOptions = {
@@ -45,7 +45,7 @@ export const presetReact = defineVixtModule<VixtOptions>({
         importMode: () => 'sync',
       },
       imports: {
-        imports: ['react', 'react-router', 'ahooks', componentsResolver(vixt)],
+        imports: ['react', 'react-router', 'ahooks', componentsResolver({ dirs: components })],
         dts: `${buildTypesDir}/auto-imports.d.ts`,
         dirs: [constants, hooks, stores, utils, buildImportsDir!].flat(),
       },
