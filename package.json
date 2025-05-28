@@ -20,7 +20,7 @@
     "lint": "eslint .",
     "postinstall": "npx simple-git-hooks",
     "prerelease": "pnpm build && pnpm test run && pnpm test:vue run",
-    "release": "tsx scripts/release.ts",
+    "release": "bumpp",
     "rm:dist": "tsx scripts/rm-dist.ts",
     "tc": "tsc --noEmit",
     "test": "vitest",

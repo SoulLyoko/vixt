@@ -1,8 +1,7 @@
 import { defineConfig } from 'bumpp'
 
 export default defineConfig({
+  all: true,
   files: ['package.json', 'packages/*/package.json'],
-  commit: false,
-  tag: false,
-  push: false,
+  execute: 'pnpm changelog',
 })
