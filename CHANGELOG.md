@@ -1,3 +1,13 @@
+## [0.4.4](https://github.com/SoulLyoko/vixt/compare/v0.4.3...v0.4.4) (2025-07-02)
+
+
+### Bug Fixes
+
+* add `patchUnocss` compatible unocss v66.0.0 to vite v7.0.0 ([50b8793](https://github.com/SoulLyoko/vixt/commit/50b8793dced06e106dc1bcd18d633ff6c051935a))
+* **core:** remove layers dir on init ([51087bf](https://github.com/SoulLyoko/vixt/commit/51087bfe2dd272fbe02fcbd974c99c6006ce1a64))
+
+
+
 ## [0.4.3](https://github.com/SoulLyoko/vixt/compare/v0.4.2...v0.4.3) (2025-06-24)
 
 
