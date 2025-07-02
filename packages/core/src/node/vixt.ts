@@ -23,11 +23,15 @@ export async function loadVixt(opts?: LoadConfigOptions<VixtOptions>) {
     },
   }))
 
-  // remove buildDir
   const parsedArgv = cac().parse()
   const isForce = !!parsedArgv.options.force
   if (isForce) {
+    // remove buildDir
     fs.removeSync(result.config.buildDir!)
+  }
+  else {
+    // remove layers
+    fs.removeSync(result.config.buildLayersDir!)
   }
 
   // apply layers
