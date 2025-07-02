@@ -90,6 +90,7 @@ export function applyLayers(layers: VixtConfigLayer[], config: VixtOptions) {
     // copy to `<buildLayersDir>/<layerName>` when layer is in node_modules
     if (layer.cwd?.includes('node_modules')) {
       const newCwd = resolve(buildLayersDir!, layerName)
+      fs.removeSync(newCwd)
       fs.copySync(layer.cwd!, newCwd, {
         filter: (src) => {
           const nodeModulesPath = resolve(layer.cwd!, 'node_modules')
