@@ -3,7 +3,7 @@ import type { TreeNode } from 'unplugin-vue-router'
 
 import Vue from '@vitejs/plugin-vue'
 import VueJsx from '@vitejs/plugin-vue-jsx'
-import { defineVixtModule, resolveLayersDirs } from '@vixt/core'
+import { defineVixtModule, patchUnocss, resolveLayersDirs } from '@vixt/core'
 import defu from 'defu'
 import UnoCSS from 'unocss/vite'
 import AutoImport from 'unplugin-auto-import/vite'
@@ -84,6 +84,8 @@ export const presetVue = defineVixtModule<VixtOptions>({
     const options = vixt.options = defu(vixt.options, defaultOptions)
 
     genarateGlobalComponents(vixt)
+
+    patchUnocss()
 
     const plugins = [
       VueRouter(options.router),
