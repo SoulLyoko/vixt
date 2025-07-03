@@ -1,3 +1,13 @@
+## [0.4.5](https://github.com/SoulLyoko/vixt/compare/v0.4.4...v0.4.5) (2025-07-03)
+
+
+### Bug Fixes
+
+* **core:** remove layer before copy ([64b083d](https://github.com/SoulLyoko/vixt/commit/64b083d4f20f1797f392430789f9e7ba580be9d7))
+* **web:** remove default viewport meta ([c528cd2](https://github.com/SoulLyoko/vixt/commit/c528cd2f776cd633b56df4c9e086cc9bab262afd))
+
+
+
 ## [0.4.4](https://github.com/SoulLyoko/vixt/compare/v0.4.3...v0.4.4) (2025-07-02)
 
 
