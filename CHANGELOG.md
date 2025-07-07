@@ -1,3 +1,12 @@
+## [0.5.1](https://github.com/SoulLyoko/vixt/compare/v0.5.0...v0.5.1) (2025-07-07)
+
+
+### Bug Fixes
+
+* **core:** load plugins with `.ts(x)` and `.js(x)`, load modules with `.ts` and `.js` ([7780478](https://github.com/SoulLyoko/vixt/commit/7780478f451c6f7ad2d7a6af731cb331b68c6983))
+
+
+
 # [0.5.0](https://github.com/SoulLyoko/vixt/compare/v0.4.5...v0.5.0) (2025-07-07)
 
 

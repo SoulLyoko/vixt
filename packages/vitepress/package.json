@@ -1,7 +1,7 @@
 {
   "name": "@vixt/vitepress",
   "type": "module",
-  "version": "0.5.0",
+  "version": "0.5.1",
   "author": "SoulLyoko<https://github.com/SoulLyoko>",
   "license": "MIT",
   "homepage": "https://soullyoko.github.io/vixt/",
