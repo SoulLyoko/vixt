@@ -1,3 +1,12 @@
+# [0.5.0](https://github.com/SoulLyoko/vixt/compare/v0.4.5...v0.5.0) (2025-07-07)
+
+
+### Bug Fixes
+
+* bring back default viewport meta ([91e1dee](https://github.com/SoulLyoko/vixt/commit/91e1dee59ab5d7ab3cae8f66fa32340110e6afc0))
+
+
+
 ## [0.4.5](https://github.com/SoulLyoko/vixt/compare/v0.4.4...v0.4.5) (2025-07-03)
 
 
