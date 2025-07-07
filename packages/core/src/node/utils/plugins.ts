@@ -13,7 +13,7 @@ export function generatePlugins(vixt: Vixt) {
 
   for (const pluginsDir of pluginsDirs.reverse()) {
     const files = fs.existsSync(pluginsDir) ? fs.readdirSync(pluginsDir) : []
-    for (const f of files) {
+    for (const f of files.filter(f => /(?:t|j)sx?$/.test(f))) {
       const p = path.resolve(pluginsDir, f)
       const pluginName = `__plugin_${i}`
       pluginsImportTemplate += `import ${pluginName} from '${p}'\n`
