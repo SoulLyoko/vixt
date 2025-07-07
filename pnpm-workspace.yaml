@@ -7,17 +7,17 @@ catalog:
   '@antfu/eslint-config': ^4.16.2
   '@commitlint/cli': ^19.8.1
   '@commitlint/config-conventional': ^19.8.1
-  '@dcloudio/types': ^3.4.15
-  '@dcloudio/uni-app': 3.0.0-alpha-4070420250630002
-  '@dcloudio/uni-app-plus': 3.0.0-alpha-4070420250630002
-  '@dcloudio/uni-h5': 3.0.0-alpha-4070420250630002
-  '@dcloudio/uni-mp-weixin': 3.0.0-alpha-4070420250630002
+  '@dcloudio/types': ^3.4.16
+  '@dcloudio/uni-app': 3.0.0-alpha-4070520250704001
+  '@dcloudio/uni-app-plus': 3.0.0-alpha-4070520250704001
+  '@dcloudio/uni-h5': 3.0.0-alpha-4070520250704001
+  '@dcloudio/uni-mp-weixin': 3.0.0-alpha-4070520250704001
   '@dcloudio/uni-ui': ^1.5.8
-  '@dcloudio/uni-uts-v1': 3.0.0-alpha-4070420250630002
-  '@dcloudio/vite-plugin-uni': 3.0.0-alpha-4070420250630002
+  '@dcloudio/uni-uts-v1': 3.0.0-alpha-4070520250704001
+  '@dcloudio/vite-plugin-uni': 3.0.0-alpha-4070520250704001
   '@iconify/react': ^6.0.0
   '@iconify/vue': ^5.0.0
-  '@reactuses/core': ^6.0.3
+  '@reactuses/core': ^6.0.5
   '@types/fs-extra': ^11.0.4
   '@types/react': ^19.1.8
   '@types/react-dom': ^19.1.6
@@ -36,7 +36,7 @@ catalog:
   '@vitest/browser': ^3.2.4
   '@vue/shared': ^3.5.17
   '@vue/tsconfig': ^0.7.0
-  '@vueuse/core': ^13.4.0
+  '@vueuse/core': ^13.5.0
   ahooks: ^3.9.0
   bumpp: ^10.2.0
   c12: ^3.0.4
@@ -70,7 +70,7 @@ catalog:
   unplugin-auto-import: ^19.3.0
   unplugin-vue-components: 28.0.0
   unplugin-vue-router: ^0.14.0
-  vite: ^7.0.0
+  vite: ^7.0.2
   vite-plugin-checker: ^0.9.3
   vite-plugin-pages: ^0.33.1
   vite-plugin-vue-devtools: ^7.7.7
@@ -79,6 +79,6 @@ catalog:
   vitest: ^3.2.4
   vue: ^3.5.17
   vue-router: ^4.5.1
-  vue-tsc: ^3.0.0
+  vue-tsc: ^3.0.1
   yaml: ^2.8.0
   zustand: ^5.0.6
