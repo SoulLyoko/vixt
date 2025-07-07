@@ -11,7 +11,6 @@
   },
   "dependencies": {
     "@vixt/layer-vue": "workspace:*",
-    "@vixt/vue": "workspace:*",
     "vixt": "workspace:*"
   }
 }

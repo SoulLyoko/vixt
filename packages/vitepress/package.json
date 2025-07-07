@@ -4,8 +4,13 @@
   "version": "0.4.5",
   "author": "SoulLyoko<https://github.com/SoulLyoko>",
   "license": "MIT",
-  "homepage": "https://github.com/SoulLyoko/vixt#readme",
+  "homepage": "https://soullyoko.github.io/vixt/",
   "repository": "https://github.com/SoulLyoko/vixt.git",
+  "keywords": [
+    "vixt",
+    "vite",
+    "vitepress"
+  ],
   "exports": {
     ".": {
       "types": "./dist/index.d.ts",

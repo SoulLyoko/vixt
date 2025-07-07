@@ -19,7 +19,6 @@
     "@dcloudio/uni-ui": "catalog:",
     "@dcloudio/uni-uts-v1": "catalog:",
     "@vixt/layer-uni": "workspace:*",
-    "@vixt/uni": "workspace:*",
     "vixt": "workspace:*"
   },
   "devDependencies": {

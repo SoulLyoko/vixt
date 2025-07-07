@@ -7,7 +7,6 @@
     "@iconify/react": "catalog:",
     "@reactuses/core": "catalog:",
     "@vixt/layer-shared": "workspace:*",
-    "@vixt/react": "workspace:*",
     "vixt": "workspace:*",
     "zustand": "catalog:"
   }

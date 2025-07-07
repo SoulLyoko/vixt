@@ -4,26 +4,57 @@
   "version": "0.4.5",
   "author": "SoulLyoko<https://github.com/SoulLyoko>",
   "license": "MIT",
-  "homepage": "https://github.com/SoulLyoko/vixt#readme",
+  "homepage": "https://soullyoko.github.io/vixt/",
   "repository": "https://github.com/SoulLyoko/vixt.git",
+  "keywords": [
+    "vixt",
+    "vite",
+    "nuxt",
+    "vue",
+    "uni",
+    "vitepress",
+    "react"
+  ],
   "exports": {
     ".": {
-      "types": "./index.d.ts",
-      "import": "./index.js"
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.mjs"
     },
     "./client": {
-      "types": "./client.d.ts",
-      "import": "./client.js"
+      "types": "./dist/client.d.ts",
+      "import": "./dist/client.mjs"
+    },
+    "./react": {
+      "types": "./dist/react.d.ts",
+      "import": "./dist/react.mjs"
+    },
+    "./uni": {
+      "types": "./dist/uni.d.ts",
+      "import": "./dist/uni.mjs"
+    },
+    "./vitepress": {
+      "types": "./dist/vitepress.d.ts",
+      "import": "./dist/vitepress.mjs"
+    },
+    "./vue": {
+      "types": "./dist/vue.d.ts",
+      "import": "./dist/vue.mjs"
     }
   },
-  "main": "index.js",
-  "types": "index.d.ts",
+  "main": "dist/index.mjs",
+  "types": "dist/index.d.ts",
   "files": [
-    "client.*",
-    "index.*"
+    "dist"
   ],
-  "scripts": {},
+  "scripts": {
+    "build": "unbuild",
+    "dev": "unbuild --stub"
+  },
   "dependencies": {
-    "@vixt/core": "workspace:*"
+    "@vixt/core": "workspace:*",
+    "@vixt/react": "workspace:*",
+    "@vixt/uni": "workspace:*",
+    "@vixt/vitepress": "workspace:*",
+    "@vixt/vue": "workspace:*"
   }
 }

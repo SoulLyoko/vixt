@@ -21,7 +21,7 @@ const projectPath = path.join(cwd, projectName)
 const templatePath = path.join(__dirname, `../template-${templateName}`)
 
 if (!fs.existsSync(templatePath)) {
-  console.error(`"${templateName}" isn\'t a valid template. Please confirm the template name.`)
+  console.error(`"${templateName}" isn't a valid template. Please confirm the template name.`)
   process.exit(1)
 }
 

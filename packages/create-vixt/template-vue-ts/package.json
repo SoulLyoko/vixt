@@ -9,7 +9,6 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "@vixt/vue": "workspace:*",
     "vixt": "workspace:*"
   }
 }

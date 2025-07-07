@@ -10,7 +10,6 @@
   },
   "dependencies": {
     "@vixt/layer-react": "workspace:*",
-    "@vixt/react": "workspace:*",
     "vixt": "workspace:*"
   }
 }

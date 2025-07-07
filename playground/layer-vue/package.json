@@ -6,7 +6,6 @@
   "dependencies": {
     "@iconify/vue": "catalog:",
     "@vixt/layer-shared": "workspace:*",
-    "@vixt/vue": "workspace:*",
     "vixt": "workspace:*"
   }
 }
