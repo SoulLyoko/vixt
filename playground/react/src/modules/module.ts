@@ -1,4 +1,4 @@
-import { defineVixtModule } from '@vixt/core'
+import { defineVixtModule } from 'vixt'
 
 export default defineVixtModule(() => {
   console.log('react module loaded')

@@ -16,9 +16,6 @@ outline: deep
   "meta": [
     { "charset": "utf-8" },
     { "name": "viewport", "content": "width=device-width, initial-scale=1.0" }
-  ],
-  "noscript": [
-    { "children": "This website requires JavaScript to function properly. Please enable JavaScript to continue." }
   ]
 }
 ```

@@ -7,7 +7,7 @@ Vixt会将 `app.css` 选项列出的文件引入为全局样式
 ::: code-group
 
 ```ts [vixt.config.ts]
-import { defineVixtConfig } from '@vixt/core'
+import { defineVixtConfig } from 'vixt'
 
 export default defineVixtConfig({
   app: {

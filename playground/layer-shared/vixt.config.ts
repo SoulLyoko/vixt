@@ -1,4 +1,4 @@
-import { defineVixtConfig } from '@vixt/core'
+import { defineVixtConfig } from 'vixt'
 
 export default defineVixtConfig({
   meta: { name: 'layer-shared' },

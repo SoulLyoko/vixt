@@ -50,7 +50,7 @@ pnpm add vixt
 - 新建vixt.config.ts
 
 ```ts
-import { defineVixtConfig } from '@vixt/core'
+import { defineVixtConfig } from 'vixt'
 
 export default defineVixtConfig({})
 ```
@@ -58,8 +58,8 @@ export default defineVixtConfig({})
 - 修改vite.config.ts
 
 ```ts
-import vixt from '@vixt/vue'
 import { defineConfig } from 'vite'
+import vixt from 'vixt/vue'
 
 export default defineConfig({
   plugins: [vixt()],

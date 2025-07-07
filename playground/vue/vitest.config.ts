@@ -1,5 +1,5 @@
-import vixt from '@vixt/vue'
 import { defineConfig } from 'vitest/config'
+import vixt from 'vixt/vue'
 
 export default defineConfig({
   plugins: [vixt()],

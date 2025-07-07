@@ -1,5 +1,5 @@
-import vixt from '@vixt/vitepress'
 import { defineConfig } from 'vitepress'
+import vixt from 'vixt/vitepress'
 
 // refer https://vitepress.dev/reference/site-config for details
 export default defineConfig({
@@ -42,6 +42,7 @@ export default defineConfig({
         { text: 'vue', link: '/config/vue' },
         { text: 'uni', link: '/config/uni' },
         { text: 'vitepress', link: '/config/vitepress' },
+        { text: 'react', link: '/config/react' },
       ],
       '/api': [
         { text: 'vixt', link: '/api/vixt' },

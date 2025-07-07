@@ -24,7 +24,7 @@
 ```
 
 ```ts [layer-shared/vixt.config.ts]
-import { defineVixtConfig } from '@vixt/core'
+import { defineVixtConfig } from 'vixt'
 
 export default defineVixtConfig({
   meta: { name: 'layer-shared' },
@@ -35,7 +35,7 @@ export default defineVixtConfig({
 ```
 
 ```ts [web/vixt.config.ts]
-import { defineVixtConfig } from '@vixt/core'
+import { defineVixtConfig } from 'vixt'
 
 export default defineVixtConfig({
   extends: ['../layer-shared'],
@@ -43,7 +43,7 @@ export default defineVixtConfig({
 ```
 
 ```ts [app/vixt.config.ts]
-import { defineVixtConfig } from '@vixt/core'
+import { defineVixtConfig } from 'vixt'
 
 export default defineVixtConfig({
   extends: ['../layer-shared'],
@@ -81,7 +81,7 @@ export default defineVixtConfig({
 ```
 
 ```ts [web/vixt.config.ts]
-import { defineVixtConfig } from '@vixt/core'
+import { defineVixtConfig } from 'vixt'
 
 export default defineVixtConfig({
   extends: ['@vixt/layer-shared'],
@@ -97,7 +97,7 @@ export default defineVixtConfig({
 :::code-group
 
 ```ts [layer-shared/vixt.config.ts]
-import { defineVixtConfig } from '@vixt/core'
+import { defineVixtConfig } from 'vixt'
 
 export default defineVixtConfig({
   meta: { name: 'layer-shared' },
@@ -108,7 +108,7 @@ export default defineVixtConfig({
 ```
 
 ```ts [layer-web/vixt.config.ts]
-import { defineVixtConfig } from '@vixt/core'
+import { defineVixtConfig } from 'vixt'
 
 export default defineVixtConfig({
   meta: { name: 'layer-web' },
@@ -118,7 +118,7 @@ export default defineVixtConfig({
 ```
 
 ```ts [web/vixt.config.ts]
-import { defineVixtConfig } from '@vixt/core'
+import { defineVixtConfig } from 'vixt'
 
 export default defineVixtConfig({
   extends: ['../layer-web'],
