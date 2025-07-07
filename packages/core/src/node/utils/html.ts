@@ -18,8 +18,9 @@ export function generateIndexHtml(options: AppOptions, vixt: Vixt) {
 
   const { head = {}, rootTag, rootId, entryFile } = options
 
-  const headTemplate = (Object.entries(head) as [string, any[]][]).filter(([k]) => k !== 'noscript').map(([tag, attrs]) => attrs.map(e => resolveHeadTag(tag, e))).flat().join('\n')
-  const noscriptTemplate = (Object.entries(head) as [string, any[]][]).filter(([k]) => k === 'noscript').map(([tag, attrs]) => attrs.map(e => resolveHeadTag(tag, e))).flat().join('\n')
+  const heads: [string, any[]][] = Object.entries(head)
+  const headTemplate = heads.filter(([k]) => k !== 'noscript').map(([tag, attrs]) => attrs.map(e => resolveHeadTag(tag, e)).reverse()).flat().join('\n')
+  const noscriptTemplate = heads.filter(([k]) => k === 'noscript').map(([tag, attrs]) => attrs.map(e => resolveHeadTag(tag, e)).reverse()).flat().join('\n')
 
   let { loadingTemplate = '' } = options
   if (!loadingTemplate) {
