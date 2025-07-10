@@ -36,7 +36,7 @@ import routes from '~react-pages'
 
 const app = createRoot(document.getElementById('${options.rootId}')!)
 app.render(
-  <BrowserRouter>
+  <BrowserRouter basename="${options.baseURL}">
     <App />
   </BrowserRouter>,
 )
