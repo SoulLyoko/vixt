@@ -13,7 +13,7 @@ export const config = defineVixtModule({
       name,
       enforce: 'pre',
       config(config) {
-        const { rootDir, buildDir, srcDir } = vixt.options
+        const { rootDir, buildDir, srcDir, app } = vixt.options
         const defaultAlias: Record<string, string> = {
           '@': srcDir!,
           '~': srcDir!,
@@ -38,6 +38,7 @@ export const config = defineVixtModule({
 
         return {
           root: rootDir,
+          base: app?.baseURL,
           resolve: {
             alias: defaultAlias,
           },
