@@ -3,13 +3,24 @@ import fs from 'fs-extra'
 import { resolvePathSync } from 'mlly'
 
 /** 增加小程序中vueuse的运行所需 */
-export function vueusePolyfill(code: string, id: string) {
+export function transformMpRuntime(code: string, id: string) {
   if (!id.endsWith('@dcloudio/uni-mp-vue/dist/vue.runtime.esm.js'))
     return code
   code += `
 export const render = () => {}
 export const TransitionGroup = {}
 `
+  return code
+}
+
+/**
+ * 修复h5报错`Cannot assign to read only property '_' of object '#<Object>'`
+ * @see https://ask.dcloud.net.cn/question/194973
+ */
+export function transformH5Runtime(code: string, id: string) {
+  if (!id.endsWith('@dcloudio/uni-h5-vue/dist/vue.runtime.esm.js'))
+    return code
+  code = code.replace(`def(children, "_", type);`, `def(children, "_", type, true);`)
   return code
 }
 
@@ -30,7 +41,8 @@ export const uniPatch = defineVitePlugin(() => {
   return {
     name: 'vixt:uni-patch',
     transform(code, id) {
-      code = vueusePolyfill(code, id)
+      code = transformMpRuntime(code, id)
+      code = transformH5Runtime(code, id)
       return code
     },
   }
