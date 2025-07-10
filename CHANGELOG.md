@@ -1,3 +1,12 @@
+## [0.5.3](https://github.com/SoulLyoko/vixt/compare/v0.5.2...v0.5.3) (2025-07-10)
+
+
+### Bug Fixes
+
+* **uni:** fix h5 runtime error ([673319d](https://github.com/SoulLyoko/vixt/commit/673319da7206fc7f7497e17581520cf30e2f2199))
+
+
+
 ## [0.5.2](https://github.com/SoulLyoko/vixt/compare/v0.5.1...v0.5.2) (2025-07-10)
 
 
