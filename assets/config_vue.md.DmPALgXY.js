@@ -11,11 +11,11 @@ import{_ as a,c as i,o as t,ag as e}from"./chunks/framework.lD_F6v0t.js";const E
 <span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">        { name: </span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;">&#39;viewport&#39;</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">, content: </span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;">&#39;width=device-width, initial-scale=1&#39;</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;"> }</span></span>
 <span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">      ],</span></span>
 <span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">      script: [</span></span>
-<span class="line"><span style="--shiki-light:#6A737D;--shiki-dark:#6A737D;">        // &lt;script src=&quot;https://myawesome-lib.js&quot;&gt;&lt;/script&gt;</span></span>
+<span class="line"><span style="--shiki-light:#6A737D;--shiki-dark:#6A737D;">        // &lt;script src=&quot;https://awesome-lib.js&quot;&gt;&lt;/script&gt;</span></span>
 <span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">        { src: </span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;">&#39;https://awesome-lib.js&#39;</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;"> }</span></span>
 <span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">      ],</span></span>
 <span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">      link: [</span></span>
-<span class="line"><span style="--shiki-light:#6A737D;--shiki-dark:#6A737D;">        // &lt;link rel=&quot;stylesheet&quot; href=&quot;https://myawesome-lib.css&quot;&gt;</span></span>
+<span class="line"><span style="--shiki-light:#6A737D;--shiki-dark:#6A737D;">        // &lt;link rel=&quot;stylesheet&quot; href=&quot;https://awesome-lib.css&quot;&gt;</span></span>
 <span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">        { rel: </span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;">&#39;stylesheet&#39;</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">, href: </span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;">&#39;https://awesome-lib.css&#39;</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;"> }</span></span>
 <span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">      ],</span></span>
 <span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">      style: [</span></span>
