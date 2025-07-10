@@ -34,11 +34,10 @@ pnpm create vixt my-project
 ## 在现有项目中使用
 
 - 删除 packages.json 中的与vixt重复的依赖(如vue,vite等,非必须)
-- 创建 .npmrc
+- 创建 .npmrc, 启用pnpm的shamefully-hoist
 
 ```
 shamefully-hoist=true
-strict-peer-dependencies=false
 ```
 
 - 安装 vixt

@@ -1,60 +1,70 @@
 # 从 `vixt` 导入
 
-## defineAppConfig()
+## defineVixtConfig()
 
-提供定义Vixt应用配置的类型提示
+提供定义Vixt配置的类型提示
 
 ```ts
-// src/app.config.ts
-import { defineAppConfig } from 'vixt/client'
+// vixt.config.ts
+import { defineVixtConfig } from 'vixt'
 
-export default defineAppConfig({
-  title: 'My Vixt App',
-  description: 'A Vixt App',
+export default defineVixtConfig({
+  // Vixt配置
 })
 ```
 
-## defineVixtPlugin()
+## defineVixtModule()
 
-提供定义Vixt插件的类型提示
+提供定义Vixt模块的类型提示
 
 ```ts
-// src/plugins/my-plugin.ts
-import { defineVixtPlugin } from 'vixt/client'
+// src/modules/my-module.ts
+import { defineVixtModule } from 'vixt'
+
+interface ModuleOptions {
+  enabled?: boolean
+}
+
+declare module 'vixt' {
+  interface VixtOptions {
+    myModuleOptions?: ModuleOptions
+  }
+}
+
+const name = 'my-module'
+export default defineVixtModule<ModuleOptions>({
+  meta: { name },
+  defaults: { enabled: true },
+  setup(options, vixt) {
+    console.log(options) // { enabled: true }
+    return {
+      name,
+      configResolved(config) {
+        console.log(config)
+      }
+    } // return one or more vite plugins
+  }
+})
+```
+
+## defineVitePlugin()
+
+提供定义Vite插件的类型提示
+
+```ts
+import { defineVitePlugin } from 'vixt'
 
 interface PluginOptions {
   enabled?: boolean
 }
 
-declare module '@vixt/core/client' {
-  interface VixtAppConfig {
-    myPlugin?: PluginOptions
-  }
-}
-
-export default defineVixtPlugin<PluginOptions>({
-  name: 'my-plugin',
-  setup(vixt) {
-    console.log(vixt) // { app, router, routes, pinia, appConfig }
-  }
-})
-```
-
-## defineVuePlugin()
-
-提供定义Vue插件的类型提示
-
-```ts
-import { defineVuePlugin } from 'vixt/client'
-
-interface PluginOptions {
-  enabled?: boolean
-}
-
-export const myVuePlugin = defineVuePlugin<PluginOptions>({
-  install(app, options) {
-    console.log(app)
-    console.log(options)
+export const myVitePlugin = defineVitePlugin<PluginOptions>((options) => {
+  console.log(options)
+  return {
+    name: 'my-vite-plugin',
+    configResolved(config) {
+      console.log(config)
+    }
   }
 })
 ```

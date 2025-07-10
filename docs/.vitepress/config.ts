@@ -46,7 +46,7 @@ export default defineConfig({
       ],
       '/api': [
         { text: 'vixt', link: '/api/vixt' },
-        { text: 'core', link: '/api/core' },
+        { text: 'client', link: '/api/client' },
       ],
     },
   },

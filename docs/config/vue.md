@@ -31,11 +31,11 @@ export default {
         { name: 'viewport', content: 'width=device-width, initial-scale=1' }
       ],
       script: [
-        // <script src="https://myawesome-lib.js"></script>
+        // <script src="https://awesome-lib.js"></script>
         { src: 'https://awesome-lib.js' }
       ],
       link: [
-        // <link rel="stylesheet" href="https://myawesome-lib.css">
+        // <link rel="stylesheet" href="https://awesome-lib.css">
         { rel: 'stylesheet', href: 'https://awesome-lib.css' }
       ],
       style: [
