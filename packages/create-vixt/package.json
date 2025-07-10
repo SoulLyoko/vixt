@@ -1,7 +1,7 @@
 {
   "name": "create-vixt",
   "type": "module",
-  "version": "0.5.3",
+  "version": "0.5.4",
   "bin": {
     "create-vixt": "index.js"
   },

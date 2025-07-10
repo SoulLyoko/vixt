@@ -1,3 +1,13 @@
+## [0.5.4](https://github.com/SoulLyoko/vixt/compare/v0.5.3...v0.5.4) (2025-07-10)
+
+
+### Bug Fixes
+
+* **core:** resolve base from `vixt.options.app.baseURL` ([a509677](https://github.com/SoulLyoko/vixt/commit/a509677ebfadb46b803cf1fc49215c87ee5d7b47))
+* **react:** router basenaem ([5e2555a](https://github.com/SoulLyoko/vixt/commit/5e2555a95fc9efe9f4f4041acd515ed09a115274))
+
+
+
 ## [0.5.3](https://github.com/SoulLyoko/vixt/compare/v0.5.2...v0.5.3) (2025-07-10)
 
 
