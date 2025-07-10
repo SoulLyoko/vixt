@@ -14,11 +14,13 @@ export default defineBuildConfig({
   ],
   hooks: {
     'build:done': (ctx) => {
-      const { outDir, stub } = ctx.options
-      if (stub) {
-        const clientIndexPath = path.resolve(outDir, 'client.mjs')
-        fs.writeFileSync(clientIndexPath, `export * from "${path.resolve('./src/client.js')}"`)
-      }
+      const { outDir, rootDir } = ctx.options
+      const clientFileContent = fs.readFileSync(path.resolve(rootDir, 'src', 'client.ts'), 'utf-8')
+      fs.readdirSync(outDir).forEach((file) => {
+        if (/^client.*[j|t]s$/.test(file)) {
+          fs.writeFileSync(path.resolve(outDir, file), clientFileContent)
+        }
+      })
     },
   },
 })
