@@ -1,3 +1,12 @@
+## [0.5.2](https://github.com/SoulLyoko/vixt/compare/v0.5.1...v0.5.2) (2025-07-10)
+
+
+### Bug Fixes
+
+* build client.d.ts ([f222172](https://github.com/SoulLyoko/vixt/commit/f222172b34c99d058b723b4956e7fec811a2cc30))
+
+
+
 ## [0.5.1](https://github.com/SoulLyoko/vixt/compare/v0.5.0...v0.5.1) (2025-07-07)
 
 
