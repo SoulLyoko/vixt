@@ -13,7 +13,7 @@ interface ModuleOptions {
   enabled?: boolean
 }
 
-declare module '@vixt/core' {
+declare module 'vixt' {
   interface VixtOptions {
     myModuleOptions?: ModuleOptions
   }
