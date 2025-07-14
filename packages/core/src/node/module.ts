@@ -70,10 +70,15 @@ export async function applyLayerModules(layers: VixtConfigLayer[]): Promise<Vixt
   for (const m of modulesDirs.reverse()) {
     if (fs.existsSync(m)) {
       const files = fs.readdirSync(m)
-      for (const f of files.filter(f => /(?:t|j)s$/.test(f))) {
+      for (const f of files) {
         const p = path.resolve(m, f)
-        const module = await import(/* @vite-ignore */pathToFileURL(p)).then(m => m.default)
-        modules.push(module)
+        try {
+          const module = await import(/* @vite-ignore */pathToFileURL(p)).then(m => m.default)
+          modules.push(module)
+        }
+        catch (error) {
+          console.error('[LoadVixtModule Error]:', error)
+        }
       }
     }
   }
