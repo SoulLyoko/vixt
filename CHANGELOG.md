@@ -1,3 +1,12 @@
+## [0.5.5](https://github.com/SoulLyoko/vixt/compare/v0.5.4...v0.5.5) (2025-07-14)
+
+
+### Bug Fixes
+
+* **core:** load modules in sub dirs like `modules/module1/index.ts` ([ac4fadc](https://github.com/SoulLyoko/vixt/commit/ac4fadc05319a7816f8f85b70dd43b0f1eb75cc2))
+
+
+
 ## [0.5.4](https://github.com/SoulLyoko/vixt/compare/v0.5.3...v0.5.4) (2025-07-10)
 
 
