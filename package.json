@@ -18,7 +18,7 @@
     "dev:react": "pnpm -F test-react dev",
     "dev:vue": "pnpm -F test-vue dev",
     "lint": "eslint .",
-    "postinstall": "tsx scripts/patch-unocss.ts && npx simple-git-hooks",
+    "postinstall": "npx simple-git-hooks",
     "prerelease": "pnpm build && pnpm test run && pnpm test:vue run",
     "release": "bumpp",
     "rm:dist": "tsx scripts/rm-dist.ts",
