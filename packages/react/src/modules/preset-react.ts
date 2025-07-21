@@ -1,7 +1,7 @@
 import type { PluginOptions, VixtOptions } from '@vixt/core'
 
 import React from '@vitejs/plugin-react'
-import { defineVixtModule, patchUnocss, resolveLayersDirs } from '@vixt/core'
+import { defineVixtModule, resolveLayersDirs } from '@vixt/core'
 import defu from 'defu'
 import UnoCSS from 'unocss/vite'
 import AutoImport from 'unplugin-auto-import/vite'
@@ -53,8 +53,6 @@ export const presetReact = defineVixtModule<VixtOptions>({
     }
 
     const options = vixt.options = defu(vixt.options, defaultOptions)
-
-    patchUnocss()
 
     const plugins = [
       UnoCSS(options.unocss),

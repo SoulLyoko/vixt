@@ -30,7 +30,7 @@ function toast() {
 
     <view py-4 />
 
-    <TheInput v-model="name" placeholder="What's your name?" autocomplete="false" @keydown.enter="go" />
+    <TheInput v-model="name" placeholder="What's your name?" autocomplete="false" />
 
     <view>
       <button :disabled="!name" text-sm btn m-3 @click="go">
@@ -41,6 +41,5 @@ function toast() {
 </template>
 
 <route type="home" lang="yaml">
-meta:
-  layout: home
+layout: home
 </route>

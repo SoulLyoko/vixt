@@ -1,6 +1,6 @@
 import type { PluginOptions, VixtOptions } from '@vixt/core'
 
-import { defineVixtModule, patchUnocss, resolveLayersDirs } from '@vixt/core'
+import { defineVixtModule, resolveLayersDirs } from '@vixt/core'
 import defu from 'defu'
 import UnoCSS from 'unocss/vite'
 import AutoImport from 'unplugin-auto-import/vite'
@@ -47,8 +47,6 @@ export const presetVitepress = defineVixtModule<VixtOptions>({
     }
 
     const options = vixt.options = defu(vixt.options, defaultOptions)
-
-    patchUnocss()
 
     const plugins = [
       Components(options.components),

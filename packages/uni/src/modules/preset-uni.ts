@@ -5,7 +5,7 @@ import Uni from '@dcloudio/vite-plugin-uni'
 import Components from '@uni-helper/vite-plugin-uni-components'
 import Layouts from '@uni-helper/vite-plugin-uni-layouts'
 import Pages from '@uni-helper/vite-plugin-uni-pages'
-import { defineVixtModule, patchUnocss, resolveLayersDirs } from '@vixt/core'
+import { defineVixtModule, resolveLayersDirs } from '@vixt/core'
 import defu from 'defu'
 import UnoCSS from 'unocss/vite'
 import AutoImport from 'unplugin-auto-import/vite'
@@ -62,8 +62,6 @@ export const presetUni = defineVixtModule<VixtOptions>({
     }
 
     const options = vixt.options = defu(vixt.options, defaultOptions)
-
-    patchUnocss()
 
     const modules = [
       Pages(options.uniPages),

@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import AboutLayout from '#/layers/layer-vue/src/layouts/default.vue'
+import AboutLayout from '#/layers/layer-vue/src/layouts/about.vue'
 </script>
 
 <template>

@@ -1,3 +1,5 @@
+import type { ResolvedConfig } from 'vite'
+
 import { defineVitePlugin } from '@vixt/core'
 import fs from 'fs-extra'
 import { resolvePathSync } from 'mlly'
@@ -36,10 +38,26 @@ export function patchNormalizeNodeModules() {
   }
 }
 
+/**
+ * 兼容 unocss^66.1.0 小程序平台的css文件后缀名
+ * @see https://github.com/dcloudio/uni-app/pull/5605/files
+ */
+export function patchAdjustCssExtname(config: ResolvedConfig) {
+  const plugin = config.plugins.find(p => p.name === 'uni:adjust-css-extname')
+  if (plugin && typeof plugin.generateBundle === 'function') {
+    const handler = plugin.generateBundle
+    plugin.generateBundle = { order: 'post', handler }
+  }
+}
+
 export const uniPatch = defineVitePlugin(() => {
   patchNormalizeNodeModules()
   return {
     name: 'vixt:uni-patch',
+    enforce: 'post',
+    configResolved(config) {
+      patchAdjustCssExtname(config)
+    },
     transform(code, id) {
       code = transformMpRuntime(code, id)
       code = transformH5Runtime(code, id)
