@@ -1,3 +1,12 @@
+## [0.5.6](https://github.com/SoulLyoko/vixt/compare/v0.5.5...v0.5.6) (2025-07-21)
+
+
+### Bug Fixes
+
+* **uni:** add patchAdjustCssExtname to compatible unocss^66.1.0 ([7c2b88e](https://github.com/SoulLyoko/vixt/commit/7c2b88e1b12bd97a6cb4867674fcf1428e102274))
+
+
+
 ## [0.5.5](https://github.com/SoulLyoko/vixt/compare/v0.5.4...v0.5.5) (2025-07-14)
 
 
