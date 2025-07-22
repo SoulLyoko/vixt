@@ -1,3 +1,12 @@
+## [0.5.7](https://github.com/SoulLyoko/vixt/compare/v0.5.6...v0.5.7) (2025-07-22)
+
+
+### Bug Fixes
+
+* **uni:** add patch for unocss and uniComponents ([c0e4817](https://github.com/SoulLyoko/vixt/commit/c0e48171950f449872d1a5a5aadc4c654b726360))
+
+
+
 ## [0.5.6](https://github.com/SoulLyoko/vixt/compare/v0.5.5...v0.5.6) (2025-07-21)
 
 
