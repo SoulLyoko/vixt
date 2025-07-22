@@ -50,18 +50,58 @@ export function patchAdjustCssExtname(config: ResolvedConfig) {
   }
 }
 
+/**
+ * fix unocss^66.1.0 hot reload fail `[unocss:global:build:scan] Could not load xxx/src/__uno.css`
+ * @see https://github.com/unocss/unocss/issues/4616
+ * @see https://github.com/unocss/unocss/pull/4737
+ */
+export function patchUnocssGlobalBuildScan(config: ResolvedConfig) {
+  const plugin = config.plugins.find(p => p.name === 'unocss:global:build:scan')
+  if (plugin)
+    plugin.shouldTransformCachedModule = ({ id }) => id.endsWith('main.ts')
+}
+
+/**
+ * fix `@uni-helper/vite-plugin-uni-components` load slowly
+ * @see https://github.com/uni-helper/vite-plugin-uni-components/blob/main/packages/core/src/index.ts#L27
+ */
+export function patchUniComponents(config: ResolvedConfig) {
+  if (JSON.stringify(config.build.watch) === '{}')
+    config.build.watch = null
+}
+
 export const uniPatch = defineVitePlugin(() => {
   patchNormalizeNodeModules()
-  return {
-    name: 'vixt:uni-patch',
-    enforce: 'post',
-    configResolved(config) {
-      patchAdjustCssExtname(config)
+
+  return [
+    {
+      name: 'vixt:uni-patch-runtime',
+      transform(code, id) {
+        code = transformMpRuntime(code, id)
+        code = transformH5Runtime(code, id)
+        return code
+      },
     },
-    transform(code, id) {
-      code = transformMpRuntime(code, id)
-      code = transformH5Runtime(code, id)
-      return code
+    {
+      name: 'vixt:uni-patch-uni-components',
+      configResolved(config) {
+        patchUniComponents(config)
+      },
     },
-  }
+    {
+      name: 'vixt:uni-patch-unocss-global-build-scan',
+      apply: 'build',
+      enforce: 'pre',
+      configResolved(config) {
+        patchUnocssGlobalBuildScan(config)
+      },
+    },
+    {
+      name: 'vixt:uni-patch-adjust-css-extname',
+      enforce: 'post',
+      configResolved(config) {
+        patchAdjustCssExtname(config)
+      },
+    },
+  ]
 })
