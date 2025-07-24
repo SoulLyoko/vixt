@@ -1,3 +1,12 @@
+## [0.5.8](https://github.com/SoulLyoko/vixt/compare/v0.5.7...v0.5.8) (2025-07-24)
+
+
+### Bug Fixes
+
+* **uni:** using normalizePath ([e005a54](https://github.com/SoulLyoko/vixt/commit/e005a541e1136a0028bda856e865f451ca46f939))
+
+
+
 ## [0.5.7](https://github.com/SoulLyoko/vixt/compare/v0.5.6...v0.5.7) (2025-07-22)
 
 
