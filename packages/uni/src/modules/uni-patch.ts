@@ -3,6 +3,7 @@ import type { ResolvedConfig } from 'vite'
 import { defineVitePlugin } from '@vixt/core'
 import fs from 'fs-extra'
 import { resolvePathSync } from 'mlly'
+import { normalizePath } from 'vite'
 
 /** 增加小程序中vueuse的运行所需 */
 export function transformMpRuntime(code: string, id: string) {
@@ -77,6 +78,7 @@ export const uniPatch = defineVitePlugin(() => {
     {
       name: 'vixt:uni-patch-runtime',
       transform(code, id) {
+        id = normalizePath(id)
         code = transformMpRuntime(code, id)
         code = transformH5Runtime(code, id)
         return code
