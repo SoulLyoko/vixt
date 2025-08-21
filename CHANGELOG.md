@@ -1,3 +1,12 @@
+## [0.5.9](https://github.com/SoulLyoko/vixt/compare/v0.5.8...v0.5.9) (2025-08-21)
+
+
+### Bug Fixes
+
+* **uni:** watch uni_modules exclude rootDir ([0c0de26](https://github.com/SoulLyoko/vixt/commit/0c0de26ddb61875b04ba48acd1a3e0864ed8a5de))
+
+
+
 ## [0.5.8](https://github.com/SoulLyoko/vixt/compare/v0.5.7...v0.5.8) (2025-07-24)
 
 
