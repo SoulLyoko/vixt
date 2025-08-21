@@ -15,6 +15,7 @@ describe('config', () => {
     expect(result.config.srcDir).toBe(path.resolve(cwd(), 'src'))
     expect(result).toMatchInlineSnapshot(`
       {
+        "_configFile": undefined,
         "config": {
           "buildDir": "C:/Project/vixt/packages/core/__tests__/.vixt",
           "buildImportsDir": "C:/Project/vixt/packages/core/__tests__/.vixt/imports",
@@ -42,6 +43,7 @@ describe('config', () => {
     expect(result.config.srcDir).toBe(srcDir)
     expect(result).toMatchInlineSnapshot(`
       {
+        "_configFile": undefined,
         "config": {
           "buildDir": "C:/Project/vixt/packages/core/__tests__/core/.test",
           "buildImportsDir": "C:/Project/vixt/packages/core/__tests__/core/.test/imports",
