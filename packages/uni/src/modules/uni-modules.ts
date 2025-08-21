@@ -1,6 +1,6 @@
 import type { Vixt } from '@vixt/core'
 
-import { defineVixtModule, resolveLayersDirs } from '@vixt/core'
+import { defineVixtModule, isSamePath, resolveLayersDirs } from '@vixt/core'
 import fs from 'fs-extra'
 import path from 'pathe'
 
@@ -35,9 +35,9 @@ function copyUniModules(options: ModuleOptions, vixt: Vixt) {
         // const srcPkgVersion = fs.readJSONSync(path.join(srcPath, 'package.json'), { throws: false })?.version
         // const destPkgVersion = fs.readJSONSync(path.join(destPath, 'package.json'), { throws: false })?.version
         // if (srcPath !== destPath && srcPkgVersion !== destPkgVersion) {
-        // fs.removeSync(destPath)
         if (srcPath !== destPath) {
           try {
+            fs.removeSync(destPath)
             fs.copySync(srcPath, destPath)
             fs.writeFileSync(path.join(destPath, '.gitignore'), '*', 'utf-8')
           }
@@ -58,7 +58,7 @@ export const uniModules = defineVixtModule({
     return {
       name,
       configureServer(server) {
-        const { uni_modules = [] } = resolveLayersDirs(vixt._layers)
+        const { uni_modules = [] } = resolveLayersDirs(vixt._layers.filter(e => !isSamePath(e.cwd!, vixt.options.rootDir!)))
         server.watcher.add(uni_modules)
         server.watcher.on('all', (_, file) => {
           const match = uni_modules.some(e => path.normalize(file).match(e))
