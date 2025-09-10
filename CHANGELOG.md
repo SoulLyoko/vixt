@@ -1,3 +1,12 @@
+## [0.5.11](https://github.com/SoulLyoko/vixt/compare/v0.5.10...v0.5.11) (2025-09-10)
+
+
+### Bug Fixes
+
+* **uni:** add genarateVirtualUniPagesTypes ([b615757](https://github.com/SoulLyoko/vixt/commit/b615757409370fc5c4ef704d6fa01908f5301da4))
+
+
+
 ## [0.5.10](https://github.com/SoulLyoko/vixt/compare/v0.5.9...v0.5.10) (2025-09-10)
 
 
