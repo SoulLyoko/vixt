@@ -37,7 +37,7 @@ function copyUniModules(options: ModuleOptions, vixt: Vixt) {
         // if (srcPath !== destPath && srcPkgVersion !== destPkgVersion) {
         if (srcPath !== destPath) {
           try {
-            fs.removeSync(destPath)
+            fs.emptyDirSync(destPath)
             fs.copySync(srcPath, destPath)
             fs.writeFileSync(path.join(destPath, '.gitignore'), '*', 'utf-8')
           }
