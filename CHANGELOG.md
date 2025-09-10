@@ -1,3 +1,12 @@
+## [0.5.10](https://github.com/SoulLyoko/vixt/compare/v0.5.9...v0.5.10) (2025-09-10)
+
+
+### Bug Fixes
+
+* **uni:** use `emptyDirSync` instead `removeSync` when copy uni_modules ([252908d](https://github.com/SoulLyoko/vixt/commit/252908db88b45f4fd83def0129899198991ec703))
+
+
+
 ## [0.5.9](https://github.com/SoulLyoko/vixt/compare/v0.5.8...v0.5.9) (2025-08-21)
 
 
