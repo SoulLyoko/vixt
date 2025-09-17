@@ -17,6 +17,8 @@
     "dev:mp": "pnpm -F test-uni dev:mp",
     "dev:react": "pnpm -F test-react dev",
     "dev:vue": "pnpm -F test-vue dev",
+    "dev:rolldown-vue": "pnpm -F rolldown-vue dev",
+    "dev:rolldown-react": "pnpm -F rolldown-react dev",
     "lint": "eslint .",
     "postinstall": "npx simple-git-hooks",
     "prerelease": "pnpm build && pnpm test run && pnpm test:vue run",
@@ -48,6 +50,8 @@
   },
   "pnpm": {
     "overrides": {
+      "@vixt/rolldown-react>vite": "catalog:rolldown",
+      "@vixt/rolldown-vue>vite": "catalog:rolldown",
       "@vue/shared": "catalog:",
       "vite": "catalog:",
       "vue": "catalog:"

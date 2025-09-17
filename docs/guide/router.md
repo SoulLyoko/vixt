@@ -12,8 +12,8 @@
 import { defineVixtConfig } from 'vixt'
 
 export default defineVixtConfig({
-  components: {
-    pages: ['src/views']
+  router: {
+    routesFolder: ['src/views']
   }
 })
 ```

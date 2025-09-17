@@ -1,0 +1,14 @@
+{
+  "name": "@vixt/rolldown-react",
+  "type": "module",
+  "private": true,
+  "scripts": {
+    "build": "vite build",
+    "dev": "vite"
+  },
+  "dependencies": {
+    "@vixt/test-react": "workspace:*",
+    "vite": "catalog:rolldown",
+    "vixt": "workspace:*"
+  }
+}

@@ -8,6 +8,9 @@ export default defineConfig({
   description: 'Trying to implement nuxt\'s features via vite plugin',
   ignoreDeadLinks: true,
   themeConfig: {
+    socialLinks: [
+      { icon: 'github', link: 'https://github.com/SoulLyoko/vixt' },
+    ],
     nav: [
       { text: '指南', link: '/guide/' },
       { text: '配置', link: '/config/core' },
@@ -34,6 +37,7 @@ export default defineConfig({
             { text: '插件', link: '/guide/plugins' },
             { text: '模块', link: '/guide/modules' },
             { text: '层', link: '/guide/layers' },
+            { text: 'Rolldown', link: '/guide/rolldown' },
           ],
         },
       ],

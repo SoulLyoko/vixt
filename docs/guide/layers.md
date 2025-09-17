@@ -58,7 +58,7 @@ export default defineVixtConfig({
 
 :::code-group
 
-```json [@vixt/layer-shared/package.json]
+```json{4} [@vixt/layer-shared/package.json]
 {
   "name": "@vixt/layer-shared",
   "type": "module",
@@ -92,7 +92,7 @@ export default defineVixtConfig({
 
 ### 层继承层
 
-层也可以继承层，从而实现更复杂的继承关系
+层也可以继承层，从而实现更复杂的~~套娃~~继承关系
 
 :::code-group
 

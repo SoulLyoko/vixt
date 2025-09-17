@@ -2,6 +2,7 @@
   "name": "@vixt/test-vue",
   "type": "module",
   "private": true,
+  "main": "vixt.config.ts",
   "scripts": {
     "build": "vite build",
     "dev": "vite",
