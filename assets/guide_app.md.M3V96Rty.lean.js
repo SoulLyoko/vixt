@@ -1,0 +1,1 @@
+import{_ as i,c as a,o as t,ag as n}from"./chunks/framework.DIJW_Laq.js";const o=JSON.parse('{"title":"应用","description":"","frontmatter":{},"headers":[],"relativePath":"guide/app.md","filePath":"guide/app.md"}'),p={name:"guide/app.md"};function e(l,s,h,k,d,r){return t(),a("div",null,[...s[0]||(s[0]=[n("",16)])])}const c=i(p,[["render",e]]);export{o as __pageData,c as default};
