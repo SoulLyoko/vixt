@@ -1,3 +1,4 @@
+import { playwright } from '@vitest/browser-playwright'
 import { defineConfig } from 'vitest/config'
 import vixt from 'vixt/vue'
 
@@ -12,7 +13,8 @@ export default defineConfig({
     globals: true,
     browser: {
       enabled: true,
-      provider: 'playwright',
+      // @ts-ignore
+      provider: playwright(),
       testerHtmlPath: './index.html',
       instances: [
         { browser: 'chromium' },

@@ -35,6 +35,7 @@
     "@commitlint/config-conventional": "catalog:",
     "@unocss/eslint-plugin": "catalog:",
     "@vitest/browser": "catalog:",
+    "@vitest/browser-playwright": "catalog:",
     "bumpp": "catalog:",
     "conventional-changelog-cli": "catalog:",
     "eslint": "catalog:",
