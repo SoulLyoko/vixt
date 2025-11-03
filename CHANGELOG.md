@@ -1,3 +1,12 @@
+## [0.5.13](https://github.com/SoulLyoko/vixt/compare/v0.5.12...v0.5.13) (2025-11-03)
+
+
+### Bug Fixes
+
+* **uni:** app white screen cause `setupDevToolsPlugin` ([7b15c89](https://github.com/SoulLyoko/vixt/commit/7b15c894275aa823e9291eb009a059c457a1d6b6))
+
+
+
 ## [0.5.12](https://github.com/SoulLyoko/vixt/compare/v0.5.11...v0.5.12) (2025-10-10)
 
 
