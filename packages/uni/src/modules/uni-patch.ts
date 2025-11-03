@@ -27,6 +27,16 @@ export function transformH5Runtime(code: string, id: string) {
   return code
 }
 
+/** 修复app运行白屏，原因是pinia调用了@vue/devtools-kit的setupDevToolsPlugin */
+export function transformVueDevtools(code: string, id: string) {
+  if (!id.endsWith('@vue/devtools-kit/dist/index.js'))
+    return code
+  code = code.replace(`function setupDevToolsPlugin(pluginDescriptor, setupFn) {
+  return hook.setupDevToolsPlugin(pluginDescriptor, setupFn);
+}`, `function setupDevToolsPlugin(pluginDescriptor, setupFn) {}`)
+  return code
+}
+
 /** 移除路径中的'../' */
 export function patchNormalizeNodeModules() {
   const matched = `str = normalizePath(str).replace(NODE_MODULES_REGEX, 'node-modules');`
@@ -81,6 +91,7 @@ export const uniPatch = defineVitePlugin(() => {
         id = normalizePath(id)
         code = transformMpRuntime(code, id)
         code = transformH5Runtime(code, id)
+        code = transformVueDevtools(code, id)
         return code
       },
     },
