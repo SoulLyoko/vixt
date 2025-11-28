@@ -29,6 +29,6 @@
   "dependencies": {
     "@vixt/core": "workspace:*",
     "@vixt/vue": "workspace:*",
-    "vitepress": "catalog:"
+    "vitepress": "catalog:vite"
   }
 }

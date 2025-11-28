@@ -12,18 +12,18 @@
     "tc": "vue-tsc --noEmit"
   },
   "dependencies": {
-    "@dcloudio/uni-app": "catalog:",
-    "@dcloudio/uni-app-plus": "catalog:",
-    "@dcloudio/uni-h5": "catalog:",
-    "@dcloudio/uni-mp-weixin": "catalog:",
-    "@dcloudio/uni-ui": "catalog:",
-    "@dcloudio/uni-uts-v1": "catalog:",
+    "@dcloudio/uni-app": "catalog:uni",
+    "@dcloudio/uni-app-plus": "catalog:uni",
+    "@dcloudio/uni-h5": "catalog:uni",
+    "@dcloudio/uni-mp-weixin": "catalog:uni",
+    "@dcloudio/uni-ui": "catalog:uni",
+    "@dcloudio/uni-uts-v1": "catalog:uni",
     "@vixt/layer-uni": "workspace:*",
     "vixt": "workspace:*"
   },
   "devDependencies": {
-    "@dcloudio/vite-plugin-uni": "catalog:",
-    "@uni-helper/uni-ui-types": "catalog:",
+    "@dcloudio/vite-plugin-uni": "catalog:uni",
+    "@uni-helper/uni-ui-types": "catalog:uni",
     "sass": "catalog:"
   }
 }

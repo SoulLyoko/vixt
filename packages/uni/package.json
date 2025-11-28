@@ -29,15 +29,15 @@
     "dev": "unbuild --stub"
   },
   "dependencies": {
-    "@dcloudio/types": "catalog:",
-    "@uni-helper/uni-app-types": "catalog:",
-    "@uni-helper/uni-use": "catalog:",
-    "@uni-helper/unocss-preset-uni": "catalog:",
-    "@uni-helper/vite-plugin-uni-components": "catalog:",
-    "@uni-helper/vite-plugin-uni-layouts": "catalog:",
-    "@uni-helper/vite-plugin-uni-pages": "catalog:",
+    "@dcloudio/types": "catalog:uni",
+    "@uni-helper/uni-app-types": "catalog:uni",
+    "@uni-helper/uni-use": "catalog:uni",
+    "@uni-helper/unocss-preset-uni": "catalog:uni",
+    "@uni-helper/vite-plugin-uni-components": "catalog:uni",
+    "@uni-helper/vite-plugin-uni-layouts": "catalog:uni",
+    "@uni-helper/vite-plugin-uni-pages": "catalog:uni",
     "@vixt/core": "workspace:*",
     "@vixt/vue": "workspace:*",
-    "unocss-applet": "catalog:"
+    "unocss-applet": "catalog:uni"
   }
 }

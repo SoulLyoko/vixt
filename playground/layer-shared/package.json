@@ -4,7 +4,7 @@
   "private": true,
   "main": "vixt.config.ts",
   "dependencies": {
-    "@unocss/reset": "catalog:",
+    "@unocss/reset": "catalog:vite",
     "vixt": "workspace:*"
   }
 }

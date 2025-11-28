@@ -33,34 +33,35 @@
     "@antfu/eslint-config": "catalog:",
     "@commitlint/cli": "catalog:",
     "@commitlint/config-conventional": "catalog:",
-    "@unocss/eslint-plugin": "catalog:",
-    "@vitest/browser": "catalog:",
-    "@vitest/browser-playwright": "catalog:",
+    "@unocss/eslint-plugin": "catalog:vite",
+    "@vitest/browser": "catalog:vite",
+    "@vitest/browser-playwright": "catalog:vite",
     "bumpp": "catalog:",
     "conventional-changelog-cli": "catalog:",
     "eslint": "catalog:",
     "eslint-plugin-format": "catalog:",
     "execa": "catalog:",
     "lint-staged": "catalog:",
-    "playwright": "catalog:",
+    "playwright": "catalog:vite",
     "simple-git-hooks": "catalog:",
     "taze": "catalog:",
     "tsx": "catalog:",
     "typescript": "catalog:",
     "unbuild": "catalog:",
-    "vitest": "catalog:"
+    "vitest": "catalog:vite"
   },
   "pnpm": {
     "overrides": {
       "@vixt/rolldown-react>vite": "catalog:rolldown",
       "@vixt/rolldown-vue>vite": "catalog:rolldown",
-      "@vue/shared": "catalog:",
-      "vite": "catalog:",
-      "vue": "catalog:"
+      "@vue/shared": "catalog:vue",
+      "vite": "catalog:vite",
+      "vue": "catalog:vue"
     },
     "peerDependencyRules": {
       "allowAny": [
-        "vite"
+        "vite",
+        "@dcloudio/types"
       ]
     }
   },

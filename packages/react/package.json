@@ -27,21 +27,21 @@
     "dev": "unbuild --stub"
   },
   "dependencies": {
-    "@types/react": "catalog:",
-    "@types/react-dom": "catalog:",
-    "@vitejs/plugin-react": "catalog:",
+    "@types/react": "catalog:react",
+    "@types/react-dom": "catalog:react",
+    "@vitejs/plugin-react": "catalog:vite",
     "@vixt/core": "workspace:*",
-    "ahooks": "catalog:",
+    "ahooks": "catalog:react",
     "extract-comments": "catalog:",
     "fast-glob": "catalog:",
-    "react": "catalog:",
-    "react-dom": "catalog:",
-    "react-router": "catalog:",
-    "unocss": "catalog:",
-    "unplugin-auto-import": "catalog:",
-    "unplugin-vue-components": "catalog:",
-    "vite-plugin-pages": "catalog:",
-    "vite-plugin-vue-layouts": "catalog:",
+    "react": "catalog:react",
+    "react-dom": "catalog:react",
+    "react-router": "catalog:react",
+    "unocss": "catalog:vite",
+    "unplugin-auto-import": "catalog:vite",
+    "unplugin-vue-components": "catalog:vite",
+    "vite-plugin-pages": "catalog:vite",
+    "vite-plugin-vue-layouts": "catalog:vite",
     "yaml": "catalog:"
   }
 }

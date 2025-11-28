@@ -7,39 +7,9 @@ catalog:
   '@antfu/eslint-config': ^6.2.0
   '@commitlint/cli': ^20.1.0
   '@commitlint/config-conventional': ^20.0.0
-  '@dcloudio/types': ^3.4.16
-  '@dcloudio/uni-app': 3.0.0-4070520250711001
-  '@dcloudio/uni-app-plus': 3.0.0-4070520250711001
-  '@dcloudio/uni-h5': 3.0.0-4070520250711001
-  '@dcloudio/uni-mp-weixin': 3.0.0-4070520250711001
-  '@dcloudio/uni-ui': ^1.5.10
-  '@dcloudio/uni-uts-v1': 3.0.0-4070520250711001
-  '@dcloudio/vite-plugin-uni': 3.0.0-4070520250711001
-  '@iconify/react': ^6.0.2
-  '@iconify/vue': ^5.0.0
-  '@reactuses/core': ^6.1.5
   '@types/fs-extra': ^11.0.4
-  '@types/react': ^19.2.4
-  '@types/react-dom': ^19.2.3
-  '@uni-helper/uni-app-types': ^1.0.0-alpha.6
-  '@uni-helper/uni-ui-types': ^1.0.0-alpha.6
-  '@uni-helper/uni-use': ^0.19.15
-  '@uni-helper/unocss-preset-uni': ^0.2.11
-  '@uni-helper/vite-plugin-uni-components': ^0.2.3
-  '@uni-helper/vite-plugin-uni-layouts': ^0.1.11
-  '@uni-helper/vite-plugin-uni-pages': ^0.3.21
-  '@unocss/eslint-plugin': ^66.5.6
-  '@unocss/reset': ^66.5.6
-  '@vitejs/plugin-react': ^5.1.1
-  '@vitejs/plugin-vue': ^6.0.1
-  '@vitejs/plugin-vue-jsx': ^5.1.1
-  '@vitest/browser': ^4.0.8
-  '@vitest/browser-playwright': ^4.0.8
-  '@vue/shared': ^3.5.24
-  '@vue/tsconfig': ^0.8.1
-  '@vueuse/core': ^13.9.0
-  ahooks: ^3.9.6
-  bumpp: ^10.3.1
+  '@types/node': ^24.10.1
+  bumpp: ^10.3.2
   c12: ^3.3.2
   cac: ^6.7.14
   conventional-changelog-cli: ^5.0.0
@@ -51,40 +21,79 @@ catalog:
   fast-glob: ^3.3.3
   find-up: ^8.0.0
   fs-extra: ^11.3.2
-  lint-staged: ^16.2.6
+  lint-staged: ^16.2.7
   mlly: ^1.8.0
   pathe: ^2.0.3
-  pinia: ^3.0.4
-  pinia-plugin-persistedstate: ^4.7.1
   pkg-types: ^2.3.0
-  playwright: ^1.56.1
-  react: ^19.2.0
-  react-dom: ^19.2.0
-  react-router: ^7.9.5
-  sass: ^1.94.0
+  sass: ^1.94.2
   simple-git-hooks: ^2.13.1
-  taze: ^19.9.0
+  taze: ^19.9.2
   tsx: ^4.20.6
   typescript: ^5.9.3
   unbuild: ^3.6.1
-  unocss: ^66.5.6
-  unocss-applet: ^0.12.2
-  unplugin-auto-import: ^20.2.0
-  unplugin-vue-components: 28.0.0
-  unplugin-vue-router: ^0.16.1
-  vite: ^7.2.2
-  vite-plugin-checker: ^0.11.0
-  vite-plugin-pages: ^0.33.1
-  vite-plugin-vue-devtools: ^8.0.3
-  vite-plugin-vue-layouts: ^0.11.0
-  vitepress: ^1.6.4
-  vitest: ^4.0.8
-  vue: ^3.5.24
-  vue-router: ^4.6.3
-  vue-tsc: ^3.1.3
   yaml: ^2.8.1
-  zustand: ^5.0.8
 
 catalogs:
+  react:
+    '@iconify/react': ^6.0.2
+    '@reactuses/core': ^6.1.6
+    '@types/react': ^19.2.7
+    '@types/react-dom': ^19.2.3
+    ahooks: ^3.9.6
+    react: ^19.2.0
+    react-dom: ^19.2.0
+    react-router: ^7.9.6
+    zustand: ^5.0.8
+
   rolldown:
-    vite: npm:rolldown-vite@^7.2.5
+    vite: npm:rolldown-vite@^7.2.8
+
+  uni:
+    '@dcloudio/types': ^3.4.28
+    '@dcloudio/uni-app': 3.0.0-4080520251106001
+    '@dcloudio/uni-app-plus': 3.0.0-4080520251106001
+    '@dcloudio/uni-h5': 3.0.0-4080520251106001
+    '@dcloudio/uni-mp-weixin': 3.0.0-4080520251106001
+    '@dcloudio/uni-ui': ^1.5.11
+    '@dcloudio/uni-uts-v1': 3.0.0-4080520251106001
+    '@dcloudio/vite-plugin-uni': 3.0.0-4080520251106001
+    '@uni-helper/uni-app-types': ^1.0.0-alpha.7
+    '@uni-helper/uni-ui-types': ^1.0.0-alpha.7
+    '@uni-helper/uni-use': ^0.19.17
+    '@uni-helper/unocss-preset-uni': ^0.2.11
+    '@uni-helper/vite-plugin-uni-components': ^0.2.3
+    '@uni-helper/vite-plugin-uni-layouts': ^0.1.11
+    '@uni-helper/vite-plugin-uni-pages': ^0.3.22
+    unocss-applet: ^0.12.2
+
+  vite:
+    '@unocss/eslint-plugin': ^66.5.9
+    '@unocss/reset': ^66.5.9
+    '@vitejs/plugin-react': ^5.1.1
+    '@vitejs/plugin-vue': ^6.0.2
+    '@vitejs/plugin-vue-jsx': ^5.1.2
+    '@vitest/browser': ^4.0.14
+    '@vitest/browser-playwright': ^4.0.14
+    playwright: ^1.57.0
+    unocss: ^66.5.9
+    unplugin-auto-import: ^20.3.0
+    unplugin-vue-components: 28.0.0
+    unplugin-vue-router: ^0.17.2
+    vite: ^7.2.4
+    vite-plugin-checker: ^0.11.0
+    vite-plugin-pages: ^0.33.1
+    vite-plugin-vue-devtools: ^8.0.5
+    vite-plugin-vue-layouts: ^0.11.0
+    vitepress: ^1.6.4
+    vitest: ^4.0.14
+
+  vue:
+    '@iconify/vue': ^5.0.0
+    '@vue/shared': ^3.5.25
+    '@vue/tsconfig': ^0.8.1
+    '@vueuse/core': ^13.9.0
+    pinia: ^3.0.4
+    pinia-plugin-persistedstate: ^4.7.1
+    vue: ^3.5.25
+    vue-router: ^4.6.3
+    vue-tsc: ^3.1.5

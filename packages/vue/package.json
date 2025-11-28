@@ -27,20 +27,20 @@
     "dev": "unbuild --stub"
   },
   "dependencies": {
-    "@vitejs/plugin-vue": "catalog:",
-    "@vitejs/plugin-vue-jsx": "catalog:",
+    "@vitejs/plugin-vue": "catalog:vite",
+    "@vitejs/plugin-vue-jsx": "catalog:vite",
     "@vixt/core": "workspace:*",
-    "@vueuse/core": "catalog:",
-    "pinia": "catalog:",
-    "pinia-plugin-persistedstate": "catalog:",
-    "unocss": "catalog:",
-    "unplugin-auto-import": "catalog:",
-    "unplugin-vue-components": "catalog:",
-    "unplugin-vue-router": "catalog:",
-    "vite-plugin-vue-devtools": "catalog:",
-    "vite-plugin-vue-layouts": "catalog:",
-    "vue": "catalog:",
-    "vue-router": "catalog:",
-    "vue-tsc": "catalog:"
+    "@vueuse/core": "catalog:vue",
+    "pinia": "catalog:vue",
+    "pinia-plugin-persistedstate": "catalog:vue",
+    "unocss": "catalog:vite",
+    "unplugin-auto-import": "catalog:vite",
+    "unplugin-vue-components": "catalog:vite",
+    "unplugin-vue-router": "catalog:vite",
+    "vite-plugin-vue-devtools": "catalog:vite",
+    "vite-plugin-vue-layouts": "catalog:vite",
+    "vue": "catalog:vue",
+    "vue-router": "catalog:vue",
+    "vue-tsc": "catalog:vue"
   }
 }

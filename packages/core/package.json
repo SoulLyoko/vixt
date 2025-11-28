@@ -36,7 +36,7 @@
   },
   "dependencies": {
     "@types/fs-extra": "catalog:",
-    "@vue/tsconfig": "catalog:",
+    "@vue/tsconfig": "catalog:vue",
     "c12": "catalog:",
     "cac": "catalog:",
     "defu": "catalog:",
@@ -46,7 +46,7 @@
     "pathe": "catalog:",
     "pkg-types": "catalog:",
     "tsx": "catalog:",
-    "vite": "catalog:",
-    "vite-plugin-checker": "catalog:"
+    "vite": "catalog:vite",
+    "vite-plugin-checker": "catalog:vite"
   }
 }

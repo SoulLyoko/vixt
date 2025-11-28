@@ -4,10 +4,10 @@
   "private": true,
   "main": "vixt.config.ts",
   "dependencies": {
-    "@iconify/react": "catalog:",
-    "@reactuses/core": "catalog:",
+    "@iconify/react": "catalog:react",
+    "@reactuses/core": "catalog:react",
     "@vixt/layer-shared": "workspace:*",
     "vixt": "workspace:*",
-    "zustand": "catalog:"
+    "zustand": "catalog:react"
   }
 }
