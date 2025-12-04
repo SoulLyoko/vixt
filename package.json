@@ -4,6 +4,10 @@
   "version": "0.5.16",
   "private": true,
   "packageManager": "pnpm@9.15.9",
+  "engines": {
+    "node": "^20.19.0 || >=22.12.0",
+    "pnpm": "^9.15.9"
+  },
   "scripts": {
     "build": "pnpm -F \"./packages/*\" build",
     "build:docs": "pnpm -F docs build",
