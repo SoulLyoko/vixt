@@ -1,3 +1,12 @@
+## [0.5.17](https://github.com/SoulLyoko/vixt/compare/v0.5.16...v0.5.17) (2025-12-04)
+
+
+### Bug Fixes
+
+* **uni:** patchUniPagesTypes ([9f82c54](https://github.com/SoulLyoko/vixt/commit/9f82c545dca0f603456e211339a5adf28929dc42))
+
+
+
 ## [0.5.16](https://github.com/SoulLyoko/vixt/compare/v0.5.15...v0.5.16) (2025-12-03)
 
 
