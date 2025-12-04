@@ -1,8 +1,12 @@
-# Rolldown 集成
+# Rolldown-Vite (Vite 8) 集成
 
 Vixt内置的模块和插件现已完美支持`rolldown`！
 
-根据[官方文档](https://cn.vitejs.dev/guide/rolldown.html)将`vite`依赖替换为`rolldown-vite`
+参考 [Rolldown Integration | Vite](https://vite.dev/guide/rolldown) 将`vite`依赖替换为`rolldown-vite`
+
+或者
+
+参考 [Migration from v7 | Vite 8](https://main.vite.dev/guide/migration) 将`vite`升级到`8.0.0`
 
 ## 试试看吧
 

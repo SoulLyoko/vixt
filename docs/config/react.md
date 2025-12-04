@@ -1,4 +1,4 @@
-# `vite/uni` 的配置
+# `vite/react` 的配置
 
 ## app
 
