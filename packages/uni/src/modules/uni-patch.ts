@@ -3,6 +3,7 @@ import type { ResolvedConfig } from 'vite'
 import { defineVitePlugin } from '@vixt/core'
 import fs from 'fs-extra'
 import { resolvePathSync } from 'mlly'
+import path from 'pathe'
 import { normalizePath } from 'vite'
 
 /** 增加小程序中vueuse的运行所需 */
@@ -81,8 +82,24 @@ export function patchUniComponents(config: ResolvedConfig) {
     config.build.watch = null
 }
 
+/**
+ * fix `@uni-helper/vite-plugin-uni-pages` client types
+ * @see https://github.com/uni-helper/vite-plugin-uni-pages/blob/main/packages/core/client.d.ts#L4
+ */
+export function patchUniPagesTypes() {
+  const matched = `  import type { SubPackage } from './src/config/types/index'\n  import type { PageMetaDatum } from './src/types'`
+  const replaced = `  import type { PageMetaDatum, SubPackage } from '@uni-helper/vite-plugin-uni-pages'`
+  const codePath = path.resolve(resolvePathSync('@uni-helper/vite-plugin-uni-pages'), '../../client.d.ts')
+  let code = codePath && fs.readFileSync(codePath, 'utf-8')
+  if (code.includes(matched)) {
+    code = code.replace(matched, replaced)
+    fs.outputFileSync(codePath, code)
+  }
+}
+
 export const uniPatch = defineVitePlugin(() => {
   patchNormalizeNodeModules()
+  patchUniPagesTypes()
 
   return [
     {

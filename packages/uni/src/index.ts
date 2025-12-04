@@ -9,7 +9,7 @@ const defaults = {
   typescript: {
     tsConfig: {
       compilerOptions: {
-        types: ['@dcloudio/types', '@uni-helper/uni-app-types', '@uni-helper/vite-plugin-uni-pages/client'],
+        types: ['@dcloudio/types', '@uni-helper/uni-app-types'],
       },
       vueCompilerOptions: {
         plugins: ['@uni-helper/uni-app-types/volar-plugin'],

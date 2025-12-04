@@ -12,7 +12,6 @@ import AutoImport from 'unplugin-auto-import/vite'
 
 import { uniPatch } from './uni-patch'
 import { uniVueUseResolver } from './uni-use'
-import { genarateVirtualUniPagesTypes } from './virtual-uni-pages'
 
 declare module '@vixt/core' {
   interface VixtOptions {
@@ -63,8 +62,6 @@ export const presetUni = defineVixtModule<VixtOptions>({
     }
 
     const options = vixt.options = defu(vixt.options, defaultOptions)
-
-    genarateVirtualUniPagesTypes(vixt)
 
     const modules = [
       Pages(options.uniPages),
