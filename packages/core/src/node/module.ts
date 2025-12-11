@@ -2,10 +2,12 @@ import type { VixtConfigLayer } from './config'
 import type { Vixt } from './vixt'
 import type { PluginOption } from 'vite'
 
+import process from 'node:process'
+
 import defu from 'defu'
 import fs from 'fs-extra'
+import { createJiti } from 'jiti'
 import { pathToFileURL } from 'mlly'
-import 'tsx/esm'
 import path from 'pathe'
 
 import { resolveLayersDirs } from './config'
@@ -32,7 +34,7 @@ export function defineVitePlugin<Options = any>(pluginFn: (options?: Options) =>
   return pluginFn
 }
 
-export function defineVixtModule<T extends ModuleOptions>(definition: ModuleDefinition<T> | VixtModule<T>): VixtModule<T> {
+export function defineVixtModule<T extends ModuleOptions>(definition: ModuleDefinition<T> | VixtModule<T>) {
   if (typeof definition == 'function')
     return defineVixtModule({ setup: definition })
 
@@ -67,18 +69,17 @@ export function installModule(module: VixtModule, inlineOptions: any, vixt: Vixt
 export async function applyLayerModules(layers: VixtConfigLayer[]): Promise<VixtModule[]> {
   const { modules: modulesDirs = [] } = resolveLayersDirs(layers)
   const modules: VixtModule[] = []
+  const jiti = createJiti(layers[0]?.cwd ?? process.cwd())
   for (const m of modulesDirs.reverse()) {
     if (fs.existsSync(m)) {
       const files = fs.readdirSync(m)
-      for (const f of files.filter(f => !f.includes('.') || /\.[jt]s$/.test(f))) {
+      for (const f of files) {
         try {
           const fileURL = pathToFileURL(path.resolve(m, f))
-          const module = await import(/* @vite-ignore */fileURL).then(m => m.default)
+          const module = await jiti.import(fileURL, { default: true }) as VixtModule
           modules.push(module)
         }
-        catch (error) {
-          console.error('[VixtModule Error]:', error)
-        }
+        catch { }
       }
     }
   }

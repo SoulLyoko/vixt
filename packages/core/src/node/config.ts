@@ -106,7 +106,7 @@ export function applyLayers(layers: VixtConfigLayer[], config: VixtOptions) {
     layer.config.rootDir ??= layer.cwd
     layer.config.srcDir ??= resolve(layer.config.rootDir!, 'src')
 
-    return { ...layer, meta }
+    return { ...layer, meta } as VixtConfigLayer
   })
 }
 

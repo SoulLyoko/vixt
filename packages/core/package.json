@@ -42,10 +42,10 @@
     "defu": "catalog:",
     "find-up": "catalog:",
     "fs-extra": "catalog:",
+    "jiti": "catalog:",
     "mlly": "catalog:",
     "pathe": "catalog:",
     "pkg-types": "catalog:",
-    "tsx": "catalog:",
     "vite": "catalog:vite",
     "vite-plugin-checker": "catalog:vite"
   }
