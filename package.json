@@ -21,6 +21,7 @@
     "dev:docs": "pnpm -F docs dev",
     "dev:h5": "pnpm -F test-uni dev",
     "dev:mp": "pnpm -F test-uni dev:mp",
+    "dev:nuxt": "pnpm -F test-nuxt dev",
     "dev:react": "pnpm -F test-react dev",
     "dev:vue": "pnpm -F test-vue dev",
     "dev:rolldown-react": "pnpm -F rolldown-react dev",

@@ -35,6 +35,9 @@ catalog:
   yaml: ^2.8.2
 
 catalogs:
+  nuxt:
+    nuxt: ^4.2.2
+
   react:
     '@iconify/react': ^6.0.2
     '@reactuses/core': ^6.1.6

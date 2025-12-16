@@ -1,0 +1,15 @@
+{
+  "name": "@vixt/test-nuxt",
+  "type": "module",
+  "private": true,
+  "scripts": {
+    "build": "vite build",
+    "dev": "vite",
+    "preview": "vite preview",
+    "tc": "vue-tsc --noEmit",
+    "test": "vitest"
+  },
+  "dependencies": {
+    "nuxt": "catalog:nuxt"
+  }
+}

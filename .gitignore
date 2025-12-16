@@ -5,3 +5,5 @@ dist
 pages.json
 cache
 *.local
+.nuxt
+.output
