@@ -12,20 +12,21 @@
     "react"
   ],
   "exports": {
-    ".": {
-      "types": "./dist/index.d.ts",
-      "import": "./dist/index.mjs"
+    ".": "./src/index.ts",
+    "./client/*": "./src/client/*.ts",
+    "./types": "./src/types/index.d.ts",
+    "./package.json": "./package.json"
+  },
+  "publishConfig": {
+    "exports": {
+      ".": "./dist/index.mjs",
+      "./client/*": "./dist/client/*.js",
+      "./types": "./dist/types/index.d.ts",
+      "./package.json": "./package.json"
     }
   },
-  "main": "dist/index.mjs",
-  "types": "dist/index.d.ts",
-  "files": [
-    "dist"
-  ],
-  "scripts": {
-    "build": "unbuild",
-    "dev": "unbuild --stub"
-  },
+  "main": "./dist/index.mjs",
+  "types": "./dist/types/index.d.ts",
   "dependencies": {
     "@types/react": "catalog:react",
     "@types/react-dom": "catalog:react",

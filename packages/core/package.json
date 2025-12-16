@@ -16,26 +16,27 @@
     "react"
   ],
   "exports": {
-    ".": {
-      "types": "./dist/node/index.d.ts",
-      "import": "./dist/node/index.mjs"
-    },
-    "./client": {
-      "types": "./dist/client/index.d.ts",
-      "import": "./dist/client/index.mjs"
+    ".": "./src/node/index.ts",
+    "./client": "./src/client/index.ts",
+    "./package.json": "./package.json"
+  },
+  "publishConfig": {
+    "exports": {
+      ".": "./dist/node/index.mjs",
+      "./client": "./dist/client/index.js",
+      "./package.json": "./package.json"
     }
   },
   "main": "./dist/node/index.mjs",
-  "types": "./dist/node/index.d.ts",
+  "types": "./dist/node/index.d.mts",
+  "browser": "./dist/client/index.js",
   "files": [
     "dist"
   ],
-  "scripts": {
-    "build": "unbuild",
-    "dev": "unbuild --stub"
-  },
   "dependencies": {
     "@types/fs-extra": "catalog:",
+    "@vitejs/plugin-basic-ssl": "catalog:vite",
+    "@vitejs/plugin-legacy": "catalog:vite",
     "@vue/tsconfig": "catalog:vue",
     "c12": "catalog:",
     "cac": "catalog:",
@@ -47,6 +48,7 @@
     "pathe": "catalog:",
     "pkg-types": "catalog:",
     "vite": "catalog:vite",
+    "vite-bundle-analyzer": "catalog:vite",
     "vite-plugin-checker": "catalog:vite"
   }
 }

@@ -9,7 +9,7 @@
     "pnpm": "^9.15.9"
   },
   "scripts": {
-    "build": "pnpm -F \"./packages/*\" build",
+    "build": "tsdown --workspace",
     "build:docs": "pnpm -F docs build",
     "build:h5": "pnpm -F test-uni build",
     "build:react": "pnpm -F test-react build",
@@ -17,7 +17,7 @@
     "build:rolldown-react": "pnpm -F rolldown-react build",
     "build:rolldown-vue": "pnpm -F rolldown-vue build",
     "changelog": "conventional-changelog -p angular -i CHANGELOG.md -s",
-    "dev": "pnpm --parallel -F \"./packages/*\" dev",
+    "dev": "pnpm -F vixt dev",
     "dev:docs": "pnpm -F docs dev",
     "dev:h5": "pnpm -F test-uni dev",
     "dev:mp": "pnpm -F test-uni dev:mp",
@@ -52,6 +52,7 @@
     "playwright": "catalog:vite",
     "simple-git-hooks": "catalog:",
     "taze": "catalog:",
+    "tsdown": "catalog:",
     "tsx": "catalog:",
     "typescript": "catalog:",
     "unbuild": "catalog:",

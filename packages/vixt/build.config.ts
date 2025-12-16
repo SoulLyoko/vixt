@@ -5,7 +5,6 @@ import { defineBuildConfig } from 'unbuild'
 export default defineBuildConfig({
   declaration: true,
   entries: [
-    'src/client.ts',
     'src/index.ts',
     'src/react.ts',
     'src/uni.ts',
@@ -14,13 +13,12 @@ export default defineBuildConfig({
   ],
   hooks: {
     'build:done': (ctx) => {
-      const { outDir, rootDir } = ctx.options
-      const clientFileContent = fs.readFileSync(path.resolve(rootDir, 'src', 'client.ts'), 'utf-8')
-      fs.readdirSync(outDir).forEach((file) => {
-        if (/^client.*[j|t]s$/.test(file)) {
-          fs.writeFileSync(path.resolve(outDir, file), clientFileContent)
-        }
-      })
+      const { outDir, rootDir, stub } = ctx.options
+      if (stub) {
+        const clientSrc = path.resolve(rootDir, 'src/client.ts')
+        fs.copyFileSync(clientSrc, path.resolve(outDir, 'client.mjs'))
+        fs.copyFileSync(clientSrc, path.resolve(outDir, 'client.d.mts'))
+      }
     },
   },
 })

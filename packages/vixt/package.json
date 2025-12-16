@@ -16,38 +16,20 @@
     "react"
   ],
   "exports": {
-    ".": {
-      "types": "./dist/index.d.ts",
-      "import": "./dist/index.mjs"
-    },
-    "./client": {
-      "types": "./dist/client.d.ts",
-      "import": "./dist/client.mjs"
-    },
-    "./react": {
-      "types": "./dist/react.d.ts",
-      "import": "./dist/react.mjs"
-    },
-    "./uni": {
-      "types": "./dist/uni.d.ts",
-      "import": "./dist/uni.mjs"
-    },
-    "./vitepress": {
-      "types": "./dist/vitepress.d.ts",
-      "import": "./dist/vitepress.mjs"
-    },
-    "./vue": {
-      "types": "./dist/vue.d.ts",
-      "import": "./dist/vue.mjs"
-    }
+    ".": "./dist/index.mjs",
+    "./client": "./dist/client.mjs",
+    "./react": "./dist/react.mjs",
+    "./uni": "./dist/uni.mjs",
+    "./vitepress": "./dist/vitepress.mjs",
+    "./vue": "./dist/vue.mjs",
+    "./package.json": "./package.json"
   },
-  "main": "dist/index.mjs",
-  "types": "dist/index.d.ts",
+  "main": "./dist/index.mjs",
+  "types": "./dist/index.d.mts",
   "files": [
     "dist"
   ],
   "scripts": {
-    "build": "unbuild",
     "dev": "unbuild --stub"
   },
   "dependencies": {

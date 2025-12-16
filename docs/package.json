@@ -7,7 +7,6 @@
     "serve": "vitepress serve"
   },
   "dependencies": {
-    "@vixt/vitepress": "workspace:*",
     "vixt": "workspace:*"
   }
 }
