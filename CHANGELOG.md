@@ -1,3 +1,14 @@
+# [0.6.0](https://github.com/SoulLyoko/vixt/compare/v0.5.17...v0.6.0) (2025-12-29)
+
+
+### Features
+
+* **core:** use jiti to resolve modules ([2d17412](https://github.com/SoulLyoko/vixt/commit/2d174127d93c5e9d4dd44c6464902f15c6b36e62))
+* migrate to tsdown ([81ce6bc](https://github.com/SoulLyoko/vixt/commit/81ce6bc1d7dcfaabbd41a7070f47d446c601aeb2))
+* virtualize plugins and app-config ([8ef5185](https://github.com/SoulLyoko/vixt/commit/8ef5185f7ccbeaabbe7e310852cfa5ce5a085501))
+
+
+
 ## [0.5.17](https://github.com/SoulLyoko/vixt/compare/v0.5.16...v0.5.17) (2025-12-04)
 
 
