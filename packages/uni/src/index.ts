@@ -5,10 +5,12 @@ import { resolvePathSync } from 'mlly'
 import presetUni from './modules/preset-uni'
 import uniModules from './modules/uni-modules'
 
+const plugins = ['@vixt/uni/client/plugins/pinia', '@vixt/uni/client/plugins/router']
+
 export default createVixtPlugin({
   defaults: {
     modules: [presetUni, uniModules],
-    plugins: ['@vixt/uni/client/plugins/pinia', '@vixt/uni/client/plugins/router'],
+    plugins,
     app: {
       entryFile: 'main.ts',
       entryCode: fs.readFileSync(resolvePathSync('@vixt/uni/client/entry'), 'utf-8'),
@@ -31,7 +33,7 @@ export default createVixtPlugin({
     },
     vite: {
       optimizeDeps: {
-        exclude: ['@vixt/uni/client/entry', '@vixt/uni/client/plugins/pinia', '@vixt/uni/client/plugins/router'],
+        exclude: plugins,
       },
     },
   },

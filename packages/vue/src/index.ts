@@ -5,10 +5,12 @@ import { resolvePathSync } from 'mlly'
 import presetVue from './modules/preset-vue'
 import virtualRootComponent from './modules/virtual-root-component'
 
+const plugins = ['@vixt/vue/client/plugins/pinia', '@vixt/vue/client/plugins/router']
+
 export default createVixtPlugin({
   defaults: {
     modules: [presetVue, virtualRootComponent],
-    plugins: ['@vixt/vue/client/plugins/pinia', '@vixt/vue/client/plugins/router'],
+    plugins,
     app: {
       entryFile: 'main.ts',
       entryCode: fs.readFileSync(resolvePathSync('@vixt/vue/client/entry'), 'utf-8'),
@@ -24,6 +26,11 @@ export default createVixtPlugin({
         compilerOptions: {
           types: ['@vixt/vue/types', 'vite-plugin-vue-layouts/client', 'unplugin-vue-router/client'],
         },
+      },
+    },
+    vite: {
+      optimizeDeps: {
+        exclude: plugins,
       },
     },
   },
