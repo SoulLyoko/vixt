@@ -50,7 +50,7 @@ function copyUniModules(options: ModuleOptions, vixt: Vixt) {
 }
 
 const name = 'vixt:uni-modules'
-export const uniModules = defineVixtModule({
+export default defineVixtModule({
   meta: { name, configKey: 'uniModules' },
   setup(options, vixt) {
     copyUniModules(options, vixt)

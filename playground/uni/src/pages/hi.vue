@@ -18,7 +18,7 @@ watchEffect(() => {
       Dynamic route!
     </view>
 
-    <view v-if="user.otherNames.length" text-sm mt-4>
+    <view v-if="user.otherNames.length" mt-4 text-sm>
       <view op-75>
         aka:
       </view>
@@ -30,7 +30,7 @@ watchEffect(() => {
     </view>
 
     <view>
-      <navigator text-sm btn m-3 open-type="navigateBack">
+      <navigator m-3 btn text-sm open-type="navigateBack">
         Back
       </navigator>
     </view>

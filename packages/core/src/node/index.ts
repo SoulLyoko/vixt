@@ -1,7 +1,5 @@
-export * from './app'
 export * from './config'
 export * from './env'
 export * from './module'
 export * from './modules'
-export * from './utils'
 export * from './vixt'

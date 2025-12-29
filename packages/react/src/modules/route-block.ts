@@ -1,6 +1,11 @@
-import type { CustomBlock, ParsedJSX } from 'vite-plugin-pages'
+/**
+ * Support route block in react
+ * @link https://github.com/hannoeru/vite-plugin-pages?tab=readme-ov-file#jsxtsx-yaml-format-comments-for-route-datain-vue
+ * @link https://github.com/hannoeru/vite-plugin-pages/blob/main/src/customBlock.ts
+ */
+import type { CustomBlock, ParsedJSX, ReactRoute } from 'vite-plugin-pages'
 
-// @ts-ignore
+// @ts-expect-error
 import extractComments from 'extract-comments'
 import fs from 'fs-extra'
 import { parse as YAMLParser } from 'yaml'
@@ -29,16 +34,19 @@ function parseYamlComment(code: ParsedJSX[], path: string): CustomBlock {
   }, {})
 }
 
-export function extendRoute(route: any) {
+function getRouteBlock(path: string) {
+  const code = fs.readFileSync(path, 'utf-8')
+  const parsedJSX = parseJSX(code)
+  const block = parseYamlComment(parsedJSX, path)
+  return block
+}
+
+export function extendRoute(route: ReactRoute) {
   if (!route.element)
     return
 
   const codePath = route.element.startsWith('/') ? route.element.slice(1) : route.element
-  const code = fs.readFileSync(codePath, 'utf-8')
-  const jsx = parseJSX(code)
-  const block = parseYamlComment(jsx, codePath)
-  return {
-    ...route,
-    ...block,
-  }
+  const block = getRouteBlock(codePath)
+
+  return { ...route, ...block }
 }

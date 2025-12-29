@@ -14,3 +14,9 @@ export function defineVixtPlugin(definition: PluginDefinition | VixtPlugin): Vix
 
   return vixt => definition.setup?.(vixt)
 }
+
+export async function applyPlugins(vixt: VixtApp, plugins: VixtPlugin[]) {
+  for (const plugin of plugins) {
+    typeof plugin === 'function' && await plugin(vixt)
+  }
+}

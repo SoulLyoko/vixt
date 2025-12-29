@@ -12,7 +12,7 @@ import path from 'pathe'
 
 import { resolveLayersDirs } from './config'
 
-export type PluginOptions<Options = any> = (Options extends (...args: any[]) => any ? Parameters<Options>[0] : Options)
+export type ExtractPluginOptions<Options = any> = (Options extends (...args: any[]) => any ? Parameters<Options>[0] : Options)
 
 export type ModuleOptions = Record<string, any>
 export interface ModuleMeta extends Record<string, any> {
@@ -21,12 +21,12 @@ export interface ModuleMeta extends Record<string, any> {
 }
 export interface ModuleDefinition<T extends ModuleOptions = ModuleOptions> {
   meta?: ModuleMeta
-  defaults?: T | ((vixt: Vixt) => T)
+  defaults?: Partial<T> | ((vixt: Vixt) => Partial<T>)
   setup?: (this: void, resolvedOptions: T, vixt: Vixt) => PluginOption | void
 }
 export interface VixtModule<T extends ModuleOptions = ModuleOptions> {
-  (this: void, inlineOptions: T, vixt: Vixt): PluginOption
-  getOptions?: (inlineOptions?: T, Vixt?: Vixt) => T
+  (this: void, resolvedOptions: T, vixt: Vixt): PluginOption
+  getOptions?: (inlineOptions: Partial<T>, Vixt: Vixt) => T
   getMeta?: () => ModuleMeta
 }
 
@@ -40,7 +40,7 @@ export function defineVixtModule<T extends ModuleOptions>(definition: ModuleDefi
 
   const module = definition
 
-  function getOptions(inlineOptions: T, vixt: Vixt) {
+  function getOptions(inlineOptions: Partial<T>, vixt: Vixt) {
     const configKey = module.meta?.configKey || module.meta?.name
     const configOptions = configKey ? vixt.options[configKey] : {}
     const defaultOptions = typeof module.defaults === 'function' ? module.defaults(vixt) : module.defaults
@@ -62,14 +62,14 @@ export function defineVixtModule<T extends ModuleOptions>(definition: ModuleDefi
   return normalizedModule as VixtModule<T>
 }
 
-export function installModule(module: VixtModule, inlineOptions: any, vixt: Vixt) {
+export function installModule<T extends ModuleOptions = ModuleOptions>(module: VixtModule<T>, inlineOptions: any, vixt: Vixt) {
   return module(inlineOptions, vixt)
 }
 
 export async function applyLayerModules(layers: VixtConfigLayer[]): Promise<VixtModule[]> {
   const { modules: modulesDirs = [] } = resolveLayersDirs(layers)
   const modules: VixtModule[] = []
-  const jiti = createJiti(layers[0]?.cwd ?? process.cwd())
+  const jiti = createJiti(layers[0]?.cwd ?? process.cwd(), { moduleCache: false })
   for (const m of modulesDirs.reverse()) {
     if (fs.existsSync(m)) {
       const files = fs.readdirSync(m)
