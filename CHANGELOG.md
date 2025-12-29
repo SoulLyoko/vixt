@@ -1,3 +1,13 @@
+## [0.6.2](https://github.com/SoulLyoko/vixt/compare/v0.6.1...v0.6.2) (2025-12-29)
+
+
+### Bug Fixes
+
+* **core:** correct extraction of `vixt.options.app` ([6bca522](https://github.com/SoulLyoko/vixt/commit/6bca5221f5c319c8b153227eccdb57c007e18e09))
+* exclude optimize builtin plugins ([696d2f4](https://github.com/SoulLyoko/vixt/commit/696d2f44e3cbb8e37aad508d5427205c8d76ca37))
+
+
+
 ## [0.6.1](https://github.com/SoulLyoko/vixt/compare/v0.6.0...v0.6.1) (2025-12-29)
 
 
