@@ -1,9 +1,9 @@
 import { playwright } from '@vitest/browser-playwright'
-import { createJiti } from 'jiti'
 import { defineConfig } from 'vitest/config'
 
-const jiti = createJiti(import.meta.url)
-const vixt = await jiti.import<typeof import('vixt/vue').default>('vixt/vue', { default: true })
+import importVixt from '../../vixt'
+
+const vixt = await importVixt('vixt/vue')
 
 export default defineConfig({
   plugins: [vixt()],
