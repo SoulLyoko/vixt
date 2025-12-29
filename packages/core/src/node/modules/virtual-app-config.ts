@@ -22,8 +22,6 @@ export default defineVixtModule({
       }
     }
 
-    const { baseURL = '/', rootId = 'app' } = vixt.options.app ?? {}
-
     return {
       name,
       resolveId(id) {
@@ -33,6 +31,7 @@ export default defineVixtModule({
       },
       load(id) {
         if (id === resolvedVirtualModuleId) {
+          const { baseURL = '/', rootId = 'app' } = vixt.options.app ?? {}
           return `
 import { defu } from 'defu'
 ${appConfigsImportTemplate}
