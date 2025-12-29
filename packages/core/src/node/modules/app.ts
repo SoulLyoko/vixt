@@ -52,8 +52,8 @@ export function resolveEntryCode(options: AppOptions, vixt: Vixt) {
   for (const layer of vixt._layers) {
     const layerEntryPath = path.resolve(layer.config!.srcDir!, entryFile!)
     const isExits = fs.existsSync(layerEntryPath)
-    const code = isExits && fs.readFileSync(layerEntryPath, 'utf-8')
-    if (!isEmptyCode(code || ''))
+    const code = (isExits && fs.readFileSync(layerEntryPath, 'utf-8')) || ''
+    if (!isEmptyCode(code))
       return code
   }
   // default entry
