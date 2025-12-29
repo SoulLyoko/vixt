@@ -7,7 +7,7 @@ const vixt = await importVixt('vixt/vitepress')
 
 // refer https://vitepress.dev/reference/site-config for details
 export default defineConfig({
-  base: '/vixt',
+  base: '/vixt/',
   title: 'Vixt',
   description: 'Trying to implement nuxt\'s features via vite plugin',
   ignoreDeadLinks: true,
