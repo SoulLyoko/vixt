@@ -5,6 +5,10 @@ on:
     branches:
       - main
 
+permissions:
+  id-token: write
+  contents: read
+
 jobs:
   publish:
     runs-on: ubuntu-latest
@@ -27,9 +31,7 @@ jobs:
           pnpm run build
 
       - name: Publish
-        run: |
-          echo "//registry.npmjs.org/:_authToken=${{ secrets.NPM_TOKEN }}" > .npmrc
-          pnpm publish --no-git-checks --access public -r
+        run: pnpm publish --no-git-checks --access public -r
 
       - name: Sync
         uses: sepveneto/sync-npmmirror-action@v1
@@ -41,3 +43,4 @@ jobs:
             @vixt/vitepress
             @vixt/react
             vixt
+            create-vixt
