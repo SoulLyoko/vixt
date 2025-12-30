@@ -16,22 +16,30 @@
     "react"
   ],
   "exports": {
-    ".": "./dist/index.mjs",
-    "./client": "./dist/client.mjs",
-    "./react": "./dist/react.mjs",
-    "./uni": "./dist/uni.mjs",
-    "./vitepress": "./dist/vitepress.mjs",
-    "./vue": "./dist/vue.mjs",
+    ".": "./dev/index.ts",
+    "./client": "./dev/client.ts",
+    "./react": "./dev/react.ts",
+    "./uni": "./dev/uni.ts",
+    "./vitepress": "./dev/vitepress.ts",
+    "./vue": "./dev/vue.ts",
     "./package.json": "./package.json"
+  },
+  "publishConfig": {
+    "exports": {
+      ".": "./dist/index.mjs",
+      "./client": "./dist/client.mjs",
+      "./react": "./dist/react.mjs",
+      "./uni": "./dist/uni.mjs",
+      "./vitepress": "./dist/vitepress.mjs",
+      "./vue": "./dist/vue.mjs",
+      "./package.json": "./package.json"
+    }
   },
   "main": "./dist/index.mjs",
   "types": "./dist/index.d.mts",
   "files": [
     "dist"
   ],
-  "scripts": {
-    "dev": "unbuild --stub"
-  },
   "dependencies": {
     "@vixt/core": "workspace:*",
     "@vixt/react": "workspace:*",

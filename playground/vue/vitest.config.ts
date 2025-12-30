@@ -1,9 +1,6 @@
 import { playwright } from '@vitest/browser-playwright'
 import { defineConfig } from 'vitest/config'
-
-import importVixt from '../../vixt'
-
-const vixt = await importVixt('vixt/vue')
+import vixt from 'vixt/vue'
 
 export default defineConfig({
   plugins: [vixt()],

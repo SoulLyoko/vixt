@@ -14,9 +14,6 @@
     "index.js",
     "template-*"
   ],
-  "scripts": {
-    "build": "unbuild"
-  },
   "dependencies": {
     "cac": "catalog:",
     "fs-extra": "catalog:"

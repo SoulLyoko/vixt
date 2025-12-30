@@ -17,7 +17,7 @@ const genPath = path.join(__dirname, projectName)
 const cliPath = path.join(__dirname, '..')
 
 function run(args: string[] = [], options?: SyncOptions) {
-  return execaCommandSync(`pnpm tsx ${cliPath} ${args.join(' ')}`, { cwd: __dirname, ...options })
+  return execaCommandSync(`node ${cliPath} ${args.join(' ')}`, { cwd: __dirname, ...options })
 }
 
 function getVixtDepVersion(dir: string) {

@@ -1,9 +1,5 @@
 import { defineConfig } from 'vitepress'
-
-import importVixt from '../../vixt'
-
-// eslint-disable-next-line antfu/no-top-level-await
-const vixt = await importVixt('vixt/vitepress')
+import vixt from 'vixt/vitepress'
 
 // refer https://vitepress.dev/reference/site-config for details
 export default defineConfig({
