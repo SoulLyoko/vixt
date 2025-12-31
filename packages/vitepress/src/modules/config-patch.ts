@@ -8,11 +8,5 @@ export default defineVitePlugin(() => {
       if (siteBase)
         return { base: siteBase }
     },
-    configResolved(config) {
-      for (const plugin of config.plugins) {
-        if (plugin.name === 'vixt:app')
-          delete plugin.transformIndexHtml
-      }
-    },
   }
 })

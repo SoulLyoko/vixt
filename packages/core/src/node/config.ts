@@ -142,10 +142,21 @@ export interface AppOptions {
    * The entry file relative to <srcDir>
    * @default 'main.ts'(vue)
    * @default 'main.tsx'(react)
-   * @example 'entry.ts'(means '/<srcDir>/entry.ts')
+   * @example 'entry.ts'(relative to '/<srcDir>/entry.ts')
    */
   entryFile?: string
+  /** The default entry code */
   entryCode?: string
+  /**
+   * Whether to enable generate and transform entry file
+   * @default true
+   */
+  transformEntryFile?: boolean
+  /**
+   * Whether to enable transform and transform index.html
+   * @default true
+   */
+  transformIndexHtml?: boolean
   /**
    * Set default configuration for `<head>`.
    */

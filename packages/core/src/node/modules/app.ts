@@ -20,17 +20,6 @@ export function resolveHead(tag: string, attrs: AppHeadAttrs): HtmlTagDescriptor
   }
 }
 
-export function isEmptyCode(code?: string) {
-  if (!code)
-    return true
-  try {
-    return !parseAst(code, { jsx: true }).body.length
-  }
-  catch {
-    return true
-  }
-}
-
 export function resolveLoadingTemplate(options: AppOptions, vixt: Vixt) {
   const { loadingTemplate } = options
 
@@ -46,18 +35,15 @@ export function resolveLoadingTemplate(options: AppOptions, vixt: Vixt) {
   }
 }
 
-export function resolveEntryCode(options: AppOptions, vixt: Vixt) {
-  const { entryCode, entryFile } = options
-  // search for layers `<srcDir>/<entryFile>`
-  for (const layer of vixt._layers) {
-    const layerEntryPath = path.resolve(layer.config!.srcDir!, entryFile!)
-    const isExits = fs.existsSync(layerEntryPath)
-    const code = (isExits && fs.readFileSync(layerEntryPath, 'utf-8')) || ''
-    if (!isEmptyCode(code))
-      return code
+export function isEmptyCode(code?: string) {
+  if (!code)
+    return true
+  try {
+    return !parseAst(code, { jsx: true }).body.length
   }
-  // default entry
-  return entryCode
+  catch {
+    return false
+  }
 }
 
 const name = 'vixt:app'
@@ -68,37 +54,45 @@ export default defineVixtModule<AppOptions>({
     rootTag: 'div',
     baseURL: '/',
     css: [],
+    transformEntryFile: true,
+    transformIndexHtml: true,
   },
   setup(options, vixt) {
-    const { srcDir } = vixt.options
-    const { entryFile, rootTag, rootId, head } = options
+    const { rootDir, srcDir } = vixt.options
+    const { entryFile, transformEntryFile, transformIndexHtml } = options
+
+    const indexHtmlPath = path.resolve(rootDir!, 'index.html')
+    if (transformIndexHtml && !fs.existsSync(indexHtmlPath))
+      fs.outputFileSync(indexHtmlPath, '')
 
     const relativeEntryPath = `/${path.basename(srcDir!)}/${entryFile}`
     const absoluteEntryPath = path.resolve(srcDir!, entryFile!)
+    if (transformEntryFile && !fs.existsSync(absoluteEntryPath))
+      fs.outputFileSync(absoluteEntryPath, '')
 
     const order = 'pre'
 
     return {
       name,
       enforce: order,
-      load: {
-        order,
-        handler(id) {
-          if (id === relativeEntryPath)
-            return resolveEntryCode(options, vixt)
-        },
-      },
       transform: {
         order,
-        handler(code, id) {
-          if (id === absoluteEntryPath && isEmptyCode(code)) {
-            return resolveEntryCode(options, vixt)
-          }
+        filter: { id: absoluteEntryPath },
+        handler(code) {
+          if (!transformEntryFile)
+            return
+
+          if (isEmptyCode(code))
+            return options.entryCode
         },
       },
       transformIndexHtml: {
         order,
         handler() {
+          if (!transformIndexHtml)
+            return
+
+          const { rootTag, rootId, head } = options
           const heads: [string, AppHeadAttrs[]][] = Object.entries(head ?? {})
           const tags = heads.map(([tag, attrs]) => attrs.map(attr => resolveHead(tag, attr))).flat()
           const loadingTemplate = resolveLoadingTemplate(options, vixt)

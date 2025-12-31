@@ -17,6 +17,7 @@ export default createVixtPlugin({
     app: {
       entryFile: 'index.ts',
       entryCode: fs.readFileSync(resolvePathSync('@vixt/vitepress/client/entry'), 'utf-8'),
+      transformIndexHtml: false,
     },
     typescript: {
       tsConfig: {
