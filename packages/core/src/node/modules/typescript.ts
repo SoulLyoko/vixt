@@ -72,8 +72,8 @@ export default defineVixtModule<TypescriptOptions>({
 
     const paths: Record<string, string[]> = {}
     for (const [ak, av] of Object.entries(alias ?? {})) {
-      const exits = fs.existsSync(av)
-      const stats = exits ? fs.statSync(av) : null
+      const exists = fs.existsSync(av)
+      const stats = exists ? fs.statSync(av) : null
       paths[ak] = [av]
       if (stats?.isDirectory())
         paths[`${ak}/*`] = [`${av}/*`]

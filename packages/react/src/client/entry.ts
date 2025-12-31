@@ -8,7 +8,7 @@ import appConfig from 'virtual:vixt:app-config'
 // @ts-expect-error virtual file
 import plugins from 'virtual:vixt:plugins'
 // @ts-expect-error virtual file
-import RootComponent from 'virtual:vixt:root-component'
+import RootComponent from 'virtual:vixt:root-component.tsx'
 
 async function entry() {
   const app = createRoot(document.getElementById(appConfig.rootId || 'app')!)

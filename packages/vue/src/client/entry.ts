@@ -6,7 +6,7 @@ import appConfig from 'virtual:vixt:app-config'
 // @ts-expect-error virtual file
 import plugins from 'virtual:vixt:plugins'
 // @ts-expect-error virtual file
-import RootComponent from 'virtual:vixt:root-component'
+import RootComponent from 'virtual:vixt:root-component.vue'
 import { createApp } from 'vue'
 
 async function entry() {
