@@ -1,3 +1,12 @@
+## [0.6.4](https://github.com/SoulLyoko/vixt/compare/v0.6.3...v0.6.4) (2025-12-31)
+
+
+### Bug Fixes
+
+* correct resolve root component ([44e6964](https://github.com/SoulLyoko/vixt/commit/44e6964926848649a672db2ba8a08604c7a1d5a0))
+
+
+
 ## [0.6.3](https://github.com/SoulLyoko/vixt/compare/v0.6.2...v0.6.3) (2025-12-31)
 
 
