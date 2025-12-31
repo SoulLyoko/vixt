@@ -1,3 +1,12 @@
+## [0.6.3](https://github.com/SoulLyoko/vixt/compare/v0.6.2...v0.6.3) (2025-12-31)
+
+
+### Bug Fixes
+
+* required exist entry file ([f3f5fc7](https://github.com/SoulLyoko/vixt/commit/f3f5fc757d301c1fe85be14610727f45631f4e22))
+
+
+
 ## [0.6.2](https://github.com/SoulLyoko/vixt/compare/v0.6.1...v0.6.2) (2025-12-29)
 
 
