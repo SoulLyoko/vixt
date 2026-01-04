@@ -1,4 +1,5 @@
 import fs from 'fs-extra'
+import { parseExpression, parseModule } from 'magicast'
 import path from 'pathe'
 
 import { resolveLayersDirs } from '../config'
@@ -10,29 +11,6 @@ const resolvedVirtualModuleId = `\0${virtualModuleId}`
 export default defineVixtModule({
   meta: { name },
   setup(_, vixt) {
-    const { plugins: pluginsDirs = [] } = resolveLayersDirs(vixt._layers)
-    let pluginsImportTemplate = ''
-    let pluginsMergeTemplate = ''
-    let i = 0
-
-    for (const plugin of vixt.options.plugins ?? []) {
-      const pluginName = `__plugin_${i}`
-      pluginsImportTemplate += `import ${pluginName} from '${plugin}'\n`
-      pluginsMergeTemplate += `${pluginName}, `
-      i++
-    }
-
-    for (const pluginsDir of pluginsDirs.reverse()) {
-      const files = fs.existsSync(pluginsDir) ? fs.readdirSync(pluginsDir) : []
-      for (const f of files.filter(f => /[jt]sx?$/.test(f))) {
-        const p = path.resolve(pluginsDir, f)
-        const pluginName = `__plugin_${i}`
-        pluginsImportTemplate += `import ${pluginName} from '${p}'\n`
-        pluginsMergeTemplate += `${pluginName}, `
-        i++
-      }
-    }
-
     return {
       name,
       resolveId(id) {
@@ -41,13 +19,36 @@ export default defineVixtModule({
         }
       },
       load(id) {
-        if (id === resolvedVirtualModuleId) {
-          return `
-${pluginsImportTemplate}
-const plugins = [${pluginsMergeTemplate}]
-export default plugins
-`
+        if (id !== resolvedVirtualModuleId)
+          return
+
+        const { plugins: pluginsDirs = [] } = resolveLayersDirs(vixt._layers)
+
+        const code = parseModule('')
+        const pluginsArray = parseExpression<Array<any>>('[]')
+
+        let i = 0
+        function addPlugin(from: string) {
+          const pluginName = `__plugin_${i++}`
+          code.imports.$append({ local: pluginName, imported: 'default', from })
+          pluginsArray.push(parseExpression(pluginName))
         }
+
+        for (const pluginPath of vixt.options.plugins ?? []) {
+          addPlugin(pluginPath)
+        }
+
+        for (const pluginsDir of pluginsDirs.reverse()) {
+          const files = fs.existsSync(pluginsDir) ? fs.readdirSync(pluginsDir) : []
+          for (const file of files.filter(f => /[jt]sx?$/.test(f))) {
+            const pluginPath = path.resolve(pluginsDir, file)
+            addPlugin(pluginPath)
+          }
+        }
+
+        code.exports.default = pluginsArray
+
+        return code.generate()
       },
     }
   },
