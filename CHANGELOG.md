@@ -1,3 +1,12 @@
+## [0.6.5](https://github.com/SoulLyoko/vixt/compare/v0.6.4...v0.6.5) (2026-01-04)
+
+
+### Features
+
+* **core:** use magicast to generate virtual code ([35f4773](https://github.com/SoulLyoko/vixt/commit/35f477304e9ddb96bce1b5ab9fddced9a08b8c38))
+
+
+
 ## [0.6.4](https://github.com/SoulLyoko/vixt/compare/v0.6.3...v0.6.4) (2025-12-31)
 
 
