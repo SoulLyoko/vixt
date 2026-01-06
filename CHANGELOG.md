@@ -1,3 +1,12 @@
+## [0.6.6](https://github.com/SoulLyoko/vixt/compare/v0.6.5...v0.6.6) (2026-01-06)
+
+
+### Bug Fixes
+
+* **core:** missing`<!DOCTYPE html>` ([efe5aa4](https://github.com/SoulLyoko/vixt/commit/efe5aa455ba691722dc8d2727ce1104ac281bc4b))
+
+
+
 ## [0.6.5](https://github.com/SoulLyoko/vixt/compare/v0.6.4...v0.6.5) (2026-01-04)
 
 
