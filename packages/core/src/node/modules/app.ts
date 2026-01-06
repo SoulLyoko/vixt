@@ -88,7 +88,7 @@ export default defineVixtModule<AppOptions>({
       },
       transformIndexHtml: {
         order,
-        handler() {
+        handler(html = '') {
           if (!transformIndexHtml)
             return
 
@@ -96,11 +96,14 @@ export default defineVixtModule<AppOptions>({
           const heads: [string, AppHeadAttrs[]][] = Object.entries(head ?? {})
           const tags = heads.map(([tag, attrs]) => attrs.map(attr => resolveHead(tag, attr))).flat()
           const loadingTemplate = resolveLoadingTemplate(options, vixt)
-          return [
-            { tag: rootTag!, attrs: { id: rootId }, children: loadingTemplate, injectTo: 'body' },
-            { tag: 'script', attrs: { type: 'module', src: relativeEntryPath }, injectTo: 'body' },
-            ...tags,
-          ]
+          return {
+            html: `<!DOCTYPE html>\n${html}`,
+            tags: [
+              { tag: rootTag!, attrs: { id: rootId }, children: loadingTemplate, injectTo: 'body' },
+              { tag: 'script', attrs: { type: 'module', src: relativeEntryPath }, injectTo: 'body' },
+              ...tags,
+            ],
+          }
         },
       },
     }
