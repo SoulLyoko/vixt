@@ -9,12 +9,12 @@ import plugins from 'virtual:vixt:plugins'
 import RootComponent from 'virtual:vixt:root-component.vue'
 import { createApp } from 'vue'
 
-async function entry() {
+function entry() {
   const app = createApp(RootComponent)
   const vixt = createVixtApp({ app, appConfig })
 
   try {
-    await applyPlugins(vixt, plugins)
+    applyPlugins(vixt, plugins)
   }
   catch (err) {
     console.error(err)

@@ -11,11 +11,11 @@ import DefaultTheme from 'vitepress/theme'
 
 export default <Theme>{
   extends: DefaultTheme,
-  async enhanceApp(ctx) {
+  enhanceApp(ctx) {
     const vixt = createVixtApp({ ...ctx, appConfig })
 
     try {
-      await applyPlugins(vixt, plugins)
+      applyPlugins(vixt, plugins)
     }
     catch (err) {
       console.error(err)

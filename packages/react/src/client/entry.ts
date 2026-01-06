@@ -10,12 +10,12 @@ import plugins from 'virtual:vixt:plugins'
 // @ts-expect-error virtual file
 import RootComponent from 'virtual:vixt:root-component.tsx'
 
-async function entry() {
+function entry() {
   const app = createRoot(document.getElementById(appConfig.rootId || 'app')!)
   const vixt = createVixtApp({ app, appConfig })
 
   try {
-    await applyPlugins(vixt, plugins)
+    applyPlugins(vixt, plugins)
   }
   catch (err) {
     console.error(err)

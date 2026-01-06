@@ -6,17 +6,21 @@ export interface PluginDefinition {
 }
 export interface VixtPlugin {
   (this: void, vixt: VixtApp): any
+  /** @internal */
+  _name?: string
 }
 
 export function defineVixtPlugin(definition: PluginDefinition | VixtPlugin): VixtPlugin {
   if (typeof definition == 'function')
-    return defineVixtPlugin({ setup: definition })
+    return definition
 
-  return vixt => definition.setup?.(vixt)
+  const pluginName = definition.name
+  const pluginSetup = definition.setup || (() => {})
+  return Object.assign(pluginSetup, { _name: pluginName })
 }
 
-export async function applyPlugins(vixt: VixtApp, plugins: VixtPlugin[]) {
+export function applyPlugins(vixt: VixtApp, plugins: VixtPlugin[]) {
   for (const plugin of plugins) {
-    typeof plugin === 'function' && await plugin(vixt)
+    typeof plugin === 'function' && plugin(vixt)
   }
 }
