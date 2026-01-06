@@ -1,3 +1,12 @@
+## [0.6.7](https://github.com/SoulLyoko/vixt/compare/v0.6.6...v0.6.7) (2026-01-06)
+
+
+### Bug Fixes
+
+* **core:** cancel async loading plugins ([3ac7270](https://github.com/SoulLyoko/vixt/commit/3ac72705233af185aad594c8c8408033e75e87f8))
+
+
+
 ## [0.6.6](https://github.com/SoulLyoko/vixt/compare/v0.6.5...v0.6.6) (2026-01-06)
 
 
