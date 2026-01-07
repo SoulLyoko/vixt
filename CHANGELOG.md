@@ -1,3 +1,12 @@
+## [0.6.8](https://github.com/SoulLyoko/vixt/compare/v0.6.7...v0.6.8) (2026-01-07)
+
+
+### Bug Fixes
+
+* **core:** assign `config.env` ([4bb7244](https://github.com/SoulLyoko/vixt/commit/4bb72448644e4286cd8e5a58cea2ea09d13c5fd9))
+
+
+
 ## [0.6.7](https://github.com/SoulLyoko/vixt/compare/v0.6.6...v0.6.7) (2026-01-06)
 
 
