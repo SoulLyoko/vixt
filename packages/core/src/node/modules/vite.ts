@@ -26,6 +26,9 @@ export default defineVixtModule({
           define: defineEnv,
         })
       },
+      configResolved(config) {
+        Object.assign(config.env, { ...env, ...config.env })
+      },
     }
   },
 })
