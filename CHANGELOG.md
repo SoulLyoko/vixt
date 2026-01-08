@@ -1,3 +1,12 @@
+# [0.7.0](https://github.com/SoulLyoko/vixt/compare/v0.6.8...v0.7.0) (2026-01-08)
+
+
+### Features
+
+* no longer copy layers to `.vixt` ([183a5d1](https://github.com/SoulLyoko/vixt/commit/183a5d1831583d89ab15ba7f84843b328a1dcd44))
+
+
+
 ## [0.6.8](https://github.com/SoulLyoko/vixt/compare/v0.6.7...v0.6.8) (2026-01-07)
 
 
