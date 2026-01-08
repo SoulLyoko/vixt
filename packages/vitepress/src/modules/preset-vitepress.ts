@@ -16,6 +16,7 @@ export default defineVixtModule<VixtOptions>({
   async setup(_, vixt) {
     const { components = [], composables = [], constants = [], utils = [], stores = [] } = resolveLayersDirs([...vixt._layers].reverse())
     const { buildTypesDir } = vixt.options
+
     const defaultOptions: VixtOptions = {
       components: {
         dts: `${buildTypesDir}/components.d.ts`,
@@ -23,13 +24,14 @@ export default defineVixtModule<VixtOptions>({
         directoryAsNamespace: true,
         collapseSamePrefixes: true,
         extensions: ['vue', 'md'],
-        include: [/\.vue$/, /\.vue\?vue/, /\.md$/],
+        include: [/\.vue$/, /\.vue\?vue/, /\.md$/, /\.md\?md/],
       },
       imports: {
-        include: [/\.[jt]sx?$/, /\.vue$/, /\.vue\?vue/, /\.md/, /\.md\?md/],
         imports: ['vue', '@vueuse/core', 'pinia', VueRouterAutoImports, VixtClientAutoImports],
         dts: `${buildTypesDir}/auto-imports.d.ts`,
         dirs: [composables, constants, stores, utils].flat(),
+        exclude: [],
+        include: [],
         vueTemplate: true,
       },
       unocss: {},

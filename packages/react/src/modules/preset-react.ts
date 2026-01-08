@@ -14,7 +14,7 @@ import { extendRoute } from './route-block'
 const name = 'vixt:preset-react'
 export default defineVixtModule<VixtOptions>({
   meta: { name },
-  async setup(_, vixt) {
+  setup(_, vixt) {
     const { components = [], constants = [], hooks = [], layouts = [], pages = [], stores = [], utils = [] } = resolveLayersDirs([...vixt._layers].reverse())
     const { buildTypesDir } = vixt.options
 
@@ -34,6 +34,8 @@ export default defineVixtModule<VixtOptions>({
         imports: ['react', 'react-router', 'ahooks', componentsResolver({ dirs: components }), VixtClientAutoImports],
         dts: `${buildTypesDir}/auto-imports.d.ts`,
         dirs: [constants, hooks, stores, utils].flat(),
+        exclude: [],
+        include: [],
       },
       unocss: {},
     }

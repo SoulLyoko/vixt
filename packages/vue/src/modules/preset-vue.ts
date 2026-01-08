@@ -16,9 +16,10 @@ import Layouts from 'vite-plugin-vue-layouts'
 const name = 'vixt:preset-vue'
 export default defineVixtModule<VixtOptions>({
   meta: { name },
-  async setup(_, vixt) {
+  setup(_, vixt) {
     const { components = [], composables = [], constants = [], utils = [], stores = [], pages = [], layouts = [] } = resolveLayersDirs([...vixt._layers].reverse())
     const { buildTypesDir } = vixt.options
+
     const defaultOptions: VixtOptions = {
       vue: {},
       vueJsx: {},
@@ -54,6 +55,8 @@ export default defineVixtModule<VixtOptions>({
         imports: ['vue', '@vueuse/core', 'pinia', VueRouterAutoImports, VixtClientAutoImports],
         dts: `${buildTypesDir}/auto-imports.d.ts`,
         dirs: [composables, constants, stores, utils].flat(),
+        exclude: [],
+        include: [],
         vueTemplate: true,
       },
       unocss: {},

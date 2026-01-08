@@ -18,6 +18,7 @@ export default defineVixtModule<VixtOptions>({
   setup(_, vixt) {
     const { components = [], composables = [], constants = [], utils = [], stores = [] } = resolveLayersDirs([...vixt._layers].reverse())
     const { buildTypesDir } = vixt.options
+
     const defaultOptions: VixtOptions = {
       uni: {},
       uniPages: { dts: `${buildTypesDir}/uni-pages.d.ts` },
@@ -32,6 +33,8 @@ export default defineVixtModule<VixtOptions>({
         imports: ['vue', 'uni-app', 'pinia', uniVueUseResolver(), VixtClientAutoImports],
         dts: `${buildTypesDir}/auto-imports.d.ts`,
         dirs: [composables, constants, stores, utils].flat(),
+        exclude: [],
+        include: [],
         vueTemplate: true,
       },
       unocss: {},
