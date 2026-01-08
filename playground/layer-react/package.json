@@ -6,7 +6,7 @@
   "dependencies": {
     "@iconify/react": "catalog:react",
     "@reactuses/core": "catalog:react",
-    "@vixt/layer-shared": "workspace:*",
+    "@vixt/layer-shared": "catalog:",
     "vixt": "workspace:*",
     "zustand": "catalog:react"
   }
