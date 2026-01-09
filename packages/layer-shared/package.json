@@ -1,7 +1,7 @@
 {
   "name": "@vixt/layer-shared",
   "type": "module",
-  "version": "0.6.8",
+  "version": "0.7.1",
   "main": "vixt.config.ts",
   "dependencies": {
     "@unocss/reset": "catalog:vite"

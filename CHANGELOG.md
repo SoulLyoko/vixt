@@ -1,3 +1,12 @@
+## [0.7.1](https://github.com/SoulLyoko/vixt/compare/v0.7.0...v0.7.1) (2026-01-09)
+
+
+### Bug Fixes
+
+* **core:** add `copyLayers` option ([714290b](https://github.com/SoulLyoko/vixt/commit/714290bded0f90da57b63f2e29403817455ade3a))
+
+
+
 # [0.7.0](https://github.com/SoulLyoko/vixt/compare/v0.6.8...v0.7.0) (2026-01-08)
 
 
