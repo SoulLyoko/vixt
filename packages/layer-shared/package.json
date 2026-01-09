@@ -2,6 +2,10 @@
   "name": "@vixt/layer-shared",
   "type": "module",
   "version": "0.7.1",
+  "author": "SoulLyoko<https://github.com/SoulLyoko>",
+  "license": "MIT",
+  "homepage": "https://soullyoko.github.io/vixt/",
+  "repository": "https://github.com/SoulLyoko/vixt.git",
   "main": "vixt.config.ts",
   "dependencies": {
     "@unocss/reset": "catalog:vite"
