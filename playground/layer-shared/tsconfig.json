@@ -1,3 +1,0 @@
-{
-  "extends": ["../vue/.vixt/tsconfig.json", "../react/.vixt/tsconfig.json"]
-}

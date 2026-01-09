@@ -4,7 +4,6 @@
   "version": "0.6.8",
   "main": "vixt.config.ts",
   "dependencies": {
-    "@unocss/reset": "catalog:vite",
-    "vixt": "workspace:*"
+    "@unocss/reset": "catalog:vite"
   }
 }

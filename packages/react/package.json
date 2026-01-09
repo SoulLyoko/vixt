@@ -29,6 +29,9 @@
   },
   "main": "./dist/index.mjs",
   "types": "./dist/types/index.d.ts",
+  "files": [
+    "dist"
+  ],
   "dependencies": {
     "@types/react": "catalog:react",
     "@types/react-dom": "catalog:react",

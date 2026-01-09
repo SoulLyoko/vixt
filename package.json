@@ -5,8 +5,8 @@
   "private": true,
   "packageManager": "pnpm@9.15.9",
   "exports": {
-    "./layer-shared": "./playground/layer-shared/vixt.config.ts",
-    "./layer-shared/*": "./playground/layer-shared/*"
+    "./layer-shared": "./packages/layer-shared/vixt.config.ts",
+    "./layer-shared/*": "./packages/layer-shared/*"
   },
   "engines": {
     "node": "^20.19.0 || >=22.12.0",

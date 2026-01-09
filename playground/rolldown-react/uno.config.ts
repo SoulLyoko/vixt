@@ -1,1 +1,1 @@
-export { default } from '../layer-shared/uno.config'
+export { default } from '../../packages/layer-shared/uno.config'
