@@ -110,6 +110,12 @@ export interface VixtOptions {
   plugins?: string[]
   /** typescript */
   typescript?: TypescriptOptions
+  /**
+   * Whether to copy layers from `node_modules` to `.vixt/layers`
+   * @default true
+   * @experimental
+   */
+  copyLayers?: boolean
   /** custom options */
   [key: string]: any
 }
@@ -249,7 +255,7 @@ export async function loadVixtConfig(opts?: LoadConfigOptions<VixtOptions>) {
 }
 
 export function applyLayers(layers: VixtConfigLayer[], config: VixtOptions) {
-  const { rootDir } = config
+  const { rootDir, buildLayersDir, copyLayers = true } = config
   return layers.filter(e => e.cwd).map((layer) => {
     layer.config ??= {}
     layer.config.meta ??= {}
@@ -260,19 +266,19 @@ export function applyLayers(layers: VixtConfigLayer[], config: VixtOptions) {
       meta.alias = `#/layers/${layerName}`
     }
 
-    // copy to `<buildLayersDir>/<layerName>` when layer is in node_modules
-    // if (layer.cwd?.includes('node_modules')) {
-    //   const newCwd = resolve(buildLayersDir!, layerName)
-    //   fs.removeSync(newCwd)
-    //   fs.copySync(layer.cwd!, newCwd, {
-    //     filter: (src) => {
-    //       const nodeModulesPath = resolve(layer.cwd!, 'node_modules')
-    //       const tsConfigPath = resolve(layer.cwd!, 'tsconfig.json')
-    //       return !isSamePath(src, nodeModulesPath) && !isSamePath(src, tsConfigPath)
-    //     },
-    //   })
-    //   layer.cwd = newCwd
-    // }
+    // FIXME: required to copy when package when layer is installed from git
+    if (copyLayers && layer.cwd?.includes('node_modules')) {
+      const newCwd = resolve(buildLayersDir!, layerName)
+      fs.removeSync(newCwd)
+      fs.copySync(layer.cwd!, newCwd, {
+        filter: (src) => {
+          const nodeModulesPath = resolve(layer.cwd!, 'node_modules')
+          const tsConfigPath = resolve(layer.cwd!, 'tsconfig.json')
+          return !isSamePath(src, nodeModulesPath) && !isSamePath(src, tsConfigPath)
+        },
+      })
+      layer.cwd = newCwd
+    }
 
     // assign layer `rootDir` and `srcDir`
     layer.config.rootDir ??= layer.cwd

@@ -400,6 +400,12 @@ importers:
         specifier: 'catalog:'
         version: 11.3.3
 
+  packages/layer-shared:
+    dependencies:
+      '@unocss/reset':
+        specifier: ^66.5.12
+        version: 66.5.12
+
   packages/react:
     dependencies:
       '@types/react':
@@ -580,15 +586,6 @@ importers:
         specifier: catalog:react
         version: 5.0.9(@types/react@19.2.7)(react@19.2.3)(use-sync-external-store@1.5.0(react@19.2.3))
 
-  playground/layer-shared:
-    dependencies:
-      '@unocss/reset':
-        specifier: ^66.5.12
-        version: 66.5.12
-      vixt:
-        specifier: workspace:*
-        version: link:../../packages/vixt
-
   playground/layer-uni:
     dependencies:
       vixt:
@@ -600,12 +597,12 @@ importers:
       '@iconify/vue':
         specifier: catalog:vue
         version: 5.0.0(vue@3.5.26(typescript@5.9.3))
-      '@vixt/layer-shared':
-        specifier: 'catalog:'
-        version: 0.6.8
       vixt:
         specifier: workspace:*
         version: link:../../packages/vixt
+      vixt-framework:
+        specifier: git+https://github.com/SoulLyoko/vixt.git#main
+        version: git+https://github.com/SoulLyoko/vixt.git#bad9e5e3b9dfc9b26c1aaaa1804175f4fae9e3f1
 
   playground/nuxt:
     dependencies:
@@ -8911,6 +8908,11 @@ packages:
         optional: true
       jsdom:
         optional: true
+
+  vixt-framework@git+https://github.com/SoulLyoko/vixt.git#bad9e5e3b9dfc9b26c1aaaa1804175f4fae9e3f1:
+    resolution: {commit: bad9e5e3b9dfc9b26c1aaaa1804175f4fae9e3f1, repo: https://github.com/SoulLyoko/vixt.git, type: git}
+    version: 0.7.0
+    engines: {node: ^20.19.0 || >=22.12.0, pnpm: ^9.15.9}
 
   vscode-uri@3.1.0:
     resolution: {integrity: sha512-/BpdSx+yCQGnCvecbyXdxHDkuk55/G3xwnC0GqY4gmQ3j+A+g8kzzgB4Nk/SINjqn6+waqw3EgbVF2QKExkRxQ==}
@@ -19127,6 +19129,8 @@ snapshots:
       - terser
       - tsx
       - yaml
+
+  vixt-framework@git+https://github.com/SoulLyoko/vixt.git#bad9e5e3b9dfc9b26c1aaaa1804175f4fae9e3f1: {}
 
   vscode-uri@3.1.0: {}
 

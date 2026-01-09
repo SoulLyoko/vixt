@@ -1,6 +1,6 @@
 import { defineVixtConfig } from 'vixt'
 
 export default defineVixtConfig({
-  extends: ['@vixt/layer-shared'],
+  extends: ['vixt-framework/layer-shared'],
   meta: { name: 'layer-vue' },
 })

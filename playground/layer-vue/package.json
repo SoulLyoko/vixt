@@ -5,7 +5,7 @@
   "main": "vixt.config.ts",
   "dependencies": {
     "@iconify/vue": "catalog:vue",
-    "@vixt/layer-shared": "catalog:",
-    "vixt": "workspace:*"
+    "vixt": "workspace:*",
+    "vixt-framework": "git+https://github.com/SoulLyoko/vixt.git#main"
   }
 }

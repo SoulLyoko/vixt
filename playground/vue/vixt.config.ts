@@ -20,4 +20,5 @@ export default defineVixtConfig({
       },
     },
   },
+  copyLayers: true,
 })
