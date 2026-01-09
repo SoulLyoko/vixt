@@ -4,6 +4,10 @@
   "version": "0.7.0",
   "private": true,
   "packageManager": "pnpm@9.15.9",
+  "exports": {
+    "./layer-shared": "./playground/layer-shared/vixt.config.ts",
+    "./layer-shared/*": "./playground/layer-shared/*"
+  },
   "engines": {
     "node": "^20.19.0 || >=22.12.0",
     "pnpm": "^9.15.9"
