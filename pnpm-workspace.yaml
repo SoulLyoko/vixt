@@ -5,11 +5,11 @@ packages:
 
 catalog:
   '@antfu/eslint-config': ^6.7.3
-  '@commitlint/cli': ^20.3.0
-  '@commitlint/config-conventional': ^20.3.0
+  '@commitlint/cli': ^20.3.1
+  '@commitlint/config-conventional': ^20.3.1
   '@types/fs-extra': ^11.0.4
-  '@types/node': ^24.10.4
-  '@vixt/layer-shared': ^0.6.8
+  '@types/node': ^24.10.7
+  '@vixt/layer-shared': ^0.7.1
   bumpp: ^10.3.2
   c12: ^3.3.3
   cac: ^6.7.14
@@ -32,7 +32,7 @@ catalog:
   sass: ^1.97.2
   simple-git-hooks: ^2.13.1
   taze: ^19.9.2
-  tsdown: ^0.18.4
+  tsdown: ^0.19.0
   typescript: ^5.9.3
   yaml: ^2.8.2
 
@@ -43,16 +43,16 @@ catalogs:
   react:
     '@iconify/react': ^6.0.2
     '@reactuses/core': ^6.1.8
-    '@types/react': ^19.2.7
+    '@types/react': ^19.2.8
     '@types/react-dom': ^19.2.3
     ahooks: ^3.9.6
     react: ^19.2.3
     react-dom: ^19.2.3
     react-router: ^7.12.0
-    zustand: ^5.0.9
+    zustand: ^5.0.10
 
   rolldown:
-    vite: npm:rolldown-vite@^7.3.0
+    vite: npm:rolldown-vite@^7.3.1
 
   uni:
     '@dcloudio/types': ^3.4.28

@@ -63,9 +63,10 @@
     "vitest": "catalog:vite"
   },
   "pnpm": {
-    "neverBuiltDependencies": ["vixt-framework"],
+    "neverBuiltDependencies": [
+      "vixt-framework"
+    ],
     "overrides": {
-      "@vixt/layer-shared>@unocss/reset": "catalog:vite",
       "@vixt/rolldown-react>vite": "catalog:rolldown",
       "@vixt/rolldown-vue>vite": "catalog:rolldown",
       "@vue/shared": "catalog:vue",
