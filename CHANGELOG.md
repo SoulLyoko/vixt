@@ -1,3 +1,12 @@
+## [0.7.2](https://github.com/SoulLyoko/vixt/compare/v0.7.1...v0.7.2) (2026-01-12)
+
+
+### Bug Fixes
+
+* revert imports `include`,`exclude` options ([903e2a3](https://github.com/SoulLyoko/vixt/commit/903e2a326db4460d03389fa13b563127c7bfbd35))
+
+
+
 ## [0.7.1](https://github.com/SoulLyoko/vixt/compare/v0.7.0...v0.7.1) (2026-01-09)
 
 
