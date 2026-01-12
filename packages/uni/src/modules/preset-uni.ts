@@ -33,8 +33,6 @@ export default defineVixtModule<VixtOptions>({
         imports: ['vue', 'uni-app', 'pinia', uniVueUseResolver(), VixtClientAutoImports],
         dts: `${buildTypesDir}/auto-imports.d.ts`,
         dirs: [composables, constants, stores, utils].flat(),
-        exclude: [],
-        include: [],
         vueTemplate: true,
       },
       unocss: {},

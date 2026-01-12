@@ -27,11 +27,10 @@ export default defineVixtModule<VixtOptions>({
         include: [/\.vue$/, /\.vue\?vue/, /\.md$/, /\.md\?md/],
       },
       imports: {
+        include: [/\.[jt]sx?$/, /\.vue$/, /\.vue\?vue/, /\.md/, /\.md\?md/],
         imports: ['vue', '@vueuse/core', 'pinia', VueRouterAutoImports, VixtClientAutoImports],
         dts: `${buildTypesDir}/auto-imports.d.ts`,
         dirs: [composables, constants, stores, utils].flat(),
-        exclude: [],
-        include: [],
         vueTemplate: true,
       },
       unocss: {},

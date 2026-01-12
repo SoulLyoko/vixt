@@ -1,8 +1,6 @@
-import type { VixtConfigLayer } from './config'
+import type { ResolvedVixtConfig } from './config'
 import type { Vixt } from './vixt'
 import type { PluginOption } from 'vite'
-
-import process from 'node:process'
 
 import defu from 'defu'
 import fs from 'fs-extra'
@@ -66,10 +64,10 @@ export function installModule<T extends ModuleOptions = ModuleOptions>(module: V
   return module(inlineOptions, vixt)
 }
 
-export async function applyLayerModules(layers: VixtConfigLayer[]): Promise<VixtModule[]> {
+export async function applyLayerModules({ config, layers = [] }: ResolvedVixtConfig): Promise<VixtModule[]> {
   const { modules: modulesDirs = [] } = resolveLayersDirs(layers)
   const modules: VixtModule[] = []
-  const jiti = createJiti(layers[0]?.cwd ?? process.cwd(), { moduleCache: false })
+  const jiti = createJiti(config.rootDir!, { moduleCache: false })
   for (const m of modulesDirs.reverse()) {
     if (fs.existsSync(m)) {
       const files = fs.readdirSync(m)

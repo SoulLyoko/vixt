@@ -34,8 +34,6 @@ export default defineVixtModule<VixtOptions>({
         imports: ['react', 'react-router', 'ahooks', componentsResolver({ dirs: components }), VixtClientAutoImports],
         dts: `${buildTypesDir}/auto-imports.d.ts`,
         dirs: [constants, hooks, stores, utils].flat(),
-        exclude: [],
-        include: [],
       },
       unocss: {},
     }

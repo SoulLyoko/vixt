@@ -2,7 +2,7 @@ import type { ExtractPluginOptions, VixtModule } from './module'
 import type Ssl from '@vitejs/plugin-basic-ssl'
 import type Legacy from '@vitejs/plugin-legacy'
 import type { RawVueCompilerOptions } from '@vue/language-core'
-import type { ConfigLayer, ConfigLayerMeta, LoadConfigOptions } from 'c12'
+import type { ConfigLayer, ConfigLayerMeta, LoadConfigOptions, ResolvedConfig } from 'c12'
 import type { TSConfig } from 'pkg-types'
 import type { HtmlTagDescriptor, ServerOptions, UserConfig } from 'vite'
 import type Analyzer from 'vite-bundle-analyzer'
@@ -228,11 +228,14 @@ export interface VixtConfigLayer extends ConfigLayer<VixtOptions, VixtConfigLaye
   cwd?: string
 }
 
+export interface LoadVixtConfigOptions extends LoadConfigOptions<VixtOptions, VixtConfigLayerMeta> { }
+export interface ResolvedVixtConfig extends ResolvedConfig<VixtOptions, VixtConfigLayerMeta> { }
+
 export function defineVixtConfig(input: VixtOptions) {
   return input
 }
 
-export async function loadVixtConfig(opts?: LoadConfigOptions<VixtOptions>) {
+export async function loadVixtConfig(opts?: LoadVixtConfigOptions): Promise<ResolvedVixtConfig> {
   const result = await loadConfig<VixtOptions>({
     name: 'vixt',
     rcFile: false,
@@ -254,7 +257,7 @@ export async function loadVixtConfig(opts?: LoadConfigOptions<VixtOptions>) {
   return result
 }
 
-export function applyLayers(layers: VixtConfigLayer[], config: VixtOptions) {
+export function applyLayers({ config, layers = [] }: ResolvedVixtConfig) {
   const { rootDir, buildLayersDir, copyLayers = true } = config
   return layers.filter(e => e.cwd).map((layer) => {
     layer.config ??= {}

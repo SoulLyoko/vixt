@@ -33,10 +33,10 @@ export async function loadVixt(opts?: LoadConfigOptions<VixtOptions>) {
   result.config.dev = env.NODE_ENV !== 'production'
 
   // apply layers
-  result.layers = applyLayers(result.layers ?? [], result.config)
+  result.layers = applyLayers(result)
 
   // apply modules
-  const layerModules = await applyLayerModules(result.layers ?? [])
+  const layerModules = await applyLayerModules(result)
 
   const vixt: Vixt = {
     options: result.config,
