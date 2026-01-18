@@ -7,3 +7,4 @@ cache
 *.local
 .nuxt
 .output
+.DS_Store
