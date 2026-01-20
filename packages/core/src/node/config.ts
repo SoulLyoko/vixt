@@ -283,6 +283,13 @@ export function applyLayers({ config, layers = [] }: ResolvedVixtConfig) {
       layer.cwd = newCwd
     }
 
+    if (isSamePath(layer.cwd!, resolve(rootDir!))) {
+      layer.config.rootDir ??= config.rootDir
+      layer.config.srcDir ??= config.srcDir
+      layer.config.modulesDir ??= config.modulesDir
+      layer.config.pluginsDir ??= config.pluginsDir
+    }
+
     // assign layer `rootDir` and `srcDir`
     layer.config.rootDir ??= layer.cwd
     layer.config.srcDir ??= resolve(layer.config.rootDir!, 'src')
