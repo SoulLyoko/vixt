@@ -70,6 +70,7 @@
       "@vixt/rolldown-react>vite": "catalog:rolldown",
       "@vixt/rolldown-vue>vite": "catalog:rolldown",
       "@vue/shared": "catalog:vue",
+      "@vueuse/core": "catalog:vue",
       "vite": "catalog:vite",
       "vue": "catalog:vue"
     },

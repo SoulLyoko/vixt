@@ -4,12 +4,12 @@ packages:
   - docs
 
 catalog:
-  '@antfu/eslint-config': ^7.0.1
+  '@antfu/eslint-config': ^7.1.0
   '@commitlint/cli': ^20.3.1
   '@commitlint/config-conventional': ^20.3.1
   '@types/fs-extra': ^11.0.4
   '@types/node': ^24.10.9
-  '@vixt/layer-shared': ^0.7.2
+  '@vixt/layer-shared': ^0.7.3
   bumpp: ^10.4.0
   c12: ^3.3.3
   cac: ^6.7.14
@@ -93,7 +93,7 @@ catalogs:
     vite-plugin-pages: ^0.33.2
     vite-plugin-vue-devtools: ^8.0.5
     vite-plugin-vue-layouts: ^0.11.0
-    vitepress: ^1.6.4
+    vitepress: ^2.0.0-alpha.15
     vitest: ^4.0.17
 
   vue:
