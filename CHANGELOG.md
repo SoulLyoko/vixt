@@ -1,3 +1,12 @@
+## [0.8.1](https://github.com/SoulLyoko/vixt/compare/v0.8.0...v0.8.1) (2026-01-29)
+
+
+### Bug Fixes
+
+* missing exports "./vue" ([741c548](https://github.com/SoulLyoko/vixt/commit/741c5488de4005d5c4475d58f9f12d891442c16a))
+
+
+
 # [0.8.0](https://github.com/SoulLyoko/vixt/compare/v0.7.4...v0.8.0) (2026-01-29)
 
 
