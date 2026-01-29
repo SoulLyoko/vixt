@@ -79,7 +79,7 @@ export default defineVixtModule<TypescriptOptions>({
         paths[`${ak}/*`] = [`${av}/*`]
     }
 
-    const layersDirs = vixt._layers.map(e => e.cwd!)
+    const layersDirs = vixt._layers.map(e => `${e.cwd!}/**/*`)
     const include = ['./**/*', ...layersDirs]
 
     return {
@@ -99,11 +99,11 @@ export default defineVixtModule<TypescriptOptions>({
     }
   },
   setup(options, vixt) {
+    generateTsConfig(options, vixt)
     return [
       {
         name,
         configResolved(config) {
-          generateTsConfig(options, vixt)
           generateVixtDts(options, vixt)
           genarateShim(options, vixt)
           generateEnvDts(config.env, vixt)

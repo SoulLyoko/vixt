@@ -2,6 +2,7 @@ import { defineConfig, presetAttributify, presetWind3, transformerAttributifyJsx
 
 export default defineConfig({
   presets: [
+    // @ts-ignore
     presetWind3(),
     presetAttributify(),
   ],

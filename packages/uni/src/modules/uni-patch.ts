@@ -44,7 +44,7 @@ export function patchNormalizeNodeModules() {
   const matched = `str = normalizePath(str).replace(NODE_MODULES_REGEX, 'node-modules');`
   const replaced = `str = normalizePath(str).replace(NODE_MODULES_REGEX, 'node-modules').replace(/\\.\\.\\//g, '');`
   const codePath = resolvePathSync('@dcloudio/uni-cli-shared/dist/utils.js')
-  let code = fs.readFileSync(codePath, 'utf8')
+  let code = fs.readFileSync(codePath, 'utf-8')
   if (code.includes(matched)) {
     code = code.replace(matched, replaced)
     fs.writeFileSync(codePath, code)

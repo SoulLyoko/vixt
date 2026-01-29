@@ -17,12 +17,14 @@
   ],
   "exports": {
     ".": "./src/node/index.ts",
+    "./cli": "./src/cli/index.ts",
     "./client": "./src/client/index.ts",
     "./package.json": "./package.json"
   },
   "publishConfig": {
     "exports": {
       ".": "./dist/node/index.mjs",
+      "./cli": "./dist/cli/index.mjs",
       "./client": "./dist/client/index.js",
       "./package.json": "./package.json"
     }
@@ -40,6 +42,7 @@
     "@vue/tsconfig": "catalog:vue",
     "c12": "catalog:",
     "cac": "catalog:",
+    "citty": "catalog:",
     "defu": "catalog:",
     "find-up": "catalog:",
     "fs-extra": "catalog:",

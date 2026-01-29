@@ -4,11 +4,13 @@
   "private": true,
   "scripts": {
     "build": "vite build",
-    "dev": "vite"
+    "dev": "vite --configLoader native"
   },
   "dependencies": {
     "@vixt/test-react": "workspace:*",
-    "vite": "catalog:rolldown",
     "vixt": "workspace:*"
+  },
+  "devDependencies": {
+    "vite": "catalog:rolldown"
   }
 }

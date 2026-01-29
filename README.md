@@ -77,6 +77,14 @@ export default defineConfig({
 }
 ```
 
+::: tip 加载配置文件报错
+从 `vite>=8.0.0-beta.8(rolldown>=1.0.0-beta.60)` 开始，rolldown默认启用了tsconfig的自动发现，导致在未生成 `.vixt/tsconfig.json` 时加载配置文件报错，可以使用以下两种方式来解决：
+
+1. 将vite加载配置文件的方式设置为 native `"dev": "vite --configLoader native"`
+2. 添加脚本 `"postinstall": "vixt prepare"`
+
+:::
+
 ## Packages
 
 | Package                               | Desc                 |

@@ -4,11 +4,14 @@
   "private": true,
   "scripts": {
     "build": "vite build",
-    "dev": "vite"
+    "dev": "vite",
+    "postinstall": "vixt prepare"
   },
   "dependencies": {
     "@vixt/test-vue": "workspace:*",
-    "vite": "catalog:rolldown",
     "vixt": "workspace:*"
+  },
+  "devDependencies": {
+    "vite": "catalog:rolldown"
   }
 }
