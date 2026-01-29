@@ -33,6 +33,7 @@
       "./react": "./dist/react.mjs",
       "./uni": "./dist/uni.mjs",
       "./vitepress": "./dist/vitepress.mjs",
+      "./vue": "./dist/vue.mjs",
       "./package.json": "./package.json"
     }
   },
