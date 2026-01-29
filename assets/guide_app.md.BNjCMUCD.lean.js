@@ -1,1 +1,0 @@
-import{_ as i,c as a,o as n,aj as t}from"./chunks/framework.Bvwya0Sy.js";const g=JSON.parse('{"title":"应用","description":"","frontmatter":{},"headers":[],"relativePath":"guide/app.md","filePath":"guide/app.md"}'),e={name:"guide/app.md"};function l(p,s,h,k,d,r){return n(),a("div",null,[...s[0]||(s[0]=[t("",16)])])}const c=i(e,[["render",l]]);export{g as __pageData,c as default};
