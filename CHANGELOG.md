@@ -1,3 +1,12 @@
+# [0.8.0](https://github.com/SoulLyoko/vixt/compare/v0.7.4...v0.8.0) (2026-01-29)
+
+
+### Features
+
+* add vixt cli, prepare vixt after install ([d220831](https://github.com/SoulLyoko/vixt/commit/d220831a87150bcd6f9831b513013723fb2c0dae))
+
+
+
 ## [0.7.4](https://github.com/SoulLyoko/vixt/compare/v0.7.3...v0.7.4) (2026-01-20)
 
 
