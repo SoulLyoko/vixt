@@ -5,7 +5,7 @@ export default defineConfig([
     entry: 'src/index.ts',
     platform: 'node',
     copy: ['src/types'],
-    external: ['@vue/compiler-sfc'],
+    external: ['vite', '@vue/compiler-sfc'],
   },
   {
     entry: ['src/client/**/*', '!src/client/App.vue'],
