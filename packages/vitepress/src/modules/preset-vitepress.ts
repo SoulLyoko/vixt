@@ -5,7 +5,6 @@ import defu from 'defu'
 import UnoCSS from 'unocss/vite'
 import AutoImport from 'unplugin-auto-import/vite'
 import Components from 'unplugin-vue-components/vite'
-import { VueRouterAutoImports } from 'unplugin-vue-router'
 import VueDevTools from 'vite-plugin-vue-devtools'
 
 import ConfigPatch from './config-patch'
@@ -13,7 +12,7 @@ import ConfigPatch from './config-patch'
 const name = 'vixt:preset-vitepress'
 export default defineVixtModule<VixtOptions>({
   meta: { name },
-  async setup(_, vixt) {
+  setup(_, vixt) {
     const { components = [], composables = [], constants = [], utils = [], stores = [] } = resolveLayersDirs([...vixt._layers].reverse())
     const { buildTypesDir } = vixt.options
 
@@ -28,7 +27,7 @@ export default defineVixtModule<VixtOptions>({
       },
       imports: {
         include: [/\.[jt]sx?$/, /\.vue$/, /\.vue\?vue/, /\.md/, /\.md\?md/],
-        imports: ['vue', '@vueuse/core', 'pinia', VueRouterAutoImports, VixtClientAutoImports],
+        imports: ['vue', '@vueuse/core', 'pinia', VixtClientAutoImports],
         dts: `${buildTypesDir}/auto-imports.d.ts`,
         dirs: [composables, constants, stores, utils].flat(),
         vueTemplate: true,

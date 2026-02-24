@@ -24,7 +24,10 @@ export default createVixtPlugin({
     typescript: {
       tsConfig: {
         compilerOptions: {
-          types: ['@vixt/vue/types', 'vite-plugin-vue-layouts/client', 'unplugin-vue-router/client'],
+          types: ['@vixt/vue/types', 'vue-router/auto', 'vite-plugin-vue-layouts/client'],
+        },
+        vueCompilerOptions: {
+          plugins: ['vue-router/volar/sfc-typed-router', 'vue-router/volar/sfc-route-blocks'],
         },
       },
     },

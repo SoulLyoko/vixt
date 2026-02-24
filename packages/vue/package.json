@@ -42,7 +42,6 @@
     "unocss": "catalog:vite",
     "unplugin-auto-import": "catalog:vite",
     "unplugin-vue-components": "catalog:vite",
-    "unplugin-vue-router": "catalog:vite",
     "vite-plugin-vue-devtools": "catalog:vite",
     "vite-plugin-vue-layouts": "catalog:vite",
     "vue": "catalog:vue",

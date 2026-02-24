@@ -4,7 +4,7 @@ const route = useRoute('/hi/[name]')
 const user = useUserStore()
 
 watchEffect(() => {
-  user.setNewName(route.params.name)
+  user.setNewName(route.params.name as string)
 })
 </script>
 
@@ -18,7 +18,7 @@ watchEffect(() => {
       Dynamic route!
     </div>
 
-    <div v-if="user.otherNames.length" text-sm mt-4>
+    <div v-if="user.otherNames.length" mt-4 text-sm>
       <div op-75>
         aka:
       </div>
@@ -29,7 +29,7 @@ watchEffect(() => {
       </div>
     </div>
 
-    <button text-sm btn m-3 @click="router.back()">
+    <button m-3 btn text-sm @click="router.back()">
       Back
     </button>
 

@@ -4,15 +4,15 @@ import type { ExtractPluginOptions } from '@vixt/core'
 import type UnoCSS from 'unocss/vite'
 import type AutoImport from 'unplugin-auto-import/vite'
 import type Components from 'unplugin-vue-components/vite'
-import type VueRouter from 'unplugin-vue-router/vite'
 import type VueDevTools from 'vite-plugin-vue-devtools'
 import type Layouts from 'vite-plugin-vue-layouts'
+import type VueRouter from 'vue-router/vite'
 
 declare module '@vixt/core' {
   interface VixtOptions {
     vue?: ExtractPluginOptions<typeof Vue>
     vueJsx?: ExtractPluginOptions<typeof VueJsx>
-    /** https://github.com/posva/unplugin-vue-router */
+    /** https://router.vuejs.org/file-based-routing/ */
     router?: ExtractPluginOptions<typeof VueRouter>
     /** https://github.com/JohnCampionJr/vite-plugin-vue-layouts */
     layouts?: ExtractPluginOptions<typeof Layouts>

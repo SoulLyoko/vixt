@@ -1,5 +1,5 @@
 import type { VixtOptions } from '@vixt/core'
-import type { TreeNode } from 'unplugin-vue-router'
+import type { TreeNode } from 'vue-router/unplugin'
 
 import Vue from '@vitejs/plugin-vue'
 import VueJsx from '@vitejs/plugin-vue-jsx'
@@ -8,10 +8,10 @@ import defu from 'defu'
 import UnoCSS from 'unocss/vite'
 import AutoImport from 'unplugin-auto-import/vite'
 import Components from 'unplugin-vue-components/vite'
-import { VueRouterAutoImports } from 'unplugin-vue-router'
-import VueRouter from 'unplugin-vue-router/vite'
 import VueDevTools from 'vite-plugin-vue-devtools'
 import Layouts from 'vite-plugin-vue-layouts'
+import { VueRouterAutoImports } from 'vue-router/unplugin'
+import VueRouter from 'vue-router/vite'
 
 const name = 'vixt:preset-vue'
 export default defineVixtModule<VixtOptions>({
