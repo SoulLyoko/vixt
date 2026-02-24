@@ -1,0 +1,1 @@
+import{_ as i,o as a,c as n,ak as t}from"./chunks/framework.D5Vq-PAW.js";const g=JSON.parse('{"title":"应用","description":"","frontmatter":{},"headers":[],"relativePath":"guide/app.md","filePath":"guide/app.md"}'),e={name:"guide/app.md"};function l(p,s,h,k,d,r){return a(),n("div",null,[...s[0]||(s[0]=[t("",16)])])}const c=i(e,[["render",l]]);export{g as __pageData,c as default};
