@@ -1,6 +1,6 @@
 # 路由
 
-约定式文件路由由 [unplugin-vue-router](https://github.com/posva/unplugin-vue-router) 提供支持
+约定式文件路由由 [vue-router/vite](https://router.vuejs.org/file-based-routing/) 提供支持
 
 默认扫描 `pages` 文件夹
 

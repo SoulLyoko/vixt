@@ -100,7 +100,7 @@ export default {
 
 ## router
 
-[unplugin-vue-router的配置](https://github.com/posva/unplugin-vue-router)
+[vue-router/vite的配置](https://router.vuejs.org/file-based-routing/configuration.html)
 
 ## layouts
 
