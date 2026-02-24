@@ -1,3 +1,12 @@
+# [0.9.0](https://github.com/SoulLyoko/vixt/compare/v0.8.1...v0.9.0) (2026-02-24)
+
+
+### Features
+
+* **vue:** migrate to `vue-router` v5, remove `unplugin-vue-router` ([15fff62](https://github.com/SoulLyoko/vixt/commit/15fff62afef8d6181beb29bb9e6d26a51b8be32f))
+
+
+
 ## [0.8.1](https://github.com/SoulLyoko/vixt/compare/v0.8.0...v0.8.1) (2026-01-29)
 
 
