@@ -68,7 +68,7 @@ const name = 'vixt:typescript'
 export default defineVixtModule<TypescriptOptions>({
   meta: { name, configKey: 'typescript' },
   defaults(vixt: Vixt) {
-    const { rootDir, alias } = vixt.options
+    const { alias } = vixt.options
 
     const paths: Record<string, string[]> = {}
     for (const [ak, av] of Object.entries(alias ?? {})) {
@@ -86,7 +86,6 @@ export default defineVixtModule<TypescriptOptions>({
       tsConfig: {
         extends: '@vue/tsconfig/tsconfig.dom.json',
         compilerOptions: {
-          baseUrl: rootDir,
           paths,
           types: ['vite/client'],
         },

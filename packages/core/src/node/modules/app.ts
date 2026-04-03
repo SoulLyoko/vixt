@@ -39,6 +39,7 @@ export function isEmptyCode(code?: string) {
   if (!code)
     return true
   try {
+    // @ts-ignore compatible with vite7
     return !parseAst(code, { jsx: true }).body.length
   }
   catch {
