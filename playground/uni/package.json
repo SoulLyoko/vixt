@@ -27,6 +27,6 @@
     "@dcloudio/vite-plugin-uni": "catalog:uni",
     "@uni-helper/uni-ui-types": "catalog:uni",
     "sass": "catalog:",
-    "vite": "catalog:vite"
+    "vite": "catalog:uni"
   }
 }
