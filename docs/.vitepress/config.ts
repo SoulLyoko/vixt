@@ -37,7 +37,7 @@ export default defineConfig({
             { text: '插件', link: '/guide/plugins' },
             { text: '模块', link: '/guide/modules' },
             { text: '层', link: '/guide/layers' },
-            { text: 'Rolldown', link: '/guide/rolldown' },
+            { text: 'Vite8', link: '/guide/vite8' },
           ],
         },
       ],

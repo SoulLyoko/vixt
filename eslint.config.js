@@ -19,9 +19,10 @@ export default antfu(
     },
   },
   {
-    files: ['**/*.md/*'],
+    files: ['**/*.md', '**/*.md/*'],
     rules: {
       'unused-imports/no-unused-imports': 'off', // md文件允许未使用的导入
+      'perfectionist/sort-imports': 'off',
     },
   },
 )
