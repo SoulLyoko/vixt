@@ -5,13 +5,17 @@ export default defineConfig([
     entry: 'src/index.ts',
     platform: 'node',
     copy: ['src/types'],
-    skipNodeModulesBundle: true,
+    deps: {
+      skipNodeModulesBundle: true,
+    },
   },
   {
     entry: 'src/client/**/*',
     platform: 'browser',
     outDir: 'dist/client',
-    external: [/virtual:/, /@\//],
-    skipNodeModulesBundle: true,
+    deps: {
+      skipNodeModulesBundle: true,
+      neverBundle: [/virtual:/, /@\//],
+    },
   },
 ])
