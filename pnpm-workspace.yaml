@@ -10,7 +10,7 @@ catalog:
   '@types/fs-extra': ^11.0.4
   '@types/node': ^25.5.2
   '@vixt/layer-shared': ^0.9.0
-  bumpp: ^11.0.1
+  bumpp: ^10.4.1
   c12: ^3.3.4
   cac: ^7.0.0
   citty: ^0.2.2
