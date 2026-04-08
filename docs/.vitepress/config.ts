@@ -15,6 +15,7 @@ export default defineConfig({
       { text: '指南', link: '/guide/' },
       { text: '配置', link: '/config/core' },
       { text: 'API', link: '/api/vixt' },
+      { text: 'Releases', link: 'https://github.com/SoulLyoko/vixt/releases' },
     ],
     sidebar: {
       '/guide': [
@@ -22,7 +23,6 @@ export default defineConfig({
           text: '介绍',
           items: [
             { text: '开始', link: '/guide/' },
-            { text: '更新日志', link: '/guide/changelog' },
           ],
         },
         {
