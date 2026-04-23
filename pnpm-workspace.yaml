@@ -32,7 +32,7 @@ catalog:
   sass: ^1.99.0
   simple-git-hooks: ^2.13.1
   taze: ^19.11.0
-  tsdown: ^0.21.9
+  tsdown: ^0.21.10
   typescript: ^6.0.3
   yaml: ^2.8.3
 
@@ -68,7 +68,7 @@ catalogs:
     '@uni-helper/vite-plugin-uni-layouts': ^0.1.11
     '@uni-helper/vite-plugin-uni-pages': ^0.3.24
     unocss-applet: ^0.12.2
-    vite: ^7.3.1
+    vite: ^7.3.2
 
   vite:
     '@unocss/eslint-plugin': ^66.6.8
@@ -80,6 +80,7 @@ catalogs:
     '@vitejs/plugin-vue-jsx': ^5.1.5
     '@vitest/browser': ^4.1.5
     '@vitest/browser-playwright': ^4.1.5
+    nitro: ^3.0.260415-beta
     playwright: ^1.59.1
     unocss: ^66.6.8
     unplugin-auto-import: ^21.0.0
@@ -95,11 +96,11 @@ catalogs:
 
   vue:
     '@iconify/vue': ^5.0.0
-    '@vue/shared': ^3.5.32
+    '@vue/shared': ^3.5.33
     '@vue/tsconfig': ^0.9.1
     '@vueuse/core': ^13.9.0
     pinia: ^3.0.4
     pinia-plugin-persistedstate: ^4.7.1
-    vue: ^3.5.32
-    vue-router: ^5.0.4
+    vue: ^3.5.33
+    vue-router: ^5.0.6
     vue-tsc: ^3.2.7
