@@ -9,7 +9,7 @@
     "./layer-shared/*": "./packages/layer-shared/*"
   },
   "engines": {
-    "node": "^20.19.0 || >=22.12.0",
+    "node": ">=24",
     "pnpm": "^9.15.9"
   },
   "scripts": {
