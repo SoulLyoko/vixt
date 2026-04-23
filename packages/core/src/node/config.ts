@@ -3,6 +3,7 @@ import type Ssl from '@vitejs/plugin-basic-ssl'
 import type Legacy from '@vitejs/plugin-legacy'
 import type { RawVueCompilerOptions } from '@vue/language-core'
 import type { ConfigLayer, ConfigLayerMeta, LoadConfigOptions, ResolvedConfig } from 'c12'
+import type { NitroPluginConfig } from 'nitro/vite'
 import type { TSConfig } from 'pkg-types'
 import type { HtmlTagDescriptor, ServerOptions, UserConfig } from 'vite'
 import type Analyzer from 'vite-bundle-analyzer'
@@ -116,6 +117,10 @@ export interface VixtOptions {
    * @experimental
    */
   copyLayers?: boolean
+  /**
+   * Nitro configuration
+   */
+  nitro?: NitroOptions
   /** custom options */
   [key: string]: any
 }
@@ -136,7 +141,7 @@ export interface AppHead {
 
 export interface AppOptions {
   /**
-   * The base path of your Nuxt application.
+   * The base path of your Vixt application.
    * @default '/'
    */
   baseURL?: string
@@ -214,6 +219,11 @@ export interface TypescriptOptions {
    * @default false
    */
   shim?: boolean
+}
+
+export interface NitroOptions extends Omit<NitroPluginConfig, 'serverDir'> {
+  enabled?: boolean
+  serverDir?: Exclude<NitroPluginConfig['serverDir'], boolean>
 }
 
 export interface VixtConfigLayerMeta extends ConfigLayerMeta {
@@ -323,5 +333,5 @@ export function resolveLayersDirs(layers: VixtConfigLayer[] = []) {
 }
 
 export const VixtClientAutoImports: Record<string, string[]> = {
-  '@vixt/core/client': ['defineAppConfig', 'defineVixtPlugin', 'useAppConfig', 'useVixtApp'],
+  '@vixt/core/client': ['defineAppConfig', 'defineVixtPlugin', 'useAppConfig', 'useVixtApp', '$fetch'],
 }

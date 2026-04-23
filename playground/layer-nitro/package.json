@@ -1,0 +1,10 @@
+{
+  "name": "@vixt/layer-nitro",
+  "type": "module",
+  "private": true,
+  "main": "vixt.config.ts",
+  "dependencies": {
+    "@pinia/colada": "^1.2.0",
+    "vixt": "workspace:*"
+  }
+}

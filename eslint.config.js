@@ -6,6 +6,7 @@ export default antfu(
     formatters: true,
     ignores: ['**/pages.json'],
     pnpm: false,
+    e18e: false,
   },
   {
     rules: {

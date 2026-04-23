@@ -1,0 +1,17 @@
+{
+  "name": "@vixt/test-nitro",
+  "type": "module",
+  "private": true,
+  "scripts": {
+    "build": "vite build",
+    "dev": "vite",
+    "preview": "vite preview",
+    "tc": "vue-tsc --noEmit"
+  },
+  "dependencies": {
+    "@vixt/layer-nitro": "workspace:*",
+    "vercel": "^52.0.0",
+    "vixt": "workspace:*",
+    "wrangler": "^4.84.1"
+  }
+}

@@ -8,3 +8,6 @@ cache
 .nuxt
 .output
 .DS_Store
+.netlify
+.vercel
+.wrangler
