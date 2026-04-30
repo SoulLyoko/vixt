@@ -39,6 +39,7 @@
     "tc": "tsc --noEmit",
     "test": "vitest",
     "test:vue": "pnpm -F test-vue test",
+    "typedoc": "pnpm -F docs typedoc",
     "upd": "taze major -r -l -I"
   },
   "devDependencies": {

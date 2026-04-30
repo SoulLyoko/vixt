@@ -5,13 +5,9 @@
 
 ## 介绍
 
-Vixt是一个[Vite](https://vitepress.dev/zh/)插件，与[Nuxt](https://nuxt.com.cn/)一样旨在提升开发者体验，名字取自Vite的前两个字母和Nuxt的后两个字母。
+Vixt是一个[Vite](https://vitepress.dev/zh/)插件，与[Nuxt](https://nuxt.com.cn/)一样旨在提升开发者体验(DX)，名字取自Vite的前两个字母和Nuxt的后两个字母。
 
-## 为什么不用Nuxt?
-
-Nuxt具备SSR和全栈开发的能力，如果你的项目需要这些，Nuxt是个不错的选择。当然它也可以通过配置关闭ssr甚至是混合渲染以适应不同的场景，但是它依然会带来一些额外的性能开销和心智负担，随着项目体积增大，启动时间也会成倍增加（这也是Vixt诞生的主要原因）。
-
-而Vixt则是一个轻量级的Vite插件，抛弃了ssr(也许后续会支持)和服务端，它的启动速度完全取决于Vite，Vite有多快，Vixt就有多快，同时它也提供了一些提升开发者体验的特性，比如文件系统路由、布局、自动导入、插件(plugins)、模块(modules)、层(layers)等。
+Vixt的目标是把Nuxt的实用功能带到Vue, React, Uni-app等现代流行框架中，包括文件系统路由、布局、自动导入、插件(plugins)、模块(modules)、层(layers)、服务端等，基于Vite 8实现更快的开发和构建速度，由Nitro提供构建全栈应用的能力。
 
 ## 尝试使用Vixt构建的Vitesse吧!
 
@@ -88,3 +84,13 @@ export default defineConfig({
 | [@vixt/vitepress](packages/vitepress) | vitepress的适配层    |
 | [@vixt/react](packages/react)         | react的适配层        |
 | [create-vixt](packages/create-vixt)   | 用于创建模板项目     |
+
+## Thanks
+
+This project is highly inspired by [Nuxt](https://github.com/nuxt/nuxt) and [Vite](https://github.com/vitejs/vite).
+
+Thanks [UnJS](https://unjs.io/) for creating helpful packages.
+
+## License
+
+[MIT](LICENSE) License © 2024-PRESENT [SoulLyoko](https://github.com/SoulLyoko)

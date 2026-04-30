@@ -38,6 +38,14 @@ export default defineVixtModule({
           }
         }
 
+        try {
+          // Only accept data that can be structured
+          defuCall.$args.push(JSON.parse(JSON.stringify(vixt.options.appConfig ?? {})))
+        }
+        catch (err) {
+          console.error(err)
+        }
+
         defuCall.$args.push({ baseURL, rootId })
         code.exports.default = defuCall
 

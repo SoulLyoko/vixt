@@ -1,4 +1,4 @@
-import type { AliasOptions } from '../config'
+import type { AliasOptions } from '../types'
 
 import { defineVixtModule } from '../module'
 

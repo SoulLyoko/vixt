@@ -12,7 +12,7 @@
     "vue"
   ],
   "exports": {
-    ".": "./src/index.ts",
+    ".": "./src/node/index.ts",
     "./client/App": "./src/client/App.vue",
     "./client/*": "./src/client/*.ts",
     "./types": "./src/types/index.d.ts",
@@ -20,14 +20,14 @@
   },
   "publishConfig": {
     "exports": {
-      ".": "./dist/index.mjs",
+      ".": "./dist/node/index.mjs",
       "./client/App": "./dist/client/App.vue",
       "./client/*": "./dist/client/*.js",
       "./types": "./dist/types/index.d.ts",
       "./package.json": "./package.json"
     }
   },
-  "main": "./dist/index.mjs",
+  "main": "./dist/node/index.mjs",
   "types": "./dist/types/index.d.ts",
   "files": [
     "dist"
@@ -40,7 +40,6 @@
     "pinia": "catalog:vue",
     "pinia-plugin-persistedstate": "catalog:vue",
     "unocss": "catalog:vite",
-    "unplugin-auto-import": "catalog:vite",
     "unplugin-vue-components": "catalog:vite",
     "vite-plugin-vue-devtools": "catalog:vite",
     "vite-plugin-vue-layouts": "catalog:vite",

@@ -8,7 +8,7 @@ import { findUpSync } from 'find-up'
 import path from 'pathe'
 import { loadEnv as _loadEnv } from 'vite'
 
-/** https://github.com/vitejs/vite/blob/v8.0.0-beta.3/packages/vite/src/node/cli.ts */
+/** https://github.com/vitejs/vite/blob/main/packages/vite/src/node/cli.ts */
 export interface GlobalCLIOptions {
   '--'?: string[]
   'c'?: boolean | string

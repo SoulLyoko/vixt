@@ -2,12 +2,15 @@ import { defineConfig } from 'tsdown'
 
 export default defineConfig([
   {
-    entry: 'src/index.ts',
+    entry: 'src/node/**/*',
+    outDir: 'dist/node',
     platform: 'node',
-    copy: ['src/types'],
     deps: {
       neverBundle: ['vite', '@vue/compiler-sfc'],
     },
+    copy: [
+      { from: 'src/types', to: 'dist' },
+    ],
   },
   {
     entry: ['src/client/**/*', '!src/client/App.vue'],

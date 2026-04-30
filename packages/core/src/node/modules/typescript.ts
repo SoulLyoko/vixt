@@ -1,5 +1,4 @@
-import type { TypescriptOptions } from '../config'
-import type { Vixt } from '../vixt'
+import type { TypescriptOptions, Vixt } from '../types'
 
 import fs from 'fs-extra'
 import path from 'pathe'

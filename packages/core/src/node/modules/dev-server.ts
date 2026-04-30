@@ -1,4 +1,4 @@
-import type { DevServerOptions } from '../config'
+import type { DevServerOptions } from '../types'
 
 import Ssl from '@vitejs/plugin-basic-ssl'
 import path from 'pathe'

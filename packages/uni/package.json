@@ -14,20 +14,20 @@
     "uni-app"
   ],
   "exports": {
-    ".": "./src/index.ts",
+    ".": "./src/node/index.ts",
     "./client/*": "./src/client/*.ts",
     "./types": "./src/types/index.d.ts",
     "./package.json": "./package.json"
   },
   "publishConfig": {
     "exports": {
-      ".": "./dist/index.mjs",
+      ".": "./dist/node/index.mjs",
       "./client/*": "./dist/client/*.js",
       "./types": "./dist/types/index.d.ts",
       "./package.json": "./package.json"
     }
   },
-  "main": "./dist/index.mjs",
+  "main": "./dist/node/index.mjs",
   "types": "./dist/types/index.d.ts",
   "files": [
     "dist"

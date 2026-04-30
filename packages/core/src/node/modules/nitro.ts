@@ -1,4 +1,4 @@
-import type { NitroOptions } from '../config'
+import type { NitroOptions } from '../types'
 import type { Nitro } from 'nitro/types'
 
 import { writeTypes as _writeTypes } from 'nitro/builder'

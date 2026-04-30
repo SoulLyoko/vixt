@@ -1,0 +1,21 @@
+# 路由
+
+约定式文件路由由 [vite-plugin-pages](https://github.com/hannoeru/vite-plugin-pages) 提供支持
+
+默认扫描 `pages` 文件夹
+
+## 自定义配置
+
+::: code-group
+
+```ts [vixt.config.ts]
+import { defineVixtConfig } from 'vixt'
+
+export default defineVixtConfig({
+  pages: {
+    pages: ['src/views']
+  }
+})
+```
+
+:::

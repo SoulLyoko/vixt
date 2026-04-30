@@ -10,8 +10,6 @@
   },
   "dependencies": {
     "@vixt/layer-nitro": "workspace:*",
-    "vercel": "^52.0.0",
-    "vixt": "workspace:*",
-    "wrangler": "^4.84.1"
+    "vixt": "workspace:*"
   }
 }

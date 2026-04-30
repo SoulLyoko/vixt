@@ -1,5 +1,5 @@
-import type { AppHeadAttrs, AppOptions } from '../config'
-import type { Vixt } from '../vixt'
+import type { AppHeadAttrs, AppOptions } from '../types'
+import type { Vixt } from '../types/vixt'
 import type { HtmlTagDescriptor } from 'vite'
 
 import fs from 'fs-extra'
@@ -71,42 +71,43 @@ export default defineVixtModule<AppOptions>({
     if (transformEntryFile && !fs.existsSync(absoluteEntryPath))
       fs.outputFileSync(absoluteEntryPath, '')
 
+    function transformEntryFileHandler(code: string) {
+      if (isEmptyCode(code))
+        return options.entryCode
+    }
+    function transformIndexHtmlHandler(html = '') {
+      const { rootTag, rootId, head } = options
+      const heads: [string, AppHeadAttrs[]][] = Object.entries(head ?? {})
+      const tags = heads.map(([tag, attrs]) => attrs.map(attr => resolveHead(tag, attr))).flat()
+      const loadingTemplate = resolveLoadingTemplate(options, vixt)
+      return {
+        html: `<!DOCTYPE html>\n${html}`,
+        tags: [
+          { tag: rootTag!, attrs: { id: rootId }, children: loadingTemplate, injectTo: 'body' },
+          { tag: 'script', attrs: { type: 'module', src: relativeEntryPath }, injectTo: 'body' },
+          ...tags,
+        ],
+      }
+    }
+
     const order = 'pre'
 
     return {
       name,
       enforce: order,
-      transform: {
-        order,
-        filter: { id: absoluteEntryPath },
-        handler(code) {
-          if (!transformEntryFile)
-            return
-
-          if (isEmptyCode(code))
-            return options.entryCode
-        },
-      },
-      transformIndexHtml: {
-        order,
-        handler(html = '') {
-          if (!transformIndexHtml)
-            return
-
-          const { rootTag, rootId, head } = options
-          const heads: [string, AppHeadAttrs[]][] = Object.entries(head ?? {})
-          const tags = heads.map(([tag, attrs]) => attrs.map(attr => resolveHead(tag, attr))).flat()
-          const loadingTemplate = resolveLoadingTemplate(options, vixt)
-          return {
-            html: `<!DOCTYPE html>\n${html}`,
-            tags: [
-              { tag: rootTag!, attrs: { id: rootId }, children: loadingTemplate, injectTo: 'body' },
-              { tag: 'script', attrs: { type: 'module', src: relativeEntryPath }, injectTo: 'body' },
-              ...tags,
-            ],
+      transform: transformEntryFile
+        ? {
+            order,
+            filter: { id: absoluteEntryPath },
+            handler: transformEntryFileHandler,
           }
-        },
-      },
+        : undefined,
+      transformIndexHtml: transformIndexHtml
+        ? {
+            order,
+            handler: transformIndexHtmlHandler,
+          }
+        : undefined,
     }
   },
 })

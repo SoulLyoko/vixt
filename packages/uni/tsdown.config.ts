@@ -2,12 +2,15 @@ import { defineConfig } from 'tsdown'
 
 export default defineConfig([
   {
-    entry: 'src/index.ts',
+    entry: 'src/node/**/*',
+    outDir: 'dist/node',
     platform: 'node',
-    copy: ['src/types'],
     deps: {
       skipNodeModulesBundle: true,
     },
+    copy: [
+      { from: 'src/types', to: 'dist' },
+    ],
   },
   {
     entry: 'src/client/**/*',

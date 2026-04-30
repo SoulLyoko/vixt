@@ -1,33 +1,26 @@
-// @ts-ignore
-export interface VixtApp {
-  app: any
-  appConfig: VixtAppConfig
-  [key: string]: unknown
-}
+import type { CreateOptions, VixtApp, VixtAppConfig } from './types'
 
-export interface CreateOptions {
-  app: any
-  appConfig: VixtAppConfig
-}
-
-export interface VixtAppConfig extends Record<string, any> {
-  readonly baseURL?: string
-  readonly rootId?: string
-}
-
+/**
+ * Define the app config.
+ * @example
+ * ```ts
+ * // src/app.config.ts
+ * export default defineAppConfig({
+ *   title: 'My Vixt App',
+ *   description: 'A Vixt App',
+ * })
+ * ```
+ */
 export function defineAppConfig(config: VixtAppConfig) {
   return config
 }
 
+/** Access the app config defined in the project. */
 export function useAppConfig() {
   return useVixtApp()?.appConfig ?? {}
 }
 
-export function useVixtApp(): VixtApp {
-  // @ts-ignore
-  return globalThis.useVixtApp?.()
-}
-
+/** Create a Vixt App instance. */
 export function createVixtApp(options: CreateOptions): VixtApp {
   const vixtApp = { ...options }
 
@@ -35,4 +28,10 @@ export function createVixtApp(options: CreateOptions): VixtApp {
   globalThis.useVixtApp = () => vixtApp
 
   return vixtApp as VixtApp
+}
+
+/** Access the shared runtime context of the Vixt Application. */
+export function useVixtApp(): VixtApp {
+  // @ts-ignore
+  return globalThis.useVixtApp?.()
 }

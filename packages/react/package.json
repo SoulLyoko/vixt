@@ -12,7 +12,7 @@
     "react"
   ],
   "exports": {
-    ".": "./src/index.ts",
+    ".": "./src/node/index.ts",
     "./client/App": "./src/client/App.tsx",
     "./client/*": "./src/client/*.ts",
     "./types": "./src/types/index.d.ts",
@@ -20,14 +20,14 @@
   },
   "publishConfig": {
     "exports": {
-      ".": "./dist/index.mjs",
+      ".": "./dist/node/index.mjs",
       "./client/App": "./src/client/App.tsx",
       "./client/*": "./dist/client/*.js",
       "./types": "./dist/types/index.d.ts",
       "./package.json": "./package.json"
     }
   },
-  "main": "./dist/index.mjs",
+  "main": "./dist/node/index.mjs",
   "types": "./dist/types/index.d.ts",
   "files": [
     "dist"
@@ -44,7 +44,6 @@
     "react-dom": "catalog:react",
     "react-router": "catalog:react",
     "unocss": "catalog:vite",
-    "unplugin-auto-import": "catalog:vite",
     "unplugin-vue-components": "catalog:vite",
     "vite-plugin-pages": "catalog:vite",
     "vite-plugin-vue-layouts": "catalog:vite",

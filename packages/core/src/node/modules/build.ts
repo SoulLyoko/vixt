@@ -1,4 +1,4 @@
-import type { BuildOptions } from '../config'
+import type { BuildOptions } from '../types'
 
 import Legacy from '@vitejs/plugin-legacy'
 import Analyzer from 'vite-bundle-analyzer'

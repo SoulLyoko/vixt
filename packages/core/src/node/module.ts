@@ -1,5 +1,6 @@
-import type { ResolvedVixtConfig } from './config'
-import type { Vixt } from './vixt'
+import type { ResolvedVixtConfig } from './types/layer'
+import type { ModuleDefinition, ModuleOptions, VixtModule } from './types/module'
+import type { Vixt } from './types/vixt'
 import type { PluginOption } from 'vite'
 
 import defu from 'defu'
@@ -10,29 +11,65 @@ import path from 'pathe'
 
 import { resolveLayersDirs } from './config'
 
-export type ExtractPluginOptions<Options = any> = (Options extends (...args: any[]) => any ? Parameters<Options>[0] : Options)
-
-export type ModuleOptions = Record<string, any>
-export interface ModuleMeta extends Record<string, any> {
-  name?: string
-  configKey?: string
-}
-export interface ModuleDefinition<T extends ModuleOptions = ModuleOptions> {
-  meta?: ModuleMeta
-  defaults?: Partial<T> | ((vixt: Vixt) => Partial<T>)
-  setup?: (this: void, resolvedOptions: T, vixt: Vixt) => PluginOption | void
-}
-export interface VixtModule<T extends ModuleOptions = ModuleOptions> {
-  (this: void, resolvedOptions: T, vixt: Vixt): PluginOption
-  getOptions?: (inlineOptions: Partial<T>, Vixt: Vixt) => T
-  getMeta?: () => ModuleMeta
-}
-
+/**
+ * A helper function for creating Vite plugins.
+ * @example
+ * ```ts
+ * import { defineVitePlugin } from 'vixt'
+ *
+ * interface PluginOptions {
+ *   enabled?: boolean
+ * }
+ *
+ * export const myVitePlugin = defineVitePlugin<PluginOptions>((options) => {
+ *   console.log(options)
+ *   return {
+ *     name: 'my-vite-plugin',
+ *     configResolved(config) {
+ *       console.log(config)
+ *     }
+ *   }
+ * })
+ * ```
+ */
 export function defineVitePlugin<Options = any>(pluginFn: (options?: Options) => PluginOption) {
   return pluginFn
 }
 
-export function defineVixtModule<T extends ModuleOptions>(definition: ModuleDefinition<T> | VixtModule<T>) {
+/**
+ * Define a Vixt module.
+ * @example
+ * ```ts
+ * // src/modules/my-module.ts
+ * import { defineVixtModule } from 'vixt'
+ *
+ * interface ModuleOptions {
+ *   enabled?: boolean
+ * }
+ *
+ * declare module 'vixt' {
+ *   interface VixtOptions {
+ *     myModuleOptions?: ModuleOptions
+ *   }
+ * }
+ *
+ * const name = 'my-module'
+ * export default defineVixtModule<ModuleOptions>({
+ *   meta: { name },
+ *   defaults: { enabled: true },
+ *   setup(options, vixt) {
+ *     console.log(options) // { enabled: true }
+ *     return {
+ *       name,
+ *       configResolved(config) {
+ *         console.log(config)
+ *       }
+ *     } // return one or more vite plugins
+ *   }
+ * })
+ * ```
+ */
+export function defineVixtModule<T extends ModuleOptions = ModuleOptions>(definition: ModuleDefinition<T> | VixtModule<T>) {
   if (typeof definition == 'function')
     return defineVixtModule({ setup: definition })
 

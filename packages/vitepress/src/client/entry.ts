@@ -1,5 +1,6 @@
 import type { Theme } from 'vitepress'
 
+// @ts-expect-error virtual file
 import 'virtual:vixt:css'
 import 'uno.css'
 import { applyPlugins, createVixtApp } from '@vixt/core/client'

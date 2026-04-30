@@ -1,5 +1,5 @@
-import type { VixtConfigLayer, VixtOptions } from './config'
-import type { VixtModule } from './module'
+import type { VixtOptions } from './types/config'
+import type { Vixt } from './types/vixt'
 import type { LoadConfigOptions } from 'c12'
 
 import { env } from 'node:process'
@@ -11,12 +11,6 @@ import { applyLayers, loadVixtConfig } from './config'
 import { loadCLIOptions } from './env'
 import { applyLayerModules, defineVitePlugin, installModule } from './module'
 import { builtinModules } from './modules'
-
-export interface Vixt {
-  options: VixtOptions
-  _layers: VixtConfigLayer[]
-  _modules: VixtModule[]
-}
 
 export async function loadVixt(opts?: LoadConfigOptions<VixtOptions>) {
   const result = await loadVixtConfig(opts)

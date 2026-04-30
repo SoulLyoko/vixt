@@ -52,6 +52,7 @@
     "nitro": "catalog:vite",
     "pathe": "catalog:",
     "pkg-types": "catalog:",
+    "unplugin-auto-import": "catalog:vite",
     "vite": "catalog:vite",
     "vite-bundle-analyzer": "catalog:vite",
     "vite-plugin-checker": "catalog:vite"
