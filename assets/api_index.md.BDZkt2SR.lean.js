@@ -1,0 +1,1 @@
+import{_ as a,o as i,c as t,ak as r}from"./chunks/framework.C5Z5FDNo.js";const x=JSON.parse('{"title":"vixt","description":"","frontmatter":{},"headers":[],"relativePath":"api/index.md","filePath":"api/index.md"}'),l={name:"api/index.md"};function n(o,e,s,c,d,p){return i(),t("div",null,[...e[0]||(e[0]=[r("",3)])])}const h=a(l,[["render",n]]);export{x as __pageData,h as default};
