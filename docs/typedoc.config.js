@@ -1,3 +1,4 @@
+// @ts-check
 export const typeDocDir = 'api'
 export const packages = ['core', 'react', 'uni', 'vitepress', 'vue']
 
@@ -22,9 +23,6 @@ export default {
   /** output */
   cleanOutputDir: true,
   out: typeDocDir,
-  // navigation: {
-  // includeCategories: false,
-  // },
   /** other */
   skipErrorChecking: true,
   /** mardown */

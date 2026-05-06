@@ -3,11 +3,11 @@ layout: home
 
 hero:
   name: Vixt
-  text: 使用Vixt快速开发<br>多框架应用
+  text: 将Nuxt的特性带到现代流行的框架中
   actions:
     - theme: brand
       text: 开始
-      link: /guide/
+      link: /zh/guide/introduction
     - theme: alt
       text: GitHub
       link: https://github.com/SoulLyoko/vixt

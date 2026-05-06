@@ -1,8 +1,8 @@
 # 服务端
 
-服务端由 [nitro](https://github.com/nitrojs/nitro) 提供支持
+服务端由 [Nitro](https://github.com/nitrojs/nitro) 提供支持
 
-## 启用 nitro
+## 启用 Nitro
 
 默认情况下，nitro是禁用的，你可以通过配置`nitro.enabled`来启用它
 

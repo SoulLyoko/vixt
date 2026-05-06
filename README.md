@@ -3,50 +3,58 @@
 <a href="https://npmjs.com/package/vixt"><img src="https://img.shields.io/npm/v/vixt.svg" alt="npm package"></a>
 <a href="https://soullyoko.github.io/vixt/"><img src="https://img.shields.io/badge/Vixt%20Docs-5A5A5A" alt="Website"></a>
 
-## 介绍
+## Introduction
 
-Vixt是一个[Vite](https://vitepress.dev/zh/)插件，与[Nuxt](https://nuxt.com.cn/)一样旨在提升开发者体验(DX)，名字取自Vite的前两个字母和Nuxt的后两个字母。
+<!-- #region introduction -->
 
-Vixt的目标是把Nuxt的实用功能带到Vue, React, Uni-app等现代流行框架中，包括文件系统路由、布局、自动导入、插件(plugins)、模块(modules)、层(layers)、服务端等，基于Vite 8实现更快的开发和构建速度，由Nitro提供构建全栈应用的能力。
+Vixt is a [Vite](https://vite.dev/) plugin designed to improve developer experience (DX), inspired by [Nuxt](https://nuxt.com/). The name combines the first two letters of Vite and the last two letters of Nuxt.
 
-## 尝试使用Vixt构建的Vitesse吧!
+Vixt aims to bring Nuxt-style productivity features to popular modern frameworks such as Vue, React, and Uni-app. It includes filesystem routing, layouts, auto-imports, plugins, modules, layers, server-side features, and more. Built on Vite 8 for faster development and build speed, Nitro provides the ability to build full-stack applications.
+
+<!-- #endregion -->
+
+## Installation
+
+<!-- #region installation -->
+
+### Try Vitesse built with Vixt
 
 [vitesse-vixt](https://github.com/SoulLyoko/vitesse-vixt)
 
-## 创建Vixt项目
+### Create a Vixt project
 
-Vixt推荐使用pnpm+monorepo管理项目，创建的默认模板也是monorepo项目
+Vixt recommends using pnpm with a monorepo setup, and the default project templates are monorepo-based.
 
 ```sh
-# 默认为monorepo模板，包含vue和uni-app项目
+# Default monorepo template, including vue and uni-app projects
 pnpm create vixt my-project
 
-# vue单项目
+# Vue single-project
 # pnpm create vixt my-project --template vue-ts
 
-# uni-app单项目
+# Uni-app single-project
 # pnpm create vixt my-project --template uni-ts
 
-# react单项目
+# React single-project
 # pnpm create vixt my-project --template react-ts
 ```
 
-## 在现有项目中使用
+### Use in an existing project
 
-- 删除 packages.json 中的与vixt重复的依赖(如vue,vite等,非必须)
-- 创建 .npmrc, 启用pnpm的shamefully-hoist
+- Remove duplicate dependencies in `package.json` that Vixt already provides (such as `vue`, `vite`, etc., if not required).
+- Create a `.npmrc` file and enable pnpm's `shamefully-hoist`:
 
 ```
 shamefully-hoist=true
 ```
 
-- 安装 vixt
+- Install Vixt:
 
 ```sh
 pnpm add vixt
 ```
 
-- 新建vixt.config.ts
+- Create `vixt.config.ts`:
 
 ```ts
 import { defineVixtConfig } from 'vixt'
@@ -54,7 +62,7 @@ import { defineVixtConfig } from 'vixt'
 export default defineVixtConfig({})
 ```
 
-- 修改vite.config.ts
+- Update `vite.config.ts`:
 
 ```ts
 import { defineConfig } from 'vite'
@@ -65,7 +73,7 @@ export default defineConfig({
 })
 ```
 
-- 修改tsconfig.json
+- Update `tsconfig.json`:
 
 ```json
 {
@@ -73,23 +81,25 @@ export default defineConfig({
 }
 ```
 
+<!-- #endregion -->
+
 ## Packages
 
-| Package                               | Desc                 |
-| ------------------------------------- | -------------------- |
-| [vixt](packages/vixt)                 | 统一管理vixt的所有包 |
-| [@vixt/core](packages/core)           | vixt的底层核心       |
-| [@vixt/vue](packages/vue)             | vue的适配层          |
-| [@vixt/uni](packages/uni)             | uni-app的适配层      |
-| [@vixt/vitepress](packages/vitepress) | vitepress的适配层    |
-| [@vixt/react](packages/react)         | react的适配层        |
-| [create-vixt](packages/create-vixt)   | 用于创建模板项目     |
+| Package                               | Description                           |
+| ------------------------------------- | ------------------------------------- |
+| [vixt](packages/vixt)                 | Central package for all Vixt packages |
+| [@vixt/core](packages/core)           | Core foundation of Vixt               |
+| [@vixt/vue](packages/vue)             | Vue adapter layer                     |
+| [@vixt/uni](packages/uni)             | Uni-app adapter layer                 |
+| [@vixt/vitepress](packages/vitepress) | VitePress adapter layer               |
+| [@vixt/react](packages/react)         | React adapter layer                   |
+| [create-vixt](packages/create-vixt)   | Project scaffolding tool              |
 
 ## Thanks
 
 This project is highly inspired by [Nuxt](https://github.com/nuxt/nuxt) and [Vite](https://github.com/vitejs/vite).
 
-Thanks [UnJS](https://unjs.io/) for creating helpful packages.
+Thanks to [UnJS](https://unjs.io/) for creating helpful packages.
 
 ## License
 

@@ -46,6 +46,8 @@ export default defineVixtModule({
           if (item.text !== 'core')
             item.items = item.items?.map(e => e.items ?? []).flat()
         })
+        config.vitepress!.userConfig!.themeConfig ??= {}
+        config.vitepress!.userConfig!.themeConfig!.sidebar ??= {}
         config.vitepress!.userConfig!.themeConfig!.sidebar![`/${typeDocDir}`] = sidebar
       },
       configureServer(server) {
