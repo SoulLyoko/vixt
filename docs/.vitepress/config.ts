@@ -11,7 +11,7 @@ export default defineConfig({
   },
   locales: {
     root: { label: 'English', lang: 'en' },
-    zh: { label: '中文', lang: 'zh' },
+    zh: { label: '简体中文', lang: 'zh' },
   },
   themeConfig: {
     outline: [2, 3],
