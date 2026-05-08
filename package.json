@@ -3,14 +3,14 @@
   "type": "module",
   "version": "0.10.1",
   "private": true,
-  "packageManager": "pnpm@9.15.9",
+  "packageManager": "pnpm@11.1.1",
   "exports": {
     "./layer-shared": "./packages/layer-shared/vixt.config.ts",
     "./layer-shared/*": "./packages/layer-shared/*"
   },
   "engines": {
     "node": ">=24",
-    "pnpm": "^9.15.9"
+    "pnpm": ">=11"
   },
   "scripts": {
     "build": "tsdown",
@@ -61,24 +61,6 @@
     "tsdown": "catalog:",
     "typescript": "catalog:",
     "vitest": "catalog:vite"
-  },
-  "pnpm": {
-    "neverBuiltDependencies": [
-      "vixt-framework"
-    ],
-    "overrides": {
-      "@vixt/test-uni>vite": "catalog:uni",
-      "@vue/shared": "catalog:vue",
-      "@vueuse/core": "catalog:vue",
-      "vue": "catalog:vue"
-    },
-    "peerDependencyRules": {
-      "allowAny": [
-        "@dcloudio/types",
-        "typescript",
-        "vite"
-      ]
-    }
   },
   "simple-git-hooks": {
     "commit-msg": "npx --no-install commitlint --edit $1",

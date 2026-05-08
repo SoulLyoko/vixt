@@ -3,6 +3,20 @@ packages:
   - playground/*
   - docs
 
+overrides:
+  '@vixt/test-uni>vite': 'catalog:uni'
+  '@vue/shared': 'catalog:vue'
+  '@vueuse/core': 'catalog:vue'
+  vue: 'catalog:vue'
+
+peerDependencyRules:
+  allowAny:
+    - '@dcloudio/types'
+    - typescript
+    - vite
+
+shamefullyHoist: true
+
 catalog:
   '@antfu/eslint-config': ^8.2.0
   '@commitlint/cli': ^20.5.3
