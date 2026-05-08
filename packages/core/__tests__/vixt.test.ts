@@ -26,10 +26,11 @@ describe('vixt', () => {
           [Function],
           [Function],
           [Function],
+          [Function],
+          [Function],
         ],
         "options": {
           "buildDir": "C:/Project/vixt/packages/core/__tests__/.vixt",
-          "buildImportsDir": "C:/Project/vixt/packages/core/__tests__/.vixt/imports",
           "buildLayersDir": "C:/Project/vixt/packages/core/__tests__/.vixt/layers",
           "buildTypesDir": "C:/Project/vixt/packages/core/__tests__/.vixt/types",
           "debug": false,
@@ -38,6 +39,7 @@ describe('vixt', () => {
           "pluginsDir": "C:/Project/vixt/packages/core/__tests__/src/plugins",
           "rootDir": "C:/Project/vixt/packages/core/__tests__",
           "srcDir": "C:/Project/vixt/packages/core/__tests__/src",
+          "test": true,
           "workspaceDir": "C:/Project/vixt/packages/core/__tests__",
         },
       }

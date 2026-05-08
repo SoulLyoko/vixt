@@ -22,9 +22,10 @@ export async function loadVixt(opts?: LoadConfigOptions<VixtOptions>) {
 
   // assign vixt.options.debug
   result.config.debug = !!cliOptions.debug
-
   // assign vixt.options.dev
   result.config.dev = env.NODE_ENV !== 'production'
+  // assign vixt.options.test
+  result.config.test = env.NODE_ENV === 'test'
 
   // apply layers
   result.layers = applyLayers(result)

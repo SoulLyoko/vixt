@@ -21,7 +21,6 @@ describe('config', () => {
         "_configFile": undefined,
         "config": {
           "buildDir": "C:/Project/vixt/packages/core/__tests__/.vixt",
-          "buildImportsDir": "C:/Project/vixt/packages/core/__tests__/.vixt/imports",
           "buildLayersDir": "C:/Project/vixt/packages/core/__tests__/.vixt/layers",
           "buildTypesDir": "C:/Project/vixt/packages/core/__tests__/.vixt/types",
           "modulesDir": "C:/Project/vixt/packages/core/__tests__/src/modules",
@@ -52,7 +51,6 @@ describe('config', () => {
         "_configFile": undefined,
         "config": {
           "buildDir": "C:/Project/vixt/packages/core/__tests__/core/.test",
-          "buildImportsDir": "C:/Project/vixt/packages/core/__tests__/core/.test/imports",
           "buildLayersDir": "C:/Project/vixt/packages/core/__tests__/core/.test/layers",
           "buildTypesDir": "C:/Project/vixt/packages/core/__tests__/core/.test/types",
           "modulesDir": "C:/Project/vixt/packages/core/__tests__/core/src/modules",
