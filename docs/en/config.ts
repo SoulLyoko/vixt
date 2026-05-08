@@ -1,13 +1,11 @@
 import { defineAdditionalConfig } from 'vitepress'
 
-import { typeDocDir } from '../typedoc.config'
-
 export default defineAdditionalConfig({
   description: 'Bring the features of Nuxt to modern popular frameworks, like Vue, React, Uni-app, Vitepress, etc.',
   themeConfig: {
     nav: [
       { text: 'Guide', link: '/guide/introduction' },
-      { text: 'API', link: `/${typeDocDir}/core/` },
+      { text: 'API', link: '/api/core/' },
       { text: 'Release', link: 'https://github.com/SoulLyoko/vixt/releases' },
     ],
     sidebar: {

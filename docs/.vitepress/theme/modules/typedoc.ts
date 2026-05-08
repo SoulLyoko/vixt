@@ -1,3 +1,5 @@
+import type { TypeDocOptions } from 'typedoc'
+import type { PluginOptions as TypeDocMardownOptions } from 'typedoc-plugin-markdown'
 import type { DefaultTheme } from 'vitepress'
 
 import { cwd } from 'node:process'
@@ -8,24 +10,22 @@ import { debounce } from 'perfect-debounce'
 import * as typedoc from 'typedoc'
 import { defineVixtModule } from 'vixt'
 
-import typeDocOptions, { packages, typeDocDir } from '../../../typedoc.config'
-
-const sourceDirs = packages.map(e => path.resolve(cwd(), `../packages/${e}/src`))
-
-function generateTypeDocTsConfig() {
-  const tsConfig = {
-    extends: './tsconfig.json',
-    include: sourceDirs,
-  }
-  fs.writeJSONSync(path.resolve(cwd(), '.vixt/typedoc.tsconfig.json'), tsConfig, { spaces: 2 })
-}
-
 const name = 'vixt:typedoc'
-export default defineVixtModule({
-  meta: { name },
-  async setup() {
-    generateTypeDocTsConfig()
-    const app = await typedoc.Application.bootstrapWithPlugins(typeDocOptions)
+export default defineVixtModule<ModuleOptions>({
+  meta: { name, configKey: 'typedoc' },
+  defaults: {
+    /** Configuration */
+    plugin: ['typedoc-plugin-markdown', 'typedoc-vitepress-theme'],
+    tsconfig: '.vixt/typedoc.tsconfig.json',
+  },
+  async setup(options) {
+    // write `typedoc.tsconfig.json`
+    const sourceDirs = [...new Set(options.entryPoints!.map(e => e.slice(0, e.indexOf('src') + 3)))]
+    const tsConfig = { extends: './tsconfig.json', include: sourceDirs }
+    fs.writeJSONSync(path.resolve(cwd(), options.tsconfig!), tsConfig, { spaces: 2 })
+
+    // generate api docs
+    const app = await typedoc.Application.bootstrapWithPlugins(options)
     async function generate() {
       const project = await app.convert()
       if (project) {
@@ -33,14 +33,14 @@ export default defineVixtModule({
       }
     }
     await generate()
-    app.options.setValue('cleanOutputDir', false)
+    app.options.setValue('cleanOutputDir', false) // for HMR
     const generateDebounced = debounce(generate, 100)
 
     return {
       name,
       enforce: 'post',
       config(config) {
-        const sidebar: DefaultTheme.SidebarItem[] = fs.readJSONSync(path.resolve(cwd(), typeDocDir, 'typedoc-sidebar.json'))
+        const sidebar: DefaultTheme.SidebarItem[] = fs.readJSONSync(path.resolve(cwd(), 'api', 'typedoc-sidebar.json'))
         sidebar.forEach((item) => {
           item.collapsed = undefined
           if (item.text !== 'core')
@@ -48,7 +48,7 @@ export default defineVixtModule({
         })
         config.vitepress!.userConfig!.themeConfig ??= {}
         config.vitepress!.userConfig!.themeConfig!.sidebar ??= {}
-        config.vitepress!.userConfig!.themeConfig!.sidebar![`/${typeDocDir}`] = sidebar
+        config.vitepress!.userConfig!.themeConfig!.sidebar!['/api'] = sidebar
       },
       configureServer(server) {
         server.watcher.add(sourceDirs)
@@ -68,3 +68,11 @@ declare module 'vite' {
     vitepress?: import('vitepress').SiteConfig
   }
 }
+
+declare module '@vixt/core' {
+  interface VixtOptions {
+    typedoc?: ModuleOptions
+  }
+}
+
+interface ModuleOptions extends TypeDocOptions, TypeDocMardownOptions {}
