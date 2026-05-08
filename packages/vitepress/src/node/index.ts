@@ -33,6 +33,7 @@ export default createVixtPlugin({
         compilerOptions: {
           types: ['@vixt/vitepress/types'],
         },
+        include: ['../.vitepress/**/*'],
       },
     },
     vite: {
