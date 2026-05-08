@@ -2,4 +2,4 @@
  * @module
  * @mergeModuleWith uni
  */
-export * from './types'
+export * from './client.d'

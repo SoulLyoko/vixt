@@ -10,7 +10,7 @@ import presetVitepress from './modules/preset-vitepress'
 
 const plugins = ['@vixt/vitepress/client/plugins/pinia']
 
-export * from './types'
+export * from './node.d'
 
 /** @hidden */
 export default createVixtPlugin({

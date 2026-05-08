@@ -1,2 +1,2 @@
-import './client/types'
-import './node/types'
+import '../client/client.d'
+import '../node/node.d'

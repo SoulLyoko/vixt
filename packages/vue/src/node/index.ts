@@ -9,7 +9,7 @@ import virtualRootComponent from './modules/virtual-root-component'
 
 const plugins = ['@vixt/vue/client/plugins/pinia', '@vixt/vue/client/plugins/router']
 
-export * from './types'
+export * from './node.d'
 
 /** @hidden */
 export default createVixtPlugin({

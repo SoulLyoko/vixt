@@ -2,4 +2,4 @@
  * @module
  * @mergeModuleWith react
  */
-export * from './types'
+export * from './client.d'

@@ -9,7 +9,7 @@ import { uniVueUseResolver } from './modules/uni-use'
 
 const plugins = ['@vixt/uni/client/plugins/pinia', '@vixt/uni/client/plugins/router']
 
-export * from './types'
+export * from './node.d'
 
 /** @hidden */
 export default createVixtPlugin({

@@ -2,4 +2,4 @@
  * @module
  * @mergeModuleWith vue
  */
-export * from './types'
+export * from './client.d'
