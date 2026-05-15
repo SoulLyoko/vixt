@@ -98,7 +98,7 @@ export function patchUniPagesTypes() {
   }
 }
 
-export const uniPatch = defineVitePlugin(() => {
+export default defineVitePlugin(() => {
   patchNormalizeNodeModules()
   patchUniPagesTypes()
 

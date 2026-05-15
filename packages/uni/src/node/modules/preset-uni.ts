@@ -8,7 +8,7 @@ import { defineVixtModule, resolveLayersDirs } from '@vixt/core'
 import defu from 'defu'
 import UnoCSS from 'unocss/vite'
 
-import { uniPatch } from './uni-patch'
+import UniPatch from './uni-patch'
 
 const name = 'vixt:preset-uni'
 export default defineVixtModule<VixtOptions>({
@@ -37,7 +37,7 @@ export default defineVixtModule<VixtOptions>({
       Layouts(options.uniLayouts),
       Components(options.uniComponents),
       UnoCSS(options.unocss),
-      uniPatch(),
+      UniPatch(),
       // @ts-expect-error
       (Uni?.default ?? Uni)(options.uni),
     ]

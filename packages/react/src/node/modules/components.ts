@@ -2,15 +2,18 @@ import type { ImportsMap } from 'unplugin-auto-import/types'
 
 import { cwd } from 'node:process'
 
+import { defineVitePlugin } from '@vixt/core'
 import fg from 'fast-glob'
+import AutoImport from 'unplugin-auto-import/vite'
 import { pascalCase } from 'unplugin-vue-components'
 
 export interface ComponentResolverOptions {
   dirs?: string[]
+  dts?: string | boolean
 }
 
-export function componentsResolver(options: ComponentResolverOptions = {}) {
-  const { dirs = ['src/components'] } = options
+export default defineVitePlugin<ComponentResolverOptions>((options) => {
+  const { dirs = ['src/components'], dts = 'components.d.ts' } = options ?? {}
 
   const files = fg.sync(dirs.map(c => `${c}/**/*.(t|j)sx`), {
     ignore: ['node_modules'],
@@ -29,5 +32,5 @@ export function componentsResolver(options: ComponentResolverOptions = {}) {
     imports[componentPath] = [['default', componentName]]
   })
 
-  return imports
-}
+  return AutoImport({ imports, dts })
+})

@@ -7,7 +7,7 @@ import UnoCSS from 'unocss/vite'
 import Pages from 'vite-plugin-pages'
 import Layouts from 'vite-plugin-vue-layouts'
 
-import { componentsResolver } from './components'
+import Components from './components'
 import { extendRoute } from './route-block'
 
 const name = 'vixt:preset-react'
@@ -15,6 +15,7 @@ export default defineVixtModule<VixtOptions>({
   meta: { name },
   setup(_, vixt) {
     const { components = [], layouts = [], pages = [] } = resolveLayersDirs([...vixt._layers].reverse())
+    const { buildTypesDir } = vixt.options
 
     const defaultOptions: VixtOptions = {
       react: {},
@@ -28,9 +29,6 @@ export default defineVixtModule<VixtOptions>({
         extensions: ['jsx', 'tsx'],
         importMode: () => 'sync',
       },
-      imports: {
-        imports: ['react', 'react-router', 'ahooks', componentsResolver({ dirs: components })],
-      },
       unocss: {},
     }
 
@@ -41,6 +39,10 @@ export default defineVixtModule<VixtOptions>({
       React(options.react),
       Pages(options.pages),
       Layouts(options.layouts),
+      Components({
+        dirs: components,
+        dts: `${buildTypesDir}/components.d.ts`,
+      }),
     ]
 
     return plugins
