@@ -5,7 +5,10 @@
   "main": "vixt.config.ts",
   "dependencies": {
     "@iconify/vue": "catalog:vue",
-    "vixt": "workspace:*",
-    "vixt-framework": "git+https://github.com/SoulLyoko/vixt.git#main"
+    "@vixt/layer-shared": "workspace:",
+    "@vueuse/core": "catalog:vue",
+    "pinia": "catalog:vue",
+    "pinia-plugin-persistedstate": "catalog:vue",
+    "vixt": "workspace:*"
   }
 }

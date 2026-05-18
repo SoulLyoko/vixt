@@ -11,6 +11,7 @@ const entryPoints = fs.readdirSync(packagesDir).map((pkg) => {
 }).flat()
 
 export default defineVixtConfig({
+  extends: ['@vixt/layer-shared'],
   devtools: { enabled: true },
   typescript: {
     typeCheck: { vueTsc: true },

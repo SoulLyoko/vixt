@@ -7,7 +7,7 @@ import { VueRouterAutoImports } from 'vue-router/unplugin'
 import presetVue from './modules/preset-vue'
 import virtualRootComponent from './modules/virtual-root-component'
 
-const plugins = ['@vixt/vue/client/plugins/pinia', '@vixt/vue/client/plugins/router']
+const plugins = ['@vixt/vue/client/plugins/router']
 
 export * from './node.d'
 
@@ -27,7 +27,7 @@ export default createVixtPlugin({
       },
     },
     imports: {
-      imports: ['vue', '@vueuse/core', 'pinia', VueRouterAutoImports],
+      imports: ['vue', VueRouterAutoImports],
       vueTemplate: true,
     },
     typescript: {

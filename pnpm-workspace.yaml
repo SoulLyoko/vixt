@@ -31,7 +31,6 @@ catalog:
   '@commitlint/config-conventional': ^21.0.1
   '@types/fs-extra': ^11.0.4
   '@types/node': ^25.8.0
-  '@vixt/layer-shared': ^0.10.1
   bumpp: ^10.4.1
   c12: ^3.3.4
   cac: ^7.0.0

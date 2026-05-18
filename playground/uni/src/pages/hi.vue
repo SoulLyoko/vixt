@@ -1,7 +1,10 @@
 <script setup lang="ts">
 const user = useUserStore()
 
-const { query } = useQuery()
+const query = ref<any>({})
+onLoad((q) => {
+  query.value = q
+})
 
 watchEffect(() => {
   user.setNewName(query.value.name)

@@ -5,9 +5,8 @@ import { resolvePathSync } from 'mlly'
 
 import presetUni from './modules/preset-uni'
 import uniModules from './modules/uni-modules'
-import { uniVueUseResolver } from './modules/uni-use'
 
-const plugins = ['@vixt/uni/client/plugins/pinia', '@vixt/uni/client/plugins/router']
+const plugins = ['@vixt/uni/client/plugins/router']
 
 export * from './node.d'
 
@@ -27,7 +26,7 @@ export default createVixtPlugin({
       },
     },
     imports: {
-      imports: ['vue', 'uni-app', 'pinia', uniVueUseResolver()],
+      imports: ['vue', 'uni-app'],
       vueTemplate: true,
     },
     typescript: {
