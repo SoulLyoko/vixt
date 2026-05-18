@@ -1,6 +1,5 @@
 // @ts-expect-error virtual file
 import 'virtual:vixt:css'
-import 'virtual:uno.css'
 import { applyPlugins, createVixtApp } from '@vixt/core/client'
 import { createElement } from 'react'
 import { createRoot } from 'react-dom/client'

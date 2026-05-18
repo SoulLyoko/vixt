@@ -6,7 +6,6 @@ import Layouts from '@uni-helper/vite-plugin-uni-layouts'
 import Pages from '@uni-helper/vite-plugin-uni-pages'
 import { defineVixtModule, resolveLayersDirs } from '@vixt/core'
 import defu from 'defu'
-import UnoCSS from 'unocss/vite'
 
 import UniPatch from './uni-patch'
 
@@ -27,7 +26,6 @@ export default defineVixtModule<VixtOptions>({
         directoryAsNamespace: true,
         collapseSamePrefixes: true,
       },
-      unocss: {},
     }
 
     const options = vixt.options = defu(vixt.options, defaultOptions)
@@ -36,7 +34,6 @@ export default defineVixtModule<VixtOptions>({
       Pages(options.uniPages),
       Layouts(options.uniLayouts),
       Components(options.uniComponents),
-      UnoCSS(options.unocss),
       UniPatch(),
       // @ts-expect-error
       (Uni?.default ?? Uni)(options.uni),

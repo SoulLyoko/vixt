@@ -3,7 +3,6 @@ import type { VixtOptions } from '@vixt/core'
 import React from '@vitejs/plugin-react'
 import { defineVixtModule, resolveLayersDirs } from '@vixt/core'
 import defu from 'defu'
-import UnoCSS from 'unocss/vite'
 import Pages from 'vite-plugin-pages'
 import Layouts from 'vite-plugin-vue-layouts'
 
@@ -29,13 +28,11 @@ export default defineVixtModule<VixtOptions>({
         extensions: ['jsx', 'tsx'],
         importMode: () => 'sync',
       },
-      unocss: {},
     }
 
     const options = vixt.options = defu(vixt.options, defaultOptions)
 
     const plugins = [
-      UnoCSS(options.unocss),
       React(options.react),
       Pages(options.pages),
       Layouts(options.layouts),

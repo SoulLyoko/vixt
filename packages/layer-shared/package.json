@@ -8,6 +8,7 @@
   "repository": "https://github.com/SoulLyoko/vixt.git",
   "main": "vixt.config.ts",
   "dependencies": {
-    "@unocss/reset": "catalog:vite"
+    "@unocss/reset": "catalog:vite",
+    "unocss": "catalog:vite"
   }
 }

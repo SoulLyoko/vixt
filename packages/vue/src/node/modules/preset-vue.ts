@@ -5,7 +5,6 @@ import Vue from '@vitejs/plugin-vue'
 import VueJsx from '@vitejs/plugin-vue-jsx'
 import { defineVixtModule, resolveLayersDirs } from '@vixt/core'
 import defu from 'defu'
-import UnoCSS from 'unocss/vite'
 import Components from 'unplugin-vue-components/vite'
 import VueDevTools from 'vite-plugin-vue-devtools'
 import Layouts from 'vite-plugin-vue-layouts'
@@ -49,7 +48,6 @@ export default defineVixtModule<VixtOptions>({
         directoryAsNamespace: true,
         collapseSamePrefixes: true,
       },
-      unocss: {},
       devtools: { enabled: false },
     }
 
@@ -61,7 +59,6 @@ export default defineVixtModule<VixtOptions>({
       VueJsx(options.vueJsx),
       Layouts(options.layouts),
       Components(options.components),
-      UnoCSS(options.unocss),
       options.devtools?.enabled && VueDevTools(options.devtools),
     ]
 

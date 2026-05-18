@@ -2,7 +2,6 @@ import type { VixtOptions } from '@vixt/core'
 
 import { defineVixtModule, resolveLayersDirs } from '@vixt/core'
 import defu from 'defu'
-import UnoCSS from 'unocss/vite'
 import Components from 'unplugin-vue-components/vite'
 import VueDevTools from 'vite-plugin-vue-devtools'
 
@@ -24,7 +23,6 @@ export default defineVixtModule<VixtOptions>({
         extensions: ['vue', 'md'],
         include: [/\.vue$/, /\.vue\?vue/, /\.md$/, /\.md\?md/],
       },
-      unocss: {},
       devtools: { enabled: false },
     }
 
@@ -32,7 +30,6 @@ export default defineVixtModule<VixtOptions>({
 
     const plugins = [
       Components(options.components),
-      UnoCSS(options.unocss),
       options.devtools?.enabled && VueDevTools(options.devtools),
       ConfigPatch(),
     ]
