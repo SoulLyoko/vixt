@@ -31,7 +31,6 @@ Imports of third-party components originally in `main.ts` should be moved to a V
 ```ts [src/plugins/register.ts]
 import ElementPlus from 'element-plus'
 import 'element-plus/dist/index.css'
-import { defineVixtPlugin } from 'vixt/client'
 
 export default defineVixtPlugin({
   name: 'register',

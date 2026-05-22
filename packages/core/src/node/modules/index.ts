@@ -11,8 +11,8 @@ import virtualPlugins from './virtual-plugins'
 import vite from './vite'
 
 export const virtualModuleIds = {
-  css: virtualCSS.getMeta!().name,
   appConfig: virtualAppConfig.getMeta!().name,
+  css: virtualCSS.getMeta!().name,
   plugins: virtualPlugins.getMeta!().name,
 }
 

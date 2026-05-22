@@ -1,7 +1,6 @@
 import type { Pinia } from 'pinia'
 import type { PluginOptions as PersistedStateOptions } from 'pinia-plugin-persistedstate'
 
-import { defineVixtPlugin } from '@vixt/core/client'
 import { createPinia } from 'pinia'
 import { createPersistedState } from 'pinia-plugin-persistedstate'
 

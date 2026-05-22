@@ -7,8 +7,6 @@ Vixt automatically scans and executes all plugins in the `plugins` folder after 
 :::code-group
 
 ```ts [plugins/my-plugin.ts]
-import { defineVixtPlugin } from 'vixt/client'
-
 interface PluginOptions {
   enabled?: boolean
 }
