@@ -1,3 +1,5 @@
+import { defineVixtPlugin } from 'vixt/client'
+
 declare module '@vixt/core/client' {
   interface VixtAppConfig {
     pluginConfig?: string

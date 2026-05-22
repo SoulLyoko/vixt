@@ -1,3 +1,5 @@
+import { defineAppConfig } from 'vixt/client'
+
 const env = useEnv()
 console.log('env:', env)
 
