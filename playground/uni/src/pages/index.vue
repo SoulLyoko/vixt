@@ -10,7 +10,7 @@ function go() {
 }
 
 function toast() {
-  showToast({ message: 'Vixt App' })
+  showToast('Vixt App')
 }
 </script>
 
@@ -20,7 +20,7 @@ function toast() {
       <Icon icon="carbon:campsite" width="36px" />
     </view>
 
-    <uni-link href="https://github.com/SoulLyoko/vixt" :show-under-line="false" color="#333">
+    <uni-link href="https://github.com/SoulLyoko/vixt" :show-under-line="false">
       Vixt
     </uni-link>
 

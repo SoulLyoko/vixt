@@ -1,5 +1,1 @@
-export interface ToastOptions {
-  message: string
-}
-
-export function showToast(option: ToastOptions): void
+export function showToast(message: string): void

@@ -10,11 +10,11 @@ allowBuilds:
   core-js-pure: false
   esbuild: false
   simple-git-hooks: false
+  vue-demi: false
 
 overrides:
   '@vixt/test-uni>vite': 'catalog:uni'
   '@vue/shared': 'catalog:vue'
-  '@vueuse/core': 'catalog:vue'
   vue: 'catalog:vue'
 
 peerDependencyRules:
@@ -36,7 +36,7 @@ catalog:
   cac: ^7.0.0
   citty: ^0.2.2
   defu: ^6.1.7
-  eslint: ^10.3.0
+  eslint: ^10.4.0
   eslint-plugin-format: ^2.0.1
   execa: ^9.6.1
   extract-comments: ^1.1.0
@@ -44,7 +44,7 @@ catalog:
   find-up: ^8.0.0
   fs-extra: ^11.3.5
   jiti: ^2.7.0
-  lint-staged: ^17.0.4
+  lint-staged: ^17.0.5
   magicast: ^0.5.3
   mlly: ^1.8.2
   pathe: ^2.0.3
@@ -78,13 +78,13 @@ catalogs:
 
   uni:
     '@dcloudio/types': ^3.4.28
-    '@dcloudio/uni-app': 3.0.0-4080720251210001
-    '@dcloudio/uni-app-plus': 3.0.0-4080720251210001
-    '@dcloudio/uni-h5': 3.0.0-4080720251210001
-    '@dcloudio/uni-mp-weixin': 3.0.0-4080720251210001
+    '@dcloudio/uni-app': 3.0.0-5000720260410001
+    '@dcloudio/uni-app-plus': 3.0.0-5000720260410001
+    '@dcloudio/uni-h5': 3.0.0-5000720260410001
+    '@dcloudio/uni-mp-weixin': 3.0.0-5000720260410001
     '@dcloudio/uni-ui': ^1.5.11
-    '@dcloudio/uni-uts-v1': 3.0.0-4080720251210001
-    '@dcloudio/vite-plugin-uni': 3.0.0-4080720251210001
+    '@dcloudio/uni-uts-v1': 3.0.0-5000720260410001
+    '@dcloudio/vite-plugin-uni': 3.0.0-5000720260410001
     '@uni-helper/uni-app-types': ^1.0.0
     '@uni-helper/uni-ui-types': ^1.0.0
     '@uni-helper/uni-use': ^0.19.17
@@ -123,7 +123,7 @@ catalogs:
     '@iconify/vue': ^5.0.1
     '@vue/shared': ^3.5.34
     '@vue/tsconfig': ^0.9.1
-    '@vueuse/core': ^13.9.0
+    '@vueuse/core': ^14.3.0
     pinia: ^3.0.4
     pinia-plugin-persistedstate: ^4.7.1
     vue: ^3.5.34

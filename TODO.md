@@ -3,7 +3,7 @@
 - [x] module reload
 - [ ] modules,plugins include/exclude,order
 - [ ] move modules dir to {rootDir}/modules (Nuxt v4)
-- [ ] remove unocss,pinia,vueuse
+- [x] remove unocss,pinia,vueuse
 - [ ] hooks
 - [ ] debug
 - [ ] compatibility nuxt
@@ -11,3 +11,4 @@
 - [x] tsdown
 - [ ] generate modules options types `modules.d.ts`
 - [ ] ssr?
+- [x] server(nitro)
