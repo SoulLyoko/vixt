@@ -42,6 +42,5 @@ jobs:
             @vixt/uni
             @vixt/vitepress
             @vixt/react
-            @vixt/layer-shared
             vixt
             create-vixt
