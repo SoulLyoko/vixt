@@ -70,8 +70,9 @@ export function patchAdjustCssExtname(config: ResolvedConfig) {
  */
 export function patchUnocssGlobalBuildScan(config: ResolvedConfig) {
   const plugin = config.plugins.find(p => p.name === 'unocss:global:build:scan')
-  if (plugin)
-    plugin.shouldTransformCachedModule = ({ id }) => id.endsWith('main.ts')
+  if (plugin) {
+    plugin.shouldTransformCachedModule = ({ code }) => code.includes('virtual:uno.css')
+  }
 }
 
 /**

@@ -2,24 +2,26 @@ import type { VixtOptions } from '@vixt/core'
 
 import Uni from '@dcloudio/vite-plugin-uni'
 import Components from '@uni-helper/vite-plugin-uni-components'
-import Layouts from '@uni-helper/vite-plugin-uni-layouts'
 import Pages from '@uni-helper/vite-plugin-uni-pages'
 import { defineVixtModule, resolveLayersDirs } from '@vixt/core'
 import defu from 'defu'
 
+import Layouts from './uni-layouts'
 import UniPatch from './uni-patch'
 
 const name = 'vixt:preset-uni'
 export default defineVixtModule<VixtOptions>({
   meta: { name },
   setup(_, vixt) {
-    const { components = [] } = resolveLayersDirs([...vixt._layers].reverse())
+    const { components = [], layouts = [] } = resolveLayersDirs([...vixt._layers].reverse())
     const { buildTypesDir } = vixt.options
 
     const defaultOptions: VixtOptions = {
       uni: {},
       uniPages: { dts: `${buildTypesDir}/uni-pages.d.ts` },
-      uniLayouts: {},
+      uniLayouts: {
+        layoutsDirs: layouts,
+      },
       uniComponents: {
         dts: `${buildTypesDir}/components.d.ts`,
         dirs: [...components].reverse(),

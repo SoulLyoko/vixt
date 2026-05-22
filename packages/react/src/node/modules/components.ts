@@ -1,5 +1,6 @@
 import type { ImportsMap } from 'unplugin-auto-import/types'
 
+import { parse } from 'node:path'
 import { cwd } from 'node:process'
 
 import { defineVitePlugin } from '@vixt/core'
@@ -12,11 +13,33 @@ export interface ComponentResolverOptions {
   dts?: string | boolean
 }
 
+function getNameFromFilePath(filePath: string, dirs: string[]) {
+  const parsedFilePath = parse(filePath)
+
+  let strippedPath = ''
+  for (const dir of dirs) {
+    if (parsedFilePath.dir.startsWith(dir)) {
+      strippedPath = parsedFilePath.dir.slice(dir.length)
+      break
+    }
+  }
+  const folders = strippedPath.slice(1).split('/').filter(Boolean)
+
+  let filename = parsedFilePath.name
+  if (filename === 'index')
+    filename = ''
+
+  const namespaced = [...folders, filename]
+  filename = namespaced.filter(Boolean).join('-')
+
+  return filename
+}
+
 export default defineVitePlugin<ComponentResolverOptions>((options) => {
   const { dirs = ['src/components'], dts = 'components.d.ts' } = options ?? {}
 
   const files = fg.sync(dirs.map(c => `${c}/**/*.(t|j)sx`), {
-    ignore: ['node_modules'],
+    ignore: ['node_modules', '.git'],
     onlyFiles: true,
     cwd: cwd(),
     absolute: true,
@@ -24,11 +47,7 @@ export default defineVitePlugin<ComponentResolverOptions>((options) => {
 
   const imports: ImportsMap = {}
   files.forEach((componentPath) => {
-    let componentName = componentPath.replace(/\/index\.(t|j)sx$/, '').replace(/\.(t|j)sx$/, '')
-    for (const dir of dirs) {
-      componentName = componentName.replace(dir, '')
-    }
-    componentName = pascalCase(componentName.replace(/\//g, '-'))
+    const componentName = pascalCase(getNameFromFilePath(componentPath, dirs))
     imports[componentPath] = [['default', componentName]]
   })
 
