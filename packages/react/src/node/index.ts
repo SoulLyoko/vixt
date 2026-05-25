@@ -7,7 +7,7 @@ import presetReact from './modules/preset-react'
 import virtualRootComponent from './modules/virtual-root-component'
 import virtualSetupLayouts from './modules/virtual-setup-layouts'
 
-export * from './node.d'
+export type * from './node.d'
 
 /** @hidden */
 export default createVixtPlugin({

@@ -2,4 +2,4 @@
  * @module
  * @mergeModuleWith vitepress
  */
-export * from './client.d'
+export type * from './client.d'

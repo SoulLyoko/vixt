@@ -8,7 +8,7 @@ import path from 'pathe'
 
 import presetVitepress from './modules/preset-vitepress'
 
-export * from './node.d'
+export type * from './node.d'
 
 /** @hidden */
 export default createVixtPlugin({

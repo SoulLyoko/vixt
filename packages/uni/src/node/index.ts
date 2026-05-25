@@ -8,7 +8,7 @@ import uniModules from './modules/uni-modules'
 
 const plugins = ['@vixt/uni/client/plugins/router']
 
-export * from './node.d'
+export type * from './node.d'
 
 /** @hidden */
 export default createVixtPlugin({
