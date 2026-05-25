@@ -12,7 +12,7 @@
 import { defineVixtConfig } from 'vixt'
 
 export default defineVixtConfig({
-  components: {
+  uniComponents: {
     dirs: ['src/ui']
   }
 })
