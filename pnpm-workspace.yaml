@@ -27,16 +27,16 @@ shamefullyHoist: true
 
 catalog:
   '@antfu/eslint-config': ^9.0.0
-  '@commitlint/cli': ^21.0.1
-  '@commitlint/config-conventional': ^21.0.1
+  '@commitlint/cli': ^21.0.2
+  '@commitlint/config-conventional': ^21.0.2
   '@types/fs-extra': ^11.0.4
-  '@types/node': ^25.9.1
+  '@types/node': ^25.9.2
   bumpp: ^11.1.0
   c12: ^3.3.4
   cac: ^7.0.0
   citty: ^0.2.2
   defu: ^6.1.7
-  eslint: ^10.4.0
+  eslint: ^10.4.1
   eslint-plugin-format: ^2.0.1
   execa: ^9.6.1
   extract-comments: ^1.1.0
@@ -44,7 +44,7 @@ catalog:
   find-up: ^8.0.0
   fs-extra: ^11.3.5
   jiti: ^2.7.0
-  lint-staged: ^17.0.5
+  lint-staged: ^17.0.7
   magicast: ^0.5.3
   mlly: ^1.8.2
   pathe: ^2.0.3
@@ -53,28 +53,28 @@ catalog:
   rimraf: ^6.1.3
   sass: ^1.100.0
   simple-git-hooks: ^2.13.1
-  taze: ^19.13.0
-  tsdown: ^0.22.0
+  taze: ^19.14.1
+  tsdown: ^0.22.2
   typedoc: ^0.28.19
-  typedoc-plugin-markdown: ^4.11.0
-  typedoc-vitepress-theme: ^1.1.2
+  typedoc-plugin-markdown: ^4.12.0
+  typedoc-vitepress-theme: ^1.1.3
   typescript: ^6.0.3
   yaml: ^2.9.0
 
 catalogs:
   nuxt:
-    nuxt: ^4.4.6
+    nuxt: ^4.4.7
 
   react:
     '@iconify/react': ^6.0.2
     '@reactuses/core': ^6.3.2
-    '@types/react': ^19.2.15
+    '@types/react': ^19.2.17
     '@types/react-dom': ^19.2.3
     ahooks: ^3.9.7
-    react: ^19.2.6
-    react-dom: ^19.2.6
-    react-router: ^7.15.1
-    zustand: ^5.0.13
+    react: ^19.2.7
+    react-dom: ^19.2.7
+    react-router: ^7.17.0
+    zustand: ^5.0.14
 
   uni:
     '@dcloudio/types': ^3.4.28
@@ -85,8 +85,8 @@ catalogs:
     '@dcloudio/uni-ui': ^1.5.11
     '@dcloudio/uni-uts-v1': 3.0.0-5000720260410001
     '@dcloudio/vite-plugin-uni': 3.0.0-5000720260410001
-    '@uni-helper/uni-app-types': ^1.0.0
-    '@uni-helper/uni-ui-types': ^1.0.0
+    '@uni-helper/uni-app-types': ^1.0.1
+    '@uni-helper/uni-ui-types': ^1.0.1
     '@uni-helper/uni-use': ^0.19.17
     '@uni-helper/unocss-preset-uni': ^0.2.11
     '@uni-helper/vite-plugin-uni-components': 0.2.6
@@ -103,29 +103,29 @@ catalogs:
     '@vitejs/plugin-react': ^6.0.2
     '@vitejs/plugin-vue': ^6.0.7
     '@vitejs/plugin-vue-jsx': ^5.1.5
-    '@vitest/browser': ^4.1.7
-    '@vitest/browser-playwright': ^4.1.7
+    '@vitest/browser': ^4.1.8
+    '@vitest/browser-playwright': ^4.1.8
     nitro: ^3.0.260522-beta
     playwright: ^1.60.0
     unocss: ^66.7.0
     unplugin-auto-import: ^21.0.0
     unplugin-vue-components: 28.0.0
-    vite: ^8.0.14
+    vite: ^8.0.16
     vite-bundle-analyzer: ^1.3.8
-    vite-plugin-checker: ^0.13.0
+    vite-plugin-checker: ^0.14.1
     vite-plugin-pages: ^0.33.3
     vite-plugin-vue-devtools: ^8.1.2
     vite-plugin-vue-layouts: ^0.11.0
     vitepress: ^2.0.0-alpha.17
-    vitest: ^4.1.7
+    vitest: ^4.1.8
 
   vue:
     '@iconify/vue': ^5.0.1
-    '@vue/shared': ^3.5.34
+    '@vue/shared': ^3.5.35
     '@vue/tsconfig': ^0.9.1
     '@vueuse/core': ^14.3.0
     pinia: ^3.0.4
     pinia-plugin-persistedstate: ^4.7.1
-    vue: ^3.5.34
-    vue-router: ^5.0.7
+    vue: ^3.5.35
+    vue-router: ^5.1.0
     vue-tsc: ^3.3.1
