@@ -18,7 +18,7 @@ const cwd = process.cwd()
 // 获取命令执行的目录
 const projectPath = path.join(cwd, projectName)
 // 获取模板路径
-const templatePath = path.join(__dirname, `../template-${templateName}`)
+const templatePath = path.join(__dirname, `../template/${templateName}`)
 
 if (!fs.existsSync(templatePath)) {
   console.error(`"${templateName}" isn't a valid template. Please confirm the template name.`)
@@ -58,21 +58,21 @@ function copyTemplateFiles(srcDir: string, destDir: string) {
 copyTemplateFiles(templatePath, projectPath)
 
 if (templateName === 'monorepo-ts') {
-  const vueTemplatePath = path.join(__dirname, `../template-vue-ts`)
+  const vueTemplatePath = path.join(__dirname, `../template/vue-ts`)
   const vueProjectPath = path.join(projectPath, 'packages/vue')
   fs.copySync(vueTemplatePath, vueProjectPath)
   editPackageJson(vueProjectPath, (json) => {
     delete json.dependencies.vixt
   })
 
-  const uniTemplatePath = path.join(__dirname, `../template-uni-ts`)
+  const uniTemplatePath = path.join(__dirname, `../template/uni-ts`)
   const uniProjectPath = path.join(projectPath, 'packages/uni')
   fs.copySync(uniTemplatePath, uniProjectPath)
   editPackageJson(uniProjectPath, (json) => {
     delete json.dependencies.vixt
   })
 
-  const reactTemplatePath = path.join(__dirname, `../template-react-ts`)
+  const reactTemplatePath = path.join(__dirname, `../template/react-ts`)
   const reactProjectPath = path.join(projectPath, 'packages/react')
   fs.copySync(reactTemplatePath, reactProjectPath)
   editPackageJson(reactProjectPath, (json) => {

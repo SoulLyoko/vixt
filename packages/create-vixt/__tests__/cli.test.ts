@@ -14,10 +14,10 @@ const vixtVersion = `^${version}`
 
 const projectName = 'test-project'
 const genPath = path.join(__dirname, projectName)
-const cliPath = path.join(__dirname, '..')
+const cliPath = path.join(__dirname, '../src/index.ts')
 
 function run(args: string[] = [], options?: SyncOptions) {
-  return execaCommandSync(`node ${cliPath} ${args.join(' ')}`, { cwd: __dirname, ...options })
+  return execaCommandSync(`jiti ${cliPath} ${args.join(' ')}`, { cwd: __dirname, ...options })
 }
 
 function getVixtDepVersion(dir: string) {
