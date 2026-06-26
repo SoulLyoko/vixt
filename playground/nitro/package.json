@@ -1,12 +1,11 @@
 {
   "name": "@vixt/test-nitro",
-  "type": "module",
   "private": true,
+  "type": "module",
   "scripts": {
-    "build": "vite build",
-    "dev": "vite",
-    "preview": "vite preview",
-    "tc": "vue-tsc --noEmit"
+    "build": "vp build",
+    "dev": "vp dev",
+    "preview": "vp preview"
   },
   "dependencies": {
     "@vixt/layer-nitro": "workspace:*",

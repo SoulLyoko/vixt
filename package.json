@@ -1,75 +1,65 @@
 {
   "name": "vixt-framework",
-  "type": "module",
   "version": "0.11.2",
   "private": true,
-  "packageManager": "pnpm@11.5.2",
+  "type": "module",
   "exports": {
     "./layer-shared": "./packages/layer-shared/vixt.config.ts",
     "./layer-shared/*": "./packages/layer-shared/*"
+  },
+  "scripts": {
+    "build": "vp exec --filter \"./packages/*\" -- vp pack",
+    "build:all": "vp run --filter \"./playground/*\" build",
+    "build:docs": "vp run --filter docs build",
+    "build:nitro": "vp run --filter @vixt/test-nitro build",
+    "build:app": "vp run --filter @vixt/test-uni build:app",
+    "build:h5": "vp run --filter @vixt/test-uni build:h5",
+    "build:mp": "vp run --filter @vixt/test-uni build:mp",
+    "build:react": "vp run --filter @vixt/test-react build",
+    "build:vue": "vp run --filter @vixt/test-vue build",
+    "check": "vp check",
+    "cleanup": "npx rimraf packages/*/dist --glob",
+    "dev:docs": "vp run --filter docs dev",
+    "dev:nitro": "vp run --filter @vixt/test-nitro dev",
+    "dev:app": "vp run --filter @vixt/test-uni dev:app",
+    "dev:h5": "vp run --filter @vixt/test-uni dev:h5",
+    "dev:mp": "vp run --filter @vixt/test-uni dev:mp",
+    "dev:nuxt": "vp run --filter @vixt/test-nuxt dev",
+    "dev:react": "vp run --filter @vixt/test-react dev",
+    "dev:vue": "vp run --filter @vixt/test-vue dev",
+    "lint": "vp lint",
+    "prepare": "vp config",
+    "prerelease": "vp run build && vp run test:all",
+    "preview:nitro": "vp run --filter @vixt/test-nitro preview",
+    "release": "bumpp",
+    "test": "vp test",
+    "test:all": "vp run test && vp run test:react && vp run test:uni && vp run test:vue",
+    "test:react": "vp run --filter @vixt/test-react test",
+    "test:uni": "vp run --filter @vixt/test-uni test",
+    "test:vue": "vp run --filter @vixt/test-vue test",
+    "typedoc": "vp run --filter docs typedoc",
+    "upd": "taze major -r -l -I"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "catalog:",
+    "@commitlint/config-conventional": "catalog:",
+    "@vitest/browser-playwright": "catalog:",
+    "bumpp": "catalog:",
+    "execa": "catalog:",
+    "playwright": "catalog:",
+    "rimraf": "catalog:",
+    "taze": "catalog:",
+    "typescript": "catalog:",
+    "vite": "catalog:",
+    "vite-plus": "catalog:",
+    "vitest": "catalog:"
+  },
+  "commitlint": {
+    "extends": "@commitlint/config-conventional"
   },
   "engines": {
     "node": ">=24",
     "pnpm": ">=11"
   },
-  "scripts": {
-    "build": "tsdown",
-    "build:all": "pnpm -F \"./playground/*\" build",
-    "build:docs": "pnpm -F docs build",
-    "build:nitro": "pnpm -F test-nitro build",
-    "build:app": "pnpm -F test-uni build:app",
-    "build:h5": "pnpm -F test-uni build:h5",
-    "build:mp": "pnpm -F test-uni build:mp",
-    "build:react": "pnpm -F test-react build",
-    "build:vue": "pnpm -F test-vue build",
-    "cleanup": "rimraf packages/*/dist --glob",
-    "dev:docs": "pnpm -F docs dev",
-    "dev:nitro": "pnpm -F test-nitro dev",
-    "dev:app": "pnpm -F test-uni dev:app",
-    "dev:h5": "pnpm -F test-uni dev:h5",
-    "dev:mp": "pnpm -F test-uni dev:mp",
-    "dev:nuxt": "pnpm -F test-nuxt dev",
-    "dev:react": "pnpm -F test-react dev",
-    "dev:vue": "pnpm -F test-vue dev",
-    "lint": "eslint .",
-    "postinstall": "npx simple-git-hooks",
-    "prerelease": "pnpm build && pnpm test run && pnpm test:vue run",
-    "preview:nitro": "pnpm -F test-nitro preview",
-    "release": "bumpp",
-    "tc": "tsc --noEmit",
-    "test": "vitest",
-    "test:vue": "pnpm -F test-vue test",
-    "typedoc": "pnpm -F docs typedoc",
-    "upd": "taze major -r -l -I"
-  },
-  "devDependencies": {
-    "@antfu/eslint-config": "catalog:",
-    "@commitlint/cli": "catalog:",
-    "@commitlint/config-conventional": "catalog:",
-    "@unocss/eslint-plugin": "catalog:vite",
-    "@vitest/browser": "catalog:vite",
-    "@vitest/browser-playwright": "catalog:vite",
-    "bumpp": "catalog:",
-    "eslint": "catalog:",
-    "eslint-plugin-format": "catalog:",
-    "execa": "catalog:",
-    "lint-staged": "catalog:",
-    "playwright": "catalog:vite",
-    "rimraf": "catalog:",
-    "simple-git-hooks": "catalog:",
-    "taze": "catalog:",
-    "tsdown": "catalog:",
-    "typescript": "catalog:",
-    "vitest": "catalog:vite"
-  },
-  "simple-git-hooks": {
-    "commit-msg": "npx --no-install commitlint --edit $1",
-    "pre-commit": "pnpm lint-staged"
-  },
-  "commitlint": {
-    "extends": "@commitlint/config-conventional"
-  },
-  "lint-staged": {
-    "*": "eslint --fix"
-  }
+  "packageManager": "pnpm@11.9.0"
 }

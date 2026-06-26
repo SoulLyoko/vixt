@@ -24,7 +24,7 @@ export default createVixtPlugin({
       },
     },
     imports: {
-      imports: ['react', 'react-router', 'ahooks'],
+      imports: ['react', 'react-router'],
     },
     typescript: {
       tsConfig: {

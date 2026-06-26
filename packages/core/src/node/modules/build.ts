@@ -1,9 +1,9 @@
-import type { BuildOptions } from '../types'
-
 import Legacy from '@vitejs/plugin-legacy'
+import type { PluginOption } from 'vite'
 import Analyzer from 'vite-bundle-analyzer'
 
 import { defineVixtModule } from '../module'
+import type { BuildOptions } from '../types'
 
 const name = 'vixt:build'
 export default defineVixtModule<BuildOptions>({
@@ -11,15 +11,15 @@ export default defineVixtModule<BuildOptions>({
   setup(options) {
     const analyzeOptions = {
       enabled: !!options.analyze,
-      ...typeof options.analyze === 'object' ? options.analyze : {},
+      ...(typeof options.analyze === 'object' ? options.analyze : {}),
     }
     const legacyOptions = {
       enabled: !!options.legacy,
-      ...typeof options.legacy === 'object' ? options.legacy : {},
+      ...(typeof options.legacy === 'object' ? options.legacy : {}),
     }
     return [
       analyzeOptions.enabled && Analyzer(analyzeOptions),
       legacyOptions.enabled && Legacy(legacyOptions),
-    ]
+    ] as PluginOption
   },
 })

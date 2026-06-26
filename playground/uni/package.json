@@ -1,7 +1,7 @@
 {
   "name": "@vixt/test-uni",
-  "type": "module",
   "private": true,
+  "type": "module",
   "scripts": {
     "dev": "uni",
     "dev:app": "uni -p app",
@@ -11,7 +11,7 @@
     "build:app": "uni build -p app",
     "build:h5": "uni build",
     "build:mp": "uni build -p mp-weixin",
-    "tc": "vue-tsc --noEmit"
+    "test": "vp test"
   },
   "dependencies": {
     "@dcloudio/uni-app": "catalog:uni",
@@ -26,6 +26,7 @@
   "devDependencies": {
     "@dcloudio/vite-plugin-uni": "catalog:uni",
     "@uni-helper/uni-ui-types": "catalog:uni",
+    "@uni-helper/unocss-preset-uni": "catalog:uni",
     "sass": "catalog:",
     "vite": "catalog:uni"
   }

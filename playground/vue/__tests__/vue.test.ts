@@ -1,4 +1,4 @@
-import { page } from 'vitest/browser'
+import { page } from 'vite-plus/test/browser'
 
 describe('test vue', async () => {
   it('should override pages', async () => {

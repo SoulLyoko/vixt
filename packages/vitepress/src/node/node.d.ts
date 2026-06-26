@@ -11,7 +11,7 @@ export interface VitepressVixtOptions {
 }
 
 declare module '@vixt/core' {
-  interface VixtOptions extends VitepressVixtOptions { }
+  interface VixtOptions extends VitepressVixtOptions {}
 }
 
 declare module 'vite' {

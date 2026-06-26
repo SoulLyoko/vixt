@@ -13,12 +13,12 @@ export default defineVixtConfig({
   },
   devtools: { enabled: true },
   typescript: {
-    typeCheck: { vueTsc: true },
     tsConfig: {
       compilerOptions: {
         types: ['vitest/globals'],
       },
     },
+    typeCheck: { vueTsc: true },
   },
   copyLayers: true,
 })

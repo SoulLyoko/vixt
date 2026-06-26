@@ -1,10 +1,10 @@
-import type { SyncOptions } from 'execa'
-
 import path from 'node:path'
 import url from 'node:url'
 
+import type { SyncOptions } from 'execa'
 import { execaCommandSync } from 'execa'
 import fs from 'fs-extra'
+import { resolvePathSync } from 'mlly'
 
 import { version } from '../../../package.json'
 
@@ -15,9 +15,13 @@ const vixtVersion = `^${version}`
 const projectName = 'test-project'
 const genPath = path.join(__dirname, projectName)
 const cliPath = path.join(__dirname, '../src/index.ts')
+const jitiCliPath = path.resolve(resolvePathSync('jiti'), '../jiti-cli.mjs')
 
 function run(args: string[] = [], options?: SyncOptions) {
-  return execaCommandSync(`jiti ${cliPath} ${args.join(' ')}`, { cwd: __dirname, ...options })
+  return execaCommandSync(`${jitiCliPath} ${cliPath} ${args.join(' ')}`, {
+    cwd: __dirname,
+    ...options,
+  })
 }
 
 function getVixtDepVersion(dir: string) {

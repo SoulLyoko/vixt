@@ -8,7 +8,7 @@ export default defineVixtConfig({
   typescript: {
     tsConfig: {
       compilerOptions: {
-        types: ['@uni-helper/uni-ui-types'],
+        types: ['@uni-helper/uni-ui-types', 'vitest/globals'],
       },
     },
     typeCheck: { vueTsc: true },

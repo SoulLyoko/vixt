@@ -1,15 +1,13 @@
-import type { ResolvedConfig } from 'vite'
-
 import { defineVitePlugin } from '@vixt/core'
 import fs from 'fs-extra'
 import { resolvePathSync } from 'mlly'
 import path from 'pathe'
+import type { ResolvedConfig } from 'vite'
 import { normalizePath } from 'vite'
 
 /** 增加小程序中vueuse的运行所需 */
 export function transformMpRuntime(code: string, id: string) {
-  if (!id.endsWith('@dcloudio/uni-mp-vue/dist/vue.runtime.esm.js'))
-    return code
+  if (!id.endsWith('@dcloudio/uni-mp-vue/dist/vue.runtime.esm.js')) return code
   code += `
 export const render = () => {}
 export const TransitionGroup = {}
@@ -22,16 +20,14 @@ export const TransitionGroup = {}
  * @see https://ask.dcloud.net.cn/question/194973
  */
 export function transformH5Runtime(code: string, id: string) {
-  if (!id.endsWith('@dcloudio/uni-h5-vue/dist/vue.runtime.esm.js'))
-    return code
+  if (!id.endsWith('@dcloudio/uni-h5-vue/dist/vue.runtime.esm.js')) return code
   code = code.replace(`def(children, "_", type);`, `def(children, "_", type, true);`)
   return code
 }
 
 /** 修复app运行白屏，原因是pinia调用了@vue/devtools-kit的setupDevToolsPlugin */
 export function transformPinia(code: string, id: string) {
-  if (!id.endsWith('pinia/dist/pinia.mjs'))
-    return code
+  if (!id.endsWith('pinia/dist/pinia.mjs')) return code
   code = code.replace(
     `import { setupDevtoolsPlugin } from '@vue/devtools-api';`,
     `function setupDevtoolsPlugin() {};`,
@@ -56,7 +52,7 @@ export function patchNormalizeNodeModules() {
  * @see https://github.com/dcloudio/uni-app/pull/5605/files
  */
 export function patchAdjustCssExtname(config: ResolvedConfig) {
-  const plugin = config.plugins.find(p => p.name === 'uni:adjust-css-extname')
+  const plugin = config.plugins.find((p) => p.name === 'uni:adjust-css-extname')
   if (plugin && typeof plugin.generateBundle === 'function') {
     const handler = plugin.generateBundle
     plugin.generateBundle = { order: 'post', handler }
@@ -69,7 +65,7 @@ export function patchAdjustCssExtname(config: ResolvedConfig) {
  * @see https://github.com/unocss/unocss/pull/4737
  */
 export function patchUnocssGlobalBuildScan(config: ResolvedConfig) {
-  const plugin = config.plugins.find(p => p.name === 'unocss:global:build:scan')
+  const plugin = config.plugins.find((p) => p.name === 'unocss:global:build:scan')
   if (plugin) {
     plugin.shouldTransformCachedModule = ({ code }) => code.includes('virtual:uno.css')
   }
@@ -80,8 +76,7 @@ export function patchUnocssGlobalBuildScan(config: ResolvedConfig) {
  * @see https://github.com/uni-helper/vite-plugin-uni-components/blob/main/packages/core/src/index.ts#L27
  */
 export function patchUniComponents(config: ResolvedConfig) {
-  if (JSON.stringify(config.build.watch) === '{}')
-    config.build.watch = null
+  if (JSON.stringify(config.build.watch) === '{}') config.build.watch = null
 }
 
 /**
@@ -91,7 +86,10 @@ export function patchUniComponents(config: ResolvedConfig) {
 export function patchUniPagesTypes() {
   const matched = `  import type { SubPackage } from './src/config/types/index'\n  import type { PageMetaDatum } from './src/types'`
   const replaced = `  import type { PageMetaDatum, SubPackage } from '@uni-helper/vite-plugin-uni-pages'`
-  const codePath = path.resolve(resolvePathSync('@uni-helper/vite-plugin-uni-pages'), '../../client.d.ts')
+  const codePath = path.resolve(
+    resolvePathSync('@uni-helper/vite-plugin-uni-pages'),
+    '../../client.d.ts',
+  )
   let code = codePath && fs.readFileSync(codePath, 'utf-8')
   if (code.includes(matched)) {
     code = code.replace(matched, replaced)
@@ -117,6 +115,7 @@ export default defineVitePlugin(() => {
     {
       name: 'vixt:uni-patch-uni-components',
       configResolved(config) {
+        // @ts-ignore
         patchUniComponents(config)
       },
     },
@@ -125,6 +124,7 @@ export default defineVitePlugin(() => {
       apply: 'build',
       enforce: 'pre',
       configResolved(config) {
+        // @ts-ignore
         patchUnocssGlobalBuildScan(config)
       },
     },
@@ -132,6 +132,7 @@ export default defineVitePlugin(() => {
       name: 'vixt:uni-patch-adjust-css-extname',
       enforce: 'post',
       configResolved(config) {
+        // @ts-ignore
         patchAdjustCssExtname(config)
       },
     },

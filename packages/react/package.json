@@ -1,16 +1,21 @@
 {
   "name": "@vixt/react",
-  "type": "module",
   "version": "0.11.2",
-  "author": "SoulLyoko<https://github.com/SoulLyoko>",
-  "license": "MIT",
-  "homepage": "https://soullyoko.github.io/vixt/",
-  "repository": "https://github.com/SoulLyoko/vixt.git",
   "keywords": [
-    "vixt",
+    "react",
     "vite",
-    "react"
+    "vixt"
   ],
+  "homepage": "https://soullyoko.github.io/vixt/",
+  "license": "MIT",
+  "author": "SoulLyoko<https://github.com/SoulLyoko>",
+  "repository": "https://github.com/SoulLyoko/vixt.git",
+  "files": [
+    "dist"
+  ],
+  "type": "module",
+  "main": "./dist/node/index.mjs",
+  "types": "./dist/types/index.d.ts",
   "exports": {
     ".": "./src/node/index.ts",
     "./client/App": "./src/client/App.tsx",
@@ -27,23 +32,16 @@
       "./package.json": "./package.json"
     }
   },
-  "main": "./dist/node/index.mjs",
-  "types": "./dist/types/index.d.ts",
-  "files": [
-    "dist"
-  ],
   "dependencies": {
     "@types/react": "catalog:react",
     "@types/react-dom": "catalog:react",
     "@vitejs/plugin-react": "catalog:vite",
     "@vixt/core": "workspace:*",
-    "ahooks": "catalog:react",
     "extract-comments": "catalog:",
     "fast-glob": "catalog:",
     "react": "catalog:react",
     "react-dom": "catalog:react",
     "react-router": "catalog:react",
-    "unocss": "catalog:vite",
     "unplugin-vue-components": "catalog:vite",
     "vite-plugin-pages": "catalog:vite",
     "vite-plugin-vue-layouts": "catalog:vite",

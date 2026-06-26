@@ -1,4 +1,7 @@
 <script setup lang="ts">
+definePage({
+  layout: 'about',
+})
 </script>
 
 <template>
@@ -6,7 +9,3 @@
     <h3>About</h3>
   </div>
 </template>
-
-<route lang="yaml">
-layout: about
-</route>

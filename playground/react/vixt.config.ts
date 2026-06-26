@@ -11,4 +11,12 @@ export default defineVixtConfig({
       title: [{ children: env.VITE_APP_NAME }],
     },
   },
+  typescript: {
+    tsConfig: {
+      compilerOptions: {
+        types: ['vitest/globals'],
+      },
+    },
+    typeCheck: { typescript: true },
+  },
 })
