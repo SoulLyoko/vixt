@@ -1,10 +1,11 @@
 import type { RuntimeConfig } from 'nuxt/schema'
 import type { App } from 'vue'
 
-// @ts-ignore
-import plugins from '#build/plugins'
 import { applyPlugins, createNuxtApp } from 'nuxt/app'
 import { createApp, createSSRApp, nextTick } from 'vue'
+
+// @ts-ignore
+import plugins from '#build/plugins'
 
 import RootComponent from './app.vue'
 import '@unocss/reset/tailwind.css'

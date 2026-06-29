@@ -25,8 +25,9 @@
   },
   "devDependencies": {
     "@dcloudio/vite-plugin-uni": "catalog:uni",
-    "@uni-helper/uni-ui-types": "catalog:uni",
+    "@uni-helper/unocss-preset-uni": "catalog:uni",
     "sass": "catalog:",
+    "unocss-applet": "catalog:uni",
     "vite": "catalog:uni"
   }
 }

@@ -1,5 +1,7 @@
+import { useCounter } from '@reactuses/core'
+
 export default function TheCounter(props: { initial: number }) {
-  const [count, { inc, dec, reset }] = useCounter(props.initial)
+  const [count, _set, inc, dec, reset] = useCounter(props.initial)
   useEffect(() => reset(), [props.initial])
 
   return (

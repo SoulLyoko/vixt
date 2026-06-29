@@ -6,6 +6,7 @@ import uno from '../layer-shared/uno.config'
 export default defineConfig({
   ...uno,
   presets: [
-    presetUni() as any,
+    // @ts-ignore
+    presetUni(),
   ],
 })

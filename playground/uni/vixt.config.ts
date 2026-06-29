@@ -6,11 +6,6 @@ export default defineVixtConfig({
     css: ['@/styles/main.css'],
   },
   typescript: {
-    tsConfig: {
-      compilerOptions: {
-        types: ['@uni-helper/uni-ui-types'],
-      },
-    },
     typeCheck: { vueTsc: true },
   },
 })
