@@ -1,6 +1,6 @@
 import { page } from 'vitest/browser'
 
-describe('test vue', async () => {
+describe('test vue', () => {
   it('should override pages', async () => {
     await expect.element(page.getByTestId('page-index')).toBeDefined()
   })

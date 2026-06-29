@@ -11,4 +11,7 @@ export default defineVixtConfig({
       title: [{ children: env.VITE_APP_NAME }],
     },
   },
+  typescript: {
+    typeCheck: { typescript: true },
+  },
 })

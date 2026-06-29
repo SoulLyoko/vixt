@@ -10,30 +10,16 @@ process.chdir(__dirname)
 describe('config', () => {
   it('should assign default dirs', async () => {
     const result = await loadVixtConfig()
-    expect(result.config.rootDir).toBe(path.resolve(cwd()))
     expect(result.config.buildDir).toBe(path.resolve(cwd(), '.vixt'))
-    expect(result.config.srcDir).toBe(path.resolve(cwd(), 'src'))
+    expect(result.config.buildLayersDir).toBe(path.resolve(cwd(), '.vixt', 'layers'))
+    expect(result.config.buildTypesDir).toBe(path.resolve(cwd(), '.vixt', 'types'))
     expect(result.config.modulesDir).toBe(path.resolve(cwd(), 'src', 'modules'))
     expect(result.config.pluginsDir).toBe(path.resolve(cwd(), 'src', 'plugins'))
+    expect(result.config.rootDir).toBe(path.resolve(cwd()))
+    expect(result.config.srcDir).toBe(path.resolve(cwd(), 'src'))
     expect(result.config.workspaceDir).toBe(path.resolve(cwd()))
-    expect(result).toMatchInlineSnapshot(`
-      {
-        "_configFile": undefined,
-        "config": {
-          "buildDir": "C:/Project/vixt/packages/core/__tests__/.vixt",
-          "buildLayersDir": "C:/Project/vixt/packages/core/__tests__/.vixt/layers",
-          "buildTypesDir": "C:/Project/vixt/packages/core/__tests__/.vixt/types",
-          "modulesDir": "C:/Project/vixt/packages/core/__tests__/src/modules",
-          "pluginsDir": "C:/Project/vixt/packages/core/__tests__/src/plugins",
-          "rootDir": "C:/Project/vixt/packages/core/__tests__",
-          "srcDir": "C:/Project/vixt/packages/core/__tests__/src",
-          "workspaceDir": "C:/Project/vixt/packages/core/__tests__",
-        },
-        "configFile": "vixt.config",
-        "cwd": "C:/Project/vixt/packages/core/__tests__",
-        "layers": [],
-      }
-    `)
+    expect(result.configFile).toBe('vixt.config')
+    expect(result.cwd).toBe(path.resolve(cwd()))
   })
 
   it('should override dirs', async () => {
@@ -46,23 +32,5 @@ describe('config', () => {
     expect(result.config.rootDir).toBe(rootDir)
     expect(result.config.buildDir).toBe(buildDir)
     expect(result.config.srcDir).toBe(srcDir)
-    expect(result).toMatchInlineSnapshot(`
-      {
-        "_configFile": undefined,
-        "config": {
-          "buildDir": "C:/Project/vixt/packages/core/__tests__/core/.test",
-          "buildLayersDir": "C:/Project/vixt/packages/core/__tests__/core/.test/layers",
-          "buildTypesDir": "C:/Project/vixt/packages/core/__tests__/core/.test/types",
-          "modulesDir": "C:/Project/vixt/packages/core/__tests__/core/src/modules",
-          "pluginsDir": "C:/Project/vixt/packages/core/__tests__/core/src/plugins",
-          "rootDir": "C:/Project/vixt/packages/core/__tests__/core",
-          "srcDir": "C:/Project/vixt/packages/core/__tests__/core/src",
-          "workspaceDir": "C:/Project/vixt/packages/core/__tests__",
-        },
-        "configFile": "vixt.config",
-        "cwd": "C:/Project/vixt/packages/core/__tests__",
-        "layers": [],
-      }
-    `)
   })
 })
