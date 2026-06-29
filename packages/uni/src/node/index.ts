@@ -32,10 +32,10 @@ export default createVixtPlugin({
     typescript: {
       tsConfig: {
         compilerOptions: {
-          types: ['@vixt/uni/types', '@dcloudio/types', '@uni-helper/uni-app-types'],
+          types: ['@vixt/uni/types', '@dcloudio/types', '@uni-helper/uni-types'],
         },
         vueCompilerOptions: {
-          plugins: ['@uni-helper/uni-app-types/volar-plugin'],
+          plugins: ['@uni-helper/uni-types/volar-plugin'],
         },
       },
     },
