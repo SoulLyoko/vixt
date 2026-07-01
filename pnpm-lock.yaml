@@ -202,9 +202,6 @@ catalogs:
     '@vitejs/plugin-vue-jsx':
       specifier: ^5.1.6
       version: 5.1.6
-    '@vitest/browser':
-      specifier: ^4.1.9
-      version: 4.1.9
     '@vitest/browser-playwright':
       specifier: ^4.1.9
       version: 4.1.9
@@ -297,9 +294,6 @@ importers:
       '@unocss/eslint-plugin':
         specifier: catalog:vite
         version: 66.7.3(eslint@10.6.0(jiti@2.7.0))(typescript@6.0.3)
-      '@vitest/browser':
-        specifier: catalog:vite
-        version: 4.1.9(vite@8.1.0(@types/node@25.1.0)(esbuild@0.28.0)(jiti@2.7.0)(sass@1.101.0)(terser@5.46.0)(yaml@2.9.0))(vitest@4.1.9)
       '@vitest/browser-playwright':
         specifier: catalog:vite
         version: 4.1.9(playwright@1.61.1)(vite@8.1.0(@types/node@25.1.0)(esbuild@0.28.0)(jiti@2.7.0)(sass@1.101.0)(terser@5.46.0)(yaml@2.9.0))(vitest@4.1.9)
@@ -638,6 +632,12 @@ importers:
         specifier: catalog:vue
         version: 3.3.5(typescript@6.0.3)
 
+  playground/layer-link:
+    dependencies:
+      dayjs:
+        specifier: latest
+        version: 1.11.21
+
   playground/layer-nitro:
     dependencies:
       '@pinia/colada':
@@ -673,9 +673,15 @@ importers:
       '@unocss/reset':
         specifier: catalog:vite
         version: 66.7.3
+      '@vixt/layer-link':
+        specifier: workspace:*
+        version: file:playground/layer-link
       unocss:
         specifier: catalog:vite
         version: 66.7.3(vite@8.1.0(@types/node@25.1.0)(esbuild@0.28.0)(jiti@2.7.0)(sass@1.101.0)(terser@5.46.0)(yaml@2.9.0))
+    dependenciesMeta:
+      '@vixt/layer-link':
+        injected: true
 
   playground/layer-uni:
     dependencies:
@@ -4680,6 +4686,9 @@ packages:
   '@vitest/utils@4.1.9':
     resolution: {integrity: sha512-A51o8ymO5PpqlWNnBP9ZHPXDIpuMtTLlGSjN7la4US+LJzoUMyhwjA5QXlm39JexgwHKW4Xjs8Z2d3dLCXOeuA==}
 
+  '@vixt/layer-link@file:playground/layer-link':
+    resolution: {directory: playground/layer-link, type: directory}
+
   '@volar/language-core@2.4.28':
     resolution: {integrity: sha512-w4qhIJ8ZSitgLAkVay6AbcnC7gP3glYM3fYwKV3srj8m494E3xtrCv6E+bWviiK/8hs6e6t1ij1s2Endql7vzQ==}
 
@@ -5600,6 +5609,9 @@ packages:
 
   csstype@3.2.3:
     resolution: {integrity: sha512-z1HGKcYy2xA8AGQfwrn0PAy+PB7X/GSj3UVJW9qKyn43xWa+gl5nXmU4qqLMRzWVLFC8KusUX8T/0kCiOYpAIQ==}
+
+  dayjs@1.11.21:
+    resolution: {integrity: sha512-98IT+HOahAisibz/yjKbzuOBwYcjJ7BCLPzARyHiyEBmRz4fatF+KPJszEHXsGYjUG234aH/cOjW1wwTbKUZlA==}
 
   db0@0.3.4:
     resolution: {integrity: sha512-RiXXi4WaNzPTHEOu8UPQKMooIbqOEyqA1t7Z6MsdxSCeb8iUC9ko3LcmsLmeUt2SM5bctfArZKkRQggKZz7JNw==}
@@ -14723,6 +14735,10 @@ snapshots:
       convert-source-map: 2.0.0
       tinyrainbow: 3.1.0
 
+  '@vixt/layer-link@file:playground/layer-link':
+    dependencies:
+      dayjs: 1.11.21
+
   '@volar/language-core@2.4.28':
     dependencies:
       '@volar/source-map': 2.4.28
@@ -15787,6 +15803,8 @@ snapshots:
       css-tree: 2.2.1
 
   csstype@3.2.3: {}
+
+  dayjs@1.11.21: {}
 
   db0@0.3.4: {}
 

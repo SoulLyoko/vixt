@@ -5,6 +5,12 @@
   "main": "vixt.config.ts",
   "dependencies": {
     "@unocss/reset": "catalog:vite",
+    "@vixt/layer-link": "workspace:*",
     "unocss": "catalog:vite"
+  },
+  "dependenciesMeta": {
+    "@vixt/layer-link": {
+      "injected": true
+    }
   }
 }

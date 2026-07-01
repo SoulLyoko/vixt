@@ -44,7 +44,6 @@
     "@commitlint/config-conventional": "catalog:",
     "@types/fs-extra": "catalog:",
     "@unocss/eslint-plugin": "catalog:vite",
-    "@vitest/browser": "catalog:vite",
     "@vitest/browser-playwright": "catalog:vite",
     "bumpp": "catalog:",
     "eslint": "catalog:",
