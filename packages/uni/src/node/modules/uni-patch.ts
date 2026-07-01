@@ -6,6 +6,33 @@ import { resolvePathSync } from 'mlly'
 import path from 'pathe'
 import { normalizePath } from 'vite'
 
+/** 移除路径中的'../' */
+export function overrideNormalizeNodeModules() {
+  const matched = `str = normalizePath(str).replace(NODE_MODULES_REGEX, 'node-modules');`
+  const replaced = `str = normalizePath(str).replace(NODE_MODULES_REGEX, 'node-modules').replace(/\\.\\.\\//g, '');`
+  const codePath = resolvePathSync('@dcloudio/uni-cli-shared/dist/utils.js')
+  let code = fs.readFileSync(codePath, 'utf-8')
+  if (code.includes(matched)) {
+    code = code.replace(matched, replaced)
+    fs.writeFileSync(codePath, code)
+  }
+}
+
+/**
+ * fix `@uni-helper/vite-plugin-uni-pages` client types
+ * @see https://github.com/uni-helper/vite-plugin-uni-pages/blob/v0.3.24/packages/core/client.d.ts#L4
+ */
+export function overrideUniPagesTypes() {
+  const matched = `  import type { SubPackage } from './src/config/types/index'\n  import type { PageMetaDatum } from './src/types'`
+  const replaced = `  import type { PageMetaDatum, SubPackage } from '@uni-helper/vite-plugin-uni-pages'`
+  const codePath = path.resolve(resolvePathSync('@uni-helper/vite-plugin-uni-pages'), '../../client.d.ts')
+  let code = codePath && fs.readFileSync(codePath, 'utf-8')
+  if (code.includes(matched)) {
+    code = code.replace(matched, replaced)
+    fs.outputFileSync(codePath, code)
+  }
+}
+
 /** 增加小程序中vueuse的运行所需 */
 export function transformMpRuntime(code: string, id: string) {
   if (!id.endsWith('@dcloudio/uni-mp-vue/dist/vue.runtime.esm.js'))
@@ -39,101 +66,58 @@ export function transformPinia(code: string, id: string) {
   return code
 }
 
-/** 移除路径中的'../' */
-export function patchNormalizeNodeModules() {
-  const matched = `str = normalizePath(str).replace(NODE_MODULES_REGEX, 'node-modules');`
-  const replaced = `str = normalizePath(str).replace(NODE_MODULES_REGEX, 'node-modules').replace(/\\.\\.\\//g, '');`
-  const codePath = resolvePathSync('@dcloudio/uni-cli-shared/dist/utils.js')
-  let code = fs.readFileSync(codePath, 'utf-8')
-  if (code.includes(matched)) {
-    code = code.replace(matched, replaced)
-    fs.writeFileSync(codePath, code)
-  }
-}
-
-/**
- * 兼容 unocss^66.1.0 小程序平台的css文件后缀名
- * @see https://github.com/dcloudio/uni-app/pull/5605/files
- */
-export function patchAdjustCssExtname(config: ResolvedConfig) {
-  const plugin = config.plugins.find(p => p.name === 'uni:adjust-css-extname')
-  if (plugin && typeof plugin.generateBundle === 'function') {
-    const handler = plugin.generateBundle
-    plugin.generateBundle = { order: 'post', handler }
-  }
-}
-
-/**
- * fix unocss^66.1.0 hot reload fail `[unocss:global:build:scan] Could not load xxx/src/__uno.css`
- * @see https://github.com/unocss/unocss/issues/4616
- * @see https://github.com/unocss/unocss/pull/4737
- */
-export function patchUnocssGlobalBuildScan(config: ResolvedConfig) {
-  const plugin = config.plugins.find(p => p.name === 'unocss:global:build:scan')
-  if (plugin) {
-    plugin.shouldTransformCachedModule = ({ code }) => code.includes('virtual:uno.css')
-  }
-}
-
 /**
  * fix `@uni-helper/vite-plugin-uni-components` load slowly
- * @see https://github.com/uni-helper/vite-plugin-uni-components/blob/main/packages/core/src/index.ts#L27
+ * @see https://github.com/uni-helper/vite-plugin-uni-components/blob/v0.2.6/packages/core/src/index.ts#L27
  */
-export function patchUniComponents(config: ResolvedConfig) {
+export function modifyUniComponentsConfig(config: ResolvedConfig) {
   if (JSON.stringify(config.build.watch) === '{}')
     config.build.watch = null
 }
 
 /**
- * fix `@uni-helper/vite-plugin-uni-pages` client types
- * @see https://github.com/uni-helper/vite-plugin-uni-pages/blob/main/packages/core/client.d.ts#L4
+ * 兼容 unocss^66.1.0 小程序平台的css文件后缀名
+ * @see https://github.com/dcloudio/uni-app/pull/5605/files
+ * @fixed 官方已修复
  */
-export function patchUniPagesTypes() {
-  const matched = `  import type { SubPackage } from './src/config/types/index'\n  import type { PageMetaDatum } from './src/types'`
-  const replaced = `  import type { PageMetaDatum, SubPackage } from '@uni-helper/vite-plugin-uni-pages'`
-  const codePath = path.resolve(resolvePathSync('@uni-helper/vite-plugin-uni-pages'), '../../client.d.ts')
-  let code = codePath && fs.readFileSync(codePath, 'utf-8')
-  if (code.includes(matched)) {
-    code = code.replace(matched, replaced)
-    fs.outputFileSync(codePath, code)
-  }
-}
+// export function modifyAdjustCssExtnameConfig(config: ResolvedConfig) {
+//   const plugin = config.plugins.find(p => p.name === 'uni:adjust-css-extname')
+//   if (plugin && typeof plugin.generateBundle === 'function') {
+//     const handler = plugin.generateBundle
+//     plugin.generateBundle = { order: 'post', handler }
+//   }
+// }
+
+/**
+ * fix unocss^66.1.0 hot reload fail `[unocss:global:build:scan] Could not load xxx/src/__uno.css`
+ * @see https://github.com/unocss/unocss/issues/4616
+ * @see https://github.com/unocss/unocss/pull/4737
+ * @fixed 官方已修复
+ */
+// export function modifyUnocssGlobalBuildScanConfig(config: ResolvedConfig) {
+//   const plugin = config.plugins.find(p => p.name === 'unocss:global:build:scan')
+//   if (plugin) {
+//     plugin.shouldTransformCachedModule = ({ code }) => code.includes('virtual:uno.css')
+//   }
+// }
 
 export default defineVitePlugin(() => {
-  patchNormalizeNodeModules()
-  patchUniPagesTypes()
+  overrideNormalizeNodeModules()
+  overrideUniPagesTypes()
 
-  return [
-    {
-      name: 'vixt:uni-patch-runtime',
-      transform(code, id) {
-        id = normalizePath(id)
-        code = transformMpRuntime(code, id)
-        code = transformH5Runtime(code, id)
-        code = transformPinia(code, id)
-        return code
-      },
+  return {
+    name: 'vixt:uni-patch',
+    transform(code, id) {
+      id = normalizePath(id)
+      code = transformMpRuntime(code, id)
+      code = transformH5Runtime(code, id)
+      code = transformPinia(code, id)
+      return code
     },
-    {
-      name: 'vixt:uni-patch-uni-components',
-      configResolved(config) {
-        patchUniComponents(config)
-      },
+    configResolved(config: any) {
+      modifyUniComponentsConfig(config)
+      // modifyAdjustCssExtnameConfig(config)
+      // modifyUnocssGlobalBuildScanConfig(config)
     },
-    {
-      name: 'vixt:uni-patch-unocss-global-build-scan',
-      apply: 'build',
-      enforce: 'pre',
-      configResolved(config) {
-        patchUnocssGlobalBuildScan(config)
-      },
-    },
-    {
-      name: 'vixt:uni-patch-adjust-css-extname',
-      enforce: 'post',
-      configResolved(config) {
-        patchAdjustCssExtname(config)
-      },
-    },
-  ]
+  }
 })

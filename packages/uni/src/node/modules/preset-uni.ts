@@ -37,7 +37,7 @@ export default defineVixtModule<VixtOptions>({
       Layouts(options.uniLayouts),
       Components(options.uniComponents),
       UniPatch(),
-      (Uni?.default ?? Uni)(options.uni),
+      Uni(options.uni),
     ]
 
     return modules

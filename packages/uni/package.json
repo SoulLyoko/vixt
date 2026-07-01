@@ -50,5 +50,9 @@
     "pathe": "catalog:",
     "vite": "catalog:uni",
     "vue": "catalog:vue"
+  },
+  "devDependencies": {
+    "@dcloudio/vite-plugin-uni": "catalog:uni",
+    "pinia": "catalog:vue"
   }
 }

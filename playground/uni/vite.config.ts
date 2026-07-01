@@ -3,5 +3,6 @@ import vixt from 'vixt/uni'
 
 export default defineConfig({
   server: { port: 5174 },
+  // @ts-ignore
   plugins: [vixt()],
 })

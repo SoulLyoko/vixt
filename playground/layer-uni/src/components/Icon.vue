@@ -1,6 +1,4 @@
 <script setup lang="ts">
-import { computed, useAttrs } from 'vue'
-
 const attrs = useAttrs()
 const style = computed(() => {
   const { icon, ...query } = attrs
