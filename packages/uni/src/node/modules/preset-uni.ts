@@ -37,7 +37,6 @@ export default defineVixtModule<VixtOptions>({
       Layouts(options.uniLayouts),
       Components(options.uniComponents),
       UniPatch(),
-      // @ts-expect-error
       (Uni?.default ?? Uni)(options.uni),
     ]
 

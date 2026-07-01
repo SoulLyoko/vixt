@@ -32,6 +32,10 @@
   "files": [
     "dist"
   ],
+  "peerDependencies": {
+    "@dcloudio/vite-plugin-uni": "*",
+    "pinia": "*"
+  },
   "dependencies": {
     "@dcloudio/types": "catalog:uni",
     "@uni-helper/uni-types": "catalog:uni",
@@ -39,6 +43,12 @@
     "@uni-helper/vite-plugin-uni-layouts": "catalog:uni",
     "@uni-helper/vite-plugin-uni-pages": "catalog:uni",
     "@vixt/core": "workspace:*",
-    "@vixt/vue": "workspace:*"
+    "defu": "catalog:",
+    "fast-glob": "catalog:",
+    "fs-extra": "catalog:",
+    "mlly": "catalog:",
+    "pathe": "catalog:",
+    "vite": "catalog:uni",
+    "vue": "catalog:vue"
   }
 }

@@ -5,9 +5,6 @@ export default defineConfig([
     entry: 'src/node/**/*',
     outDir: 'dist/node',
     platform: 'node',
-    deps: {
-      neverBundle: ['vite', '@vue/compiler-sfc'],
-    },
     copy: [
       { from: 'src/types', to: 'dist' },
     ],

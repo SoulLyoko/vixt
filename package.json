@@ -4,10 +4,6 @@
   "version": "0.11.2",
   "private": true,
   "packageManager": "pnpm@11.9.0",
-  "exports": {
-    "./layer-shared": "./packages/layer-shared/vixt.config.ts",
-    "./layer-shared/*": "./packages/layer-shared/*"
-  },
   "engines": {
     "node": ">=24",
     "pnpm": ">=11"
@@ -46,6 +42,7 @@
     "@antfu/eslint-config": "catalog:",
     "@commitlint/cli": "catalog:",
     "@commitlint/config-conventional": "catalog:",
+    "@types/fs-extra": "catalog:",
     "@unocss/eslint-plugin": "catalog:vite",
     "@vitest/browser": "catalog:vite",
     "@vitest/browser-playwright": "catalog:vite",

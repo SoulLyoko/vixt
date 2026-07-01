@@ -1,7 +1,6 @@
 import type { ExtractPluginOptions } from './vixt'
 import type Ssl from '@vitejs/plugin-basic-ssl'
 import type Legacy from '@vitejs/plugin-legacy'
-import type { RawVueCompilerOptions } from '@vue/language-core'
 import type { NitroPluginConfig } from 'nitro/vite'
 import type { TSConfig } from 'pkg-types'
 import type AutoImport from 'unplugin-auto-import/vite'
@@ -181,7 +180,8 @@ export interface TypescriptOptions {
      * @default '@vue/tsconfig/tsconfig.dom.json'
      */
     extends?: string | string[]
-    vueCompilerOptions?: RawVueCompilerOptions
+    // @ts-ignore `@vue/language-core` may not be installed
+    vueCompilerOptions?: import('@vue/language-core').RawVueCompilerOptions
   }
   /**
    * Enable build-time or dev-server type checking.

@@ -52,5 +52,8 @@
     "@vixt/uni": "workspace:*",
     "@vixt/vitepress": "workspace:*",
     "@vixt/vue": "workspace:*"
+  },
+  "devDependencies": {
+    "jiti": "catalog:"
   }
 }

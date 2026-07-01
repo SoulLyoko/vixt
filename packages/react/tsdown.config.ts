@@ -5,9 +5,6 @@ export default defineConfig([
     entry: 'src/node/**/*',
     outDir: 'dist/node',
     platform: 'node',
-    deps: {
-      neverBundle: ['vite'],
-    },
     copy: [
       { from: 'src/types', to: 'dist' },
     ],

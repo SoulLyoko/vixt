@@ -32,7 +32,13 @@
   ],
   "dependencies": {
     "@vixt/core": "workspace:*",
-    "@vixt/vue": "workspace:*",
+    "defu": "catalog:",
+    "fs-extra": "catalog:",
+    "mlly": "catalog:",
+    "pathe": "catalog:",
+    "unplugin-vue-components": "catalog:vite",
+    "vite": "catalog:vite",
+    "vite-plugin-vue-devtools": "catalog:vite",
     "vitepress": "catalog:vite"
   }
 }
