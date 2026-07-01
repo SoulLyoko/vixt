@@ -5,9 +5,12 @@
  */
 import type { CustomBlock, ParsedJSX, ReactRoute } from 'vite-plugin-pages'
 
+import { cwd } from 'node:process'
+
 // @ts-expect-error
 import extractComments from 'extract-comments'
 import fs from 'fs-extra'
+import path from 'pathe'
 import { parse as YAMLParser } from 'yaml'
 
 const routeJSXReg = /^\s+(route)\s+/gm
@@ -41,11 +44,22 @@ function getRouteBlock(path: string) {
   return block
 }
 
+function resolveCodePath(element: string) {
+  if (fs.existsSync(element))
+    return element
+
+  const relativePath = path.join(cwd(), element)
+  if (fs.existsSync(relativePath))
+    return relativePath
+
+  return element
+}
+
 export function extendRoute(route: ReactRoute) {
   if (!route.element)
     return
 
-  const codePath = route.element.startsWith('/') ? route.element.slice(1) : route.element
+  const codePath = resolveCodePath(route.element)
   const block = getRouteBlock(codePath)
 
   return { ...route, ...block }
