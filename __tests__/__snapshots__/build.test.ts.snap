@@ -1,0 +1,146 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`build > core build snapshot 1`] = `
+[
+  "cli",
+  "cli/index.d.mts",
+  "cli/index.mjs",
+  "client",
+  "client/index.d.ts",
+  "client/index.js",
+  "node",
+  "node/index.d.mts",
+  "node/index.mjs",
+]
+`;
+
+exports[`build > create-vixt build snapshot 1`] = `
+[
+  "index.mjs",
+]
+`;
+
+exports[`build > react build snapshot 1`] = `
+[
+  "client",
+  "client/App.tsx",
+  "client/client.d.ts",
+  "client/entry.d.ts",
+  "client/entry.js",
+  "client/index.d.ts",
+  "client/index.js",
+  "node",
+  "node/index.d.mts",
+  "node/index.mjs",
+  "node/modules",
+  "node/modules/components.d.mts",
+  "node/modules/components.mjs",
+  "node/modules/preset-react.d.mts",
+  "node/modules/preset-react.mjs",
+  "node/modules/route-block.d.mts",
+  "node/modules/route-block.mjs",
+  "node/modules/virtual-root-component.d.mts",
+  "node/modules/virtual-root-component.mjs",
+  "node/modules/virtual-setup-layouts.d.mts",
+  "node/modules/virtual-setup-layouts.mjs",
+  "node/node.d.mts",
+  "types",
+  "types/index.d.ts",
+]
+`;
+
+exports[`build > uni build snapshot 1`] = `
+[
+  "client",
+  "client/client.d.ts",
+  "client/entry.d.ts",
+  "client/entry.js",
+  "client/index.d.ts",
+  "client/index.js",
+  "client/plugins",
+  "client/plugins/router.d.ts",
+  "client/plugins/router.js",
+  "node",
+  "node/index.d.mts",
+  "node/index.mjs",
+  "node/modules",
+  "node/modules/preset-uni.d.mts",
+  "node/modules/preset-uni.mjs",
+  "node/modules/uni-layouts.d.mts",
+  "node/modules/uni-layouts.mjs",
+  "node/modules/uni-modules.d.mts",
+  "node/modules/uni-modules.mjs",
+  "node/modules/uni-patch.d.mts",
+  "node/modules/uni-patch.mjs",
+  "node/node.d.mts",
+  "node/uni-layouts-DiqR237-.d.mts",
+  "node/uni-modules-DKxzU50K.d.mts",
+  "types",
+  "types/index.d.ts",
+]
+`;
+
+exports[`build > vitepress build snapshot 1`] = `
+[
+  "client",
+  "client/client.d.ts",
+  "client/entry.d.ts",
+  "client/entry.js",
+  "client/index.d.ts",
+  "client/index.js",
+  "node",
+  "node/index.d.mts",
+  "node/index.mjs",
+  "node/modules",
+  "node/modules/config-patch.d.mts",
+  "node/modules/config-patch.mjs",
+  "node/modules/preset-vitepress.d.mts",
+  "node/modules/preset-vitepress.mjs",
+  "node/node.d.mts",
+  "types",
+  "types/index.d.ts",
+]
+`;
+
+exports[`build > vixt build snapshot 1`] = `
+[
+  "client.d.mts",
+  "client.mjs",
+  "index.d.mts",
+  "index.mjs",
+  "react.d.mts",
+  "react.mjs",
+  "uni.d.mts",
+  "uni.mjs",
+  "vitepress.d.mts",
+  "vitepress.mjs",
+  "vue.d.mts",
+  "vue.mjs",
+]
+`;
+
+exports[`build > vue build snapshot 1`] = `
+[
+  "client",
+  "client/App.vue",
+  "client/client.d.ts",
+  "client/entry.d.ts",
+  "client/entry.js",
+  "client/index.d.ts",
+  "client/index.js",
+  "client/plugins",
+  "client/plugins/router.d.ts",
+  "client/plugins/router.js",
+  "node",
+  "node/index.d.mts",
+  "node/index.mjs",
+  "node/modules",
+  "node/modules/preset-vue.d.mts",
+  "node/modules/preset-vue.mjs",
+  "node/modules/virtual-root-component.d.mts",
+  "node/modules/virtual-root-component.mjs",
+  "node/node.d.mts",
+  "types",
+  "types/index.d.ts",
+]
+`;

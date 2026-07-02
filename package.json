@@ -32,7 +32,6 @@
     "prerelease": "pnpm build && pnpm test run && pnpm test:vue run",
     "preview:nitro": "pnpm -F test-nitro preview",
     "release": "bumpp",
-    "tc": "tsc --noEmit",
     "test": "vitest",
     "test:vue": "pnpm -F test-vue test",
     "typedoc": "pnpm -F docs typedoc",

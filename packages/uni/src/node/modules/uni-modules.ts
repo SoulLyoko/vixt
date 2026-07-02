@@ -6,16 +6,16 @@ import path from 'pathe'
 
 declare module '@vixt/core' {
   interface VixtOptions {
-    uniModules?: ModuleOptions
+    uniModules?: UniModulesOptions
   }
 }
 
-export interface ModuleOptions {
+export interface UniModulesOptions {
   include?: string[]
   exclude?: string[]
 }
 
-function copyUniModules(options: ModuleOptions, vixt: Vixt) {
+function copyUniModules(options: UniModulesOptions, vixt: Vixt) {
   const { srcDir } = vixt.options
   const { include, exclude } = options ?? {}
   const { uni_modules = [] } = resolveLayersDirs(vixt._layers)
