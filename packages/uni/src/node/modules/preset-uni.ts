@@ -37,7 +37,8 @@ export default defineVixtModule<VixtOptions>({
       Layouts(options.uniLayouts),
       Components(options.uniComponents),
       UniPatch(),
-      Uni(options.uni),
+      // @ts-ignore plugin `Uni` may be `Uni.default` on user side
+      (Uni?.default ?? Uni)(options.uni),
     ]
 
     return modules
