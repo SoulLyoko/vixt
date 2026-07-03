@@ -19,6 +19,7 @@ overrides:
   '@vixt/test-uni>vite': 'catalog:uni'
   '@vue/shared': 'catalog:vue'
   vue: 'catalog:vue'
+  vue-router: 'catalog:vue'
 
 peerDependencyRules:
   allowAny:

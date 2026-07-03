@@ -19,7 +19,6 @@ async function VitePluginNuxt() {
       enforce: 'pre',
       config() {
         const {
-          // base,
           logLevel,
           experimental,
           resolve,
@@ -28,10 +27,14 @@ async function VitePluginNuxt() {
           build,
           optimizeDeps,
           server,
+          mode,
+          publicDir,
           esbuild,
+          clearScreen,
+          cacheDir,
+          customLogger,
         } = viteConfig
         return {
-          // base,
           logLevel,
           experimental,
           resolve,
@@ -46,10 +49,17 @@ async function VitePluginNuxt() {
             host: devServer.host,
             watch: server?.watch,
             fs: server?.fs,
+            warmup: server?.warmup,
+            cors: server?.cors,
             // ...server,
           },
+          mode,
+          publicDir,
           optimizeDeps,
           esbuild,
+          clearScreen,
+          cacheDir,
+          customLogger,
         }
       },
     } satisfies import('vite').Plugin,

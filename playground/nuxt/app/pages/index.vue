@@ -1,8 +1,7 @@
 <script setup lang="ts">
+$fetch('/api/test')
 </script>
 
 <template>
-  <NuxtLayout>
-    <NuxtPage />
-  </NuxtLayout>
+  <Welcome />
 </template>

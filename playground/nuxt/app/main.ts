@@ -1,31 +1,56 @@
-import type { RuntimeConfig } from 'nuxt/schema'
 import type { App } from 'vue'
 
-import { applyPlugins, createNuxtApp } from 'nuxt/app'
+import { applyPlugins, createError, createNuxtApp } from 'nuxt/app'
 import { createApp, createSSRApp, nextTick } from 'vue'
 
-// @ts-ignore
+// This file must be imported first as we set globalThis.$fetch via this import
+// @ts-expect-error virtual file
+import '#build/fetch'
+import '#build/global-polyfills.mjs'
+// @ts-expect-error virtual file
+import '#build/css'
+import { appId, appSpaLoaderAttrs, multiApp, spaLoadingTemplateOutside, vueAppRootContainer } from '#build/nuxt.config.mjs'
+// @ts-expect-error virtual file
 import plugins from '#build/plugins'
-
-import RootComponent from './app.vue'
-import '@unocss/reset/tailwind.css'
+import RootComponent from '#build/root-component.mjs'
 
 let vueAppPromise: Promise<App<Element>>
+
 async function entry() {
   // @ts-ignore
   if (vueAppPromise) {
     return vueAppPromise
   }
 
-  // @ts-ignore
-  const nuxtConfig = __NUXT__ as { appId: string, ssr?: boolean, config: RuntimeConfig }
-
-  const vueApp = nuxtConfig.ssr ? createSSRApp(RootComponent) : createApp(RootComponent)
+  const isSSR = Boolean(
+    (multiApp ? window.__NUXT__?.[appId] : window.__NUXT__)?.serverRendered
+    ?? (multiApp ? document.querySelector(`[data-nuxt-data="${appId}"]`) as HTMLElement : document.getElementById('__NUXT_DATA__'))?.dataset.ssr === 'true',
+  )
+  const vueApp = isSSR ? createSSRApp(RootComponent) : createApp(RootComponent)
 
   const nuxt = createNuxtApp({ vueApp })
 
   async function handleVueError(error: any) {
     await nuxt.callHook('app:error', error)
+    nuxt.payload.error ||= createError(error as any)
+  }
+  // marker so nuxt-root.vue can skip re-invoking the default handler from
+  // its onErrorCaptured (which already calls `app:error` via showError)
+  ;(handleVueError as any).__nuxt_default = true
+
+  vueApp.config.errorHandler = handleVueError
+  // If the errorHandler is not overridden by the user, we unset it after the app is hydrated
+  nuxt.hook('app:suspense:resolve', () => {
+    if (vueApp.config.errorHandler === handleVueError) {
+      vueApp.config.errorHandler = undefined
+    }
+  })
+
+  if (spaLoadingTemplateOutside && !isSSR && appSpaLoaderAttrs.id) {
+    // Remove spa loader if present
+    nuxt.hook('app:suspense:resolve', () => {
+      document.getElementById(appSpaLoaderAttrs.id)?.remove()
+    })
   }
 
   try {
@@ -38,7 +63,7 @@ async function entry() {
   try {
     await nuxt.hooks.callHook('app:created', vueApp)
     await nuxt.hooks.callHook('app:beforeMount', vueApp)
-    vueApp.mount(`#${nuxtConfig.appId}`)
+    vueApp.mount(vueAppRootContainer)
     await nuxt.hooks.callHook('app:mounted', vueApp)
     await nextTick()
   }
