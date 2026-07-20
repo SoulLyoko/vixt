@@ -32,7 +32,7 @@ export default defineVixtModule<VixtOptions>({
 
     const options = vixt.options = defu(vixt.options, defaultOptions)
 
-    const modules = [
+    const plugins = [
       Pages(options.uniPages),
       Layouts(options.uniLayouts),
       Components(options.uniComponents),
@@ -41,6 +41,6 @@ export default defineVixtModule<VixtOptions>({
       (Uni?.default ?? Uni)(options.uni),
     ]
 
-    return modules
+    return plugins
   },
 })
