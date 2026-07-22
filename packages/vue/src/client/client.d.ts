@@ -1,5 +1,5 @@
 import type { App } from 'vue'
-import type { Router, RouteRecord, RouterOptions } from 'vue-router'
+import type { Router, RouteRecordRaw, RouterOptions } from 'vue-router'
 
 export interface VueVixtAppConfig {
   /** https://router.vuejs.org/api/interfaces/RouterOptions.html */
@@ -12,7 +12,7 @@ export interface VueVixtApp {
   /** Router instance */
   router: Router
   /** Router routes */
-  routes: RouteRecord[]
+  routes: RouteRecordRaw[]
 }
 
 declare module '@vixt/core/client' {
