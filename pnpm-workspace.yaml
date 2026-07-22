@@ -40,7 +40,6 @@ catalog:
   defu: ^6.1.7
   eslint: ^10.7.0
   eslint-plugin-format: ^2.0.1
-  execa: ^10.0.0
   extract-comments: ^1.1.0
   fast-glob: ^3.3.3
   find-up: ^8.0.0

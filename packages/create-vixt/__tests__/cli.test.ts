@@ -1,9 +1,9 @@
-import type { SyncOptions } from 'execa'
+import type { ExecSyncOptions } from 'node:child_process'
 
+import { execSync } from 'node:child_process'
 import path from 'node:path'
 import url from 'node:url'
 
-import { execaCommandSync } from 'execa'
 import fs from 'fs-extra'
 
 import { version } from '../../../package.json'
@@ -16,8 +16,8 @@ const projectName = 'test-project'
 const genPath = path.join(__dirname, projectName)
 const cliPath = path.join(__dirname, '../src/index.ts')
 
-function run(args: string[] = [], options?: SyncOptions) {
-  return execaCommandSync(`jiti ${cliPath} ${args.join(' ')}`, { cwd: __dirname, ...options })
+function run(args: string[] = [], options?: ExecSyncOptions) {
+  return execSync(`jiti ${cliPath} ${args.join(' ')}`, { cwd: __dirname, ...options })
 }
 
 function getVixtDepVersion(dir: string) {

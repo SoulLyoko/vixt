@@ -48,7 +48,6 @@
     "bumpp": "catalog:",
     "eslint": "catalog:",
     "eslint-plugin-format": "catalog:",
-    "execa": "catalog:",
     "lint-staged": "catalog:",
     "playwright": "catalog:vite",
     "rimraf": "catalog:",
