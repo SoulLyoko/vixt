@@ -7,13 +7,10 @@ packages:
   - docs
 
 allowBuilds:
-  '@parcel/watcher': false
-  '@uni-helper/unocss-preset-uni': false
-  core-js: false
-  core-js-pure: false
-  esbuild: false
-  simple-git-hooks: false
-  vue-demi: false
+  better-sqlite3: true
+  esbuild: true
+  sharp: true
+  workerd: true
 
 overrides:
   '@vixt/test-uni>vite': 'catalog:uni'
@@ -65,6 +62,11 @@ catalog:
 catalogs:
   nuxt:
     nuxt: ^4.5.0
+
+  void:
+    '@void/vue': ^0.10.12
+    hono: ^4.13.1
+    void: ^0.10.12
 
   react:
     '@iconify/react': ^6.0.2

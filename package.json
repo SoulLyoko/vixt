@@ -25,6 +25,7 @@
     "dev:h5": "pnpm -F test-uni dev:h5",
     "dev:mp": "pnpm -F test-uni dev:mp",
     "dev:nuxt": "pnpm -F test-nuxt dev",
+    "dev:void": "pnpm -F test-void dev",
     "dev:react": "pnpm -F test-react dev",
     "dev:vue": "pnpm -F test-vue dev",
     "lint": "eslint .",
