@@ -12,3 +12,5 @@
 - [ ] generate modules options types `modules.d.ts`
 - [ ] ssr?
 - [x] server(nitro)
+- [x] migrate to vite-plus
+- [ ] vite-plus actions

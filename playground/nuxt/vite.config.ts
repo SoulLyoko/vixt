@@ -1,10 +1,10 @@
 import { build, loadNuxt } from 'nuxt'
 import { writeTypes } from 'nuxt/kit'
-import { defineConfig } from 'vite'
+import { defineConfig } from 'vite-plus'
 
 async function VitePluginNuxt() {
   const nuxt = await loadNuxt({})
-  let viteConfig: import('vite').UserConfig = {}
+  let viteConfig: import('vite-plus').UserConfig = {}
   nuxt.hook('vite:configResolved', (config, { isClient }) => {
     if (isClient) {
       viteConfig = config
@@ -62,8 +62,8 @@ async function VitePluginNuxt() {
           customLogger,
         }
       },
-    } satisfies import('vite').Plugin,
-    ...viteConfig.plugins ?? [],
+    } satisfies import('vite-plus').Plugin,
+    ...(viteConfig.plugins ?? []),
   ]
 }
 

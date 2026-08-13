@@ -4,11 +4,11 @@
   "private": true,
   "main": "vixt.config.ts",
   "scripts": {
-    "build": "vite build",
-    "dev": "vite",
-    "preview": "vite preview",
+    "build": "vp build",
+    "dev": "vp dev",
+    "preview": "vp preview",
     "tc": "vue-tsc --noEmit",
-    "test": "vitest"
+    "test": "vp test"
   },
   "dependencies": {
     "@vixt/layer-vue": "workspace:*",

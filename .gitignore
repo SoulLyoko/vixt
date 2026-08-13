@@ -11,4 +11,5 @@ cache
 .netlify
 .vercel
 .wrangler
+.void
 docs/api

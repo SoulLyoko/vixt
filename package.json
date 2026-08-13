@@ -1,15 +1,10 @@
 {
   "name": "vixt-framework",
-  "type": "module",
   "version": "0.12.2",
   "private": true,
-  "packageManager": "pnpm@11.15.1",
-  "engines": {
-    "node": ">=24",
-    "pnpm": ">=11"
-  },
+  "type": "module",
   "scripts": {
-    "build": "tsdown",
+    "build": "vp exec --filter ./packages/* vp pack",
     "build:all": "pnpm -F \"./playground/*\" build",
     "build:docs": "pnpm -F docs build",
     "build:nitro": "pnpm -F test-nitro build",
@@ -28,44 +23,34 @@
     "dev:void": "pnpm -F test-void dev",
     "dev:react": "pnpm -F test-react dev",
     "dev:vue": "pnpm -F test-vue dev",
-    "lint": "eslint .",
-    "postinstall": "npx simple-git-hooks",
+    "lint": "vp lint .",
     "prerelease": "pnpm build && pnpm test run && pnpm test:vue run",
     "preview:nitro": "pnpm -F test-nitro preview",
     "preview:docs": "pnpm -F docs preview",
     "release": "bumpp",
-    "test": "vitest",
+    "test": "vp test",
     "test:vue": "pnpm -F test-vue test",
     "typedoc": "pnpm -F docs typedoc",
     "upd": "taze major -r -l -I"
   },
   "devDependencies": {
-    "@antfu/eslint-config": "catalog:",
     "@commitlint/cli": "catalog:",
     "@commitlint/config-conventional": "catalog:",
-    "@types/fs-extra": "catalog:",
-    "@unocss/eslint-plugin": "catalog:vite",
     "@vitest/browser-playwright": "catalog:vite",
     "bumpp": "catalog:",
-    "eslint": "catalog:",
-    "eslint-plugin-format": "catalog:",
-    "lint-staged": "catalog:",
     "playwright": "catalog:vite",
     "rimraf": "catalog:",
-    "simple-git-hooks": "catalog:",
     "taze": "catalog:",
-    "tsdown": "catalog:",
     "typescript": "catalog:",
-    "vitest": "catalog:vite"
-  },
-  "simple-git-hooks": {
-    "commit-msg": "npx --no-install commitlint --edit $1",
-    "pre-commit": "pnpm lint-staged"
+    "vite": "catalog:vite",
+    "vite-plus": "catalog:vite"
   },
   "commitlint": {
     "extends": "@commitlint/config-conventional"
   },
-  "lint-staged": {
-    "*": "eslint --fix"
-  }
+  "engines": {
+    "node": ">=24",
+    "pnpm": ">=11"
+  },
+  "packageManager": "pnpm@11.15.1"
 }

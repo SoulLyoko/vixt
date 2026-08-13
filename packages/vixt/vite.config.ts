@@ -1,6 +1,7 @@
 import { defineConfig } from 'vite-plus'
-import vixt from 'vixt/react'
 
 export default defineConfig({
-  plugins: [vixt()],
+  pack: {
+    entry: 'src/*',
+  },
 })

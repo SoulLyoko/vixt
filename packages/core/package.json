@@ -36,6 +36,7 @@
     "dist"
   ],
   "dependencies": {
+    "@types/fs-extra": "catalog:",
     "@vitejs/plugin-basic-ssl": "catalog:vite",
     "@vitejs/plugin-legacy": "catalog:vite",
     "@vue/tsconfig": "catalog:vue",

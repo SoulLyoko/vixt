@@ -3,11 +3,11 @@
   "type": "module",
   "private": true,
   "scripts": {
-    "build": "vite build",
-    "dev": "vite",
-    "preview": "vite preview",
+    "build": "vp build",
+    "dev": "vp dev",
+    "preview": "vp preview",
     "tc": "vue-tsc --noEmit",
-    "test": "vitest"
+    "test": "vp test"
   },
   "dependencies": {
     "nuxt": "catalog:nuxt",
