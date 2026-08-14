@@ -1,8 +1,8 @@
 {
   "name": "vixt-uni-ts",
-  "type": "module",
   "version": "0.0.0",
   "private": true,
+  "type": "module",
   "scripts": {
     "dev:h5": "uni",
     "dev:h5:ssr": "uni --ssr",

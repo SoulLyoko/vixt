@@ -16,7 +16,7 @@ import { defineVixtConfig } from 'vixt'
 export default defineVixtConfig({
   uniLayouts: {
     layoutsDirs: ['src/design'],
-  }
+  },
 })
 ```
 

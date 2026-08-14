@@ -1,7 +1,7 @@
 import type { Root } from 'react-dom/client'
 import type { RouteObject } from 'react-router'
 
-export interface ReactVixtAppConfig { }
+export interface ReactVixtAppConfig {}
 
 export interface ReactVixtApp {
   /** React app root */
@@ -11,6 +11,6 @@ export interface ReactVixtApp {
 }
 
 declare module '@vixt/core/client' {
-  interface VixtAppConfig extends ReactVixtAppConfig { }
-  interface VixtApp extends ReactVixtApp { }
+  interface VixtAppConfig extends ReactVixtAppConfig {}
+  interface VixtApp extends ReactVixtApp {}
 }

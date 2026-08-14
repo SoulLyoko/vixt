@@ -1,12 +1,11 @@
 {
-  "id": "uts-toast",
   "displayName": "uts-toast",
   "version": "1.0.0",
   "description": "uts-toast",
-  "repository": "",
   "keywords": [
     "uts-toast"
   ],
+  "repository": "",
   "types": "index.d.ts",
   "engines": {
     "HBuilderX": "^3.6.8"
@@ -31,6 +30,7 @@
     },
     "npmurl": ""
   },
+  "id": "uts-toast",
   "uni_modules": {
     "dependencies": [],
     "encrypt": [],

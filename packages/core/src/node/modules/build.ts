@@ -11,11 +11,11 @@ export default defineVixtModule<BuildOptions>({
   setup(options) {
     const analyzeOptions = {
       enabled: !!options.analyze,
-      ...typeof options.analyze === 'object' ? options.analyze : {},
+      ...(typeof options.analyze === 'object' ? options.analyze : {}),
     }
     const legacyOptions = {
       enabled: !!options.legacy,
-      ...typeof options.legacy === 'object' ? options.legacy : {},
+      ...(typeof options.legacy === 'object' ? options.legacy : {}),
     }
     return [
       analyzeOptions.enabled && Analyzer(analyzeOptions),

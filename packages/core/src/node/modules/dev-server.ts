@@ -12,14 +12,23 @@ export default defineVixtModule<DevServerOptions>({
   defaults(vixt) {
     const watchFiles: string[] = []
 
-    const configFiles = vixt._layers.map(layer => layer.configFile!).filter(e => !e.includes('node_modules'))
-    const modulesDirs = vixt._layers.map(layer => layer.config!.modulesDir!).filter(e => !e.includes('node_modules'))
+    const configFiles = vixt._layers
+      .map(layer => layer.configFile!)
+      .filter(e => !e.includes('node_modules'))
+    const modulesDirs = vixt._layers
+      .map(layer => layer.config!.modulesDir!)
+      .filter(e => !e.includes('node_modules'))
     watchFiles.push(...configFiles, ...modulesDirs)
 
     const workspaceDir = findUpWorkspaceDir()
     if (workspaceDir) {
       const mode = loadMode()
-      const envFiles = [`${workspaceDir}/.env`, `${workspaceDir}/.env.local`, `${workspaceDir}/.env.${mode}`, `${workspaceDir}/.env.${mode}.local`]
+      const envFiles = [
+        `${workspaceDir}/.env`,
+        `${workspaceDir}/.env.local`,
+        `${workspaceDir}/.env.${mode}`,
+        `${workspaceDir}/.env.${mode}.local`,
+      ]
       watchFiles.push(...envFiles)
     }
 
@@ -30,7 +39,7 @@ export default defineVixtModule<DevServerOptions>({
   setup(options) {
     const sslOptions = {
       enabled: !!options.https,
-      ...typeof options.https === 'object' ? options.https : {},
+      ...(typeof options.https === 'object' ? options.https : {}),
     }
 
     const watchFiles = options.watch ?? []

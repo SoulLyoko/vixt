@@ -5,6 +5,4 @@ const route = useRoute()
 console.log(route.params.id)
 </script>
 
-<template>
-  Posts {{ route.params.id }}
-</template>
+<template>Posts {{ route.params.id }}</template>

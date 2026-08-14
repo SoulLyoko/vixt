@@ -13,8 +13,8 @@ import { defineVixtConfig } from 'vixt'
 
 export default defineVixtConfig({
   imports: {
-    dirs: ['src/types']
-  }
+    dirs: ['src/types'],
+  },
 })
 ```
 

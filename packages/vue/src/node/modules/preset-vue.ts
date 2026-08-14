@@ -14,7 +14,11 @@ const name = 'vixt:preset-vue'
 export default defineVixtModule<VixtOptions>({
   meta: { name },
   setup(_, vixt) {
-    const { components = [], pages = [], layouts = [] } = resolveLayersDirs([...vixt._layers].reverse())
+    const {
+      components = [],
+      pages = [],
+      layouts = [],
+    } = resolveLayersDirs([...vixt._layers].reverse())
     const { buildTypesDir } = vixt.options
 
     const defaultOptions: VixtOptions = {
@@ -29,8 +33,7 @@ export default defineVixtModule<VixtOptions>({
           const node: TreeNode['value'] = route.node.value
           // @ts-ignore
           const overrides: Map<string, object> = node._overrides
-          if (overrides.size <= 1)
-            return
+          if (overrides.size <= 1) return
 
           for (const pageDir of [...pages].reverse()) {
             const matched = [...overrides.keys()].find(e => e.match(pageDir))
@@ -51,7 +54,7 @@ export default defineVixtModule<VixtOptions>({
       devtools: { enabled: false },
     }
 
-    const options = vixt.options = defu(vixt.options, defaultOptions)
+    const options = (vixt.options = defu(vixt.options, defaultOptions))
 
     const plugins = [
       VueRouter(options.router),

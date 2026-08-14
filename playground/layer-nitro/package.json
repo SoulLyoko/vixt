@@ -1,7 +1,7 @@
 {
   "name": "@vixt/layer-nitro",
-  "type": "module",
   "private": true,
+  "type": "module",
   "main": "vixt.config.ts",
   "dependencies": {
     "@pinia/colada": "^1.4.2",

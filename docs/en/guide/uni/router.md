@@ -13,8 +13,8 @@ import { defineVixtConfig } from 'vixt'
 
 export default defineVixtConfig({
   uniPages: {
-    dir: 'src/views'
-  }
+    dir: 'src/views',
+  },
 })
 ```
 

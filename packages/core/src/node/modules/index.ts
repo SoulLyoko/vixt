@@ -16,4 +16,16 @@ export const virtualModuleIds = {
   plugins: virtualPlugins.getMeta!().name,
 }
 
-export const builtinModules = [vite, alias, app, build, devServer, imports, nitro, typescript, virtualAppConfig, virtualCSS, virtualPlugins]
+export const builtinModules = [
+  vite,
+  alias,
+  app,
+  build,
+  devServer,
+  imports,
+  nitro,
+  typescript,
+  virtualAppConfig,
+  virtualCSS,
+  virtualPlugins,
+]

@@ -16,8 +16,7 @@ function entry() {
 
   try {
     applyPlugins(vixt, plugins)
-  }
-  catch (err) {
+  } catch (err) {
     console.error(err)
   }
 

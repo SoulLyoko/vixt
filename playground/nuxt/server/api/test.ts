@@ -1,3 +1,3 @@
-export default eventHandler((_event) => {
+export default eventHandler(_event => {
   return 'Hello!'
 })

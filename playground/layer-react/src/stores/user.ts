@@ -17,11 +17,10 @@ export const useUserStore = create(
       savedName: '',
       previousNames: [],
       otherNames: () => get().previousNames.filter(e => e !== get().savedName),
-      setNewName: (name) => {
-        set((state) => {
+      setNewName: name => {
+        set(state => {
           const { savedName, previousNames } = state
-          if (savedName && !previousNames?.includes(savedName))
-            previousNames.push(savedName)
+          if (savedName && !previousNames?.includes(savedName)) previousNames.push(savedName)
 
           return { savedName: name, previousNames }
         })

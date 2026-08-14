@@ -21,7 +21,7 @@ export default defineVixtPlugin({
   name: 'my-plugin',
   setup(vixt) {
     console.log(vixt) // { app, router, routes, pinia, appConfig }
-  }
+  },
 })
 ```
 

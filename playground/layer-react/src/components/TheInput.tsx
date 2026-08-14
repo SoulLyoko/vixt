@@ -17,7 +17,6 @@ export default function TheInput(props: TheInputProps) {
       m-auto
       {...props}
       onChange={e => props.onChange?.(e.target.value)}
-    >
-    </input>
+    ></input>
   )
 }

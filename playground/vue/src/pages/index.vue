@@ -4,8 +4,7 @@ const name = ref(user.savedName)
 
 const router = useRouter()
 function go() {
-  if (name.value)
-    router.push(`/hi/${encodeURIComponent(name.value)}`)
+  if (name.value) router.push(`/hi/${encodeURIComponent(name.value)}`)
 }
 </script>
 
@@ -13,9 +12,7 @@ function go() {
   <div data-testid="page-index">
     <Icon icon="carbon:campsite" width="36px" m-auto />
 
-    <a href="https://github.com/SoulLyoko/vixt" target="_blank">
-      Vixt
-    </a>
+    <a href="https://github.com/SoulLyoko/vixt" target="_blank"> Vixt </a>
 
     <div text-sm op-75>
       {{ ENV.VITE_APP_NAME }}
@@ -23,12 +20,15 @@ function go() {
 
     <div py-4 />
 
-    <TheInput v-model="name" placeholder="What's your name?" autocomplete="false" @keydown.enter="go" />
+    <TheInput
+      v-model="name"
+      placeholder="What's your name?"
+      autocomplete="false"
+      @keydown.enter="go"
+    />
 
     <div>
-      <button :disabled="!name" m-3 btn text-sm @click="go">
-        Go
-      </button>
+      <button :disabled="!name" m-3 btn text-sm @click="go">Go</button>
     </div>
   </div>
 </template>

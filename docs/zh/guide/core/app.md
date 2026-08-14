@@ -15,8 +15,8 @@ export default defineVixtConfig({
   app: {
     head: {
       title: [{ children: 'vixt-project' }],
-    }
-  }
+    },
+  },
 })
 ```
 
@@ -36,7 +36,7 @@ export default defineVixtPlugin({
   name: 'register',
   setup({ app }) {
     app.use(ElementPlus)
-  }
+  },
 })
 ```
 

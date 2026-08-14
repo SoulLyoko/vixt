@@ -26,7 +26,7 @@ export default defineVixtModule<VixtOptions>({
       devtools: { enabled: false },
     }
 
-    const options = vixt.options = defu(vixt.options, defaultOptions)
+    const options = (vixt.options = defu(vixt.options, defaultOptions))
 
     const plugins = [
       Components(options.components),

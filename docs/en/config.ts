@@ -1,7 +1,8 @@
 import { defineAdditionalConfig } from 'vitepress'
 
 export default defineAdditionalConfig({
-  description: 'Bring the features of Nuxt to modern popular frameworks, like Vue, React, Uni-app, Vitepress, etc.',
+  description:
+    'Bring the features of Nuxt to modern popular frameworks, like Vue, React, Uni-app, Vitepress, etc.',
   themeConfig: {
     nav: [
       { text: 'Guide', link: '/guide/introduction' },

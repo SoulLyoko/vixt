@@ -1,7 +1,7 @@
 {
   "name": "@vixt/layer-react",
-  "type": "module",
   "private": true,
+  "type": "module",
   "main": "vixt.config.ts",
   "dependencies": {
     "@iconify/react": "catalog:react",

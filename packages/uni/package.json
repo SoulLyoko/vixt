@@ -1,18 +1,23 @@
 {
   "name": "@vixt/uni",
-  "type": "module",
   "version": "0.12.2",
-  "author": "SoulLyoko<https://github.com/SoulLyoko>",
-  "license": "MIT",
-  "homepage": "https://soullyoko.github.io/vixt/",
-  "repository": "https://github.com/SoulLyoko/vixt.git",
   "keywords": [
-    "vixt",
-    "vite",
     "uni",
+    "uni-app",
     "uniapp",
-    "uni-app"
+    "vite",
+    "vixt"
   ],
+  "homepage": "https://soullyoko.github.io/vixt/",
+  "license": "MIT",
+  "author": "SoulLyoko<https://github.com/SoulLyoko>",
+  "repository": "https://github.com/SoulLyoko/vixt.git",
+  "files": [
+    "dist"
+  ],
+  "type": "module",
+  "main": "./dist/node/index.mjs",
+  "types": "./dist/types/index.d.ts",
   "exports": {
     ".": "./src/node/index.ts",
     "./client/*": "./src/client/*.ts",
@@ -26,15 +31,6 @@
       "./types": "./dist/types/index.d.ts",
       "./package.json": "./package.json"
     }
-  },
-  "main": "./dist/node/index.mjs",
-  "types": "./dist/types/index.d.ts",
-  "files": [
-    "dist"
-  ],
-  "peerDependencies": {
-    "@dcloudio/vite-plugin-uni": "*",
-    "pinia": "*"
   },
   "dependencies": {
     "@dcloudio/types": "catalog:uni",
@@ -54,5 +50,9 @@
   "devDependencies": {
     "@dcloudio/vite-plugin-uni": "catalog:uni",
     "pinia": "catalog:vue"
+  },
+  "peerDependencies": {
+    "@dcloudio/vite-plugin-uni": "*",
+    "pinia": "*"
   }
 }

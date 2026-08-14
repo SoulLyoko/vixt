@@ -8,7 +8,14 @@ const prepare = defineCommand({
   async run() {
     const { loadConfigFromFile } = await import('vite')
     // load config with 'native'
-    await loadConfigFromFile({ command: 'serve', mode: 'dev' }, undefined, undefined, undefined, undefined, 'native')
+    await loadConfigFromFile(
+      { command: 'serve', mode: 'dev' },
+      undefined,
+      undefined,
+      undefined,
+      undefined,
+      'native',
+    )
   },
 })
 

@@ -19,8 +19,7 @@ export default defineVixtModule({
         }
       },
       load(id) {
-        if (id !== resolvedVirtualModuleId)
-          return
+        if (id !== resolvedVirtualModuleId) return
 
         const { plugins: pluginsDirs = [] } = resolveLayersDirs(vixt._layers)
 

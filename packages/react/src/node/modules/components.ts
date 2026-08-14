@@ -26,8 +26,7 @@ function getNameFromFilePath(filePath: string, dirs: string[]) {
   const folders = strippedPath.slice(1).split('/').filter(Boolean)
 
   let filename = parsedFilePath.name
-  if (filename === 'index')
-    filename = ''
+  if (filename === 'index') filename = ''
 
   const namespaced = [...folders, filename]
   filename = namespaced.filter(Boolean).join('-')
@@ -35,18 +34,21 @@ function getNameFromFilePath(filePath: string, dirs: string[]) {
   return filename
 }
 
-export default defineVitePlugin<ComponentResolverOptions>((options) => {
+export default defineVitePlugin<ComponentResolverOptions>(options => {
   const { dirs = ['src/components'], dts = 'components.d.ts' } = options ?? {}
 
-  const files = fg.sync(dirs.map(c => `${c}/**/*.(t|j)sx`), {
-    ignore: ['node_modules', '.git'],
-    onlyFiles: true,
-    cwd: cwd(),
-    absolute: true,
-  })
+  const files = fg.sync(
+    dirs.map(c => `${c}/**/*.(t|j)sx`),
+    {
+      ignore: ['node_modules', '.git'],
+      onlyFiles: true,
+      cwd: cwd(),
+      absolute: true,
+    },
+  )
 
   const imports: ImportsMap = {}
-  files.forEach((componentPath) => {
+  files.forEach(componentPath => {
     const componentName = pascalCase(getNameFromFilePath(componentPath, dirs))
     imports[componentPath] = [['default', componentName]]
   })

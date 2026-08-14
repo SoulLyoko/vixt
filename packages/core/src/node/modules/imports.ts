@@ -10,10 +10,22 @@ export default defineVixtModule<ImportsOptions>({
   meta: { name, configKey: 'imports' },
   defaults(vixt) {
     const { buildTypesDir } = vixt.options
-    const { composables = [], constants = [], hooks = [], stores = [], utils = [] } = resolveLayersDirs([...vixt._layers].reverse())
+    const {
+      composables = [],
+      constants = [],
+      hooks = [],
+      stores = [],
+      utils = [],
+    } = resolveLayersDirs([...vixt._layers].reverse())
 
     const vixtClientAutoImports = {
-      '@vixt/core/client': ['defineAppConfig', 'defineVixtPlugin', 'useAppConfig', 'useVixtApp', '$fetch'],
+      '@vixt/core/client': [
+        'defineAppConfig',
+        'defineVixtPlugin',
+        'useAppConfig',
+        'useVixtApp',
+        '$fetch',
+      ],
     }
 
     return {

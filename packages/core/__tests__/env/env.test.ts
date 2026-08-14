@@ -9,14 +9,17 @@ import { loadEnv as _loadEnv } from 'vite'
 const __dirname = path.dirname(url.fileURLToPath(import.meta.url))
 process.chdir(__dirname)
 
-fs.outputFileSync(path.resolve(__dirname, '../.env.development.local'), 'VITE_ENV_DEV_LOCAL=DEV_LOCAL')
+fs.outputFileSync(
+  path.resolve(__dirname, '../.env.development.local'),
+  'VITE_ENV_DEV_LOCAL=DEV_LOCAL',
+)
 fs.outputFileSync(path.resolve(__dirname, '../.env.local'), 'VITE_ENV_LOCAL=LOCAL')
 
 describe('env', () => {
   const mode = 'development'
   const env = loadEnv(mode, __dirname)
 
-  it ('should find workspace dir', () => {
+  it('should find workspace dir', () => {
     expect(findUpWorkspaceDir()).toBe(path.resolve(__dirname, '../'))
   })
 

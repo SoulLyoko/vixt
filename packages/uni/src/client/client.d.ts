@@ -9,5 +9,5 @@ export interface UniVixtApp {
 }
 
 declare module '@vixt/core/client' {
-  interface VixtApp extends UniVixtApp { }
+  interface VixtApp extends UniVixtApp {}
 }

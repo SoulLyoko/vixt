@@ -20,16 +20,14 @@ function copyUniModules(options: UniModulesOptions, vixt: Vixt) {
   const { include, exclude } = options ?? {}
   const { uni_modules = [] } = resolveLayersDirs(vixt._layers)
   const srcUniModulesPath = path.join(srcDir!, 'uni_modules')
-  uni_modules.forEach((uniModulesPath) => {
+  uni_modules.forEach(uniModulesPath => {
     fs.readdirSync(uniModulesPath)
-      .filter((dir) => {
-        if (include?.length)
-          return include.includes(dir)
-        if (exclude?.length)
-          return !exclude.includes(dir)
+      .filter(dir => {
+        if (include?.length) return include.includes(dir)
+        if (exclude?.length) return !exclude.includes(dir)
         return true
       })
-      .forEach((dir) => {
+      .forEach(dir => {
         const srcPath = path.join(uniModulesPath, dir)
         const destPath = path.join(srcUniModulesPath, dir)
         // const srcPkgVersion = fs.readJSONSync(path.join(srcPath, 'package.json'), { throws: false })?.version
@@ -40,8 +38,7 @@ function copyUniModules(options: UniModulesOptions, vixt: Vixt) {
             fs.emptyDirSync(destPath)
             fs.copySync(srcPath, destPath)
             fs.writeFileSync(path.join(destPath, '.gitignore'), '*', 'utf-8')
-          }
-          catch (e) {
+          } catch (e) {
             console.error(`Error copying ${srcPath} to ${destPath}:\n`, e)
           }
         }
@@ -58,12 +55,13 @@ export default defineVixtModule({
     return {
       name,
       configureServer(server) {
-        const { uni_modules = [] } = resolveLayersDirs(vixt._layers.filter(e => !isSamePath(e.cwd!, vixt.options.rootDir!)))
+        const { uni_modules = [] } = resolveLayersDirs(
+          vixt._layers.filter(e => !isSamePath(e.cwd!, vixt.options.rootDir!)),
+        )
         server.watcher.add(uni_modules)
         server.watcher.on('all', (_, file) => {
           const match = uni_modules.some(e => path.normalize(file).match(e))
-          if (match)
-            copyUniModules(options, vixt)
+          if (match) copyUniModules(options, vixt)
         })
       },
     }

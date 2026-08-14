@@ -12,5 +12,5 @@ export interface ReactVixtOptions {
 }
 
 declare module '@vixt/core' {
-  interface VixtOptions extends ReactVixtOptions { }
+  interface VixtOptions extends ReactVixtOptions {}
 }

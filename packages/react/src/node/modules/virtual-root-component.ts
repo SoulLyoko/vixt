@@ -10,7 +10,8 @@ function resolveRootComponent(vixt: Vixt) {
   for (const layer of vixt._layers) {
     const layerRootComponentPath = path.resolve(layer.config!.srcDir!, 'App.tsx')
     const isExists = fs.existsSync(layerRootComponentPath)
-    const layerRootComponentCode = (isExists && fs.readFileSync(layerRootComponentPath, 'utf-8')) || ''
+    const layerRootComponentCode =
+      (isExists && fs.readFileSync(layerRootComponentPath, 'utf-8')) || ''
     if (!isEmptyCode(layerRootComponentCode)) {
       return {
         path: layerRootComponentPath,
@@ -27,13 +28,11 @@ function resolveRootComponent(vixt: Vixt) {
 }
 
 export function isEmptyCode(code?: string) {
-  if (!code)
-    return true
+  if (!code) return true
   try {
     // @ts-ignore compatible with vite7
     return !parseAst(code, { jsx: true }).body.length
-  }
-  catch {
+  } catch {
     return false
   }
 }

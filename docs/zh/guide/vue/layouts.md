@@ -14,8 +14,8 @@ import { defineVixtConfig } from 'vixt'
 export default defineVixtConfig({
   layouts: {
     layoutsDirs: ['src/design'],
-    pagesDirs: ['src/views']
-  }
+    pagesDirs: ['src/views'],
+  },
 })
 ```
 

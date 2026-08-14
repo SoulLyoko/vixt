@@ -29,9 +29,9 @@ export default defineVixtModule<ModuleOptions>({
       name,
       configResolved(config) {
         console.log(config) // vite config
-      }
+      },
     }
-  }
+  },
 })
 ```
 

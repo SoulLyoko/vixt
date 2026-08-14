@@ -4,9 +4,7 @@ function LayoutNotfound() {
   return (
     <div>
       <Outlet />
-      <div>
-        This layout should be overridden.
-      </div>
+      <div>This layout should be overridden.</div>
     </div>
   )
 }

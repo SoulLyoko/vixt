@@ -10,7 +10,8 @@ function resolveRootComponent(vixt: Vixt) {
   for (const layer of vixt._layers) {
     const layerRootComponentPath = path.resolve(layer.config!.srcDir!, 'App.vue')
     const isExists = fs.existsSync(layerRootComponentPath)
-    const layerRootComponentCode = (isExists && fs.readFileSync(layerRootComponentPath, 'utf-8')) || ''
+    const layerRootComponentCode =
+      (isExists && fs.readFileSync(layerRootComponentPath, 'utf-8')) || ''
     if (!isEmptyCode(layerRootComponentCode)) {
       return {
         path: layerRootComponentPath,
@@ -27,14 +28,14 @@ function resolveRootComponent(vixt: Vixt) {
 }
 
 export function isEmptyCode(code?: string) {
-  if (!code)
-    return true
+  if (!code) return true
   try {
     const parsed = parse(code)
-    const { descriptor: { template, script, scriptSetup } } = parsed
+    const {
+      descriptor: { template, script, scriptSetup },
+    } = parsed
     return !template && !script && !scriptSetup
-  }
-  catch {
+  } catch {
     return false
   }
 }

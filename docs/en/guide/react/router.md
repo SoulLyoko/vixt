@@ -13,8 +13,8 @@ import { defineVixtConfig } from 'vixt'
 
 export default defineVixtConfig({
   pages: {
-    pages: ['src/views']
-  }
+    pages: ['src/views'],
+  },
 })
 ```
 

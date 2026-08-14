@@ -69,16 +69,18 @@ export function defineVitePlugin<Options = any>(pluginFn: (options?: Options) =>
  * })
  * ```
  */
-export function defineVixtModule<T extends ModuleOptions = ModuleOptions>(definition: ModuleDefinition<T> | VixtModule<T>) {
-  if (typeof definition == 'function')
-    return defineVixtModule({ setup: definition })
+export function defineVixtModule<T extends ModuleOptions = ModuleOptions>(
+  definition: ModuleDefinition<T> | VixtModule<T>,
+) {
+  if (typeof definition == 'function') return defineVixtModule({ setup: definition })
 
   const module = definition
 
   function getOptions(inlineOptions: Partial<T>, vixt: Vixt) {
     const configKey = module.meta?.configKey || module.meta?.name
     const configOptions = configKey ? vixt.options[configKey] : {}
-    const defaultOptions = typeof module.defaults === 'function' ? module.defaults(vixt) : module.defaults
+    const defaultOptions =
+      typeof module.defaults === 'function' ? module.defaults(vixt) : module.defaults
     const resolvedOptions = defu(inlineOptions, configOptions, defaultOptions)
     if (configKey) {
       vixt.options[configKey] = resolvedOptions
@@ -97,11 +99,18 @@ export function defineVixtModule<T extends ModuleOptions = ModuleOptions>(defini
   return normalizedModule as VixtModule<T>
 }
 
-export function installModule<T extends ModuleOptions = ModuleOptions>(module: VixtModule<T>, inlineOptions: any, vixt: Vixt) {
+export function installModule<T extends ModuleOptions = ModuleOptions>(
+  module: VixtModule<T>,
+  inlineOptions: any,
+  vixt: Vixt,
+) {
   return module(inlineOptions, vixt)
 }
 
-export async function applyLayerModules({ config, layers = [] }: ResolvedVixtConfig): Promise<VixtModule[]> {
+export async function applyLayerModules({
+  config,
+  layers = [],
+}: ResolvedVixtConfig): Promise<VixtModule[]> {
   const { modules: modulesDirs = [] } = resolveLayersDirs(layers)
   const modules: VixtModule[] = []
   const jiti = createJiti(config.rootDir!, { moduleCache: false })
@@ -111,10 +120,9 @@ export async function applyLayerModules({ config, layers = [] }: ResolvedVixtCon
       for (const f of files) {
         try {
           const fileURL = pathToFileURL(path.resolve(m, f))
-          const module = await jiti.import(fileURL, { default: true }) as VixtModule
+          const module = (await jiti.import(fileURL, { default: true })) as VixtModule
           modules.push(module)
-        }
-        catch { }
+        } catch {}
       }
     }
   }

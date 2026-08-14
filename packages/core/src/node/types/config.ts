@@ -1,6 +1,14 @@
 import type { VixtConfigLayerMeta } from './layer'
 import type { VixtModule } from './module'
-import type { AliasOptions, AppOptions, BuildOptions, DevServerOptions, ImportsOptions, NitroOptions, TypescriptOptions } from './options'
+import type {
+  AliasOptions,
+  AppOptions,
+  BuildOptions,
+  DevServerOptions,
+  ImportsOptions,
+  NitroOptions,
+  TypescriptOptions,
+} from './options'
 import type { UserConfig } from 'vite'
 
 export interface VixtConfig {

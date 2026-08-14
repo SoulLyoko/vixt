@@ -13,9 +13,9 @@ import { defineVixtConfig } from 'vixt'
 
 export default defineVixtConfig({
   nitro: {
-    enabled: true
+    enabled: true,
     // serverDir: './server' // 默认为'./server'
-  }
+  },
 })
 ```
 
@@ -40,7 +40,7 @@ export default defineEventHandler(() => {
 ```vue [src/pages/index.vue]
 <script setup lang="ts">
 // vixt自动导入ofetch的$fetch函数，并提供类型定义
-$fetch('/test').then((res) => {
+$fetch('/test').then(res => {
   console.log(res) // 'Hello World!'
 })
 </script>

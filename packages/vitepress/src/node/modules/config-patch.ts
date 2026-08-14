@@ -5,8 +5,7 @@ export default defineVitePlugin(() => {
     name: 'vixt:config-patch',
     config(config) {
       const siteBase = config.vitepress?.userConfig?.base
-      if (siteBase)
-        return { base: siteBase }
+      if (siteBase) return { base: siteBase }
     },
   }
 })

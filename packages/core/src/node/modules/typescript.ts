@@ -16,24 +16,24 @@ function generateTsConfig(options: TypescriptOptions, vixt: Vixt) {
 function generateVixtDts(options: TypescriptOptions, vixt: Vixt) {
   const { buildDir } = vixt.options
   const codePath = path.resolve(buildDir!, 'vixt.d.ts')
-  const code = options.references?.map((reference) => {
-    if (typeof reference === 'string') {
-      return `/// <reference path="${reference}" />`
-    }
-    else if (typeof reference === 'object' && reference.path && reference.content) {
-      fs.outputFileSync(path.resolve(buildDir!, reference.path), reference.content)
-      return `/// <reference path="${reference.path}" />`
-    }
-    else {
-      return ''
-    }
-  }).concat('export {}').join('\n')
+  const code = options.references
+    ?.map(reference => {
+      if (typeof reference === 'string') {
+        return `/// <reference path="${reference}" />`
+      } else if (typeof reference === 'object' && reference.path && reference.content) {
+        fs.outputFileSync(path.resolve(buildDir!, reference.path), reference.content)
+        return `/// <reference path="${reference.path}" />`
+      } else {
+        return ''
+      }
+    })
+    .concat('export {}')
+    .join('\n')
   code && fs.outputFileSync(codePath, code)
 }
 
 function genarateShim(options: TypescriptOptions, vixt: Vixt) {
-  if (!options.shim)
-    return
+  if (!options.shim) return
   const { buildTypesDir } = vixt.options
   const code = `
 declare module '*.vue' {
@@ -74,8 +74,7 @@ export default defineVixtModule<TypescriptOptions>({
       const exists = fs.existsSync(av)
       const stats = exists ? fs.statSync(av) : null
       paths[ak] = [av]
-      if (stats?.isDirectory())
-        paths[`${ak}/*`] = [`${av}/*`]
+      if (stats?.isDirectory()) paths[`${ak}/*`] = [`${av}/*`]
     }
 
     const layersDirs = vixt._layers.map(e => `${e.cwd!}/**/*`)

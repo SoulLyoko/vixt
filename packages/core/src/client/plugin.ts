@@ -24,8 +24,7 @@ import type { PluginDefinition, VixtApp, VixtPlugin } from './types'
  * ```
  */
 export function defineVixtPlugin(definition: PluginDefinition | VixtPlugin): VixtPlugin {
-  if (typeof definition == 'function')
-    return definition
+  if (typeof definition == 'function') return definition
 
   const pluginName = definition.name
   const pluginSetup = definition.setup || (() => {})

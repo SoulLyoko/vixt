@@ -11,11 +11,11 @@ const { state } = useQuery({
   <div>
     <div>
       GET /mock/
-      <input v-model="value" type="text">
+      <input v-model="value" type="text" />
     </div>
   </div>
   <div>state:</div>
-  <code style="white-space: pre;">
+  <code style="white-space: pre">
     {{ state }}
   </code>
 </template>

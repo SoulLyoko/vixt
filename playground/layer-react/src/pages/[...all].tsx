@@ -6,11 +6,7 @@ meta:
 */
 
 function all() {
-  return (
-    <div>
-      NotFount
-    </div>
-  )
+  return <div>NotFount</div>
 }
 
 export default all

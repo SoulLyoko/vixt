@@ -22,5 +22,5 @@ export interface VueVixtOptions {
 }
 
 declare module '@vixt/core' {
-  interface VixtOptions extends VueVixtOptions { }
+  interface VixtOptions extends VueVixtOptions {}
 }

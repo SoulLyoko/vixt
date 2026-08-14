@@ -32,10 +32,7 @@ export default defineVixtConfig({
 import { defineConfig, presetAttributify, presetWind3 } from 'unocss'
 
 export default defineConfig({
-  presets: [
-    presetWind3(),
-    presetAttributify(),
-  ],
+  presets: [presetWind3(), presetAttributify()],
 })
 ```
 

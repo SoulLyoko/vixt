@@ -11,21 +11,21 @@ import { loadEnv as _loadEnv } from 'vite'
 /** https://github.com/vitejs/vite/blob/main/packages/vite/src/node/cli.ts */
 export interface GlobalCLIOptions {
   '--'?: string[]
-  'c'?: boolean | string
-  'config'?: string
-  'base'?: string
-  'l'?: LogLevel
-  'logLevel'?: LogLevel
-  'clearScreen'?: boolean
-  'configLoader'?: InlineConfig['configLoader']
-  'd'?: boolean | string
-  'debug'?: boolean | string
-  'f'?: string
-  'filter'?: string
-  'm'?: string
-  'mode'?: string
-  'force'?: boolean
-  'w'?: boolean
+  c?: boolean | string
+  config?: string
+  base?: string
+  l?: LogLevel
+  logLevel?: LogLevel
+  clearScreen?: boolean
+  configLoader?: InlineConfig['configLoader']
+  d?: boolean | string
+  debug?: boolean | string
+  f?: string
+  filter?: string
+  m?: string
+  mode?: string
+  force?: boolean
+  w?: boolean
 }
 
 export function loadCLIOptions(): GlobalCLIOptions {

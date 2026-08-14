@@ -20,8 +20,7 @@ export default defineVixtModule({
         }
       },
       load(id) {
-        if (id !== resolvedVirtualModuleId)
-          return
+        if (id !== resolvedVirtualModuleId) return
 
         const { baseURL = '/', rootId = 'app' } = vixt.options.app ?? {}
 
@@ -41,8 +40,7 @@ export default defineVixtModule({
         try {
           // Only accept data that can be structured
           defuCall.$args.push(JSON.parse(JSON.stringify(vixt.options.appConfig ?? {})))
-        }
-        catch (err) {
+        } catch (err) {
           console.error(err)
         }
 

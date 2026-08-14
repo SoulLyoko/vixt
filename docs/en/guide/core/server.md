@@ -13,9 +13,9 @@ import { defineVixtConfig } from 'vixt'
 
 export default defineVixtConfig({
   nitro: {
-    enabled: true
+    enabled: true,
     // serverDir: './server' // defaults to './server'
-  }
+  },
 })
 ```
 
@@ -40,7 +40,7 @@ export default defineEventHandler(() => {
 ```vue [src/pages/index.vue]
 <script setup lang="ts">
 // Vixt auto-imports the $fetch function from ofetch and provides types
-$fetch('/test').then((res) => {
+$fetch('/test').then(res => {
   console.log(res) // 'Hello World!'
 })
 </script>

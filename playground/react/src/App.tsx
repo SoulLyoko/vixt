@@ -1,8 +1,8 @@
-import routes from '~react-pages'
 import { StrictMode, Suspense } from 'react'
 import { BrowserRouter, useRoutes } from 'react-router'
 // @ts-expect-error virtual file
 import { setupLayouts } from 'virtual:vixt:setup-layouts'
+import routes from '~react-pages'
 
 export default function () {
   const layouts = setupLayouts(routes)

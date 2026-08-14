@@ -11,10 +11,8 @@ const query = ref(props.query ?? {})
 
 <template>
   <ul>
-    <input v-model="query.name">
-    <Link href="/users" :data="query" view-transition>
-      query
-    </Link>
+    <input v-model="query.name" />
+    <Link href="/users" :data="query" view-transition> query </Link>
     <li v-for="user in users" :key="user.name">
       {{ user.name }}
     </li>

@@ -17,24 +17,20 @@ function hi() {
         Dynamic route!
       </div>
 
-      {
-        otherNames().length
-          ? (
-              <div text-sm mt-4>
-                <div op-75>
-                  aka:
-                </div>
-                {otherNames().map(otherName => (
-                  <div key={otherName}>
-                    <Link to={`/hi/${otherName}`} replace>
-                      {otherName}
-                    </Link>
-                  </div>
-                ))}
-              </div>
-            )
-          : ''
-      }
+      {otherNames().length ? (
+        <div text-sm mt-4>
+          <div op-75>aka:</div>
+          {otherNames().map(otherName => (
+            <div key={otherName}>
+              <Link to={`/hi/${otherName}`} replace>
+                {otherName}
+              </Link>
+            </div>
+          ))}
+        </div>
+      ) : (
+        ''
+      )}
 
       <button className="btn" text-sm m-3 onClick={() => navigate(-1)}>
         Back

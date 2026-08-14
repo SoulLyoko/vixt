@@ -16,10 +16,12 @@ function usePreferredDark() {
 
 function useColorMode() {
   const preferredDark = usePreferredDark()
-  const system = computed(() => preferredDark.value ? 'dark' : 'light')
+  const system = computed(() => (preferredDark.value ? 'dark' : 'light'))
   const store = ref<BasicColorSchema>(uni.getStorageSync('vueuse-color-scheme') || 'auto')
   watch(store, v => uni.setStorageSync('vueuse-color-scheme', v))
-  const state = computed<BasicColorMode>(() => store.value === 'auto' ? system.value : store.value)
+  const state = computed<BasicColorMode>(() =>
+    store.value === 'auto' ? system.value : store.value,
+  )
 
   return Object.assign(store, { system, state })
 }
@@ -32,10 +34,8 @@ export function useDark() {
     },
     set(v) {
       const modeVal = v ? 'dark' : 'light'
-      if (mode.system.value === modeVal)
-        mode.value = 'auto'
-      else
-        mode.value = modeVal
+      if (mode.system.value === modeVal) mode.value = 'auto'
+      else mode.value = modeVal
     },
   })
   return Object.assign(isDark, { mode })

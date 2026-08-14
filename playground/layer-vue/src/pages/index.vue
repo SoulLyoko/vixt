@@ -7,7 +7,9 @@
     <ul>
       Please check the overriding rules below:
       <li>path `/index/index` can be overridden by `/index/index` and `/index`.</li>
-      <li>path `/index` can be rewritten by `/index`, but can not be overridden by `/index/index`.</li>
+      <li>
+        path `/index` can be rewritten by `/index`, but can not be overridden by `/index/index`.
+      </li>
     </ul>
   </div>
 </template>

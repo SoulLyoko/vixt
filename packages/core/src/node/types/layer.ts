@@ -13,5 +13,8 @@ export interface VixtConfigLayer extends ConfigLayer<VixtOptions, VixtConfigLaye
   cwd?: string
 }
 
-export interface LoadVixtConfigOptions extends LoadConfigOptions<VixtOptions, VixtConfigLayerMeta> { }
-export interface ResolvedVixtConfig extends ResolvedConfig<VixtOptions, VixtConfigLayerMeta> { }
+export interface LoadVixtConfigOptions extends LoadConfigOptions<
+  VixtOptions,
+  VixtConfigLayerMeta
+> {}
+export interface ResolvedVixtConfig extends ResolvedConfig<VixtOptions, VixtConfigLayerMeta> {}

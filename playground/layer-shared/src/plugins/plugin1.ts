@@ -6,7 +6,7 @@ declare module '@vixt/core/client' {
   }
 }
 
-export default defineVixtPlugin((vixtApp) => {
+export default defineVixtPlugin(vixtApp => {
   console.log('vixtApp:', vixtApp.appConfig)
   console.log('layer-shared plugin1 loaded')
 

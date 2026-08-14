@@ -36,14 +36,14 @@ export async function loadVixt(opts?: LoadConfigOptions<VixtOptions>) {
   const vixt: Vixt = {
     options: result.config,
     _layers: result.layers ?? [],
-    _modules: [...builtinModules, ...result.config.modules ?? [], ...layerModules],
+    _modules: [...builtinModules, ...(result.config.modules ?? []), ...layerModules],
   }
 
   return vixt
 }
 
 export function createVixtPlugin(loadOptions: LoadConfigOptions<VixtOptions>) {
-  return defineVitePlugin<VixtOptions>(async (vixtOptions) => {
+  return defineVitePlugin<VixtOptions>(async vixtOptions => {
     const vixt = await loadVixt(defu({ defaults: vixtOptions }, loadOptions))
 
     const plugins = vixt._modules.map(module => installModule(module, {}, vixt))

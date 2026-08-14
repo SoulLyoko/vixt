@@ -144,11 +144,11 @@ export interface BuildOptions {
   /**
    * Set to true to enable bundle analysis, or pass an object with `enabled: true` and options: [vite-bundle-analyzer](https://github.com/nonzzz/vite-bundle-analyzer)
    */
-  analyze?: boolean | ExtractPluginOptions<typeof Analyzer> & { enabled?: boolean }
+  analyze?: boolean | (ExtractPluginOptions<typeof Analyzer> & { enabled?: boolean })
   /**
    * Set to true to enable legacy mode, or pass an object with `enabled: true` and options: [@vitejs/plugin-legacy](https://github.com/vitejs/vite/tree/main/packages/plugin-legacy)
    */
-  legacy?: boolean | ExtractPluginOptions<typeof Legacy> & { enabled?: boolean }
+  legacy?: boolean | (ExtractPluginOptions<typeof Legacy> & { enabled?: boolean })
 }
 
 export interface DevServerOptions extends Pick<ServerOptions, 'port' | 'host' | 'cors'> {
@@ -156,14 +156,14 @@ export interface DevServerOptions extends Pick<ServerOptions, 'port' | 'host' | 
    * Whether to enable HTTPS by using [@vitejs/plugin-basic-ssl](https://github.com/vitejs/vite-plugin-basic-ssl).
    * @default false
    */
-  https?: boolean | ExtractPluginOptions<typeof Ssl> & { enabled?: boolean }
+  https?: boolean | (ExtractPluginOptions<typeof Ssl> & { enabled?: boolean })
   /**
    * The watch property lets you define patterns that will restart the dev server when changed.
    */
   watch?: string[]
 }
 
-export interface ImportsOptions extends ExtractPluginOptions<typeof AutoImport> { }
+export interface ImportsOptions extends ExtractPluginOptions<typeof AutoImport> {}
 
 export interface NitroOptions extends Omit<NitroPluginConfig, 'serverDir'> {
   enabled?: boolean
@@ -171,7 +171,7 @@ export interface NitroOptions extends Omit<NitroPluginConfig, 'serverDir'> {
 }
 
 export interface TypescriptOptions {
-  references?: (string | { path?: string, content?: string })[]
+  references?: (string | { path?: string; content?: string })[]
   /**
    * You can extend the generated TypeScript configurations (.vixt/tsconfig.json) using this option.
    */

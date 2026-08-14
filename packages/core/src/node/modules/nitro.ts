@@ -23,7 +23,7 @@ export default defineVixtModule<NitroOptions>({
   defaults(vixt) {
     return {
       enabled: false,
-      scanDirs: vixt._layers.map((layer) => {
+      scanDirs: vixt._layers.map(layer => {
         const { serverDir = './server' } = layer.config?.nitro ?? {}
         return path.join(layer.cwd!, serverDir)
       }),
@@ -31,12 +31,15 @@ export default defineVixtModule<NitroOptions>({
       typescript: {
         generatedTypesDir: vixt.options.buildTypesDir,
       },
-      modules: [(nitro) => { nitro.hooks.hook('build:before', setNitroCtx) }],
+      modules: [
+        nitro => {
+          nitro.hooks.hook('build:before', setNitroCtx)
+        },
+      ],
     }
   },
   setup(options, vixt) {
-    if (!options.enabled)
-      return
+    if (!options.enabled) return
 
     return [
       nitro(options),
@@ -49,8 +52,7 @@ export default defineVixtModule<NitroOptions>({
           watcher.add(routesDirs)
           watcher.on('all', (_, p) => {
             const matched = routesDirs.some(r => path.normalize(p).includes(path.normalize(r)))
-            if (matched)
-              writeTypes()
+            if (matched) writeTypes()
           })
         },
       },
@@ -58,10 +60,8 @@ export default defineVixtModule<NitroOptions>({
         name: 'vixt:config-outdir-for-unocss',
         config() {
           let publicDir = '.output/public'
-          if (options.output?.publicDir)
-            publicDir = options.output.publicDir
-          else if (options.output?.dir)
-            publicDir = path.join(options.output.dir, 'public')
+          if (options.output?.publicDir) publicDir = options.output.publicDir
+          else if (options.output?.dir) publicDir = path.join(options.output.dir, 'public')
           return {
             build: {
               outDir: publicDir,

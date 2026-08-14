@@ -7,7 +7,7 @@ function sleep(ms?: number) {
 /**
  * GET /mock?key=
  */
-export default defineHandler(async (event) => {
+export default defineHandler(async event => {
   const { key } = getRouterParams(event)
   await sleep(1000)
   return {

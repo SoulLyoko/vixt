@@ -5,20 +5,10 @@
     "jsx": "preserve",
     "module": "ESNext",
     "moduleResolution": "bundler",
-    "types": [
-      "void/env"
-    ],
+    "types": ["void/env"],
     "strict": true,
     "esModuleInterop": true,
     "skipLibCheck": true
   },
-  "include": [
-    "src",
-    "pages",
-    "routes",
-    "middleware",
-    "crons",
-    "queues",
-    "db"
-  ]
+  "include": ["src", "pages", "routes", "middleware", "crons", "queues", "db"]
 }

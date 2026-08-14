@@ -4,12 +4,16 @@ import { applyPlugins, createError, createNuxtApp } from 'nuxt/app'
 import { createApp, createSSRApp, nextTick } from 'vue'
 
 // This file must be imported first as we set globalThis.$fetch via this import
-// @ts-expect-error virtual file
 import '#build/fetch'
 import '#build/global-polyfills.mjs'
-// @ts-expect-error virtual file
 import '#build/css'
-import { appId, appSpaLoaderAttrs, multiApp, spaLoadingTemplateOutside, vueAppRootContainer } from '#build/nuxt.config.mjs'
+import {
+  appId,
+  appSpaLoaderAttrs,
+  multiApp,
+  spaLoadingTemplateOutside,
+  vueAppRootContainer,
+} from '#build/nuxt.config.mjs'
 // @ts-expect-error virtual file
 import plugins from '#build/plugins'
 import RootComponent from '#build/root-component.mjs'
@@ -23,8 +27,11 @@ async function entry() {
   }
 
   const isSSR = Boolean(
-    (multiApp ? window.__NUXT__?.[appId] : window.__NUXT__)?.serverRendered
-    ?? (multiApp ? document.querySelector(`[data-nuxt-data="${appId}"]`) as HTMLElement : document.getElementById('__NUXT_DATA__'))?.dataset.ssr === 'true',
+    (multiApp ? window.__NUXT__?.[appId] : window.__NUXT__)?.serverRendered ??
+    (multiApp
+      ? (document.querySelector(`[data-nuxt-data="${appId}"]`) as HTMLElement)
+      : document.getElementById('__NUXT_DATA__')
+    )?.dataset.ssr === 'true',
   )
   const vueApp = isSSR ? createSSRApp(RootComponent) : createApp(RootComponent)
 
@@ -55,8 +62,7 @@ async function entry() {
 
   try {
     await applyPlugins(nuxt, plugins)
-  }
-  catch (err) {
+  } catch (err) {
     handleVueError(err)
   }
 
@@ -66,8 +72,7 @@ async function entry() {
     vueApp.mount(vueAppRootContainer)
     await nuxt.hooks.callHook('app:mounted', vueApp)
     await nextTick()
-  }
-  catch (err) {
+  } catch (err) {
     handleVueError(err)
   }
 

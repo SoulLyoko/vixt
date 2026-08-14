@@ -14,17 +14,16 @@ export default defineVixtModule({
       enforce: 'pre',
       apply: 'serve',
       async resolveId(source, importer) {
-        if (!importer)
-          return
+        if (!importer) return
 
-        if (!optimizeLayerDirs.some(dir => path.normalize(importer).startsWith(dir)))
-          return
+        if (!optimizeLayerDirs.some(dir => path.normalize(importer).startsWith(dir))) return
 
-        if (optimizedDeps.has(source))
-          return
+        if (optimizedDeps.has(source)) return
 
         optimizedDeps.add(source)
-        await this.resolve(source, path.join(vixt.options.srcDir!, 'index.html'), { skipSelf: true }).catch(() => null)
+        await this.resolve(source, path.join(vixt.options.srcDir!, 'index.html'), {
+          skipSelf: true,
+        }).catch(() => null)
       },
     }
   },

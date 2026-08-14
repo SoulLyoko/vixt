@@ -25,7 +25,10 @@ export function overrideNormalizeNodeModules() {
 export function overrideUniPagesTypes() {
   const matched = `  import type { SubPackage } from './src/config/types/index'\n  import type { PageMetaDatum } from './src/types'`
   const replaced = `  import type { PageMetaDatum, SubPackage } from '@uni-helper/vite-plugin-uni-pages'`
-  const codePath = path.resolve(resolvePathSync('@uni-helper/vite-plugin-uni-pages'), '../../client.d.ts')
+  const codePath = path.resolve(
+    resolvePathSync('@uni-helper/vite-plugin-uni-pages'),
+    '../../client.d.ts',
+  )
   let code = codePath && fs.readFileSync(codePath, 'utf-8')
   if (code.includes(matched)) {
     code = code.replace(matched, replaced)
@@ -35,8 +38,7 @@ export function overrideUniPagesTypes() {
 
 /** 增加小程序中vueuse的运行所需 */
 export function transformMpRuntime(code: string, id: string) {
-  if (!id.endsWith('@dcloudio/uni-mp-vue/dist/vue.runtime.esm.js'))
-    return code
+  if (!id.endsWith('@dcloudio/uni-mp-vue/dist/vue.runtime.esm.js')) return code
   code += `
 export const render = () => {}
 export const TransitionGroup = {}
@@ -49,16 +51,14 @@ export const TransitionGroup = {}
  * @see https://ask.dcloud.net.cn/question/194973
  */
 export function transformH5Runtime(code: string, id: string) {
-  if (!id.endsWith('@dcloudio/uni-h5-vue/dist/vue.runtime.esm.js'))
-    return code
+  if (!id.endsWith('@dcloudio/uni-h5-vue/dist/vue.runtime.esm.js')) return code
   code = code.replace(`def(children, "_", type);`, `def(children, "_", type, true);`)
   return code
 }
 
 /** 修复app运行白屏，原因是pinia调用了@vue/devtools-kit的setupDevToolsPlugin */
 export function transformPinia(code: string, id: string) {
-  if (!id.endsWith('pinia/dist/pinia.mjs'))
-    return code
+  if (!id.endsWith('pinia/dist/pinia.mjs')) return code
   code = code.replace(
     `import { setupDevtoolsPlugin } from '@vue/devtools-api';`,
     `function setupDevtoolsPlugin() {};`,
@@ -71,8 +71,7 @@ export function transformPinia(code: string, id: string) {
  * @see https://github.com/uni-helper/vite-plugin-uni-components/blob/v0.2.6/packages/core/src/index.ts#L27
  */
 export function modifyUniComponentsConfig(config: ResolvedConfig) {
-  if (JSON.stringify(config.build.watch) === '{}')
-    config.build.watch = null
+  if (JSON.stringify(config.build.watch) === '{}') config.build.watch = null
 }
 
 /**

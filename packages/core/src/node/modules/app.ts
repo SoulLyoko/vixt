@@ -36,13 +36,11 @@ export function resolveLoadingTemplate(options: AppOptions, vixt: Vixt) {
 }
 
 export function isEmptyCode(code?: string) {
-  if (!code)
-    return true
+  if (!code) return true
   try {
     // @ts-ignore compatible with vite7
     return !parseAst(code, { jsx: true }).body.length
-  }
-  catch {
+  } catch {
     return false
   }
 }
@@ -63,8 +61,7 @@ export default defineVixtModule<AppOptions>({
     const { entryFile, transformEntryFile, transformIndexHtml } = options
 
     const indexHtmlPath = path.resolve(rootDir!, 'index.html')
-    if (transformIndexHtml && !fs.existsSync(indexHtmlPath))
-      fs.outputFileSync(indexHtmlPath, '')
+    if (transformIndexHtml && !fs.existsSync(indexHtmlPath)) fs.outputFileSync(indexHtmlPath, '')
 
     const relativeEntryPath = `/${path.basename(srcDir!)}/${entryFile}`
     const absoluteEntryPath = path.resolve(srcDir!, entryFile!)
@@ -72,8 +69,7 @@ export default defineVixtModule<AppOptions>({
       fs.outputFileSync(absoluteEntryPath, '')
 
     function transformEntryFileHandler(code: string) {
-      if (isEmptyCode(code))
-        return options.entryCode
+      if (isEmptyCode(code)) return options.entryCode
     }
     function transformIndexHtmlHandler(html = '') {
       const { rootTag, rootId, head } = options

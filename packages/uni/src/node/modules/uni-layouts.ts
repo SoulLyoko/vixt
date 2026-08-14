@@ -37,12 +37,15 @@ function patchUniLayouts() {
 }
 
 function scanLayoutsDirs(dirs: string[], exclude: string[] = []) {
-  const files = fg.sync(dirs.map(c => `${c}/**/*.vue`), {
-    ignore: ['node_modules', '.git', ...exclude],
-    onlyFiles: true,
-    cwd: cwd(),
-    absolute: true,
-  })
+  const files = fg.sync(
+    dirs.map(c => `${c}/**/*.vue`),
+    {
+      ignore: ['node_modules', '.git', ...exclude],
+      onlyFiles: true,
+      cwd: cwd(),
+      absolute: true,
+    },
+  )
 
   return files
 }
@@ -63,8 +66,7 @@ function getNameFromFilePath(filePath: string, dirs: string[]) {
   const folders = strippedPath.slice(1).split('/').filter(Boolean)
 
   let filename = parsedFilePath.name
-  if (filename === 'index')
-    filename = ''
+  if (filename === 'index') filename = ''
 
   const namespaced = [...folders, filename]
   filename = namespaced.filter(Boolean).join('-')
@@ -79,8 +81,8 @@ interface LayoutInfo {
   kebabName: string
 }
 function getLayouts(files: string[], dirs: string[]) {
-  const layoutsMap: Record<string, LayoutInfo> = { }
-  files.forEach((file) => {
+  const layoutsMap: Record<string, LayoutInfo> = {}
+  files.forEach(file => {
     const name = getNameFromFilePath(file, dirs)
     const layoutInfo = {
       path: file,
@@ -94,7 +96,7 @@ function getLayouts(files: string[], dirs: string[]) {
   return layouts
 }
 
-export default defineVitePlugin<UniLayoutsOptions>(async (options) => {
+export default defineVitePlugin<UniLayoutsOptions>(async options => {
   patchUniLayouts()
   const UniLayouts = await import('@uni-helper/vite-plugin-uni-layouts').then(m => m.default)
 

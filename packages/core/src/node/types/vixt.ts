@@ -8,4 +8,6 @@ export interface Vixt {
   _modules: VixtModule[]
 }
 
-export type ExtractPluginOptions<Options = any> = (Options extends (...args: any[]) => any ? Parameters<Options>[0] : Options)
+export type ExtractPluginOptions<Options = any> = Options extends (...args: any[]) => any
+  ? Parameters<Options>[0]
+  : Options

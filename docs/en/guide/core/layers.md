@@ -113,7 +113,7 @@ import { defineVixtConfig } from 'vixt'
 export default defineVixtConfig({
   meta: { name: 'layer-web' },
   extends: ['../layer-shared'],
-  devtools: { enabled: true }
+  devtools: { enabled: true },
 })
 ```
 

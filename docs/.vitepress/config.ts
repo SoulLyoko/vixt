@@ -15,9 +15,7 @@ export default defineConfig({
   },
   themeConfig: {
     outline: [2, 3],
-    socialLinks: [
-      { icon: 'github', link: 'https://github.com/SoulLyoko/vixt' },
-    ],
+    socialLinks: [{ icon: 'github', link: 'https://github.com/SoulLyoko/vixt' }],
     search: {
       provider: 'local',
     },

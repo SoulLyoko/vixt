@@ -1,4 +1,5 @@
 import type { ExecSyncOptions } from 'node:child_process'
+
 import { execSync } from 'node:child_process'
 import path from 'node:path'
 import url from 'node:url'

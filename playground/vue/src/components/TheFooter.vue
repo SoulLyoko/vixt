@@ -12,7 +12,13 @@ import { toggleDark } from '#/layers/layer-vue/src/composables/dark'
       <Icon :icon="isDark ? 'carbon:sun' : 'carbon:moon'" />
     </button>
 
-    <a icon-btn rel="noreferrer" href="https://github.com/SoulLyoko/vixt" target="_blank" title="GitHub">
+    <a
+      icon-btn
+      rel="noreferrer"
+      href="https://github.com/SoulLyoko/vixt"
+      target="_blank"
+      title="GitHub"
+    >
       <Icon icon="carbon:logo-github" />
     </a>
 

@@ -16,6 +16,6 @@ export interface VueVixtApp {
 }
 
 declare module '@vixt/core/client' {
-  interface VixtAppConfig extends VueVixtAppConfig { }
-  interface VixtApp extends VueVixtApp { }
+  interface VixtAppConfig extends VueVixtAppConfig {}
+  interface VixtApp extends VueVixtApp {}
 }

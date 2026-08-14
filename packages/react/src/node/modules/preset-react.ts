@@ -13,7 +13,11 @@ const name = 'vixt:preset-react'
 export default defineVixtModule<VixtOptions>({
   meta: { name },
   setup(_, vixt) {
-    const { components = [], layouts = [], pages = [] } = resolveLayersDirs([...vixt._layers].reverse())
+    const {
+      components = [],
+      layouts = [],
+      pages = [],
+    } = resolveLayersDirs([...vixt._layers].reverse())
     const { buildTypesDir } = vixt.options
 
     const defaultOptions: VixtOptions = {
@@ -30,7 +34,7 @@ export default defineVixtModule<VixtOptions>({
       },
     }
 
-    const options = vixt.options = defu(vixt.options, defaultOptions)
+    const options = (vixt.options = defu(vixt.options, defaultOptions))
 
     const plugins = [
       React(options.react),

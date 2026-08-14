@@ -19,5 +19,5 @@ const modelValue = defineModel<string>()
     min-h-8
     m-auto
     :placeholder="placeholder"
-  >
+  />
 </template>

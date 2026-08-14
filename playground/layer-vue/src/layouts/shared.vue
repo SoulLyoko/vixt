@@ -8,8 +8,6 @@ defineProps<{ name?: string }>()
       <RouterView />
     </slot>
     <TheFooter />
-    <div text-center mx-auto mt-5 text-sm opacity-50>
-      [{{ name }} Layout]
-    </div>
+    <div text-center mx-auto mt-5 text-sm opacity-50>[{{ name }} Layout]</div>
   </main>
 </template>

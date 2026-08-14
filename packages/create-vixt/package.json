@@ -1,10 +1,9 @@
 {
   "name": "create-vixt",
-  "type": "module",
   "version": "0.12.2",
-  "author": "SoulLyoko<https://github.com/SoulLyoko>",
-  "license": "MIT",
   "homepage": "https://soullyoko.github.io/vixt/",
+  "license": "MIT",
+  "author": "SoulLyoko<https://github.com/SoulLyoko>",
   "repository": "https://github.com/SoulLyoko/vixt.git",
   "bin": {
     "create-vixt": "index.js"
@@ -14,6 +13,7 @@
     "index.js",
     "template"
   ],
+  "type": "module",
   "dependencies": {
     "cac": "catalog:",
     "fs-extra": "catalog:"

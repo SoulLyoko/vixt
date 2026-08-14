@@ -16,7 +16,14 @@ import { parse as YAMLParser } from 'yaml'
 const routeJSXReg = /^\s+(route)\s+/gm
 
 function parseJSX(code: string): ParsedJSX[] {
-  return extractComments(code).slice(0, 1).filter((comment: ParsedJSX) => routeJSXReg.test(comment.value) && comment.value.includes(':') && comment.loc.start.line === 1)
+  return extractComments(code)
+    .slice(0, 1)
+    .filter(
+      (comment: ParsedJSX) =>
+        routeJSXReg.test(comment.value) &&
+        comment.value.includes(':') &&
+        comment.loc.start.line === 1,
+    )
 }
 
 function parseYamlComment(code: ParsedJSX[], path: string): CustomBlock {
@@ -30,8 +37,7 @@ function parseYamlComment(code: ParsedJSX[], path: string): CustomBlock {
         ...memo,
         ...yamlResult,
       }
-    }
-    catch (err: any) {
+    } catch (err: any) {
       throw new Error(`Invalid YAML format of comment in ${path}\n${err.message}`)
     }
   }, {})
@@ -45,19 +51,16 @@ function getRouteBlock(path: string) {
 }
 
 function resolveCodePath(element: string) {
-  if (fs.existsSync(element))
-    return element
+  if (fs.existsSync(element)) return element
 
   const relativePath = path.join(cwd(), element)
-  if (fs.existsSync(relativePath))
-    return relativePath
+  if (fs.existsSync(relativePath)) return relativePath
 
   return element
 }
 
 export function extendRoute(route: ReactRoute) {
-  if (!route.element)
-    return
+  if (!route.element) return
 
   const codePath = resolveCodePath(route.element)
   const block = getRouteBlock(codePath)

@@ -5,8 +5,7 @@ uni-app requires a local `App.vue` file. You can create an `App.vue` with an emp
 :::code-group
 
 ```vue [src/App.vue]
-<script setup lang="ts">
-</script>
+<script setup lang="ts"></script>
 
 <template>
   <view />

@@ -13,8 +13,8 @@ import { defineVixtConfig } from 'vixt'
 
 export default defineVixtConfig({
   components: {
-    dirs: ['src/ui']
-  }
+    dirs: ['src/ui'],
+  },
 })
 ```
 

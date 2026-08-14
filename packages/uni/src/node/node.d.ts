@@ -18,5 +18,5 @@ export interface UniVixtOptions {
 }
 
 declare module '@vixt/core' {
-  interface VixtOptions extends UniVixtOptions { }
+  interface VixtOptions extends UniVixtOptions {}
 }

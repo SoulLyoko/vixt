@@ -13,8 +13,8 @@ import { defineVixtConfig } from 'vixt'
 
 export default defineVixtConfig({
   router: {
-    routesFolder: ['src/views']
-  }
+    routesFolder: ['src/views'],
+  },
 })
 ```
 

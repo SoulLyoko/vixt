@@ -8,6 +8,6 @@ export interface VitepressVixtAppConfig {
 export interface VitepressVixtApp extends EnhanceAppContext {}
 
 declare module '@vixt/core/client' {
-  interface VixtAppConfig extends VitepressVixtAppConfig { }
-  interface VixtApp extends VitepressVixtApp { }
+  interface VixtAppConfig extends VitepressVixtAppConfig {}
+  interface VixtApp extends VitepressVixtApp {}
 }

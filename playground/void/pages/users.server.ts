@@ -10,15 +10,14 @@ const users = [
 
 export type Props = InferProps<typeof loader>
 
-export const loader = defineHandler(async (c) => {
+export const loader = defineHandler(async c => {
   const name = c.req.query('name')
   if (name) {
     return {
       users: users.filter(e => e.name.includes(name)),
       query: { name },
     }
-  }
-  else {
+  } else {
     return {
       users,
       query: {},

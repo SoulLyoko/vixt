@@ -2,10 +2,9 @@
 const attrs = useAttrs()
 const style = computed(() => {
   const { icon, ...query } = attrs
-  if (!query.color)
-    query.color = isDark.value ? 'white' : 'black'
+  if (!query.color) query.color = isDark.value ? 'white' : 'black'
   const iconPath = (icon as string)?.replace(':', '/') ?? ''
-  Object.keys(query).forEach((key) => {
+  Object.keys(query).forEach(key => {
     query[key] = encodeURIComponent(query[key] as any)
   })
   return {
@@ -15,7 +14,7 @@ const style = computed(() => {
 
 function serialize<T extends Record<string, any>>(data: T) {
   const res: string[] = []
-  Object.keys(data).forEach((key) => {
+  Object.keys(data).forEach(key => {
     res.push(`${key}=${data[key]}`)
   })
   return res.join('&')

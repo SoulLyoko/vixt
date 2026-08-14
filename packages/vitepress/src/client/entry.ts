@@ -16,8 +16,7 @@ export default <Theme>{
 
     try {
       applyPlugins(vixt, plugins)
-    }
-    catch (err) {
+    } catch (err) {
       console.error(err)
     }
   },
