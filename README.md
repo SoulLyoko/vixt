@@ -23,25 +23,16 @@ Vixt aims to bring Nuxt-style productivity features to popular modern frameworks
 
 ### Create a Vixt project
 
-Vixt recommends using pnpm with a monorepo setup, and the default project templates are monorepo-based.
+Vixt recommends using pnpm with a monorepo setup, and the default project template is monorepo-based.
 
 ```sh
-# Default monorepo template, including vue and uni-app projects
+# Default monorepo template, including vue, uni-app and react projects
 pnpm create vixt my-project
-
-# Vue single-project
-# pnpm create vixt my-project --template vue-ts
-
-# Uni-app single-project
-# pnpm create vixt my-project --template uni-ts
-
-# React single-project
-# pnpm create vixt my-project --template react-ts
 ```
 
 ### Use in an existing project
 
-- Remove duplicate dependencies in `package.json` that Vixt already provides (such as `vue`, `vite`, etc., if not required).
+- Remove duplicate dependencies in `package.json` that Vixt already provides (such as `vue`, `vite`, etc., not required).
 - Create a `.npmrc` file and enable pnpm's `shamefully-hoist`:
 
 ```
@@ -51,7 +42,7 @@ shamefully-hoist=true
 - Install Vixt:
 
 ```sh
-pnpm add vixt
+pnpm add vixt @vixt/vue
 ```
 
 - Create `vixt.config.ts`:

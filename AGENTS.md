@@ -1,50 +1,55 @@
 # Vixt AI Agent Instructions
 
-This repository is a pnpm-based monorepo for the `vixt` project. It contains core packages, framework adapters, docs, and playground/test apps.
+This repository is a pnpm-based monorepo for the `vixt` project. It contains the Vixt runtime and CLI packages, framework adapters, documentation, and framework playgrounds.
 
 ## Key facts
 
-- Use `pnpm` as the package manager. `packageManager` is `pnpm@11.5.2` and the repo requires `node >= 24`.
-- The root `package.json` defines primary automation commands and delegates many tasks to package workspaces.
+- Use `pnpm` as the package manager. The root `package.json` requires `pnpm >= 11` and `node >= 24` (`packageManager` is `pnpm@11.21.0`).
+- The repository uses Vite+ tooling. `vp` provides built-in formatting, linting, type checking, testing, and packing; `vpr` runs workspace scripts.
+- The root `package.json` defines automation commands and delegates builds and playground tasks to workspaces.
 - `pnpm-workspace.yaml` includes `packages/*`, `playground/*`, and `docs`.
 - Primary package directories:
   - `packages/core`
-  - `packages/vixt`
+  - `packages/vixt` (development entrypoints and CLI wrapper)
   - `packages/vue`
   - `packages/react`
   - `packages/uni`
   - `packages/vitepress`
   - `packages/create-vixt`
-- Playgrounds are under `playground/` and are used for integration and runtime validation across frameworks.
+- Playgrounds are under `playground/`. Runnable integration apps include `vue`, `react`, `uni`, `nuxt`, `nitro`, and `void`; `layer-*` directories contain shared or framework-specific layers used by those apps.
 
 ## Recommended agent behavior
 
-- Prefer editing source packages in `packages/` for core features and adapters.
+- Prefer editing source packages in `packages/` for core features and adapters; package builds are configured by each package's `vite.config.ts`.
 - When changing documentation architecture or behaviour, link to existing docs under `docs/en` and `docs/zh` instead of duplicating content.
 - Avoid making broad repo-wide changes without first checking if the target package has its own `package.json` or configuration.
-- Keep changes aligned with the existing monorepo script patterns and TypeScript build setup.
+- Keep changes aligned with the existing monorepo script patterns, Vite+ configuration, and TypeScript build setup.
 
 ## Common commands
 
-- `pnpm build` — build the main packages with `tsdown`
-- `pnpm lint` — run ESLint across the repo
-- `pnpm test` — run Vitest at the root
-- `pnpm test:vue` — test the Vue package/workspace
-- `pnpm build:docs` — build the docs site
-- `pnpm build:all` — build all playground apps
-- `pnpm dev:docs` — run docs dev server
+- `vpr build` — pack all packages under `packages/*`
+- `vpr build:all` — build all playground workspaces
+- `vpr build:docs` — build the VitePress docs site
+- `vpr build:vue` / `vpr build:react` — build the corresponding playground
+- `vpr test:vue` — run the Vue playground tests
+- `vp test` — run the root Vitest suite (including `__tests__/`)
+- `vp check` — format, lint, and type-check according to `vite.config.ts`
+- `vpr dev:docs` — start the docs dev server
+- `vpr dev:vue` / `vpr dev:react` — start framework playgrounds
+- `vpr dev:app`, `vpr dev:h5`, `vpr dev:mp` — start the Uni App targets
 
 ## Important docs references
 
-- `README.md` — project overview and usage
-- `docs/en` and `docs/zh` — multilingual documentation for API and guides
+- `README.md` and `README.zh_CN.md` — project overview and usage
+- `docs/en` and `docs/zh` — multilingual guides
+- `docs/api/{core,vue,react,uni,vitepress}` — generated/API reference sections
 - `packages/*/package.json` — package-specific metadata and entry points
-- `playground/*` — example apps used for testing Vixt behavior
+- `playground/*` — example and integration apps used for testing Vixt behavior
 
 ## Style and conventions
 
 - Code is TypeScript-first and uses ESM modules.
-- The repo uses `eslint` with auto-fix on staged files via `lint-staged` and `simple-git-hooks`.
+- Formatting and linting are configured in the root `vite.config.ts` and use Vite+ (`vp check`). Staged `js`, `ts`, and `vue` files are checked with `vp check --fix`.
 - Commit messages should follow Conventional Commits as enforced by `commitlint`.
 
 ## When to ask for clarification

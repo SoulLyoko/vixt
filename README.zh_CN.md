@@ -26,22 +26,13 @@ Vixt的目标是把Nuxt的实用功能带到Vue, React, Uni-app等现代流行�
 Vixt推荐使用pnpm+monorepo管理项目，创建的默认模板也是monorepo项目
 
 ```sh
-# 默认为monorepo模板，包含vue和uni-app项目
+# 默认为monorepo模板，包含vue,uni-app和react项目
 pnpm create vixt my-project
-
-# vue单项目
-# pnpm create vixt my-project --template vue-ts
-
-# uni-app单项目
-# pnpm create vixt my-project --template uni-ts
-
-# react单项目
-# pnpm create vixt my-project --template react-ts
 ```
 
 ### 在现有项目中使用
 
-- 删除 packages.json 中的与vixt重复的依赖(如vue,vite等,非必须)
+- 删除 package.json 中与vixt重复的依赖(如vue,vite等,非必须)
 - 创建 .npmrc, 启用pnpm的shamefully-hoist
 
 ```
@@ -51,7 +42,7 @@ shamefully-hoist=true
 - 安装 vixt
 
 ```sh
-pnpm add vixt
+pnpm add vixt @vixt/vue
 ```
 
 - 新建vixt.config.ts
@@ -95,11 +86,11 @@ export default defineConfig({
 | [@vixt/react](packages/react)         | react的适配层        |
 | [create-vixt](packages/create-vixt)   | 用于创建模板项目     |
 
-## Thanks
+## 致谢
 
-This project is highly inspired by [Nuxt](https://github.com/nuxt/nuxt) and [Vite](https://github.com/vitejs/vite).
+该项目深受 [Nuxt](https://github.com/nuxt/nuxt) 和 [Vite](https://github.com/vitejs/vite) 启发。
 
-Thanks [UnJS](https://unjs.io/) for creating helpful packages.
+感谢 [UnJS](https://unjs.io/) 创建了非常有用的包。
 
 ## License
 
