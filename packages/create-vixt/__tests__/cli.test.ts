@@ -20,8 +20,8 @@ function run(args: string[] = [], options?: ExecSyncOptions) {
   return execSync(`npx jiti ${cliPath} ${args.join(' ')}`, { cwd: __dirname, ...options })
 }
 
-function getVixtDepVersion(dir: string) {
-  return fs.readJsonSync(path.join(dir, 'package.json'))?.dependencies?.vixt
+function getDepVersion(dir: string, name: string) {
+  return fs.readJsonSync(path.join(dir, 'package.json'))?.dependencies?.[name]
 }
 
 beforeAll(() => fs.removeSync(genPath))
@@ -32,24 +32,9 @@ const isWatch = process.env.VITEST_MODE === 'WATCH'
 describe.skipIf(isWatch)('create-vixt', () => {
   it('should create a monorepo by default', () => {
     run([projectName])
-    expect(getVixtDepVersion(genPath)).toBe(vixtVersion)
-    expect(getVixtDepVersion(path.join(genPath, 'packages/vue'))).toBeUndefined()
-    expect(getVixtDepVersion(path.join(genPath, 'packages/uni'))).toBeUndefined()
-    expect(getVixtDepVersion(path.join(genPath, 'packages/react'))).toBeUndefined()
-  })
-
-  it('should create vue project', () => {
-    run([projectName, '--template', 'vue-ts'])
-    expect(getVixtDepVersion(genPath)).toBe(vixtVersion)
-  })
-
-  it('should create uni project', () => {
-    run([projectName, '--template', 'uni-ts'])
-    expect(getVixtDepVersion(genPath)).toBe(vixtVersion)
-  })
-
-  it('should create react project', () => {
-    run([projectName, '--template', 'react-ts'])
-    expect(getVixtDepVersion(genPath)).toBe(vixtVersion)
+    expect(getDepVersion(genPath, 'vixt')).toBe(vixtVersion)
+    expect(getDepVersion(path.join(genPath, 'packages/vue'), '@vixt/vue')).toBe(vixtVersion)
+    expect(getDepVersion(path.join(genPath, 'packages/uni'), '@vixt/uni')).toBe(vixtVersion)
+    expect(getDepVersion(path.join(genPath, 'packages/react'), '@vixt/react')).toBe(vixtVersion)
   })
 })

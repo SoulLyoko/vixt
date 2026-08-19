@@ -1,5 +1,5 @@
 {
-  "name": "vixt-vue-ts",
+  "name": "vixt-vue-template",
   "version": "0.0.0",
   "private": true,
   "type": "module",
@@ -9,6 +9,6 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "vixt": "workspace:*"
+    "@vixt/vue": "workspace:*"
   }
 }

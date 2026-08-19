@@ -1,6 +1,0 @@
-node_modules
-dist
-*.local
-.vixt
-.hbuilderx
-pages.json

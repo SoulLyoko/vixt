@@ -1,0 +1,19 @@
+{
+  "name": "vixt-monorepo-template",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build:h5": "pnpm -F uni build:h5",
+    "build:mp": "pnpm -F uni build:mp",
+    "build:react": "pnpm -F react build",
+    "build:vue": "pnpm -F vue build",
+    "dev:h5": "pnpm -F uni dev:h5",
+    "dev:mp": "pnpm -F uni dev:mp",
+    "dev:react": "pnpm -F react dev",
+    "dev:vue": "pnpm -F vue dev"
+  },
+  "dependencies": {
+    "vixt": "workspace:*"
+  }
+}
