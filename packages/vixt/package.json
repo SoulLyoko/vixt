@@ -46,14 +46,17 @@
       "./package.json": "./package.json"
     }
   },
-  "dependencies": {
-    "@vixt/core": "workspace:*",
+  "devDependencies": {
+    "@vixt/react": "workspace:*",
+    "@vixt/uni": "workspace:*",
+    "@vixt/vitepress": "workspace:*",
+    "@vixt/vue": "workspace:*",
+    "jiti": "catalog:"
+  },
+  "optionalDependencies": {
     "@vixt/react": "workspace:*",
     "@vixt/uni": "workspace:*",
     "@vixt/vitepress": "workspace:*",
     "@vixt/vue": "workspace:*"
-  },
-  "devDependencies": {
-    "jiti": "catalog:"
   }
 }
