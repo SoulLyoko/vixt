@@ -4,8 +4,7 @@
   "scripts": {
     "dev": "vitepress dev",
     "build": "vitepress build",
-    "preview": "vitepress preview",
-    "typedoc": "typedoc"
+    "preview": "vitepress preview"
   },
   "dependencies": {
     "@vixt/layer-shared": "workspace:*",
