@@ -16,7 +16,7 @@ export default defineAdditionalConfig({
           items: [
             { text: 'Introduction', link: '/guide/introduction' },
             { text: 'Installation', link: '/guide/installation' },
-            { text: 'Vite8', link: '/guide/vite8' },
+            { text: 'Rolldown', link: '/guide/rolldown' },
           ],
         },
         {
@@ -64,6 +64,16 @@ export default defineAdditionalConfig({
             { text: 'Router', link: '/guide/vue/router' },
             { text: 'Layouts', link: '/guide/vue/layouts' },
             { text: 'Components', link: '/guide/vue/components' },
+          ],
+        },
+        {
+          text: 'CLI',
+          items: [
+            { text: 'vixt build', link: '/guide/cli/build' },
+            { text: 'vixt cleanup', link: '/guide/cli/cleanup' },
+            { text: 'vixt dev', link: '/guide/cli/dev' },
+            { text: 'vixt prepare', link: '/guide/cli/prepare' },
+            { text: 'vixt preview', link: '/guide/cli/preview' },
           ],
         },
       ],

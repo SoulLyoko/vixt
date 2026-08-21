@@ -45,7 +45,8 @@ export default defineVixtModule<ModuleOptions>({
         )
         sidebar.forEach(item => {
           item.collapsed = undefined
-          if (item.text !== 'core') item.items = item.items?.map(e => e.items ?? []).flat()
+          if (!['core', 'cli'].includes(item.text!))
+            item.items = item.items?.map(e => e.items ?? []).flat()
         })
         config.vitepress!.userConfig!.themeConfig ??= {}
         config.vitepress!.userConfig!.themeConfig!.sidebar ??= {}

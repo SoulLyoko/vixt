@@ -48,16 +48,14 @@ export default defineVixtPlugin({
 
 随后可以用全局函数 `useAppConfig()` 来获取应用配置
 
-如@vixt/vue中就定义了 `vue-router` 和 `pinia-plugin-persistedstate` 的配置
+如@vixt/vue中就定义了 `vue-router` 的配置
 
 ```ts
-import type { PluginOptions as PersistedStateOptions } from 'pinia-plugin-persistedstate'
 import type { RouterOptions } from 'vue-router'
 
 declare module '@vixt/core/client' {
   interface VixtAppConfig {
     router?: Partial<RouterOptions>
-    piniaPersistedState?: PersistedStateOptions
   }
 }
 ```

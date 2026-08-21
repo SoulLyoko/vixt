@@ -8,6 +8,7 @@
   },
   "dependencies": {
     "@vixt/layer-shared": "workspace:*",
+    "@vixt/vitepress": "workspace:*",
     "perfect-debounce": "catalog:",
     "typedoc": "catalog:",
     "typedoc-plugin-markdown": "catalog:",

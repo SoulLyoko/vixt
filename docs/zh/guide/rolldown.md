@@ -1,4 +1,4 @@
-# Vite 8 集成
+# Rolldown 集成
 
 Vixt内置的模块和插件现已完美支持 `Vite 8 (rolldown)`!
 
@@ -13,12 +13,12 @@ Vixt内置的模块和插件现已完美支持 `Vite 8 (rolldown)`!
 git clone https://github.com/SoulLyoko/vixt.git
 
 # install deps
-pnpm i
+vp i
 
 # run and visit http://localhost:5173
-pnpm dev:vue
+vp dev:vue
 # or
-pnpm dev:react
+vp dev:react
 ```
 
 ## uni-app
@@ -26,17 +26,5 @@ pnpm dev:react
 :::tip
 
 由于uni-app的Vite 8支持尚未发布，相关示例项目暂时最高只支持vite 7，敬请期待!
-
-:::
-
-## 加载配置文件报错
-
-:::tip
-
-如果你在使用 `vite>=8.0.0-beta.8(rolldown>=1.0.0-beta.60)` ，rolldown默认启用了tsconfig的自动发现，导致在未生成 `.vixt/tsconfig.json` 时加载配置文件报错，可以使用以下方式来解决：
-
-1. 将vite加载配置文件的方式设置为 native `"dev": "vite --configLoader native"`
-2. 添加脚本 `"postinstall": "vixt prepare"`
-3. 升级 vite, 后续 vite 已默认不启用tsconfig自动发现
 
 :::

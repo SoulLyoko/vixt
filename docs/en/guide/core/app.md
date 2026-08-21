@@ -48,16 +48,14 @@ You can extend the `VixtAppConfig` interface from `@vixt/core/client` in any TS 
 
 Then you can use the global function `useAppConfig()` to retrieve the app config.
 
-For example, `@vixt/vue` defines configurations for `vue-router` and `pinia-plugin-persistedstate`.
+For example, `@vixt/vue` defines configurations for `vue-router`.
 
 ```ts
-import type { PluginOptions as PersistedStateOptions } from 'pinia-plugin-persistedstate'
 import type { RouterOptions } from 'vue-router'
 
 declare module '@vixt/core/client' {
   interface VixtAppConfig {
     router?: Partial<RouterOptions>
-    piniaPersistedState?: PersistedStateOptions
   }
 }
 ```

@@ -12,6 +12,7 @@ const entryPoints = fs
     return bothExists ? [clientPath, nodePath] : []
   })
   .flat()
+  .concat(path.join(packagesDir, 'cli/src/index.ts'))
 
 export default defineVixtConfig({
   extends: ['@vixt/layer-shared'],

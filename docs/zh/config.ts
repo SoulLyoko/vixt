@@ -15,7 +15,7 @@ export default defineAdditionalConfig({
           items: [
             { text: '介绍', link: '/zh/guide/introduction' },
             { text: '安装', link: '/zh/guide/installation' },
-            { text: 'Vite8', link: '/zh/guide/vite8' },
+            { text: 'Rolldown', link: '/zh/guide/rolldown' },
           ],
         },
         {
@@ -63,6 +63,16 @@ export default defineAdditionalConfig({
             { text: '路由', link: '/zh/guide/vue/router' },
             { text: '布局', link: '/zh/guide/vue/layouts' },
             { text: '组件', link: '/zh/guide/vue/components' },
+          ],
+        },
+        {
+          text: 'CLI',
+          items: [
+            { text: 'vixt build', link: '/zh/guide/cli/build' },
+            { text: 'vixt cleanup', link: '/zh/guide/cli/cleanup' },
+            { text: 'vixt dev', link: '/zh/guide/cli/dev' },
+            { text: 'vixt prepare', link: '/zh/guide/cli/prepare' },
+            { text: 'vixt preview', link: '/zh/guide/cli/preview' },
           ],
         },
       ],

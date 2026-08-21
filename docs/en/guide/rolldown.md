@@ -1,4 +1,4 @@
-# Vite 8 Integration
+# Rolldown Integration
 
 The built-in Vixt modules and plugins now fully support `Vite 8 (rolldown)`!
 
@@ -13,12 +13,12 @@ Run the `vue` or `react` demo projects in this repository:
 git clone https://github.com/SoulLyoko/vixt.git
 
 # install deps
-pnpm i
+vp i
 
 # run and visit http://localhost:5173
-pnpm dev:vue
+vp dev:vue
 # or
-pnpm dev:react
+vp dev:react
 ```
 
 ## uni-app
@@ -26,17 +26,5 @@ pnpm dev:react
 :::tip
 
 Because uni-app does not yet have released Vite 8 support, the related demo projects currently only support Vite 7 at most. Stay tuned!
-
-:::
-
-## Configuration loading errors
-
-:::tip
-
-If you are using `vite>=8.0.0-beta.8(rolldown>=1.0.0-beta.60)`, rolldown enables tsconfig auto-discovery by default, which may cause configuration loading errors when `.vixt/tsconfig.json` has not been generated. You can resolve this by:
-
-1. Setting Vite to load configuration natively: `"dev": "vite --configLoader native"`
-2. Adding a script: `"postinstall": "vixt prepare"`
-3. Upgrading Vite, since later versions no longer enable tsconfig auto-discovery by default.
 
 :::
