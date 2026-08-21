@@ -3,6 +3,9 @@
   "private": true,
   "type": "module",
   "main": "vixt.config.ts",
+  "exports": {
+    "./*": "./*"
+  },
   "dependencies": {
     "@unocss/reset": "catalog:vite",
     "@vixt/layer-link": "workspace:*",

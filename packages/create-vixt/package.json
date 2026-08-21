@@ -6,16 +6,19 @@
   "author": "SoulLyoko<https://github.com/SoulLyoko>",
   "repository": "https://github.com/SoulLyoko/vixt.git",
   "bin": {
-    "create-vixt": "index.js"
+    "create-vixt": "bin/create-vixt.mjs"
   },
   "files": [
+    "bin",
     "dist",
-    "index.js",
     "template"
   ],
   "type": "module",
   "dependencies": {
     "cac": "catalog:",
     "fs-extra": "catalog:"
+  },
+  "devDependencies": {
+    "jiti": "catalog:"
   }
 }

@@ -1,10 +1,14 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
+exports[`build > cli build snapshot 1`] = `
+[
+  "index.d.mts",
+  "index.mjs",
+]
+`;
+
 exports[`build > core build snapshot 1`] = `
 [
-  "cli",
-  "cli/index.d.mts",
-  "cli/index.mjs",
   "client",
   "client/index.d.ts",
   "client/index.js",
@@ -105,6 +109,8 @@ exports[`build > vitepress build snapshot 1`] = `
 
 exports[`build > vixt build snapshot 1`] = `
 [
+  "cli.d.mts",
+  "cli.mjs",
   "client.d.mts",
   "client.mjs",
   "index.d.mts",

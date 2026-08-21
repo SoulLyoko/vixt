@@ -4,14 +4,16 @@
   "type": "module",
   "main": "vixt.config.ts",
   "scripts": {
-    "build": "vp build",
-    "dev": "vp dev",
-    "preview": "vp preview",
-    "tc": "vue-tsc --noEmit",
+    "build": "vixt build",
+    "cleanup": "vixt cleanup",
+    "dev": "vixt dev",
+    "postinstall": "vixt prepare",
+    "preview": "vixt preview",
     "test": "vp test"
   },
   "dependencies": {
     "@vixt/layer-vue": "workspace:*",
+    "@vixt/vue": "workspace:*",
     "vixt": "workspace:*"
   }
 }

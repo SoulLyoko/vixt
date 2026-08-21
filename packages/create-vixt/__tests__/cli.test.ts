@@ -6,7 +6,7 @@ import url from 'node:url'
 
 import fs from 'fs-extra'
 
-import { version } from '../../../package.json'
+import { version } from '../package.json'
 
 const __dirname = path.dirname(url.fileURLToPath(import.meta.url))
 
@@ -14,10 +14,9 @@ const vixtVersion = `^${version}`
 
 const projectName = 'test-project'
 const genPath = path.join(__dirname, projectName)
-const cliPath = path.join(__dirname, '../src/index.ts')
 
 function run(args: string[] = [], options?: ExecSyncOptions) {
-  return execSync(`npx jiti ${cliPath} ${args.join(' ')}`, { cwd: __dirname, ...options })
+  return execSync(`npx create-vixt ${args.join(' ')}`, { cwd: __dirname, ...options })
 }
 
 function getDepVersion(dir: string, name: string) {
@@ -25,7 +24,7 @@ function getDepVersion(dir: string, name: string) {
 }
 
 beforeAll(() => fs.removeSync(genPath))
-afterEach(() => fs.removeSync(genPath))
+afterAll(() => fs.removeSync(genPath))
 
 const isWatch = process.env.VITEST_MODE === 'WATCH'
 

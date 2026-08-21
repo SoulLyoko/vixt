@@ -17,7 +17,7 @@
   "author": "SoulLyoko<https://github.com/SoulLyoko>",
   "repository": "https://github.com/SoulLyoko/vixt.git",
   "bin": {
-    "vixt": "./bin/vixt.mjs"
+    "vixt": "bin/vixt.mjs"
   },
   "files": [
     "bin",
@@ -28,6 +28,7 @@
   "types": "./dist/index.d.mts",
   "exports": {
     ".": "./dev/index.ts",
+    "./cli": "./dev/cli.ts",
     "./client": "./dev/client.ts",
     "./react": "./dev/react.ts",
     "./uni": "./dev/uni.ts",
@@ -38,6 +39,7 @@
   "publishConfig": {
     "exports": {
       ".": "./dist/index.mjs",
+      "./cli": "./dist/cli.mjs",
       "./client": "./dist/client.mjs",
       "./react": "./dist/react.mjs",
       "./uni": "./dist/uni.mjs",
@@ -45,6 +47,10 @@
       "./vue": "./dist/vue.mjs",
       "./package.json": "./package.json"
     }
+  },
+  "dependencies": {
+    "@vixt/cli": "workspace:*",
+    "@vixt/core": "workspace:*"
   },
   "devDependencies": {
     "@vixt/react": "workspace:*",

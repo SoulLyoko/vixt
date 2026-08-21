@@ -7,11 +7,12 @@
     "dev:app": "uni -p app",
     "dev:h5": "uni",
     "dev:mp": "uni -p mp-weixin",
+    "cleanup": "vixt cleanup",
     "build": "uni build",
     "build:app": "uni build -p app",
     "build:h5": "uni build",
     "build:mp": "uni build -p mp-weixin",
-    "tc": "vue-tsc --noEmit"
+    "postinstall": "vixt prepare || true"
   },
   "dependencies": {
     "@dcloudio/uni-app": "catalog:uni",
@@ -21,6 +22,7 @@
     "@dcloudio/uni-ui": "catalog:uni",
     "@dcloudio/uni-uts-v1": "catalog:uni",
     "@vixt/layer-uni": "workspace:*",
+    "@vixt/uni": "workspace:*",
     "vixt": "workspace:*"
   },
   "devDependencies": {

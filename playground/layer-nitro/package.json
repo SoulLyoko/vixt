@@ -5,7 +5,6 @@
   "main": "vixt.config.ts",
   "dependencies": {
     "@pinia/colada": "^1.4.2",
-    "pinia": "catalog:vue",
-    "vixt": "workspace:*"
+    "pinia": "catalog:vue"
   }
 }

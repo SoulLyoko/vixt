@@ -1,40 +1,19 @@
 /// <reference types="vite/client" />
-import type { InlineConfig, LogLevel } from 'vite'
 
 import { cwd, env } from 'node:process'
 
-import { cac } from 'cac'
+import { parseVixtArgs } from '@vixt/cli'
 import { findUpSync } from 'find-up'
 import path from 'pathe'
 import { loadEnv as _loadEnv } from 'vite'
 
-/** https://github.com/vitejs/vite/blob/main/packages/vite/src/node/cli.ts */
-export interface GlobalCLIOptions {
-  '--'?: string[]
-  c?: boolean | string
-  config?: string
-  base?: string
-  l?: LogLevel
-  logLevel?: LogLevel
-  clearScreen?: boolean
-  configLoader?: InlineConfig['configLoader']
-  d?: boolean | string
-  debug?: boolean | string
-  f?: string
-  filter?: string
-  m?: string
-  mode?: string
-  force?: boolean
-  w?: boolean
-}
-
-export function loadCLIOptions(): GlobalCLIOptions {
-  return cac().parse().options ?? {}
+export function loadCLIOptions() {
+  return parseVixtArgs()
 }
 
 export function loadMode() {
-  const { mode, m } = loadCLIOptions()
-  return mode || m || env.NODE_ENV
+  const { mode } = loadCLIOptions()
+  return mode || env.NODE_ENV
 }
 
 /**

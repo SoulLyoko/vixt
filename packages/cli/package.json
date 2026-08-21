@@ -1,0 +1,42 @@
+{
+  "name": "@vixt/cli",
+  "version": "0.12.2",
+  "keywords": [
+    "nuxi",
+    "nuxt",
+    "nuxt-cli",
+    "vixt",
+    "vixt-cli"
+  ],
+  "homepage": "https://soullyoko.github.io/vixt/",
+  "license": "MIT",
+  "author": "SoulLyoko<https://github.com/SoulLyoko>",
+  "repository": "https://github.com/SoulLyoko/vixt.git",
+  "bin": {
+    "vixt": "bin/vixt.mjs"
+  },
+  "files": [
+    "bin",
+    "dist"
+  ],
+  "type": "module",
+  "main": "./dist/index.mjs",
+  "types": "./dist/index.d.mts",
+  "exports": {
+    ".": "./src/index.ts",
+    "./cli": "./dev/vixt.ts"
+  },
+  "publishConfig": {
+    "exports": {
+      ".": "./dist/index.mjs",
+      "./cli": "./bin/vixt.mjs"
+    }
+  },
+  "dependencies": {
+    "citty": "catalog:",
+    "vite": "catalog:vite"
+  },
+  "devDependencies": {
+    "jiti": "catalog:"
+  }
+}

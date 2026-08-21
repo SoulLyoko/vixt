@@ -3,10 +3,11 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "build": "vp build",
-    "dev": "vp dev",
-    "preview": "vp preview",
-    "tc": "vue-tsc --noEmit"
+    "build": "vixt build",
+    "cleanup": "vixt cleanup",
+    "dev": "vixt dev",
+    "postinstall": "vixt prepare",
+    "preview": "vixt preview"
   },
   "dependencies": {
     "@vixt/layer-nitro": "workspace:*",

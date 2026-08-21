@@ -10,7 +10,6 @@ export default defineConfig({
         neverBundle: ['@vue/language-core'],
       },
     },
-    { entry: 'src/cli/index.ts', outDir: 'dist/cli', platform: 'node' },
     { entry: 'src/client/index.ts', outDir: 'dist/client', platform: 'browser' },
   ],
 })

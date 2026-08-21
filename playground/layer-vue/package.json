@@ -8,7 +8,6 @@
     "@vixt/layer-shared": "workspace:",
     "@vueuse/core": "catalog:vue",
     "pinia": "catalog:vue",
-    "pinia-plugin-persistedstate": "catalog:vue",
-    "vixt": "workspace:*"
+    "pinia-plugin-persistedstate": "catalog:vue"
   }
 }

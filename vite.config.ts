@@ -14,6 +14,8 @@ export default defineConfig({
       'no-empty-file': 'off',
       'no-floating-promises': 'off',
       'no-unused-expressions': 'off',
+      'typescript/consistent-type-imports': ['error', { disallowTypeAnnotations: false }],
+      'import/consistent-type-specifier-style': ['error', 'prefer-top-level'],
     },
     options: {
       typeAware: true,

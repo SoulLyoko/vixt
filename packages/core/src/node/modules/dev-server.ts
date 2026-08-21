@@ -3,7 +3,7 @@ import type { DevServerOptions } from '../types'
 import Ssl from '@vitejs/plugin-basic-ssl'
 import path from 'pathe'
 
-import { findUpWorkspaceDir, loadMode } from '../env'
+import { findUpWorkspaceDir, loadCLIOptions, loadMode } from '../env'
 import { defineVixtModule } from '../module'
 
 const name = 'vixt:dev-server'
@@ -37,9 +37,11 @@ export default defineVixtModule<DevServerOptions>({
     }
   },
   setup(options) {
+    const cliOptions = loadCLIOptions()
     const sslOptions = {
       enabled: !!options.https,
       ...(typeof options.https === 'object' ? options.https : {}),
+      ...(cliOptions.https ? { enabled: true } : {}),
     }
 
     const watchFiles = options.watch ?? []

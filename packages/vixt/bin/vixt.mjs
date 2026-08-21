@@ -1,2 +1,2 @@
 #!/usr/bin/env node
-import '@vixt/core/cli'
+import '@vixt/cli/cli'

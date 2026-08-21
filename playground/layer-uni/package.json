@@ -2,8 +2,5 @@
   "name": "@vixt/layer-uni",
   "private": true,
   "type": "module",
-  "main": "vixt.config.ts",
-  "dependencies": {
-    "vixt": "workspace:*"
-  }
+  "main": "vixt.config.ts"
 }
