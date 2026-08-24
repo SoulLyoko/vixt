@@ -1,7 +1,6 @@
 import type { ImportsMap } from 'unplugin-auto-import/types'
 
 import { parse } from 'node:path'
-import { cwd } from 'node:process'
 
 import { defineVitePlugin } from '@vixt/core'
 import fg from 'fast-glob'
@@ -42,7 +41,6 @@ export default defineVitePlugin<ComponentResolverOptions>(options => {
     {
       ignore: ['node_modules', '.git'],
       onlyFiles: true,
-      cwd: cwd(),
       absolute: true,
     },
   )

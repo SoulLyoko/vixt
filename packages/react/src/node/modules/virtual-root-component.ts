@@ -6,7 +6,7 @@ import { resolvePathSync } from 'mlly'
 import path from 'pathe'
 import { parseAst } from 'vite'
 
-function resolveRootComponent(vixt: Vixt) {
+export function resolveRootComponent(vixt: Vixt) {
   for (const layer of vixt._layers) {
     const layerRootComponentPath = path.resolve(layer.config!.srcDir!, 'App.tsx')
     const isExists = fs.existsSync(layerRootComponentPath)

@@ -5,17 +5,14 @@
  */
 import type { CustomBlock, ParsedJSX, ReactRoute } from 'vite-plugin-pages'
 
-import { cwd } from 'node:process'
-
 // @ts-expect-error
 import extractComments from 'extract-comments'
 import fs from 'fs-extra'
-import path from 'pathe'
 import { parse as YAMLParser } from 'yaml'
 
 const routeJSXReg = /^\s+(route)\s+/gm
 
-function parseJSX(code: string): ParsedJSX[] {
+export function parseJSX(code: string): ParsedJSX[] {
   return extractComments(code)
     .slice(0, 1)
     .filter(
@@ -26,7 +23,7 @@ function parseJSX(code: string): ParsedJSX[] {
     )
 }
 
-function parseYamlComment(code: ParsedJSX[], path: string): CustomBlock {
+export function parseYamlComment(code: ParsedJSX[], path: string): CustomBlock {
   return code.reduce((memo, item) => {
     const { value } = item
     const v = value.replace(routeJSXReg, '')
@@ -43,27 +40,21 @@ function parseYamlComment(code: ParsedJSX[], path: string): CustomBlock {
   }, {})
 }
 
-function getRouteBlock(path: string) {
-  const code = fs.readFileSync(path, 'utf-8')
-  const parsedJSX = parseJSX(code)
-  const block = parseYamlComment(parsedJSX, path)
-  return block
-}
+export function getRouteBlock(path: string) {
+  const content = fs.readFileSync(path, 'utf-8')
+  const parsedJSX = parseJSX(content)
 
-function resolveCodePath(element: string) {
-  if (fs.existsSync(element)) return element
+  if (!parsedJSX.length) return
 
-  const relativePath = path.join(cwd(), element)
-  if (fs.existsSync(relativePath)) return relativePath
+  const result = parseYamlComment(parsedJSX, path)
 
-  return element
+  return result
 }
 
 export function extendRoute(route: ReactRoute) {
   if (!route.element) return
 
-  const codePath = resolveCodePath(route.element)
-  const block = getRouteBlock(codePath)
+  const block = getRouteBlock(route.element)
 
   return { ...route, ...block }
 }

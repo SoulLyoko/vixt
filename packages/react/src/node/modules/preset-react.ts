@@ -24,6 +24,7 @@ export default defineVixtModule<VixtOptions>({
       react: {},
       pages: {
         dirs: pages,
+        importPath: 'absolute',
         extendRoute,
       },
       layouts: {
