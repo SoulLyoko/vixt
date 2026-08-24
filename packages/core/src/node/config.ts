@@ -1,11 +1,13 @@
 import type { VixtOptions } from './types/config'
 import type { LoadVixtConfigOptions, ResolvedVixtConfig, VixtConfigLayer } from './types/layer'
 
+import { env } from 'node:process'
+
 import { loadConfig } from 'c12'
 import fs from 'fs-extra'
 import { normalize, resolve } from 'pathe'
 
-import { findUpWorkspaceDir } from './env'
+import { findUpWorkspaceDir, loadCLIOptions } from './env'
 
 /**
  * Define the Vixt config.
@@ -24,10 +26,12 @@ export function defineVixtConfig(input: VixtOptions) {
 }
 
 export async function loadVixtConfig(opts?: LoadVixtConfigOptions): Promise<ResolvedVixtConfig> {
+  const cliOptions = loadCLIOptions()
   const result = await loadConfig<VixtOptions>({
     name: 'vixt',
     rcFile: false,
     ...opts,
+    ...(cliOptions.root ? { cwd: cliOptions.root } : {}),
   })
 
   const { config, cwd } = result
@@ -40,6 +44,14 @@ export async function loadVixtConfig(opts?: LoadVixtConfigOptions): Promise<Reso
   config.srcDir ??= resolve(config.rootDir!, 'src')
   config.modulesDir ??= resolve(config.srcDir!, 'modules')
   config.pluginsDir ??= resolve(config.srcDir!, 'plugins')
+
+  // assign config variables
+  config.debug = !!cliOptions.debug
+  config.dev = env.NODE_ENV !== 'production'
+  config.test = env.NODE_ENV === 'test'
+
+  // remove buildDir
+  cliOptions.force && fs.removeSync(config.buildDir!)
 
   return result
 }

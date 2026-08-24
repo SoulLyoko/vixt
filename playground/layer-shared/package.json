@@ -4,6 +4,7 @@
   "type": "module",
   "main": "vixt.config.ts",
   "exports": {
+    ".": "./vixt.config.ts",
     "./*": "./*"
   },
   "dependencies": {

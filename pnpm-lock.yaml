@@ -101,12 +101,6 @@ catalogs:
     '@types/react-dom':
       specifier: ^19.2.4
       version: 19.2.4
-    react:
-      specifier: ^19.2.8
-      version: 19.2.8
-    react-dom:
-      specifier: ^19.2.8
-      version: 19.2.8
     react-router:
       specifier: ^8.3.0
       version: 8.3.0
@@ -252,6 +246,8 @@ overrides:
   vite: npm:@voidzero-dev/vite-plus-core@0.2.9
   '@vixt/test-uni>vite': ^7.3.6
   '@vue/shared': ^3.5.41
+  react: ^19.2.8
+  react-dom: ^19.2.8
   vue: ^3.5.41
   vue-router: ^5.2.0
 
@@ -433,10 +429,10 @@ importers:
         specifier: 'catalog:'
         version: 2.0.3
       react:
-        specifier: catalog:react
+        specifier: ^19.2.8
         version: 19.2.8
       react-dom:
-        specifier: catalog:react
+        specifier: ^19.2.8
         version: 19.2.8(react@19.2.8)
       react-router:
         specifier: catalog:react
@@ -632,16 +628,16 @@ importers:
     dependencies:
       '@iconify/react':
         specifier: catalog:react
-        version: 6.0.2(react@18.0.0)
+        version: 6.0.2(react@19.2.8)
       '@reactuses/core':
         specifier: catalog:react
-        version: 6.5.2(react@18.0.0)
+        version: 6.5.2(react@19.2.8)
       '@vixt/layer-shared':
         specifier: workspace:*
         version: link:../layer-shared
       zustand:
         specifier: catalog:react
-        version: 5.0.15(@types/react@19.2.18)(react@18.0.0)(use-sync-external-store@1.2.0(react@18.0.0))
+        version: 5.0.15(@types/react@19.2.18)(react@19.2.8)(use-sync-external-store@1.2.0(react@19.2.8))
 
   playground/layer-shared:
     dependencies:
@@ -666,7 +662,7 @@ importers:
         specifier: catalog:vue
         version: 5.0.1(vue@3.5.41(typescript@6.0.3))
       '@vixt/layer-shared':
-        specifier: 'workspace:'
+        specifier: workspace:*
         version: link:../layer-shared
       '@vueuse/core':
         specifier: catalog:vue
@@ -700,6 +696,18 @@ importers:
         version: 5.2.0(@pinia/colada@1.4.2(pinia@4.0.3(@vue/devtools-api@8.2.1)(typescript@6.0.3)(vue@3.5.41(typescript@6.0.3)))(vue@3.5.41(typescript@6.0.3)))(@voidzero-dev/vite-plus-core@0.2.9(@types/node@26.2.0)(esbuild@0.28.2)(jiti@2.7.0)(sass@1.102.0)(terser@5.50.0)(tsx@4.23.12)(typescript@6.0.3)(yaml@2.9.0))(@vue/compiler-sfc@3.5.41)(esbuild@0.28.2)(pinia@4.0.3(@vue/devtools-api@8.2.1)(typescript@6.0.3)(vue@3.5.41(typescript@6.0.3)))(rolldown@1.2.3)(rollup@4.62.4)(vue@3.5.41(typescript@6.0.3))
 
   playground/react:
+    dependencies:
+      '@vixt/layer-react':
+        specifier: workspace:*
+        version: link:../layer-react
+      '@vixt/react':
+        specifier: workspace:*
+        version: link:../../packages/react
+      vixt:
+        specifier: workspace:*
+        version: link:../../packages/vixt
+
+  playground/react-template:
     dependencies:
       '@vixt/layer-react':
         specifier: workspace:*
@@ -2635,7 +2643,7 @@ packages:
   '@iconify/react@6.0.2':
     resolution: {integrity: sha512-SMmC2sactfpJD427WJEDN6PMyznTFMhByK9yLW0gOTtnjzzbsi/Ke/XqsumsavFPwNiXs8jSiYeZTmLCLwO+Fg==}
     peerDependencies:
-      react: '>=16'
+      react: ^19.2.8
 
   '@iconify/types@2.0.0':
     resolution: {integrity: sha512-+wluvCrRhXrhyOmRDJ3q8mux9JkKy5SJ/v8ol2tu4FVjyYvtEzkc/3pK15ET6RKg4b4w4BmTk1+gsCUhf21Ykg==}
@@ -3822,7 +3830,7 @@ packages:
     resolution: {integrity: sha512-oLhqof0nC1uYHtcv1a19jnB+wqfbr8ecIDrpn7KENMrsyGP44PoihfIVMxYIljJxMfeIzNQz0TxK1syIWcTuAw==}
     peerDependencies:
       qrcode: ^1.5
-      react: ^16.8.0  || ^17.0.0 || ^18.0.0 || ^19.0.0
+      react: ^19.2.8
     peerDependenciesMeta:
       qrcode:
         optional: true
@@ -5478,8 +5486,8 @@ packages:
       next: ^14.0.0 || ^15.0.0 || ^16.0.0
       pg: ^8.0.0
       prisma: ^5.0.0 || ^6.0.0 || ^7.0.0
-      react: ^18.0.0 || ^19.0.0
-      react-dom: ^18.0.0 || ^19.0.0
+      react: ^19.2.8
+      react-dom: ^19.2.8
       solid-js: ^1.0.0
       svelte: ^4.0.0 || ^5.0.0
       vitest: ^2.0.0 || ^3.0.0 || ^4.0.0
@@ -7449,9 +7457,6 @@ packages:
   js-tokens@10.0.0:
     resolution: {integrity: sha512-lM/UBzQmfJRo9ABXbPWemivdCW8V2G8FHaHdypQaIy523snUjog0W71ayWXTjiR+ixeMyVHN2XcpnTd/liPg/Q==}
 
-  js-tokens@3.0.0:
-    resolution: {integrity: sha512-poXEQHPMmTrYZuJgNRll2sbc3kJsSU1m/g1Q93IE6txNj3p6xOOOmdj1G/zCVGawYSPzTkSoWGg1otqbeqKJeg==}
-
   js-tokens@4.0.0:
     resolution: {integrity: sha512-RdJUflcE3cUzKiMqQgsCu06FPu9UdIJO0beYbPhHN4k6apgJtifcoCtT9bcxOpYBtpD2kCM6Sbzg4CausW/PKQ==}
 
@@ -7711,10 +7716,6 @@ packages:
 
   lodash@4.18.1:
     resolution: {integrity: sha512-dMInicTPVE8d1e5otfwmmjlxkZoUpiVLwyeTdUsi/Caj/gfzzblBcCE5sRHV/AsjuCmxWrte2TNGSYuCeCq+0Q==}
-
-  loose-envify@1.4.0:
-    resolution: {integrity: sha512-lyuxPGr/Wfhrlem2CL/UcnUc1zcqKAImBDzukY7Y5F/yQiNdko6+fRLevlw1HgMySw7f611UIY408EtxRSoK3Q==}
-    hasBin: true
 
   lru-cache@10.2.0:
     resolution: {integrity: sha512-2bIM8x+VAf6JT4bKAljS1qUWgMsqZRPGJS6FSahIMPVvctcNhyVp7AJu7quxOW9jwkryBReKZY5tY5JYv2n/7Q==}
@@ -8935,15 +8936,11 @@ packages:
     resolution: {integrity: sha512-qyPMvW83jGIct3yiieisxdk9M745anqhpIMKN5m1t6yBMfgVPpt77aHOqs5fUlEJRMCGffg9BaQLH9oPVOL7xQ==}
     engines: {node: '>=22.22.0'}
     peerDependencies:
-      react: '>=19.2.7'
-      react-dom: '>=19.2.7'
+      react: ^19.2.8
+      react-dom: ^19.2.8
     peerDependenciesMeta:
       react-dom:
         optional: true
-
-  react@18.0.0:
-    resolution: {integrity: sha512-x+VL6wbT4JRVPm7EGxXhZ8w8LTROaxPXOqhlGyVSrv0sB1jkyFGgXxJ8LVoPRLvPR6/CIZGFmfzqUa2NYeMr2A==}
-    engines: {node: '>=0.10.0'}
 
   react@19.2.8:
     resolution: {integrity: sha512-PWaYA1L/q9u2u7xYQi+Y3L3Yfnie7XyLeaJICV1MGD6LprsBxcAqGjYyr0eY3p+QdsA+x/Irkt4Qif8D63+Sbw==}
@@ -10124,7 +10121,7 @@ packages:
   use-sync-external-store@1.2.0:
     resolution: {integrity: sha512-eEgnFxGQ1Ife9bzYs6VLi8/4X6CObHMw9Qr9tPY43iKwsPw8xE8+EFsf/2cFZ5S3esXgpWgtSCtLNS41F+sKPA==}
     peerDependencies:
-      react: ^16.8.0 || ^17.0.0 || ^18.0.0
+      react: ^19.2.8
 
   utif@2.0.1:
     resolution: {integrity: sha512-Z/S1fNKCicQTf375lIP9G8Sa1H/phcysstNrrSdZKj1f9g58J4NMgb5IgiEZN9/nLMPDwF0W7hdOe9Qq2IYoLg==}
@@ -10657,7 +10654,7 @@ packages:
     peerDependencies:
       '@types/react': '>=18.0.0'
       immer: '>=9.0.6'
-      react: '>=18.0.0'
+      react: ^19.2.8
       use-sync-external-store: '>=1.2.0'
     peerDependenciesMeta:
       '@types/react':
@@ -12842,10 +12839,10 @@ snapshots:
     dependencies:
       '@iconify/types': 2.0.0
 
-  '@iconify/react@6.0.2(react@18.0.0)':
+  '@iconify/react@6.0.2(react@19.2.8)':
     dependencies:
       '@iconify/types': 2.0.0
-      react: 18.0.0
+      react: 19.2.8
 
   '@iconify/types@2.0.0': {}
 
@@ -14097,14 +14094,14 @@ snapshots:
     dependencies:
       quansync: 1.0.0
 
-  '@reactuses/core@6.5.2(react@18.0.0)':
+  '@reactuses/core@6.5.2(react@19.2.8)':
     dependencies:
       '@microsoft/fetch-event-source': 2.0.1
       js-cookie: 3.0.8
       lodash-es: 4.18.1
-      react: 18.0.0
+      react: 19.2.8
       screenfull: 5.2.0
-      use-sync-external-store: 1.2.0(react@18.0.0)
+      use-sync-external-store: 1.2.0(react@19.2.8)
 
   '@rolldown/binding-android-arm64@1.2.3':
     optional: true
@@ -17987,8 +17984,6 @@ snapshots:
 
   js-tokens@10.0.0: {}
 
-  js-tokens@3.0.0: {}
-
   js-tokens@4.0.0: {}
 
   js-tokens@9.0.1: {}
@@ -18218,10 +18213,6 @@ snapshots:
   lodash.merge@4.6.2: {}
 
   lodash@4.18.1: {}
-
-  loose-envify@1.4.0:
-    dependencies:
-      js-tokens: 3.0.0
 
   lru-cache@10.2.0: {}
 
@@ -19696,10 +19687,6 @@ snapshots:
     optionalDependencies:
       react-dom: 19.2.8(react@19.2.8)
 
-  react@18.0.0:
-    dependencies:
-      loose-envify: 1.4.0
-
   react@19.2.8: {}
 
   read-cache@1.0.0:
@@ -21018,9 +21005,9 @@ snapshots:
     dependencies:
       punycode: 2.3.1
 
-  use-sync-external-store@1.2.0(react@18.0.0):
+  use-sync-external-store@1.2.0(react@19.2.8):
     dependencies:
-      react: 18.0.0
+      react: 19.2.8
 
   utif@2.0.1:
     dependencies:
@@ -21782,10 +21769,10 @@ snapshots:
 
   zod@4.4.3: {}
 
-  zustand@5.0.15(@types/react@19.2.18)(react@18.0.0)(use-sync-external-store@1.2.0(react@18.0.0)):
+  zustand@5.0.15(@types/react@19.2.18)(react@19.2.8)(use-sync-external-store@1.2.0(react@19.2.8)):
     optionalDependencies:
       '@types/react': 19.2.18
-      react: 18.0.0
-      use-sync-external-store: 1.2.0(react@18.0.0)
+      react: 19.2.8
+      use-sync-external-store: 1.2.0(react@19.2.8)
 
   zwitch@2.0.4: {}
