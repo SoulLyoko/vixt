@@ -28,11 +28,6 @@ jobs:
       - name: Publish
         run: vp pm publish --no-git-checks --access public -r
 
-      - name: GitHub release
-        run: vpx changelogithub
-        env:
-          GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
-
       - name: Sync npmmirror
         uses: sepveneto/sync-npmmirror-action@v1
         with:
