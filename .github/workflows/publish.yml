@@ -26,7 +26,7 @@ jobs:
         run: vpr build
 
       - name: Publish
-        run: pnpm publish --no-git-checks --access public -r
+        run: vp pm publish --no-git-checks --access public -r
 
       - name: GitHub release
         run: vpx changelogithub
