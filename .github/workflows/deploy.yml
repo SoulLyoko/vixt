@@ -13,22 +13,16 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@v7
 
-      - name: Install pnpm
-        uses: pnpm/action-setup@v4
-
-      - name: Install Node.js
-        uses: actions/setup-node@v4
+      - name: Setup Vite+
+        uses: voidzero-dev/setup-vp@v1
         with:
-          node-version: 24
-          cache: pnpm
+          node-version: 'lts'
+          cache: true
 
-      - name: Build Packages
-        run: |
-          pnpm install
-          pnpm run build
-          pnpm run build:docs
+      - name: Build Docs
+        run: vpr build:docs
 
       - name: Deploy
         uses: JamesIves/github-pages-deploy-action@releases/v4

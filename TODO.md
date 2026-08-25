@@ -13,4 +13,4 @@
 - [ ] ssr?
 - [x] server(nitro)
 - [x] migrate to vite-plus
-- [ ] vite-plus actions
+- [x] vite-plus actions

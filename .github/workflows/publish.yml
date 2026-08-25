@@ -14,29 +14,30 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@v7
 
-      - name: Install pnpm
-        uses: pnpm/action-setup@v4
-
-      - name: Install Node.js
-        uses: actions/setup-node@v4
+      - name: Setup Vite+
+        uses: voidzero-dev/setup-vp@v1.18.0
         with:
-          node-version: 24
-          cache: pnpm
+          node-version: 'lts'
+          cache: true
 
       - name: Build Packages
-        run: |
-          pnpm install
-          pnpm run build
+        run: vpr build
 
       - name: Publish
         run: pnpm publish --no-git-checks --access public -r
 
-      - name: Sync
+      - name: GitHub release
+        run: vpx changelogithub
+        env:
+          GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
+
+      - name: Sync npmmirror
         uses: sepveneto/sync-npmmirror-action@v1
         with:
           name: |
+            @vixt/cli
             @vixt/core
             @vixt/vue
             @vixt/uni
