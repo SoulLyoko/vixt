@@ -49,6 +49,7 @@ export async function loadVixtConfig(opts?: LoadVixtConfigOptions): Promise<Reso
   config.debug = !!cliOptions.debug
   config.dev = env.NODE_ENV !== 'production'
   config.test = env.NODE_ENV === 'test'
+  config._prepare = cliOptions.command === 'prepare'
 
   // remove buildDir
   cliOptions.force && fs.removeSync(config.buildDir!)

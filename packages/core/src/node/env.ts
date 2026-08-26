@@ -1,4 +1,5 @@
 /// <reference types="vite/client" />
+import type { commands } from '@vixt/cli'
 
 import { cwd, env } from 'node:process'
 
@@ -8,7 +9,7 @@ import path from 'pathe'
 import { loadEnv as _loadEnv } from 'vite'
 
 export function loadCLIOptions() {
-  return parseVixtArgs()
+  return { command: process.argv[2] as keyof typeof commands, ...parseVixtArgs() }
 }
 
 export function loadMode() {
