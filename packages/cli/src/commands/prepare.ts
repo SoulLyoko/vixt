@@ -12,10 +12,8 @@ export const prepareCommand = defineCommand({
     ...sharedArgs,
   },
   async run(ctx) {
-    const { createServer } = await import('vite')
+    const { createBuilder } = await import('vite')
     const config = resolveSharedConfig(ctx.args)
-    const server = await createServer(config)
-    await server.close()
-    process.exit()
+    await createBuilder(config, null)
   },
 })
