@@ -14,7 +14,7 @@ describe('vixt', () => {
     expect(vixt.options.buildDir).toBe(path.resolve(process.cwd(), '.vixt'))
     expect(vixt.options.srcDir).toBe(path.resolve(process.cwd(), 'src'))
     expect(vixt.options.debug).toBeFalsy()
-    expect(vixt.options.dev).toBeTruthy()
+    expect(vixt.options.dev).toBeFalsy()
     expect(vixt.options.test).toBeTruthy()
   })
 })

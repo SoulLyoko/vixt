@@ -7,17 +7,16 @@ const modelValue = defineModel<string>()
 
 <template>
   <input
-    id="input"
     v-model="modelValue"
+    id="input"
     type="text"
+    class="bg-transparent min-h-8"
     p="x-4 y-2"
-    w="250px"
-    text="center"
-    bg="transparent"
-    border="~ solid gray-200 rounded dark:gray-700"
     outline="none active:none"
-    min-h-8
+    border="~ solid gray-200 rounded dark:gray-700"
+    text-center
     m-auto
+    w-250px
     :placeholder="placeholder"
   />
 </template>
