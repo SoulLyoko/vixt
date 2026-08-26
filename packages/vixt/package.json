@@ -59,10 +59,24 @@
     "@vixt/vue": "workspace:*",
     "jiti": "catalog:"
   },
-  "optionalDependencies": {
+  "peerDependencies": {
     "@vixt/react": "workspace:*",
     "@vixt/uni": "workspace:*",
     "@vixt/vitepress": "workspace:*",
     "@vixt/vue": "workspace:*"
+  },
+  "peerDependenciesMeta": {
+    "@vixt/react": {
+      "optional": true
+    },
+    "@vixt/uni": {
+      "optional": true
+    },
+    "@vixt/vitepress": {
+      "optional": true
+    },
+    "@vixt/vue": {
+      "optional": true
+    }
   }
 }

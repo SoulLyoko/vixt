@@ -544,10 +544,6 @@ importers:
         specifier: workspace:*
         version: link:../core
     devDependencies:
-      jiti:
-        specifier: 'catalog:'
-        version: 2.7.0
-    optionalDependencies:
       '@vixt/react':
         specifier: workspace:*
         version: link:../react
@@ -560,6 +556,9 @@ importers:
       '@vixt/vue':
         specifier: workspace:*
         version: link:../vue
+      jiti:
+        specifier: 'catalog:'
+        version: 2.7.0
 
   packages/vue:
     dependencies:
