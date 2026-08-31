@@ -37,14 +37,20 @@ export default defineVixtModule<VixtOptions>({
 
     const options = (vixt.options = defu(vixt.options, defaultOptions))
 
+    const componentsPlugin = Components({
+      dirs: components,
+      dts: `${buildTypesDir}/components.d.ts`,
+    })
+    if (vixt.options._prepare) {
+      // @ts-ignore
+      componentsPlugin.buildStart()
+    }
+
     const plugins = [
       React(options.react),
       Pages(options.pages),
       Layouts(options.layouts),
-      Components({
-        dirs: components,
-        dts: `${buildTypesDir}/components.d.ts`,
-      }),
+      componentsPlugin,
     ]
 
     return plugins
