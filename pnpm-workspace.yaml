@@ -33,8 +33,8 @@ catalog:
   '@commitlint/cli': ^21.2.2
   '@commitlint/config-conventional': ^21.2.2
   '@types/fs-extra': ^11.0.4
-  '@types/node': ^26.3.0
-  bumpp: ^12.2.1
+  '@types/node': ^26.4.0
+  bumpp: ^12.2.2
   c12: ^3.3.4
   cac: ^7.0.0
   citty: ^0.2.2
@@ -53,7 +53,7 @@ catalog:
   sass: ^1.103.1
   taze: ^21.1.0
   typedoc: ^0.28.20
-  typedoc-plugin-markdown: ^4.12.0
+  typedoc-plugin-markdown: ^4.13.0
   typedoc-vitepress-theme: ^1.1.3
   typescript: ^6.0.3
   yaml: ^2.9.0
@@ -63,9 +63,9 @@ catalogs:
     nuxt: ^4.5.2
 
   void:
-    '@void/vue': ^0.10.12
-    hono: ^4.13.4
-    void: ^0.10.12
+    '@void/vue': ^0.10.13
+    hono: ^4.13.5
+    void: ^0.10.13
 
   vite-plus:
     vite: npm:@voidzero-dev/vite-plus-core@0.3.0
@@ -78,7 +78,7 @@ catalogs:
     '@types/react-dom': ^19.2.5
     react: ^19.2.8
     react-dom: ^19.2.8
-    react-router: ^8.3.0
+    react-router: ^8.3.1
     zustand: ^5.0.15
 
   uni:
@@ -102,7 +102,7 @@ catalogs:
     '@unocss/reset': ^66.8.1
     '@vitejs/plugin-basic-ssl': ^2.3.0
     '@vitejs/plugin-legacy': ^8.2.3
-    '@vitejs/plugin-react': ^6.1.0
+    '@vitejs/plugin-react': ^6.1.1
     '@vitejs/plugin-vue': ^6.0.8
     '@vitejs/plugin-vue-jsx': ^5.1.6
     '@vitest/browser-playwright': ^4.1.11
@@ -121,12 +121,12 @@ catalogs:
 
   vue:
     '@iconify/vue': ^5.0.1
-    '@vue/shared': ^3.5.41
-    '@vue/compiler-sfc': ^3.5.41
+    '@vue/shared': ^3.5.42
+    '@vue/compiler-sfc': ^3.5.42
     '@vue/tsconfig': ^0.9.1
     '@vueuse/core': ^14.4.0
     pinia: ^4.0.3
     pinia-plugin-persistedstate: ^4.7.1
-    vue: ^3.5.41
-    vue-router: ^5.2.0
+    vue: ^3.5.42
+    vue-router: ^5.3.0
     vue-tsc: ^3.3.11
