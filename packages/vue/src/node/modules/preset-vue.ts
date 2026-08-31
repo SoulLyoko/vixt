@@ -56,8 +56,16 @@ export default defineVixtModule<VixtOptions>({
 
     const options = (vixt.options = defu(vixt.options, defaultOptions))
 
+    const vueRouterPlugin = VueRouter(options.router)
+    if (vixt.options._prepare) {
+      // @ts-ignore
+      vueRouterPlugin.buildStart()
+      // @ts-ignore
+      vueRouterPlugin.buildEnd()
+    }
+
     const plugins = [
-      VueRouter(options.router),
+      vueRouterPlugin,
       Vue(options.vue),
       VueJsx(options.vueJsx),
       Layouts(options.layouts),
