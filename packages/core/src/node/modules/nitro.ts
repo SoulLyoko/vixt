@@ -33,7 +33,10 @@ export default defineVixtModule<NitroOptions>({
       },
       modules: [
         nitro => {
-          nitro.hooks.hook('build:before', setNitroCtx)
+          nitro.hooks.hook('build:before', ctx => {
+            setNitroCtx(ctx)
+            writeTypes()
+          })
         },
       ],
     }
@@ -46,7 +49,6 @@ export default defineVixtModule<NitroOptions>({
       {
         name: 'vixt:nitro-types',
         configureServer(server) {
-          writeTypes()
           const routesDirs = vixt._layers.map(e => `${e.cwd!}/server/routes`)
           const watcher = server.watcher
           watcher.add(routesDirs)
