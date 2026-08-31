@@ -136,6 +136,15 @@ export interface VixtConfig {
    * Define the monorepo workspace directory of your application.
    */
   workspaceDir?: string
+  /**
+   * Whether your app is running in with vixt-cli.
+   * @internal
+   */
+  _cli?: boolean
+  /**
+   * @internal
+   */
+  _prepare?: boolean
 }
 
 /**

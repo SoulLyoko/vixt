@@ -34,7 +34,13 @@ export default defineVixtModule<ImportsOptions>({
       dirs: [composables, constants, hooks, stores, utils].flat(),
     }
   },
-  setup(options) {
-    return AutoImport(options)
+  setup(options, vixt) {
+    const autoImportPlugin = AutoImport(options)
+    if (vixt.options._prepare) {
+      // @ts-ignore
+      autoImportPlugin.buildStart()
+    }
+
+    return autoImportPlugin
   },
 })

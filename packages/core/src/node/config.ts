@@ -37,6 +37,7 @@ export async function loadVixtConfig(opts?: LoadVixtConfigOptions): Promise<Reso
   })
 
   const { config, cwd } = result
+
   // assign default dirs
   config.rootDir ??= cwd
   config.buildDir ??= resolve(config.rootDir!, '.vixt')
@@ -48,10 +49,10 @@ export async function loadVixtConfig(opts?: LoadVixtConfigOptions): Promise<Reso
   config.pluginsDir ??= resolve(config.srcDir!, 'plugins')
 
   // assign config variables
-  config.debug = !!cliOptions.debug
+  config.debug ??= cliOptions.debug
   config.dev = env.NODE_ENV === 'development'
   config.test = env.NODE_ENV === 'test'
-  config._cli = process.argv[1]?.endsWith('vixt.mjs')
+  config._cli = _cli
   config._prepare = cliOptions.command === 'prepare'
 
   // remove buildDir
