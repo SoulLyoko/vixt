@@ -4,7 +4,7 @@
   "type": "module",
   "main": "vixt.config.ts",
   "dependencies": {
-    "@pinia/colada": "^1.4.2",
+    "@pinia/colada": "^1.4.4",
     "pinia": "catalog:vue"
   }
 }
