@@ -39,6 +39,7 @@
     "@commitlint/config-conventional": "catalog:",
     "@vitest/browser-playwright": "catalog:vite",
     "bumpp": "catalog:",
+    "cross-env": "^10.1.0",
     "playwright": "catalog:vite",
     "rimraf": "catalog:",
     "taze": "catalog:",
@@ -53,5 +54,5 @@
     "node": ">=24",
     "pnpm": ">=11"
   },
-  "packageManager": "pnpm@12.2.1"
+  "packageManager": "pnpm@12.11.2"
 }
