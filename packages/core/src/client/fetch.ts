@@ -1,3 +1,1 @@
-import { ofetch } from 'ofetch'
-
-export const $fetch = ofetch as import('nitro/types').$Fetch
+export { $fetch } from 'ofetch'

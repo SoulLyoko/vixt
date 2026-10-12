@@ -1,19 +1,9 @@
 import type { NitroOptions } from '../types'
-import type { Nitro } from 'nitro/types'
 
-import { writeTypes as _writeTypes } from 'nitro/builder'
 import { nitro } from 'nitro/vite'
 import path from 'pathe'
 
 import { defineVixtModule } from '../module'
-
-let nitroCtx: Nitro | undefined
-function setNitroCtx(ctx: Nitro) {
-  nitroCtx = ctx
-}
-function writeTypes() {
-  return nitroCtx && _writeTypes(nitroCtx)
-}
 
 export default defineVixtModule<NitroOptions>({
   meta: {
@@ -28,36 +18,13 @@ export default defineVixtModule<NitroOptions>({
         return path.join(layer.cwd!, serverDir)
       }),
       serverDir: './server',
-      typescript: {
-        generatedTypesDir: vixt.options.buildTypesDir,
-      },
-      modules: [
-        nitro => {
-          nitro.hooks.hook('build:before', ctx => {
-            setNitroCtx(ctx)
-            writeTypes()
-          })
-        },
-      ],
     }
   },
-  setup(options, vixt) {
+  setup(options) {
     if (!options.enabled) return
 
     return [
       nitro(options),
-      {
-        name: 'vixt:nitro-types',
-        configureServer(server) {
-          const routesDirs = vixt._layers.map(e => `${e.cwd!}/server/routes`)
-          const watcher = server.watcher
-          watcher.add(routesDirs)
-          watcher.on('all', (_, p) => {
-            const matched = routesDirs.some(r => path.normalize(p).includes(path.normalize(r)))
-            if (matched) writeTypes()
-          })
-        },
-      },
       {
         name: 'vixt:config-outdir-for-unocss',
         config() {
