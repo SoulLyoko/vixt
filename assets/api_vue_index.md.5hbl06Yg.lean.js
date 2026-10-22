@@ -1,0 +1,1 @@
+import{_t as e,it as t,n,rt as r}from"./chunks/framework.BdMe6IZp.js";var i=JSON.parse(`{"title":"vue","description":"","frontmatter":{},"headers":[],"relativePath":"api/vue/index.md","filePath":"api/vue/index.md"}`),a={name:`api/vue/index.md`};function o(n,i,a,o,s,c){return e(),r(`div`,null,[...i[0]||=[t("",4)]])}var s=n(a,[[`render`,o]]);export{i as __pageData,s as default};

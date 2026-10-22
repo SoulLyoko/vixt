@@ -1,1 +1,0 @@
-import{_t as e,it as t,n,rt as r}from"./chunks/framework.BRzNsdOb.js";var i=JSON.parse(`{"title":"cli","description":"","frontmatter":{},"headers":[],"relativePath":"api/cli/index.md","filePath":"api/cli/index.md"}`),a={name:`api/cli/index.md`};function o(n,i,a,o,s,c){return e(),r(`div`,null,[...i[0]||=[t("",8)]])}var s=n(a,[[`render`,o]]);export{i as __pageData,s as default};
