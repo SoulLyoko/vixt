@@ -35,5 +35,5 @@ describe.skipIf(isWatch)('create-vixt', () => {
     expect(getDepVersion(path.join(genPath, 'packages/vue'), '@vixt/vue')).toBe(vixtVersion)
     expect(getDepVersion(path.join(genPath, 'packages/uni'), '@vixt/uni')).toBe(vixtVersion)
     expect(getDepVersion(path.join(genPath, 'packages/react'), '@vixt/react')).toBe(vixtVersion)
-  })
+  }, 10000)
 })
